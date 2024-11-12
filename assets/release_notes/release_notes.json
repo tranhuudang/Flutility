@@ -1,0 +1,41 @@
+[
+  {
+    "version": "60",
+    "date": "11-11-2024",
+    "changesNote": [
+      "Add saving functionality to Color Collection",
+      "Support Chinese language",
+      "Bug fix and improvements"
+    ]
+  },
+  {
+    "version": "56",
+    "date": "03-11-2024",
+    "changesNote": [
+      "Add Common Flutter CLI Command"
+    ]
+  },
+  {
+    "version": "55",
+    "date": "29-10-2024",
+    "changesNote": [
+      "Add Icon Generation Tool",
+      "Improve user experience"
+    ]
+  },
+  {
+    "version": "28",
+    "date": "23-10-2024",
+    "changesNote": [
+      "Improve user experience",
+      "Fix bugs and improve performance"
+      ]
+  },
+      {
+    "version": "20",
+    "date": "22-10-2024",
+    "changesNote": [
+      "Release first version"
+    ]
+  }
+]
