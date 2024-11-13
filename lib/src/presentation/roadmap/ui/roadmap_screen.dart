@@ -1740,8 +1740,6 @@ class RoadmapScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                100.height,
-                Text('Refer to https://github.com/olexale/flutter_roadmap for the latest version and links.'.i18n)
 
               ],
             ),
