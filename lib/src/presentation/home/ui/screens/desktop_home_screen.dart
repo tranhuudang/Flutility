@@ -186,6 +186,14 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                           onTap: () {
                             goBranch(5);
                           }),
+                      OverviewItem(
+                        icon: FluentIcons.map_16_regular,
+                        title: 'Flutter Learning Roadmap'.i18n,
+                        subtitle: 'A structured guide to help you advance from beginner to expert in Flutter.'.i18n,
+                        onTap: () {
+                          goBranch(6);
+                        },
+                      ),
                     ],
                   ),
                 ),
@@ -221,7 +229,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                           subtitle:
                               'Choose your preferred font style and size.'.i18n,
                           onTap: () {
-                            goBranch(6);
+                            goBranch(7);
                           }),
                       OverviewItem(
                         icon: FluentIcons.color_16_regular,
@@ -229,7 +237,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                         subtitle:
                             'Pick the perfect color for your project.'.i18n,
                         onTap: () {
-                          goBranch(7);
+                          goBranch(8);
                         },
                       ),
                       OverviewItem(
@@ -238,7 +246,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                         subtitle:
                             'Browse and select from a variety of icons.'.i18n,
                         onTap: () {
-                          goBranch(8);
+                          goBranch(9);
                         },
                       ),
                       OverviewItem(
@@ -247,7 +255,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                         subtitle:
                             'Create custom icons tailored to your needs.'.i18n,
                         onTap: () {
-                          goBranch(10);
+                          goBranch(11);
                         },
                       ),
                     ],

@@ -7,6 +7,7 @@ import 'package:flutter_toolkits/src/presentation/home/ui/screens/desktop_home_s
 import 'package:flutter_toolkits/src/presentation/icon_generator/app_icon_generator.dart';
 import 'package:flutter_toolkits/src/presentation/image_compress/image_compress_screen.dart';
 import 'package:flutter_toolkits/src/presentation/json/json_formatter_screen.dart';
+import 'package:flutter_toolkits/src/presentation/roadmap/ui/roadmap_screen.dart';
 import 'package:go_router/go_router.dart';
 import 'package:i18n_extension/i18n_extension.dart';
 import 'package:flutter_toolkits/src/presentation/presentation.dart';
@@ -33,6 +34,7 @@ final _shellNavigatorInfoKey = GlobalKey<NavigatorState>(debugLabel: 'Info');
 final _shellNavigatorCommandLineKey =
     GlobalKey<NavigatorState>(debugLabel: 'CommandLine');
 final _shellNavigatorFontsKey = GlobalKey<NavigatorState>(debugLabel: 'Fonts');
+final _shellNavigatorRoadmapKey = GlobalKey<NavigatorState>(debugLabel: 'Roadmap');
 final _shellNavigatorDashboardKey =
     GlobalKey<NavigatorState>(debugLabel: 'Dashboard');
 final _shellNavigatorDesktopAccountKey =
@@ -154,7 +156,22 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 5 fonts
+        // 5 setting branch
+        StatefulShellBranch(
+          navigatorKey: _shellNavigatorRoadmapKey,
+          routes: [
+            // top route inside branch
+            GoRoute(
+              name: RouteName.roadmap,
+              path: RoutePath.roadmap,
+              pageBuilder: (context, state) {
+                return NoTransitionPage(
+                    child: I18n(child: const RoadmapScreen()));
+              },
+            ),
+          ],
+        ),
+        // 6 fonts
         StatefulShellBranch(
           navigatorKey: _shellNavigatorFontsKey,
           routes: [
@@ -169,7 +186,7 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 6 color
+        // 7 color
         StatefulShellBranch(
           navigatorKey: _shellNavigatorOthersKey,
           routes: [
@@ -184,7 +201,7 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 7 icon
+        // 8 icon
         StatefulShellBranch(
           navigatorKey: _shellNavigatorIconKey,
           routes: [
@@ -234,7 +251,7 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 8 json
+        // 9 json
         StatefulShellBranch(
           navigatorKey: _shellNavigatorJsonKey,
           routes: [
@@ -249,7 +266,7 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 9 icon generator
+        // 10 icon generator
         StatefulShellBranch(
           navigatorKey: _shellNavigatorIconGeneratorKey,
           routes: [
@@ -267,7 +284,7 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 10 compress image
+        // 11 compress image
         StatefulShellBranch(
           navigatorKey: _shellNavigatorImageCompressKey,
           routes: [
@@ -285,7 +302,7 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 11 api
+        // 12 api
         StatefulShellBranch(
           navigatorKey: _shellNavigatorApiKey,
           routes: [

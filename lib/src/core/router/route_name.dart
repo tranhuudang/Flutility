@@ -2,6 +2,7 @@ class RouteName{
   static const String splash ='splash';
   static const String home ='home';
   static const String commonSettings ='common-settings';
+  static const String roadmap ='roadmap';
   static const String mobileUserSettings ='mobile-user-settings';
   static const String infos ='infos';
   static const String documentation ='documentation';

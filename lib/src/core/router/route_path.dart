@@ -19,6 +19,7 @@ class RoutePath {
   static const String essential = 'essential-1848';
   static const String login = '/';
   static const String settings = '/settings';
+  static const String roadmap = '/roadmap';
   static const String desktopUserSettings = '/user-desktop-settings';
   static const String infos = '/infos';
   static const String documentation = '/documentation';

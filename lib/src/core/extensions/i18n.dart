@@ -733,6 +733,28 @@ extension Localization on Object {
       'vi_vi': 'Phản hồi',
       'zh_cn': '帮助我们改进'
     },
+    'Flutter Learning Roadmap': {
+      'en_us': 'Flutter Learning Roadmap',
+      'vi_vi': 'Lộ Trình Học Flutter',
+      'zh_cn': 'Flutter学习路线图'
+    },
+    'A structured guide to help you advance from beginner to expert in Flutter.': {
+      'en_us': 'A structured guide to help you advance from beginner to expert in Flutter.',
+      'vi_vi': 'Một hướng dẫn có cấu trúc giúp bạn tiến bộ từ người mới bắt đầu đến chuyên gia trong Flutter.',
+      'zh_cn': '一份结构化的指南，帮助您从Flutter初学者进阶到专家。',
+    },
+    'Refer to https://github.com/olexale/flutter_roadmap for the latest version and links.': {
+      'en_us': 'Refer to https://github.com/olexale/flutter_roadmap for the latest version and links.',
+      'vi_vi': 'Tham khảo https://github.com/olexale/flutter_roadmap để có phiên bản và liên kết mới nhất.',
+      'zh_cn': '请参阅 https://github.com/olexale/flutter_roadmap 以获取最新版本和链接。',
+    },
+    'introductionRoadmap': {
+      'en_us': 'This guide will help you progress from a beginner to an advanced Flutter developer. It outlines key concepts, tools, and best practices you need to master, including Dart programming, Flutter widgets, UI design, and state management. Follow this roadmap to build a solid foundation in Flutter and start developing powerful mobile applications.',
+      'vi_vi': 'Hướng dẫn này sẽ giúp bạn tiến bộ từ người mới bắt đầu đến nhà phát triển Flutter nâng cao. Nó bao gồm các khái niệm chính, công cụ và thực tiễn tốt nhất mà bạn cần nắm vững, bao gồm lập trình Dart, widget Flutter, thiết kế giao diện người dùng và quản lý trạng thái. Hãy theo dõi lộ trình này để xây dựng nền tảng vững chắc trong Flutter và bắt đầu phát triển các ứng dụng di động mạnh mẽ.',
+      'zh_cn': '本指南将帮助您从初学者进阶到高级Flutter开发者。它概述了您需要掌握的关键概念、工具和最佳实践，包括Dart编程、Flutter小部件、UI设计和状态管理。遵循此路线图，建立坚实的Flutter基础，开始开发强大的移动应用程序。',
+    },
+
+
     'If something isn’t working as expected, we’d like to know. Share your feedback on how we can improve or let us know what you enjoy about our app.':
         {
       'en_us':

@@ -67,6 +67,14 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                           selectedIcon: FluentIcons.tasks_app_20_filled,
                           label: 'Common Flutter CLI Commands'.i18n,
                           index: 5),
+                      const Divider(
+                        thickness: .3,
+                      ),
+                      _buildSidebarItem(
+                          icon: FluentIcons.map_16_regular,
+                          selectedIcon: FluentIcons.map_16_filled,
+                          label: 'Flutter Learning Roadmap'.i18n,
+                          index: 6),
                       8.height,
                     ],
                   ),
@@ -89,7 +97,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                           icon: FluentIcons.text_font_16_regular,
                           selectedIcon: FluentIcons.text_font_16_filled,
                           label: 'Fonts'.i18n,
-                          index: 6),
+                          index: 7),
                       const Divider(
                         thickness: .3,
                       ),
@@ -97,7 +105,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                           icon: FluentIcons.color_16_regular,
                           selectedIcon: FluentIcons.color_16_filled,
                           label: 'Color Picker'.i18n,
-                          index: 7),
+                          index: 8),
                       const Divider(
                         thickness: .3,
                       ),
@@ -105,7 +113,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                           icon: FluentIcons.icons_20_regular,
                           selectedIcon: FluentIcons.icons_20_filled,
                           label: 'Icons'.i18n,
-                          index: 8),
+                          index: 9),
                       8.height,
                       const Divider(
                         thickness: .3,
@@ -114,7 +122,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                           icon: FluentIcons.apps_settings_16_regular,
                           selectedIcon: FluentIcons.apps_settings_16_filled,
                           label: 'App Icon Generator'.i18n,
-                          index: 10),
+                          index: 11),
                       8.height,
                     ],
                   ),
@@ -147,7 +155,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                               icon: FluentIcons.data_pie_20_regular,
                               selectedIcon: FluentIcons.data_pie_20_filled,
                               label: 'JSON Formatter'.i18n,
-                              index: 9),
+                              index: 10),
                         ],
                         if (Properties
                             .instance.settings.enableImageCompress) ...[
@@ -160,7 +168,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                               icon: Icons.compress,
                               selectedIcon: Icons.compress,
                               label: 'Image Compress'.i18n,
-                              index: 11),
+                              index: 12),
                           8.height,
                         ],
                         if (Properties.instance.settings.enableApiTesting) ...[
@@ -173,7 +181,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                               icon: FluentIcons.network_check_20_regular,
                               selectedIcon: FluentIcons.network_check_20_filled,
                               label: 'API Testing'.i18n,
-                              index: 12),
+                              index: 13),
                           8.height,
                         ],
                       ],
