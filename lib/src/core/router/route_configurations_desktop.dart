@@ -141,7 +141,7 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // common CLI
+        // 5 common CLI
         StatefulShellBranch(
           navigatorKey: _shellNavigatorCommandLineKey,
           routes: [
@@ -156,7 +156,7 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 5 setting branch
+        // 6 setting branch
         StatefulShellBranch(
           navigatorKey: _shellNavigatorRoadmapKey,
           routes: [
@@ -171,7 +171,7 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 6 fonts
+        // 7 fonts
         StatefulShellBranch(
           navigatorKey: _shellNavigatorFontsKey,
           routes: [
@@ -186,7 +186,7 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 7 color
+        // 8 color
         StatefulShellBranch(
           navigatorKey: _shellNavigatorOthersKey,
           routes: [
@@ -201,7 +201,7 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 8 icon
+        // 9 icon
         StatefulShellBranch(
           navigatorKey: _shellNavigatorIconKey,
           routes: [
@@ -251,7 +251,7 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 9 json
+        // 10 json
         StatefulShellBranch(
           navigatorKey: _shellNavigatorJsonKey,
           routes: [
@@ -266,7 +266,7 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 10 icon generator
+        // 11 icon generator
         StatefulShellBranch(
           navigatorKey: _shellNavigatorIconGeneratorKey,
           routes: [
@@ -284,7 +284,7 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 11 compress image
+        // 12 compress image
         StatefulShellBranch(
           navigatorKey: _shellNavigatorImageCompressKey,
           routes: [
@@ -302,7 +302,7 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 12 api
+        // 13 api
         StatefulShellBranch(
           navigatorKey: _shellNavigatorApiKey,
           routes: [

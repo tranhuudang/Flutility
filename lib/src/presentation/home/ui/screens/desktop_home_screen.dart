@@ -33,7 +33,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
     final didRateApp = Properties.instance.settings.didRateApp;
     final openAppCount = Properties.instance.settings.openAppCount;
     DebugLog.info('Open App Count: $openAppCount');
-    if ((!didRateApp && openAppCount % 10 == 0) ||
+    if ((!didRateApp && openAppCount % 5 == 0) ||
         (didRateApp && openAppCount % 100 == 0)) {
       await Future.delayed(const Duration(seconds: 2), () {
         context.showAlertDialog(
@@ -316,7 +316,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                               'Format your JSON data for better readability.'
                                   .i18n,
                           onTap: () {
-                            goBranch(9);
+                            goBranch(10);
                           },
                         ),
                       if (isImageCompressorEnabled)
@@ -327,7 +327,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                               'Reduce image file sizes without sacrificing quality.'
                                   .i18n,
                           onTap: () {
-                            goBranch(11);
+                            goBranch(12);
                           },
                         ),
                       if (isApiTestingEnabled)
@@ -338,7 +338,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                               'Test and debug your API endpoints efficiently.'
                                   .i18n,
                           onTap: () {
-                            goBranch(12);
+                            goBranch(13);
                           },
                         ),
                     ],
