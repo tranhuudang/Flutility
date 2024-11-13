@@ -39,8 +39,8 @@ class RoadmapScreen extends StatelessWidget {
             Column(
               children: [
                 190.height,
-                const MapLabel(
-                  label: 'Basics',
+                 MapLabel(
+                  label: 'Basics'.i18n,
                 ),
                 60.height,
                 const MapDot(
@@ -75,8 +75,8 @@ class RoadmapScreen extends StatelessWidget {
                   branchRight: true,
                 ),
                 140.height,
-                const MapLabel(
-                  label: 'Getting Deeper',
+                 MapLabel(
+                  label: 'Getting Deeper'.i18n,
                 ),
                 50.height,
                 const MapDot(
@@ -119,8 +119,8 @@ class RoadmapScreen extends StatelessWidget {
                   branchRight: true,
                 ),
                 130.height,
-                const MapLabel(
-                  label: 'Almost there',
+                 MapLabel(
+                  label: 'Almost there'.i18n,
                 ),
                 60.height,
                 const MapDot(
@@ -135,8 +135,8 @@ class RoadmapScreen extends StatelessWidget {
                   branchLeft: true,
                 ),
                 130.height,
-                const MapLabel(
-                  label: 'The End',
+                 MapLabel(
+                  label: 'The End'.i18n,
                 ),
               ],
             ),
@@ -173,13 +173,13 @@ class RoadmapScreen extends StatelessWidget {
                                       color: context.theme.colorScheme.secondary),
                                 ),
                                 title: Text(
-                                  'Must have',
+                                  'Must have'.i18n,
                                   style: context.theme.textTheme.labelSmall,
                                 ),
                                 onTap: () {
                                   showInfoBottomSheet(
                                     context,
-                                    'Must Have',
+                                    'Must Have'.i18n,
                                     0,
                                     'These are fundamental concepts every Flutter developer should know.',
                                     {
@@ -201,13 +201,13 @@ class RoadmapScreen extends StatelessWidget {
                                           .theme.colorScheme.secondaryContainer),
                                 ),
                                 title: Text(
-                                  'Nice to have',
+                                  'Nice to have'.i18n,
                                   style: context.theme.textTheme.labelSmall,
                                 ),
                                 onTap: () {
                                   showInfoBottomSheet(
                                     context,
-                                    'Nice to Have',
+                                    'Nice to Have'.i18n,
                                     1,
                                     'These concepts are beneficial to know, but not required at the beginning.',
                                     {
@@ -229,13 +229,13 @@ class RoadmapScreen extends StatelessWidget {
                                           .theme.colorScheme.tertiaryContainer),
                                 ),
                                 title: Text(
-                                  'Optional',
+                                  'Optional'.i18n,
                                   style: context.theme.textTheme.labelSmall,
                                 ),
                                 onTap: () {
                                   showInfoBottomSheet(
                                     context,
-                                    'Optional',
+                                    'Optional'.i18n,
                                     2,
                                     'These are optional topics that may be useful in certain cases.',
                                     {
@@ -1779,7 +1779,7 @@ class RoadmapScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Importance: ${importanceLevel == 0 ? 'Must Have' : importanceLevel == 1 ? 'Nice to Have' : 'Optional'}',
+                  '${'Importance'.i18n}: ${importanceLevel == 0 ? 'Must Have'.i18n : importanceLevel == 1 ? 'Nice to Have'.i18n : 'Optional'.i18n}',
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.grey[700],
@@ -1792,8 +1792,8 @@ class RoadmapScreen extends StatelessWidget {
                   style: const TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 16),
-                const Text(
-                  'Resources:',
+                 Text(
+                  '${'Resources'.i18n}:',
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,

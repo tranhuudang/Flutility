@@ -762,7 +762,53 @@ extension Localization on Object {
       'vi_vi':
           "Nếu có điều gì đó không hoạt động như mong đợi, chúng tôi muốn biết. Chia sẻ ý kiến của bạn về cách chúng tôi có thể cải thiện hoặc cho chúng tôi biết điều gì bạn yêu thích về ứng dụng của chúng tôi.",
       'zh_cn': "如果有任何问题未如预期般运作，我们希望了解您的反馈。请分享您的建议，让我们知道如何改进，或者告诉我们您喜欢的功能。"
-    }
+    },
+    'Basics': {
+      'en_us': 'Basics',
+      'vi_vi': 'Cơ bản',
+      'zh_cn': '基础',
+    },
+    'Getting Deeper': {
+      'en_us': 'Getting Deeper',
+      'vi_vi': 'Đi sâu hơn',
+      'zh_cn': '深入学习',
+    },
+    'Almost there': {
+      'en_us': 'Almost there',
+      'vi_vi': 'Gần xong',
+      'zh_cn': '快完成了',
+    },
+    'The End': {
+      'en_us': 'The End',
+      'vi_vi': 'Hoàn thành',
+      'zh_cn': '结束',
+    },
+    'Must have': {
+      'en_us': 'Must have',
+      'vi_vi': 'Cần phải có',
+      'zh_cn': '必备',
+    },
+    'Nice to have': {
+      'en_us': 'Nice to have',
+      'vi_vi': 'Nên có',
+      'zh_cn': '锦上添花',
+    },
+    'Optional': {
+      'en_us': 'Optional',
+      'vi_vi': 'Tùy chọn',
+      'zh_cn': '可选',
+    },
+    'Resources': {
+      'en_us': 'Resources',
+      'vi_vi': 'Tài nguyên',
+      'zh_cn': '资源',
+    },
+    'Importance': {
+      'en_us': 'Importance',
+      'vi_vi': 'Tầm quan trọng',
+      'zh_cn': '重要性',
+    },
+
   });
 
   String get i18n => localize(this, _t);
