@@ -21,6 +21,7 @@ class MapItem extends StatelessWidget {
     return InkWell(
       onTap: onTap ?? () {},
       child: Container(
+        height: 50,
         padding: const EdgeInsets.only(left: 8, right: 8),
         color: importantLevel == 0
             ? context.theme.colorScheme.secondary

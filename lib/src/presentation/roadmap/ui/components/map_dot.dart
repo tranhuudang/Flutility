@@ -12,7 +12,7 @@ class MapDot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = (MediaQuery.of(context).size.width - 500) / 2;
+    const width = 250.0;
     return Stack(
       alignment: AlignmentDirectional.center,
       children: [
@@ -47,10 +47,11 @@ class MapDot extends StatelessWidget {
         ),
         Center(
           child: Container(
-            width: 20,
-            height: 20,
+            width: 24,
+            height: 24,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
+              border: Border.all(width: 2),
               color: context.theme.colorScheme.primary,
             ),
           ),
