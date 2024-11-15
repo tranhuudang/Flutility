@@ -1,5 +1,5 @@
 # Flutter Toolkit 🥇
-![cover](https://github.com/tranhuudang/flutter_toolkit/assets/banner.png?raw=true)
+![cover](https://github.com/tranhuudang/flutter_toolkit/blob/master/assets/banner.png?raw=true)
 Flutter Toolkits - Your All-in-One Developer & Designer Toolkit
 
 Flutter Toolkits is a comprehensive desktop application tailored for developers, designers, and content creators. 
