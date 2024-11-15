@@ -138,6 +138,18 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                 opacity: .8,
                 child: Row(
                   children: [
+                    TextButton.icon(
+                        onPressed: () {
+                          goToBugReport();
+                        },
+                        icon: Icon(FluentIcons.bug_16_regular, size: 18, color: context.theme.colorScheme.onSurface,),
+                        label: Opacity(
+                          opacity: .5,
+                          child: Text(
+                            'Report Issues'.i18n,
+                            style: context.theme.textTheme.labelSmall,
+                          ),
+                        )),
                     const Spacer(),
                     TextButton(
                         onPressed: () {
@@ -150,6 +162,7 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                             style: context.theme.textTheme.labelSmall,
                           ),
                         )),
+
                     IconButton(
                       onPressed: () {
                         goBranch(3);

@@ -107,7 +107,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                                     FontAwesomeIcons.github,
                                     size: 16,
                                   ),
-                                  url: 'https://github.com/tranhuudang'),
+                                  url: 'https://github.com/tranhuudang/flutter_toolkit'),
                               _buildIconButton(
                                   icon: const Icon(
                                     Icons.mail,
