@@ -1,16 +1,10 @@
-# flutter_toolkits
+# Flutter Toolkit 🥇
+![cover](https://github.com/tranhuudang/flutter_toolkit/assets/banner.png?raw=true)
+Flutter Toolkits - Your All-in-One Developer & Designer Toolkit
 
-A new Flutter project.
+Flutter Toolkits is a comprehensive desktop application tailored for developers, designers, and content creators. 
+This versatile tool brings together essential utilities in a single platform, streamlining your workflow and saving you valuable time. 
+Whether you need to preview fonts, pick colors, format JSON, test APIs, or compress images, Flutter Toolkits has you covered with a clean and intuitive interface.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)](https://www.microsoft.com/store/productId/9NM16ZPQH6BZ?ocid=pdpshare)
