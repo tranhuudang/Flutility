@@ -1,5 +1,6 @@
 import 'package:flutter_toolkits/src/presentation/api/api_test_screen.dart';
 import 'package:flutter_toolkits/src/presentation/colors/color_picker_screen.dart';
+import 'package:flutter_toolkits/src/presentation/dev%20notes/note_taking_screen.dart';
 import 'package:flutter_toolkits/src/presentation/documentation/common_command_screen.dart';
 import 'package:flutter_toolkits/src/presentation/documentation/documentation_screen.dart';
 import 'package:flutter_toolkits/src/presentation/fonts/fonts_screen.dart';
@@ -25,6 +26,8 @@ final _shellNavigatorIconGeneratorKey =
     GlobalKey<NavigatorState>(debugLabel: 'IconGenerator');
 final _shellNavigatorApiKey =
     GlobalKey<NavigatorState>(debugLabel: 'Vocabulary');
+final _shellNavigatorNoteTakingKey =
+    GlobalKey<NavigatorState>(debugLabel: 'noteTaking');
 final _shellNavigatorOthersKey =
     GlobalKey<NavigatorState>(debugLabel: 'Others');
 final _shellNavigatorJsonKey = GlobalKey<NavigatorState>(debugLabel: 'Json');
@@ -34,7 +37,8 @@ final _shellNavigatorInfoKey = GlobalKey<NavigatorState>(debugLabel: 'Info');
 final _shellNavigatorCommandLineKey =
     GlobalKey<NavigatorState>(debugLabel: 'CommandLine');
 final _shellNavigatorFontsKey = GlobalKey<NavigatorState>(debugLabel: 'Fonts');
-final _shellNavigatorRoadmapKey = GlobalKey<NavigatorState>(debugLabel: 'Roadmap');
+final _shellNavigatorRoadmapKey =
+    GlobalKey<NavigatorState>(debugLabel: 'Roadmap');
 final _shellNavigatorDashboardKey =
     GlobalKey<NavigatorState>(debugLabel: 'Dashboard');
 final _shellNavigatorDesktopAccountKey =
@@ -314,6 +318,24 @@ GoRouter routerConfigDesktop = GoRouter(
                 return NoTransitionPage(
                   child: I18n(
                     child: const ApiTestScreen(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+        // 14 api
+        StatefulShellBranch(
+          navigatorKey: _shellNavigatorNoteTakingKey,
+          routes: [
+            // top route inside branch
+            GoRoute(
+              name: RouteName.noteTaking,
+              path: RoutePath.noteTaking,
+              pageBuilder: (context, state) {
+                return NoTransitionPage(
+                  child: I18n(
+                    child: const NoteEditorScreen(),
                   ),
                 );
               },

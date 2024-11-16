@@ -36,9 +36,6 @@ class _Initializer {
     WindowManager.instance.setMaximumSize(DefaultSettings.maxWindowsSize);
     WindowManager.instance.setTitle(DefaultSettings.appName);
     WindowManager.instance.setTitleBarStyle(TitleBarStyle.hidden);
-    // Future.delayed(const Duration(seconds: 10), () {
-    //   OpenAIKeySelector.init();
-    // });
   }
 
   static Future<void> _initForMacOS() async {

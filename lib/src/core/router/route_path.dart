@@ -16,6 +16,7 @@ class RoutePath {
   static const String fonts = '/fonts';
   static const String dashboard = '/dashboard';
   static const String api = '/api';
+  static const String noteTaking = '/noteTaking';
   static const String essential = 'essential-1848';
   static const String login = '/';
   static const String settings = '/settings';

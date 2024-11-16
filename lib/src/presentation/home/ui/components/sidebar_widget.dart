@@ -46,7 +46,9 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                   ExpansionTile(
                     backgroundColor: context.theme.colorScheme.surfaceContainer
                         .withOpacity(1),
-                    leading: const Icon( FluentIcons.document_search_16_regular,),
+                    leading: const Icon(
+                      FluentIcons.document_search_16_regular,
+                    ),
                     tilePadding: const EdgeInsets.only(
                         left: 14, right: 10, top: 0, bottom: 4),
                     title: Text(
@@ -212,21 +214,26 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                 thickness: .3,
               ),
               const Spacer(),
-              if (!isWindows) ...[
-                _buildSidebarItem(
-                  icon: Icons.settings,
-                  selectedIcon: Icons.settings,
-                  label: 'Settings'.i18n,
-                  index: 2,
+              const Divider(
+                thickness: .3,
+                height: 0,
+              ),
+              Container(
+                padding: const EdgeInsets.only(bottom: 8, top: 8),
+                color: context.theme.scaffoldBackgroundColor,
+                child: _buildSidebarItem(
+                  icon: FluentIcons.notebook_16_regular,
+                  selectedIcon: FluentIcons.notebook_16_filled,
+                  label: 'Dev Notes'.i18n,
+                  index: 14,
                 ),
-              ],
+              ),
             ],
           )
         ],
       ),
     );
   }
-
 
   Widget _buildSidebarItem(
       {required IconData icon,

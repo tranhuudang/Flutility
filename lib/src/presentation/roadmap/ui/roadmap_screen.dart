@@ -1780,12 +1780,12 @@ class RoadmapScreen extends StatelessWidget {
   ) {
     showModalBottomSheet(
       context: context,
-      constraints: BoxConstraints(maxWidth: double.infinity),
+      constraints: const BoxConstraints(maxWidth: double.infinity),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.zero,
       ),
       builder: (BuildContext context) {
-        return Container(
+        return SizedBox(
           width: double.infinity,
           child: Padding(
             padding: const EdgeInsets.all(16.0),
