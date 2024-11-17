@@ -36,7 +36,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
   _initDefault() {
     final sampleContent = quill.Document()
       ..insert(0,
-          'Start typing your notes here. Your notes will auto-save.\n\n- Add headings\n- Format text\n- Include rich content like images\n');
+          'Start typing your notes here. Your notes will auto-save.');
     _controller = quill.QuillController(
       document: sampleContent,
       selection: const TextSelection.collapsed(offset: 0),
@@ -105,7 +105,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: const EdgeInsets.only(left: 4, right: 0),
+              padding: const EdgeInsets.only(left: 4, right: 0, bottom: 8),
               child: quill.QuillToolbar.simple(
                   controller: _controller,
                   configurations: const quill.QuillSimpleToolbarConfigurations(
