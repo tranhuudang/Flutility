@@ -16,34 +16,37 @@ class MapDot extends StatelessWidget {
     return Stack(
       alignment: AlignmentDirectional.center,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (branchLeft ?? false) ...[
-              Container(
-                color: context.theme.colorScheme.primary,
-                height: 3,
-                width: width,
-              ),
-              Container(
-                color: Colors.transparent,
-                height: 3,
-                width: width,
-              ),
+        Opacity(
+          opacity: .5,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (branchLeft ?? false) ...[
+                Container(
+                  color: context.theme.colorScheme.primary,
+                  height: 3,
+                  width: width,
+                ),
+                Container(
+                  color: Colors.transparent,
+                  height: 3,
+                  width: width,
+                ),
+              ],
+              if (branchRight ?? false) ...[
+                Container(
+                  color: Colors.transparent,
+                  height: 3,
+                  width: width,
+                ),
+                Container(
+                  color: context.theme.colorScheme.primary,
+                  height: 3,
+                  width: width,
+                ),
+              ],
             ],
-            if (branchRight ?? false) ...[
-              Container(
-                color: Colors.transparent,
-                height: 3,
-                width: width,
-              ),
-              Container(
-                color: context.theme.colorScheme.primary,
-                height: 3,
-                width: width,
-              ),
-            ],
-          ],
+          ),
         ),
         Center(
           child: Container(

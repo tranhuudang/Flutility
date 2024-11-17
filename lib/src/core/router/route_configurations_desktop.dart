@@ -1,6 +1,6 @@
 import 'package:flutter_toolkits/src/presentation/api/api_test_screen.dart';
 import 'package:flutter_toolkits/src/presentation/colors/color_picker_screen.dart';
-import 'package:flutter_toolkits/src/presentation/dev%20notes/note_taking_screen.dart';
+import 'package:flutter_toolkits/src/presentation/dev_notes/note_taking_screen.dart';
 import 'package:flutter_toolkits/src/presentation/documentation/common_command_screen.dart';
 import 'package:flutter_toolkits/src/presentation/documentation/documentation_screen.dart';
 import 'package:flutter_toolkits/src/presentation/fonts/fonts_screen.dart';

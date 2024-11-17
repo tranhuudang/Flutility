@@ -4,5 +4,4 @@ export 'online_directory.dart';
 export 'in_app_strings.dart';
 export 'shared_preferences_key.dart';
 export 'numbers.dart';
-export 'firebase_constant.dart';
 export 'version.dart';

@@ -92,12 +92,12 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
       appBar: AppBar(
         leading: const Icon(FluentIcons.notebook_16_regular),
         title: const Text('Dev Notes'),
-        actions: [
-          IconButton(
-            icon: const Icon(FluentIcons.open_16_regular),
-            onPressed: _loadDocument,
-            tooltip: 'Open Note'.i18n,
-          ),
+        actions: const [
+          // IconButton(
+          //   icon: const Icon(FluentIcons.open_16_regular),
+          //   onPressed: _loadDocument,
+          //   tooltip: 'Open Note'.i18n,
+          // ),
         ],
       ),
       body: Column(

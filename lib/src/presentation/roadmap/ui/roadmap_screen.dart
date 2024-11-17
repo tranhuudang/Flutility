@@ -764,8 +764,6 @@ class RoadmapScreen extends StatelessWidget {
                                       {
                                         'KISS Principle Overview':
                                             'https://en.wikipedia.org/wiki/KISS_principle',
-                                        'Keep It Simple, Stupid in Software Design':
-                                            'https://www.guru99.com/software-design-principles.html',
                                       },
                                     );
                                   },
@@ -781,8 +779,6 @@ class RoadmapScreen extends StatelessWidget {
                                       {
                                         'DRY Principle Overview':
                                             'https://en.wikipedia.org/wiki/Don%27t_repeat_yourself',
-                                        'DRY Principle in Software Development':
-                                            'https://www.smashingmagazine.com/2017/07/avoid-dont-repeat-yourself/',
                                       },
                                     );
                                   },

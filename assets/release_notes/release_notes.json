@@ -1,5 +1,14 @@
 [
   {
+    "version": "70",
+    "date": "17-11-2024",
+    "changesNote": [
+      "Add Dev Notes",
+      "Bug fixed in Roadmap",
+      "Bug fix and improvements"
+    ]
+  },
+  {
     "version": "64",
     "date": "14-11-2024",
     "changesNote": [
