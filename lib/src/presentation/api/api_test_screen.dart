@@ -48,7 +48,7 @@ class _ApiTestScreenState extends State<ApiTestScreen> {
       final response = await http.post(url,
           body: {'key': 'value'}); // You can modify the body for POST
       setState(() {
-        _response = response.body;
+        _response = JsonHandler.formatJson(response.body);
         _statusCode = response.statusCode;
         _bodyBytes = response.bodyBytes;
       });
@@ -65,7 +65,7 @@ class _ApiTestScreenState extends State<ApiTestScreen> {
     try {
       final response = await http.delete(url);
       setState(() {
-        _response = response.body;
+        _response = JsonHandler.formatJson(response.body);
         _statusCode = response.statusCode;
         _bodyBytes = response.bodyBytes;
       });
