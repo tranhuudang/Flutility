@@ -1,5 +1,13 @@
 [
   {
+    "version": "77",
+    "date": "19-11-2024",
+    "changesNote": [
+      "Improve Dev Notes",
+      "Improve response from API Tools"
+    ]
+  },
+  {
     "version": "70",
     "date": "17-11-2024",
     "changesNote": [

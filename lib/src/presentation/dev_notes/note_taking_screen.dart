@@ -65,8 +65,8 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
     // Reset the debounce timer on every text change
     if (_debounceTimer?.isActive ?? false) _debounceTimer!.cancel();
 
-    // Save the document after 5 seconds of inactivity
-    _debounceTimer = Timer(const Duration(seconds: 5), () {
+    // Save the document after 1.5 seconds of inactivity
+    _debounceTimer = Timer(const Duration(milliseconds: 1500), () {
       _saveDocument();
     });
   }
