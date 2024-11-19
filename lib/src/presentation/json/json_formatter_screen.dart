@@ -1,9 +1,8 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'dart:convert';
-
-import 'package:flutter_toolkits/src/core/core.dart'; // For JSON formatting
+import 'package:flutter_toolkits/src/core/core.dart';
+import 'package:flutter_toolkits/src/core/utils/json_formatter.dart'; // For JSON formatting
 
 class JsonFormatterScreen extends StatefulWidget {
   const JsonFormatterScreen({super.key});
@@ -18,24 +17,9 @@ class _JsonFormatterScreenState extends State<JsonFormatterScreen> {
 
   // Function to prettify the JSON
   void _formatJson() {
-    try {
-      final rawJson = _jsonController.text;
-
-      // Parse the JSON
-      final decodedJson = json.decode(rawJson);
-
-      // Convert the decoded JSON back to a pretty format with indentation
-      final prettyJson =
-          const JsonEncoder.withIndent('  ').convert(decodedJson);
-
-      setState(() {
-        _formattedJson = prettyJson;
-      });
-    } catch (error) {
-      setState(() {
-        _formattedJson = "Invalid JSON format: $error";
-      });
-    }
+    setState(() {
+      _formattedJson = JsonHandler.formatJson(_jsonController.text);
+    });
   }
 
   @override
@@ -58,7 +42,8 @@ class _JsonFormatterScreenState extends State<JsonFormatterScreen> {
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
-                    "Enter your JSON below and click 'Format JSON' to prettify it. Make sure it's valid JSON format.".i18n,
+                    "Enter your JSON below and click 'Format JSON' to prettify it. Make sure it's valid JSON format."
+                        .i18n,
                     style: TextStyle(color: context.theme.colorScheme.primary),
                   ),
                 ),
@@ -70,7 +55,7 @@ class _JsonFormatterScreenState extends State<JsonFormatterScreen> {
             TextField(
               controller: _jsonController,
               maxLines: 6,
-              decoration:  InputDecoration(
+              decoration: InputDecoration(
                 labelText: "Enter JSON".i18n,
                 border: const OutlineInputBorder(),
               ),
@@ -81,7 +66,7 @@ class _JsonFormatterScreenState extends State<JsonFormatterScreen> {
             Center(
               child: ElevatedButton(
                 onPressed: _formatJson,
-                child:  Text("Format JSON".i18n),
+                child: Text("Format JSON".i18n),
               ),
             ),
 
@@ -103,13 +88,13 @@ class _JsonFormatterScreenState extends State<JsonFormatterScreen> {
                         children: [
                           const Spacer(),
                           TextButton.icon(
-                            label:  Text('Copy'.i18n),
+                            label: Text('Copy'.i18n),
                             onPressed: () {
                               Clipboard.setData(
                                 ClipboardData(text: _formattedJson),
                               );
                               ScaffoldMessenger.of(context).showSnackBar(
-                                 SnackBar(
+                                SnackBar(
                                   content: Text('Copied to clipboard'.i18n),
                                 ),
                               );

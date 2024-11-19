@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_toolkits/src/core/core.dart';
 import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+import '../../core/utils/json_formatter.dart';
 
 class ApiTestScreen extends StatefulWidget {
   const ApiTestScreen({super.key});
@@ -19,13 +22,15 @@ class _ApiTestScreenState extends State<ApiTestScreen> {
   Uint8List _bodyBytes = Uint8List(0);
   String _response = "";
 
+
+
   // GET Request
   Future<void> _performGet() async {
     final url = Uri.parse(_getController.text);
     try {
       final response = await http.get(url);
       setState(() {
-        _response = response.body;
+        _response = JsonHandler.formatJson(response.body);
         _statusCode = response.statusCode;
         _bodyBytes = response.bodyBytes;
       });
