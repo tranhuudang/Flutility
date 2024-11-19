@@ -33,8 +33,8 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
     final didRateApp = Properties.instance.settings.didRateApp;
     final openAppCount = Properties.instance.settings.openAppCount;
     DebugLog.info('Open App Count: $openAppCount');
-    if ((!didRateApp && openAppCount % 5 == 0) ||
-        (didRateApp && openAppCount % 100 == 0)) {
+    if ((!didRateApp && openAppCount != 0 && openAppCount % 2 == 0) ||
+        (didRateApp && openAppCount % 50 == 0)) {
       await Future.delayed(const Duration(seconds: 2), () {
         context.showAlertDialog(
             actionButtonTitle: 'Feedback'.i18n,
@@ -107,7 +107,8 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                                     FontAwesomeIcons.github,
                                     size: 16,
                                   ),
-                                  url: 'https://github.com/tranhuudang/flutter_toolkit'),
+                                  url:
+                                      'https://github.com/tranhuudang/flutter_toolkit'),
                               _buildIconButton(
                                   icon: const Icon(
                                     Icons.mail,
@@ -189,7 +190,9 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                       OverviewItem(
                         icon: FluentIcons.map_16_regular,
                         title: 'Flutter Learning Roadmap'.i18n,
-                        subtitle: 'A structured guide to help you advance from beginner to expert in Flutter.'.i18n,
+                        subtitle:
+                            'A structured guide to help you advance from beginner to expert in Flutter.'
+                                .i18n,
                         onTap: () {
                           goBranch(6);
                         },
