@@ -21,7 +21,6 @@ dependencies:
   flutter_cache_manager: ^3.4.0
   # Save settings
   shared_preferences: ^2.3.2
-  shared_preferences_web: ^2.4.2
   ##
   # Package for Packaging Windows App
   msix: ^3.16.8
@@ -37,16 +36,12 @@ dependencies:
   image_picker: ^1.1.2
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
-  # this package help me create a somple way to add search view in searching stories
-  search_page: ^2.3.0
 
   ### UI PACKAGES
   responsive_builder: ^0.7.0
   loading_indicator: ^3.1.1
   # use for customizing theme
   dynamic_color: ^1.7.0
-  # This package help us create a notification in the bottom app
-  fluttertoast: ^8.2.6
   # localization
   flutter_localization: ^0.2.0
   flutter_localizations:
