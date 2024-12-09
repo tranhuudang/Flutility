@@ -123,7 +123,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                       _buildSidebarItem(
                           icon: FluentIcons.apps_settings_16_regular,
                           selectedIcon: FluentIcons.apps_settings_16_filled,
-                          label: 'App Icon Generator'.i18n,
+                          label: 'App Icon Setter'.i18n,
                           index: 11),
                       8.height,
                     ],

@@ -254,7 +254,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                       ),
                       OverviewItem(
                         icon: FluentIcons.apps_settings_16_regular,
-                        title: 'App Icon Generator for Flutter'.i18n,
+                        title: 'App Icon Setter for Flutter'.i18n,
                         subtitle:
                             'Create custom icons tailored to your needs.'.i18n,
                         onTap: () {

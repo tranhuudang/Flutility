@@ -3,46 +3,11 @@ import 'package:flutter_toolkits/src/core/core.dart';
 import 'package:flutter_toolkits/src/presentation/home/ui/screens/desktop_home_screen.dart';
 import 'package:flutter_toolkits/src/presentation/presentation.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-final List<Map<String, String>> items = [
-  {
-    'title': 'Get started',
-    'description': 'Set up your environment and start building.',
-    'url': 'https://flutter.dev/docs/get-started/install',
-  },
-  {
-    'title': 'Widget catalog',
-    'description':
-        'Dip into the rich set of Flutter widgets available in the SDK.',
-    'url': 'https://flutter.dev/docs/development/ui/widgets',
-  },
-  {
-    'title': 'API docs',
-    'description': 'Bookmark the API reference docs for the Flutter framework.',
-    'url': 'https://api.flutter.dev/',
-  },
-  {
-    'title': 'Cookbook',
-    'description': 'Browse the cookbook for many easy Flutter recipes.',
-    'url': 'https://flutter.dev/docs/cookbook',
-  },
-  {
-    'title': 'Samples',
-    'description': 'Check out the Flutter examples.',
-    'url': 'https://flutter.dev/docs/samples',
-  },
-  {
-    'title': 'Videos',
-    'description': 'View the many videos on the Flutter YouTube channel.',
-    'url': 'https://www.youtube.com/flutterdev',
-  },
-];
+part 'additional_documentation.dart';
+part 'official_documentation.dart';
 
 class DocumentationScreen extends StatelessWidget {
   const DocumentationScreen({super.key});
-
-  // Documentation items and URLs
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,23 +15,106 @@ class DocumentationScreen extends StatelessWidget {
         leading: const Icon(FluentIcons.document_search_16_regular),
         title: Text('Flutter Documentation'.i18n),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, mainAxisExtent: 90),
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            final item = items[index];
-            return DocumentationItem(
-              title: item['title']!,
-              description: item['description']!,
-              url: item['url']!,
-            );
-          },
-        ),
+      body: ListView(
+        children: [
+          /// Core
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            child: Row(
+              children: [
+                Text('Official Documentation Websites'.i18n,
+                    style: context.theme.textTheme.titleSmall),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 14, right: 14),
+            child: GridView.builder(
+              shrinkWrap: true,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, mainAxisExtent: 90),
+              itemCount: items.length,
+              itemBuilder: (context, index) {
+                final item = items[index];
+                return DocumentationItem(
+                  title: item['title']!,
+                  description: item['description']!,
+                  url: item['url']!,
+                );
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            child: Row(
+              children: [
+                Text(
+                  'Additional Flutter Resources',
+                  style: Theme.of(context).textTheme.titleSmall,
+                ),
+              ],
+            ),
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: data.length,
+                  itemBuilder: (context, index) {
+                    final section = data[index];
+                    return ExpansionTile(
+                      title: Text(
+                        section['title'],
+                        style: context.theme.textTheme.bodyMedium,
+                      ),
+                      children: section['items'].map<Widget>((item) {
+                        return ListTile(
+                          title: Text(
+                            '- ${item['name']}',  style: context.theme.textTheme.bodyMedium,),
+                          onTap: () => _launchURL(context, item['url']),
+                          trailing: Icon(Icons.open_in_new),
+                        );
+                      }).toList(),
+                    );
+                  },
+                ),
+              ),
+              Expanded(
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: dataSecondHaft.length,
+                  itemBuilder: (context, index) {
+                    final section = dataSecondHaft[index];
+                    return ExpansionTile(
+                      title: Text(
+                        section['title'],
+                        style: context.theme.textTheme.bodyMedium,
+                      ),
+                      children: section['items'].map<Widget>((item) {
+                        return ListTile(
+                          title: Text(
+                            '- ${item['name']}',  style: context.theme.textTheme.bodyMedium,),
+                          onTap: () => _launchURL(context, item['url']),
+                          trailing: Icon(Icons.open_in_new),
+                        );
+                      }).toList(),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
+  }
+}
+
+Future<void> _launchURL(BuildContext context, String url) async {
+  if (!await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication)) {
+    throw Exception('Could not launch $url');
   }
 }
 
@@ -76,7 +124,10 @@ class DocumentationItem extends StatelessWidget {
   final String url;
 
   const DocumentationItem(
-      {super.key, required this.title, required this.description, required this.url});
+      {super.key,
+      required this.title,
+      required this.description,
+      required this.url});
 
   @override
   Widget build(BuildContext context) {
@@ -92,6 +143,5 @@ class DocumentationItem extends StatelessWidget {
         }
       },
     );
-
   }
 }

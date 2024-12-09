@@ -26,7 +26,7 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(FluentIcons.apps_settings_16_regular),
-        title: Text('App Icon Generator for Flutter Project'.i18n),
+        title: Text('App Icon Setter for Flutter Project'.i18n),
       ),
       body: ListView(
         padding: const EdgeInsets.only(bottom: 16, right: 16, left: 16),

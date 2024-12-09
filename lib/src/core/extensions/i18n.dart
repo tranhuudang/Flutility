@@ -47,6 +47,11 @@ extension Localization on Object {
       'vi_vi': 'Tài liệu tham khảo',
       'zh_cn': '文档'
     },
+    'Official Documentation Websites': {
+      'en_us': 'Official Documentation Websites',
+      'vi_vi': 'Website tài liệu tham khảo chính thức',
+      'zh_cn': '官方文档网站'
+    },
     'Flutter Docs': {
       'en_us': 'Flutter Docs',
       'vi_vi': 'Tài liệu Flutter',
@@ -120,10 +125,10 @@ extension Localization on Object {
       'vi_vi': 'Xem trước Biểu tượng',
       'zh_cn': '图标预览'
     },
-    'App Icon Generator for Flutter': {
-      'en_us': 'App Icon Generator for Flutter',
-      'vi_vi': 'Tạo biểu tượng cho dự án FLutter',
-      'zh_cn': 'Flutter 应用图标生成器'
+    'App Icon Setter for Flutter': {
+      'en_us': 'App Icon Setter for Flutter',
+      'vi_vi': 'Thay đổi biểu tượng cho ứng dụng FLutter',
+      'zh_cn': '适用于 Flutter 的应用程序图标设置器'
     },
     'Options': {'en_us': 'Options', 'vi_vi': 'Tùy chọn', 'zh_cn': '选项'},
     'Flutter Documentation': {
@@ -409,15 +414,15 @@ extension Localization on Object {
     'Icons': {'en_us': 'Icons', 'vi_vi': 'Biểu tượng', 'zh_cn': '图标'},
     'Image': {'en_us': 'Image', 'vi_vi': 'Hình ảnh', 'zh_cn': '图片'},
     'Dashboard': {'en_us': 'Dashboard', 'vi_vi': 'Trang chủ', 'zh_cn': '仪表盘'},
-    'App Icon Generator': {
-      'en_us': 'App Icon Generator',
-      'vi_vi': 'Trình tạo biểu tượng ứng dụng',
-      'zh_cn': '应用图标生成器'
+    'App Icon Setter': {
+      'en_us': 'App Icon Setter',
+      'vi_vi': 'Trình đặt biểu tượng ứng dụng',
+      'zh_cn': '适用于 Flutter 的应用程序图标设置器'
     },
-    'App Icon Generator for Flutter Project': {
-      'en_us': 'App Icon Generator for Flutter Project',
-      'vi_vi': 'Trình tạo biểu tượng cho dự án Flutter',
-      'zh_cn': 'Flutter 项目的应用图标生成器'
+    'App Icon Setter for Flutter Project': {
+      'en_us': 'App Icon Setter for Flutter Project',
+      'vi_vi': 'Trình đặt biểu tượng cho dự án Flutter',
+      'zh_cn': '适用于 Flutter 的应用程序图标设置器'
     },
 
     'Color Picker': {
