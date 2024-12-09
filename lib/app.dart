@@ -63,10 +63,6 @@ class _AppState extends State<App> {
 
   Widget _buildMaterialApp(SettingState state, ColorScheme lightColorScheme,
       ColorScheme darkColorScheme) {
-    final currentBrightness = MediaQuery.of(context).platformBrightness;
-    final themeMode =
-        currentBrightness == Brightness.dark ? ThemeMode.dark : ThemeMode.light;
-
     return FlutterSizer(
       builder: (context, orientation, screenType) {
         return MaterialApp.router(

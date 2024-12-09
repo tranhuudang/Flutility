@@ -68,6 +68,7 @@ dependencies:
   flex_color_picker: ^3.6.0
   upgrader: ^10.3.0
   flutter_quill: ^10.8.5
+  flutter_colorpicker: ^1.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

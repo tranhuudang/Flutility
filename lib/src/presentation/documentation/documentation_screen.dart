@@ -55,56 +55,33 @@ class DocumentationScreen extends StatelessWidget {
               ],
             ),
           ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: data.length,
-                  itemBuilder: (context, index) {
-                    final section = data[index];
-                    return ExpansionTile(
-                      title: Text(
-                        section['title'],
-                        style: context.theme.textTheme.bodyMedium,
-                      ),
-                      children: section['items'].map<Widget>((item) {
-                        return ListTile(
-                          title: Text(
-                            '- ${item['name']}',  style: context.theme.textTheme.bodyMedium,),
-                          onTap: () => _launchURL(context, item['url']),
-                          trailing: Icon(Icons.open_in_new),
-                        );
-                      }).toList(),
-                    );
-                  },
+          Padding(
+            padding: const EdgeInsets.only(left: 14, right: 14),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: data.length,
+                    itemBuilder: (context, index) {
+                      final section = data[index];
+                      return AdditionalResourceItem(section: section);
+                    },
+                  ),
                 ),
-              ),
-              Expanded(
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: dataSecondHaft.length,
-                  itemBuilder: (context, index) {
-                    final section = dataSecondHaft[index];
-                    return ExpansionTile(
-                      title: Text(
-                        section['title'],
-                        style: context.theme.textTheme.bodyMedium,
-                      ),
-                      children: section['items'].map<Widget>((item) {
-                        return ListTile(
-                          title: Text(
-                            '- ${item['name']}',  style: context.theme.textTheme.bodyMedium,),
-                          onTap: () => _launchURL(context, item['url']),
-                          trailing: Icon(Icons.open_in_new),
-                        );
-                      }).toList(),
-                    );
-                  },
+                Expanded(
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: dataSecondHaft.length,
+                    itemBuilder: (context, index) {
+                      final section = dataSecondHaft[index];
+                      return AdditionalResourceItem(section: section);
+                    },
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
@@ -112,7 +89,49 @@ class DocumentationScreen extends StatelessWidget {
   }
 }
 
-Future<void> _launchURL(BuildContext context, String url) async {
+class AdditionalResourceItem extends StatelessWidget {
+  const AdditionalResourceItem({
+    super.key,
+    required this.section,
+  });
+
+  final Map<String, dynamic> section;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(2.0),
+      child: Container(
+        //padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+            border:
+            Border.all(color: context.theme.dividerColor.withOpacity(.5)),
+            borderRadius: BorderRadius.circular(5)),
+        child: Theme(
+          data: ThemeData(
+            dividerColor: Colors.transparent, // Set divider color to transparent
+          ),
+          child: ExpansionTile(
+            title: Text(
+              section['title'],
+              style: context.theme.textTheme.bodyMedium,
+            ),
+            children: section['items'].map<Widget>((item) {
+              return ListTile(
+                title: Text(
+                  '- ${item['name']}',  style: context.theme.textTheme.bodyMedium,),
+                onTap: () => _launchURL(item['url']),
+                trailing: const Icon(Icons.open_in_new),
+              );
+            }).toList(),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Future<void> _launchURL(String url) async {
   if (!await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication)) {
     throw Exception('Could not launch $url');
   }
@@ -136,11 +155,7 @@ class DocumentationItem extends StatelessWidget {
       title: title,
       subtitle: description,
       onTap: () async {
-        if (await canLaunch(url)) {
-          await launch(url);
-        } else {
-          throw 'Could not launch $url';
-        }
+        _launchURL(url);
       },
     );
   }

@@ -5,7 +5,7 @@ class ToggleToolsDialog extends StatefulWidget {
   const ToggleToolsDialog({super.key});
 
   @override
-  _ToggleToolsDialogState createState() => _ToggleToolsDialogState();
+  State<ToggleToolsDialog> createState() => _ToggleToolsDialogState();
 }
 
 class _ToggleToolsDialogState extends State<ToggleToolsDialog> {

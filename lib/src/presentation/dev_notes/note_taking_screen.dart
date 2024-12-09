@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart' as quill;
 import 'package:flutter_toolkits/src/core/core.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:file_picker/file_picker.dart';
 
 class NoteEditorScreen extends StatefulWidget {
   const NoteEditorScreen({super.key});
@@ -133,32 +132,5 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
         ],
       ),
     );
-  }
-
-  Future<void> _loadDocument() async {
-    try {
-      final result = await FilePicker.platform.pickFiles(
-        type: FileType.custom,
-        allowedExtensions: ['json'],
-      );
-
-      if (result != null) {
-        final file = File(result.files.single.path!);
-        final content = await file.readAsString();
-
-        final doc = quill.Document.fromJson(jsonDecode(content));
-        setState(() {
-          _controller.document = doc;
-        });
-
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Note loaded successfully')),
-        );
-      }
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Failed to load note: $e')),
-      );
-    }
   }
 }

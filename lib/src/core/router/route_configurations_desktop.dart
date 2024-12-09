@@ -43,8 +43,6 @@ final _shellNavigatorDashboardKey =
     GlobalKey<NavigatorState>(debugLabel: 'Dashboard');
 final _shellNavigatorDesktopAccountKey =
     GlobalKey<NavigatorState>(debugLabel: 'DesktopAccount');
-final _shellRequiredLoginKey =
-    GlobalKey<NavigatorState>(debugLabel: 'RequiredLogin');
 final globalNavigationShellKey =
     GlobalKey<NavigatorState>(debugLabel: 'GlobalNavigationShell');
 late StatefulNavigationShell globalNavigationShell;
