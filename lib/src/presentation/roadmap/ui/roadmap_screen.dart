@@ -1793,21 +1793,19 @@ class RoadmapScreen extends StatelessWidget {
                   title,
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
-                const SizedBox(height: 8),
+                8.height,
                 Text(
                   '${'Importance'.i18n}: ${importanceLevel == 0 ? 'Must Have'.i18n : importanceLevel == 1 ? 'Nice to Have'.i18n : 'Optional'.i18n}',
                   style: TextStyle(
-                    fontSize: 14,
                     color: Colors.grey[700],
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 16),
+                8.height,
                 Text(
                   description,
-                  style: const TextStyle(fontSize: 16),
                 ),
-                const SizedBox(height: 16),
+                8.height,
                 Text(
                   '${'Resources'.i18n}:',
                   style: const TextStyle(
@@ -1829,7 +1827,7 @@ class RoadmapScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                const SizedBox(height: 16),
+                8.height,
               ],
             ),
           ),
