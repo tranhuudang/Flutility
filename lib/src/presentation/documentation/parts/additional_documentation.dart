@@ -1,4 +1,4 @@
-part of 'documentation_screen.dart';
+part of '../documentation_screen.dart';
 
 final List<Map<String, dynamic>> data = [
   {

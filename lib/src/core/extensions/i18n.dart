@@ -47,6 +47,11 @@ extension Localization on Object {
       'vi_vi': 'Tài liệu tham khảo',
       'zh_cn': '文档'
     },
+    'Additional Flutter Resources': {
+      'en_us': 'Additional Flutter Resources',
+      'vi_vi': 'Tài liệu tham khảo khác',
+      'zh_cn': '额外的 Flutter 资源'
+    },
     "Don't forget to press Enter after changing the name of the color to save the changes.": {
       'en_us': "Don't forget to press Enter after changing the name of the color to save the changes.",
       'vi_vi': 'Đừng quên nhấn Enter sau khi thay đổi tên của màu sắc để lưu lại thay đổi.',

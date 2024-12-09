@@ -3,8 +3,8 @@ import 'package:flutter_toolkits/src/core/core.dart';
 import 'package:flutter_toolkits/src/presentation/home/ui/screens/desktop_home_screen.dart';
 import 'package:flutter_toolkits/src/presentation/presentation.dart';
 import 'package:url_launcher/url_launcher.dart';
-part 'additional_documentation.dart';
-part 'official_documentation.dart';
+part 'parts/additional_documentation.dart';
+part 'parts/official_documentation.dart';
 
 class DocumentationScreen extends StatelessWidget {
   const DocumentationScreen({super.key});
@@ -49,7 +49,7 @@ class DocumentationScreen extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  'Additional Flutter Resources',
+                  'Additional Flutter Resources'.i18n,
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
               ],

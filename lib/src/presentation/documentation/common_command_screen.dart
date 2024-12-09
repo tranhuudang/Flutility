@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_toolkits/src/core/core.dart';
 import 'package:flutter_toolkits/src/presentation/shared/ui/components/highlight_text.dart';
 import 'package:flutter_toolkits/src/presentation/shared/ui/components/see_more_section.dart';
-part 'flutter_commands.dart';
+part 'parts/flutter_commands.dart';
 class CommandLineScreen extends StatefulWidget {
   const CommandLineScreen({super.key});
 

@@ -1,4 +1,4 @@
-part of 'common_command_screen.dart';
+part of '../common_command_screen.dart';
 // List of common Flutter commands with topic categorization
 final List<Map<String, String>> flutterCommands = [
   {
