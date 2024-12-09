@@ -430,8 +430,8 @@ extension Localization on Object {
       'zh_cn': '适用于 Flutter 的应用程序图标设置器'
     },
     'App Icon Setter for Flutter Project': {
-      'en_us': 'App Icon Setter for Flutter Project',
-      'vi_vi': 'Trình đặt biểu tượng cho dự án Flutter',
+      'en_us': 'App Icon Setter for Flutter Program',
+      'vi_vi': 'Trình đặt biểu tượng cho ứng dụng Flutter',
       'zh_cn': '适用于 Flutter 的应用程序图标设置器'
     },
 

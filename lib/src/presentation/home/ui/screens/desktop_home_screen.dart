@@ -398,6 +398,7 @@ class OverviewItem extends StatelessWidget {
                   children: [
                     Text(
                       title,
+                      maxLines: 1,
                       style: context.theme.textTheme.bodyMedium,
                     ),
                     Opacity(

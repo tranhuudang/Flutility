@@ -1,5 +1,13 @@
 [
   {
+    "version": "84",
+    "date": "09-12-2024",
+    "changesNote": [
+      "Fix Color Picker that not save color's label",
+      "Add more useful documents to Flutter Docs"
+    ]
+  },
+  {
     "version": "77",
     "date": "19-11-2024",
     "changesNote": [

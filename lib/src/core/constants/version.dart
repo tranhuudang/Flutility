@@ -1,1 +1,1 @@
-int get appVersion => 77;
+int get appVersion => 84;
