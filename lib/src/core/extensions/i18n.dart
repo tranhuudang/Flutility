@@ -47,6 +47,11 @@ extension Localization on Object {
       'vi_vi': 'Tài liệu tham khảo',
       'zh_cn': '文档'
     },
+    "Don't forget to press Enter after changing the name of the color to save the changes.": {
+      'en_us': "Don't forget to press Enter after changing the name of the color to save the changes.",
+      'vi_vi': 'Đừng quên nhấn Enter sau khi thay đổi tên của màu sắc để lưu lại thay đổi.',
+      'zh_cn': '不要忘记在更改颜色名称后按下 Enter 键以保存更改。'
+    },
     'Official Documentation Websites': {
       'en_us': 'Official Documentation Websites',
       'vi_vi': 'Website tài liệu tham khảo chính thức',

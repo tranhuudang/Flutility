@@ -110,10 +110,17 @@ class _ColorPickerScreenState extends State<ColorPickerScreen> {
           8.height,
           if (colorCollection.isNotEmpty) ...[
             Padding(
-              padding: const EdgeInsets.only(left: 16, bottom: 16),
+              padding: const EdgeInsets.only(left: 16, bottom: 8),
               child: Text(
                 'Color Collection'.i18n,
                 style: context.theme.textTheme.titleMedium,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16, bottom: 16),
+              child: Text(
+                "Don't forget to press Enter after changing the name of the color to save the changes.".i18n,
+                style: context.theme.textTheme.labelSmall?.copyWith(color: context.theme.colorScheme.error),
               ),
             ),
             Padding(
@@ -153,10 +160,11 @@ class _ColorPickerScreenState extends State<ColorPickerScreen> {
                                     child: TextField(
                                       controller: TextEditingController(
                                           text: item.label),
-                                      onSubmitted: (value) {
+                                      onSubmitted: (value) async {
                                         setState(() {
                                           item.label = value;
                                         });
+                                        await _saveColorCollection();
                                       },
                                       decoration: InputDecoration(
                                         hintText: 'Label'.i18n,
