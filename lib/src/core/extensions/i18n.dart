@@ -195,6 +195,11 @@ extension Localization on Object {
       'vi_vi': 'Đang tải...',
       'zh_cn': '加载中...'
     },
+    'You can learn how to use Fluent UI System Icons in your Flutter app by following the documentation.': {
+      'en_us': 'You can learn how to use Fluent UI System Icons in your Flutter app by following the documentation.',
+      'vi_vi': 'Bạn có thể tham khảo cách sử dụng Fluent UI System Icons trong dự án của bạn bằng cách đọc qua tài liệu hướng dẫn.',
+      'zh_cn': '你可以通过查看文档来学习如何在你的 Flutter 应用中使用 Fluent UI 系统图标。'
+    },
     'Back': {'en_us': 'Back', 'vi_vi': 'Trở về', 'zh_cn': '返回'},
     'Feedback submitted successfully!': {
       'en_us': 'Feedback submitted successfully!',

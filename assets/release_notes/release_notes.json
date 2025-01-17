@@ -1,5 +1,12 @@
 [
   {
+    "version": "86",
+    "date": "17-01-2025",
+    "changesNote": [
+      "Add Fluent Icons List for Flutter"
+    ]
+  },
+  {
     "version": "84",
     "date": "09-12-2024",
     "changesNote": [
