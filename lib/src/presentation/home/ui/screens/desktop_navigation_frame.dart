@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter_toolkits/src/core/core.dart';
+import 'package:flutter_toolkits/src/presentation/donation/donation_screen.dart';
 import 'package:flutter_toolkits/src/presentation/home/data/utils/upgrader_config.dart';
 import 'package:flutter_toolkits/src/presentation/presentation.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
@@ -151,6 +152,28 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                           ),
                         )),
                     const Spacer(),
+                    InkWell(
+                      borderRadius: BorderRadius.circular(10),
+                      onTap: () {
+                        /// go to donation screen
+                        goBranch(15);
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: context.theme.colorScheme.primaryContainer,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [Text('Donate'.i18n, style: context.theme.textTheme.labelSmall,),
+                              4.width,
+                              Icon(FluentIcons.heart_12_regular, color: context.theme.colorScheme.primary, size: 16,)
+                            ],),
+                        ),
+                      ),
+                    ),
                     TextButton(
                         onPressed: () {
                           goToStoreListing();

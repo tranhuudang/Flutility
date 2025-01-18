@@ -89,6 +89,7 @@ flutter:
     - assets/release_notes/release_notes.json
     - assets/badges/
     - assets/images/app-icon.png
+    - assets/donation/bmc_qr.png
 msix_config:
   display_name: Flutter Toolkit
   publisher_display_name: Zeroboy

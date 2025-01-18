@@ -3,6 +3,7 @@ import 'package:flutter_toolkits/src/presentation/colors/color_picker_screen.dar
 import 'package:flutter_toolkits/src/presentation/dev_notes/note_taking_screen.dart';
 import 'package:flutter_toolkits/src/presentation/documentation/common_command_screen.dart';
 import 'package:flutter_toolkits/src/presentation/documentation/documentation_screen.dart';
+import 'package:flutter_toolkits/src/presentation/donation/donation_screen.dart';
 import 'package:flutter_toolkits/src/presentation/fonts/fonts_screen.dart';
 import 'package:flutter_toolkits/src/presentation/home/ui/screens/desktop_home_screen.dart';
 import 'package:flutter_toolkits/src/presentation/icon_generator/app_icon_generator.dart';
@@ -27,7 +28,8 @@ final _shellNavigatorIconGeneratorKey =
 final _shellNavigatorApiKey =
     GlobalKey<NavigatorState>(debugLabel: 'Vocabulary');
 final _shellNavigatorNoteTakingKey =
-    GlobalKey<NavigatorState>(debugLabel: 'noteTaking');
+    GlobalKey<NavigatorState>(debugLabel: 'noteTaking');final _shellNavigatorDonationKey =
+    GlobalKey<NavigatorState>(debugLabel: 'donation');
 final _shellNavigatorOthersKey =
     GlobalKey<NavigatorState>(debugLabel: 'Others');
 final _shellNavigatorJsonKey = GlobalKey<NavigatorState>(debugLabel: 'Json');
@@ -334,6 +336,24 @@ GoRouter routerConfigDesktop = GoRouter(
                 return NoTransitionPage(
                   child: I18n(
                     child: const NoteEditorScreen(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+        /// 15 donation
+        StatefulShellBranch(
+          navigatorKey: _shellNavigatorDonationKey,
+          routes: [
+            // top route inside branch
+            GoRoute(
+              name: RouteName.donation,
+              path: RoutePath.donation,
+              pageBuilder: (context, state) {
+                return NoTransitionPage(
+                  child: I18n(
+                    child: const DonationScreen(),
                   ),
                 );
               },

@@ -114,9 +114,11 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                                     Icons.mail,
                                     size: 20,
                                   ),
-                                  url: 'mailto:tranhuudang148@gmail.com'),
+                                  url: 'mailto:dt148f148@gmail.com'),
+
                             ],
                           ),
+
                         ],
                       ),
                     ],

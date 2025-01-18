@@ -23,6 +23,7 @@ class RouteName{
   static const String dashboard ='dashboard';
   static const String api ='api';
   static const String noteTaking ='noteTaking';
+  static const String donation ='donation';
   static const String statistics ='timeline';
   static const String chatbotHistory ='chatbot-history';
   static const String dialogue ='dialogue';
