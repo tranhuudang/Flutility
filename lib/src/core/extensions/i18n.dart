@@ -868,7 +868,7 @@ extension Localization on Object {
       'en_us':
           'When 2 percent of users donate, more developers will be supported to work on UI and tools. Free and Open Source for everyone, forever.',
       'vi_vi':
-          'Khi 2 phần trăm người dùng quyên góp, nhiều nhà phát triển sẽ được hỗ trợ để làm việc trên giao diện và công cụ. Miễn phí và mã nguồn mở cho mọi người, mãi mãi.',
+          'Khi 2 phần trăm người dùng quyên góp, nhiều nhà phát triển sẽ được hỗ trợ để làm việc, cải thiện giao diện và phát triển thêm công cụ. Ứng dụng miễn phí mãi mãi và mã nguồn mở dành cho mọi người.',
       'zh_cn': '当2%的用户捐款时，会有更多的开发人员得到支持来开发界面和工具。永远为每个人免费和开源。'
     },
     'or': {'en_us': 'or', 'vi_vi': 'hoặc', 'zh_cn': '或'},
