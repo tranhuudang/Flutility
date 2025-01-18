@@ -52,9 +52,12 @@ extension Localization on Object {
       'vi_vi': 'Tài liệu tham khảo khác',
       'zh_cn': '额外的 Flutter 资源'
     },
-    "Don't forget to press Enter after changing the name of the color to save the changes.": {
-      'en_us': "Don't forget to press Enter after changing the name of the color to save the changes.",
-      'vi_vi': 'Đừng quên nhấn Enter sau khi thay đổi tên của màu sắc để lưu lại thay đổi.',
+    "Don't forget to press Enter after changing the name of the color to save the changes.":
+        {
+      'en_us':
+          "Don't forget to press Enter after changing the name of the color to save the changes.",
+      'vi_vi':
+          'Đừng quên nhấn Enter sau khi thay đổi tên của màu sắc để lưu lại thay đổi.',
       'zh_cn': '不要忘记在更改颜色名称后按下 Enter 键以保存更改。'
     },
     'Official Documentation Websites': {
@@ -195,9 +198,12 @@ extension Localization on Object {
       'vi_vi': 'Đang tải...',
       'zh_cn': '加载中...'
     },
-    'You can learn how to use Fluent UI System Icons in your Flutter app by following the documentation.': {
-      'en_us': 'You can learn how to use Fluent UI System Icons in your Flutter app by following the documentation.',
-      'vi_vi': 'Bạn có thể tham khảo cách sử dụng Fluent UI System Icons trong dự án của bạn bằng cách đọc qua tài liệu hướng dẫn.',
+    'You can learn how to use Fluent UI System Icons in your Flutter app by following the documentation.':
+        {
+      'en_us':
+          'You can learn how to use Fluent UI System Icons in your Flutter app by following the documentation.',
+      'vi_vi':
+          'Bạn có thể tham khảo cách sử dụng Fluent UI System Icons trong dự án của bạn bằng cách đọc qua tài liệu hướng dẫn.',
       'zh_cn': '你可以通过查看文档来学习如何在你的 Flutter 应用中使用 Fluent UI 系统图标。'
     },
     'Back': {'en_us': 'Back', 'vi_vi': 'Trở về', 'zh_cn': '返回'},
@@ -847,6 +853,42 @@ extension Localization on Object {
       'vi_vi': 'Tầm quan trọng',
       'zh_cn': '重要性',
     },
+    'Development Fund': {
+      'en_us': 'Development Fund',
+      'vi_vi': 'Quỹ phát triển',
+      'zh_cn': '发展基金'
+    },
+    'Join the 2%': {
+      'en_us': 'Join the 2%',
+      'vi_vi': 'Tham gia vào 2%',
+      'zh_cn': '加入2%'
+    },
+    'description-donation':
+        {
+      'en_us':
+          'When 2 percent of users donate, more developers will be supported to work on UI and tools. Free and Open Source for everyone, forever.',
+      'vi_vi':
+          'Khi 2 phần trăm người dùng quyên góp, nhiều nhà phát triển sẽ được hỗ trợ để làm việc trên giao diện và công cụ. Miễn phí và mã nguồn mở cho mọi người, mãi mãi.',
+      'zh_cn': '当2%的用户捐款时，会有更多的开发人员得到支持来开发界面和工具。永远为每个人免费和开源。'
+    },
+    'or': {'en_us': 'or', 'vi_vi': 'hoặc', 'zh_cn': '或'},
+    'cup of coffee': {
+      'en_us': 'cup of coffee',
+      'vi_vi': 'cốc cà phê',
+      'zh_cn': '杯咖啡'
+    },
+    'cups of coffee': {
+      'en_us': 'cups of coffee',
+      'vi_vi': 'cốc cà phê',
+      'zh_cn': '杯咖啡'
+    },
+    'A generous soul': {
+      'en_us': 'A generous soul',
+      'vi_vi': 'Một tâm hồn rộng lượng',
+      'zh_cn': '慷慨的灵魂'
+    },
+    'Donate': {'en_us': 'Donate', 'vi_vi': 'Quyên góp', 'zh_cn': '捐款'},
+    'Total amount': { 'en_us': 'Total amount', 'vi_vi': 'Tổng số tiền', 'zh_cn': '总金额' }
   });
 
   String get i18n => localize(this, _t);

@@ -24,8 +24,6 @@ class _PaypalDonationWidgetState extends State<PaypalDonationWidget> {
     'cups of coffee',
     'cups of coffee',
     'A generous soul',
-    'A generous soul',
-    'A generous soul',
   ];
   @override
   Widget build(BuildContext context) {
@@ -53,8 +51,8 @@ class _PaypalDonationWidgetState extends State<PaypalDonationWidget> {
                 ),
                 4.width,
                 if (selectedNumber != 100)
-                  Text(descriptions[selectedNumber - 1]),
-                if (selectedNumber == 100) Text(descriptions[10]),
+                  Text(descriptions[selectedNumber - 1].i18n),
+                if (selectedNumber == 100) Text(descriptions[10].i18n),
               ],
             ),
             const SizedBox(height: 10),

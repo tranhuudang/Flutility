@@ -99,3 +99,4 @@ msix_config:
   trim_logo: false
   logo_path: C:\Users\tranh\StudioProjects\new\flutter_toolkits\assets\images\app-icon.png
   store: true
+  language: en-us, vi-vi, zh-cn

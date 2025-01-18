@@ -18,7 +18,7 @@ class _DonationScreenState extends State<DonationScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(FluentIcons.handshake_20_regular),
-        title: const Text('Development Fund'),
+        title:  Text('Development Fund'.i18n),
       ),
       body: Center(
         child: SizedBox(
@@ -34,12 +34,12 @@ class _DonationScreenState extends State<DonationScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text('Join the 2%',
+                          Text('Join the 2%'.i18n,
                               style: TextStyle(
                                   fontSize: 26, fontWeight: FontWeight.bold)),
                           4.height,
-                          const Text(
-                              'When 2 percent of users donate, more developers will be supported to work on Ul and tools. Free and Open Source for everyone, forever.',
+                          Text(
+                              'description-donation'.i18n,
                               style:
                                   TextStyle(fontSize: 16, color: Colors.grey)),
                         ],
@@ -57,7 +57,7 @@ class _DonationScreenState extends State<DonationScreen> {
                                     Image.asset('assets/donation/bmc_qr.png')),
                           ),
                           const SizedBox(height: 20),
-                          const DividerWithText(text: 'or'),
+                          DividerWithText(text: 'or'.i18n),
                           8.height,
                           const PaypalDonationWidget(),
                         ],
