@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter_toolkits/src/core/core.dart';
-import 'package:flutter_toolkits/src/presentation/donation/donation_screen.dart';
 import 'package:flutter_toolkits/src/presentation/home/data/utils/upgrader_config.dart';
 import 'package:flutter_toolkits/src/presentation/presentation.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
@@ -143,7 +142,11 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                         onPressed: () {
                           goToBugReport();
                         },
-                        icon: Icon(FluentIcons.bug_16_regular, size: 18, color: context.theme.colorScheme.onSurface,),
+                        icon: Icon(
+                          FluentIcons.bug_16_regular,
+                          size: 18,
+                          color: context.theme.colorScheme.onSurface,
+                        ),
                         label: Opacity(
                           opacity: .5,
                           child: Text(
@@ -164,13 +167,24 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 6),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
-                            children: [Text('Donate'.i18n, style: context.theme.textTheme.labelSmall,),
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Donate'.i18n,
+                                style: context.theme.textTheme.labelSmall,
+                              ),
                               4.width,
-                              Icon(FluentIcons.heart_12_regular, color: context.theme.colorScheme.primary, size: 16,)
-                            ],),
+                              Icon(
+                                FluentIcons.heart_12_regular,
+                                color: context.theme.colorScheme.primary,
+                                size: 16,
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -185,7 +199,6 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                             style: context.theme.textTheme.labelSmall,
                           ),
                         )),
-
                     IconButton(
                       onPressed: () {
                         goBranch(3);

@@ -2,8 +2,8 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_toolkits/src/core/core.dart';
-import 'package:flutter_toolkits/src/presentation/shared/ui/components/highlight_text.dart';
-import 'package:flutter_toolkits/src/presentation/shared/ui/components/see_more_section.dart';
+import 'package:flutter_toolkits/src/presentation/shared/ui/widgets/highlight_text.dart';
+import 'package:flutter_toolkits/src/presentation/shared/ui/widgets/see_more_section.dart';
 part 'parts/flutter_commands.dart';
 class CommandLineScreen extends StatefulWidget {
   const CommandLineScreen({super.key});

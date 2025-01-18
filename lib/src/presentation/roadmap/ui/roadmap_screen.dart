@@ -5,10 +5,10 @@ import 'package:flutter_toolkits/src/core/core.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'components/map_dot.dart';
-import 'components/map_group.dart';
-import 'components/map_item.dart';
-import 'components/map_label.dart';
+import 'widgets/map_dot.dart';
+import 'widgets/map_group.dart';
+import 'widgets/map_item.dart';
+import 'widgets/map_label.dart';
 
 class RoadmapScreen extends StatelessWidget {
   const RoadmapScreen({super.key});
@@ -775,7 +775,7 @@ class RoadmapScreen extends StatelessWidget {
                                       context,
                                       'DRY (Don\'t Repeat Yourself)',
                                       2,
-                                      'The DRY principle advocates for reducing repetition of code. Instead of duplicating code, refactor it into reusable components or functions.',
+                                      'The DRY principle advocates for reducing repetition of code. Instead of duplicating code, refactor it into reusable widgets or functions.',
                                       {
                                         'DRY Principle Overview':
                                             'https://en.wikipedia.org/wiki/Don%27t_repeat_yourself',
@@ -1361,7 +1361,7 @@ class RoadmapScreen extends StatelessWidget {
                                       context,
                                       'Popular Plugins',
                                       1,
-                                      'Popular plugins are third-party packages that enhance Flutter functionality. These can be used for various purposes, such as accessing native device features or adding complex UI components.',
+                                      'Popular plugins are third-party packages that enhance Flutter functionality. These can be used for various purposes, such as accessing native device features or adding complex UI widgets.',
                                       {
                                         'Flutter Popular Plugins':
                                             'https://pub.dev/flutter/packages',
@@ -1465,7 +1465,7 @@ class RoadmapScreen extends StatelessWidget {
                                       context,
                                       'RenderObjects',
                                       2,
-                                      'RenderObjects are the core components responsible for rendering UI elements in Flutter. They manage layout, painting, and interaction handling for widgets in the app.',
+                                      'RenderObjects are the core widgets responsible for rendering UI elements in Flutter. They manage layout, painting, and interaction handling for widgets in the app.',
                                       {},
                                     );
                                   },
