@@ -35,13 +35,13 @@ class _DonationScreenState extends State<DonationScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('Join the 2%'.i18n,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 26, fontWeight: FontWeight.bold)),
                           4.height,
                           Text(
                               'description-donation'.i18n,
                               style:
-                                  TextStyle(fontSize: 16, color: Colors.grey)),
+                                  const TextStyle(fontSize: 16, color: Colors.grey)),
                         ],
                       ),
                     ),

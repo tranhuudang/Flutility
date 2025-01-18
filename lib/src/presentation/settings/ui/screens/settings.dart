@@ -3,6 +3,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_toolkits/src/presentation/presentation.dart';
 import 'package:flutter_toolkits/src/core/core.dart';
+import 'package:flutter_toolkits/src/presentation/shared/ui/widgets/divider_with_text.dart';
 
 class SettingsView extends StatefulWidget {
   const SettingsView({super.key});
@@ -54,13 +55,43 @@ class _SettingsViewState extends State<SettingsView> {
                 const LanguageSwitcher(),
               ],
             ),
-            8.height,
+            16.height,
             const ThemeColorPalette(),
             8.height,
-            const Divider(
-              thickness: .3,
+            const Divider(),
+            Row(
+              children: [
+                Expanded(
+                    child: ListTile(
+                        minLeadingWidth: 0,
+                        contentPadding: const EdgeInsets.symmetric(vertical: 8),
+                        title: Text(
+                          'Restore from a backup file'.i18n,
+                          style: context.theme.textTheme.titleSmall,
+                        ),
+                        subtitle: Text(
+                          'personal-data-notice'.i18n,
+                        ))),
+                8.width,
+                SizedBox(
+                  width: 200,
+                  child: Column(
+                    children: [
+                      FilledButton.tonal(
+                          child: Text('Create a new backup'.i18n),
+                          onPressed: () {}),
+                      8.height,
+                      DividerWithText(text: 'or'.i18n),
+                      8.height,
+                      FilledButton.tonal(
+                          child: Text('Restore'.i18n), onPressed: () {}),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            8.height,
+
+            const Divider(),
             ListTile(
               minLeadingWidth: 0,
               contentPadding: const EdgeInsets.symmetric(vertical: 8),

@@ -10,7 +10,8 @@ class DividerWithText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: <Widget>[
+    return Row(
+        children: <Widget>[
       const Expanded(child: Divider()),
       8.width,
       Text(text),

@@ -863,8 +863,7 @@ extension Localization on Object {
       'vi_vi': 'Tham gia vào 2%',
       'zh_cn': '加入2%'
     },
-    'description-donation':
-        {
+    'description-donation': {
       'en_us':
           'When 2 percent of users donate, more developers will be supported to work on UI and tools. Free and Open Source for everyone, forever.',
       'vi_vi':
@@ -888,7 +887,29 @@ extension Localization on Object {
       'zh_cn': '慷慨的灵魂'
     },
     'Donate': {'en_us': 'Donate', 'vi_vi': 'Quyên góp', 'zh_cn': '捐款'},
-    'Total amount': { 'en_us': 'Total amount', 'vi_vi': 'Tổng số tiền', 'zh_cn': '总金额' }
+    'Total amount': {
+      'en_us': 'Total amount',
+      'vi_vi': 'Tổng số tiền',
+      'zh_cn': '总金额'
+    },
+    'personal-data-notice': {
+      'en_us':
+          'To ensure data safety. Your settings and data are stored locally and are not shared with any third parties. Please manually restore your settings and personal data when switching to a new device.',
+      'vi_vi':
+          'Để đảm bảo an toàn dữ liệu. Những cài đặt và dữ liệu của bạn được lưu trữ cục bộ và không được chia sẻ với bất kì bên thứ 3 nào. Vui lòng khôi phục những cài đặt và dữ liệu cá nhân bằng phương pháp thủ công khi chuyển sang dùng ở một thiết bị mới.',
+      'zh_cn': '为了确保数据安全。您的设置和数据会存储在本地，不会与任何第三方共享。请在切换到新设备时手动恢复您的设置和个人数据。'
+    },
+    'Restore from a backup file': {
+      'en_us': 'Restore from a backup file',
+      'vi_vi': 'Khôi phục từ tệp sao lưu',
+      'zh_cn': '从备份文件恢复'
+    },
+    'Restore': {'en_us': 'Restore', 'vi_vi': 'Khôi phục', 'zh_cn': '恢复'},
+    'Create a new backup': {
+      'en_us': 'Create a new backup',
+      'vi_vi': 'Tạo bản sao lưu mới',
+      'zh_cn': '创建新备份'
+    }
   });
 
   String get i18n => localize(this, _t);
