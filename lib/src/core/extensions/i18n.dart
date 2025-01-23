@@ -905,7 +905,7 @@ extension Localization on Object {
       'zh_cn': '从备份文件恢复'
     },
     'Restore': {'en_us': 'Restore', 'vi_vi': 'Khôi phục', 'zh_cn': '恢复'},
-    'Search': {'en_us': 'Restore', 'vi_vi': 'Tìm kiếm', 'zh_cn': '搜索'},
+    'Search': {'en_us': 'Search', 'vi_vi': 'Tìm kiếm', 'zh_cn': '搜索'},
     'Create a new backup': {
       'en_us': 'Create a new backup',
       'vi_vi': 'Tạo bản sao lưu mới',
