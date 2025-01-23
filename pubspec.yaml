@@ -95,7 +95,7 @@ msix_config:
   publisher_display_name: Zeroboy
   identity_name: 24555Zeroboy.FlutterToolkits
   publisher: CN=DA7D2C99-987C-4B69-8953-17157F6E0E1A
-  msix_version: 2025.01.23.89
+  msix_version: 2025.01.23.90
   trim_logo: false
   logo_path: C:\Users\tranh\StudioProjects\new\flutter_toolkits\assets\images\app-icon.png
   store: true

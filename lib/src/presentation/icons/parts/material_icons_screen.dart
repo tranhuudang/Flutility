@@ -147,6 +147,7 @@ class _MaterialIconsScreenState extends State<MaterialIconsScreen> {
             ],
           ),
         ),
+        16.height,
         Expanded(
           child: iconsMap.isEmpty || selectedTopic == null
               ? const Center(child: CircularProgressIndicator())

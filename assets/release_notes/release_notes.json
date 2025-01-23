@@ -1,5 +1,16 @@
 [
   {
+    "version": "90",
+    "date": "24-01-2025",
+    "changesNote": [
+      "Add backup and restore settings functionality",
+      "Add search box for Fluent Icons section",
+      "Add Pod commands",
+      "Add Donation section",
+      "Improve user experience"
+    ]
+  },
+  {
     "version": "86",
     "date": "17-01-2025",
     "changesNote": [
