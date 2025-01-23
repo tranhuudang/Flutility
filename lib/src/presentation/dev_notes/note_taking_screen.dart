@@ -44,7 +44,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
 
   Future<void> _initializeEditor() async {
     final directory = await getApplicationSupportDirectory();
-    final filePath = join(directory.path, 'dev_note.json');
+    final filePath = join(directory.path, LocalDirectory.devNotesFileName);
 
     DebugLog.info("Getting Dev Notes from: $filePath");
 
@@ -76,7 +76,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
     try {
       final content = jsonEncode(_controller.document.toDelta().toJson());
       final directory = await getApplicationSupportDirectory();
-      final filePath = join(directory.path, 'dev_note.json');
+      final filePath = join(directory.path, LocalDirectory.devNotesFileName);
 
       final file = File(filePath);
       await file.writeAsString(content);

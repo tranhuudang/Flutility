@@ -911,6 +911,31 @@ extension Localization on Object {
       'vi_vi': 'Tạo bản sao lưu mới',
       'zh_cn': '创建新备份'
     },
+    'Error picking files:': {
+      'en_us': 'Error picking files:',
+      'vi_vi': 'Lỗi khi chọn tệp:',
+      'zh_cn': '选择文件时出错:'
+    },
+    'Backup files is copied to Application Support Directory.': {
+      'en_us': 'Backup files is copied to Application Support Directory.',
+      'vi_vi': 'Các tệp sao lưu đã được sao chép vào Thư mục Hỗ trợ Ứng dụng.',
+      'zh_cn': '备份文件已复制到应用程序支持目录。'
+    },
+    'Backup files is not valid.': {
+      'en_us': 'Backup files is not valid.',
+      'vi_vi': 'Các tệp sao lưu không hợp lệ.',
+      'zh_cn': '备份文件无效。'
+    },
+    'Backup files are saved to selected directory': {
+      'en_us': 'Backup files are saved to selected directory',
+      'vi_vi': 'Các tệp sao lưu đã được lưu vào thư mục được chọn',
+      'zh_cn': '备份文件已保存到选定目录'
+    },
+    'Error picking directory or copying files:': {
+      'en_us': 'Error picking directory or copying files:',
+      'vi_vi': 'Lỗi khi chọn thư mục hoặc sao chép tệp:',
+      'zh_cn': '选择目录或复制文件时出错：'
+    }
   });
 
   String get i18n => localize(this, _t);
