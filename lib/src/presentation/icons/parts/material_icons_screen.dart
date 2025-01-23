@@ -83,41 +83,66 @@ class _MaterialIconsScreenState extends State<MaterialIconsScreen> {
           child: Row(
             children: [
               // Dropdown for selecting the platform (android or ios)
-              DropdownButton<String>(
-                value: selectedPlatform,
-                items: ['android', 'ios'].map((platform) {
-                  return DropdownMenuItem<String>(
-                    value: platform,
-                    child: Text(platform),
-                  );
-                }).toList(),
-                onChanged: (String? newValue) {
-                  setState(() {
-                    selectedPlatform = newValue!;
-                    iconsMap.clear(); // Clear the existing icons
-                    selectedTopic = null; // Reset the selected topic
-                    fetchIcons(); // Fetch new topics for the selected platform
-                  });
-                },
+              Container(
+                decoration:BoxDecoration(
+                  color: context.theme.colorScheme.surfaceBright,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton<String>(
+                    value: selectedPlatform,
+                    borderRadius: BorderRadius.circular(10),
+                    items: ['android', 'ios'].map((platform) {
+                      return DropdownMenuItem<String>(
+                        value: platform,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(platform),
+                        ),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        selectedPlatform = newValue!;
+                        iconsMap.clear(); // Clear the existing icons
+                        selectedTopic = null; // Reset the selected topic
+                        fetchIcons(); // Fetch new topics for the selected platform
+                      });
+                    },
+                  ),
+                ),
               ),
               const SizedBox(width: 20),
               // Dropdown for selecting the topic
-              DropdownButton<String>(
-                value: selectedTopic,
-                hint: Text('Select Topic'.i18n),
-                items: topics.map((topic) {
-                  return DropdownMenuItem<String>(
-                    value: topic,
-                    child: Text(topic.i18n),
-                  );
-                }).toList(),
-                onChanged: (String? newValue) {
-                  setState(() {
-                    selectedTopic = newValue!;
-                    fetchIconsForTopic(
-                        selectedTopic!); // Fetch icons for the selected topic
-                  });
-                },
+              Container(
+                decoration:BoxDecoration(
+                  color: context.theme.colorScheme.surfaceBright,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton<String>(
+                    borderRadius: BorderRadius.circular(10),
+
+                    value: selectedTopic,
+                    hint: Text('Select Topic'.i18n),
+                    items: topics.map((topic) {
+                      return DropdownMenuItem<String>(
+                        value: topic,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(topic.i18n),
+                        ),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        selectedTopic = newValue!;
+                        fetchIconsForTopic(
+                            selectedTopic!); // Fetch icons for the selected topic
+                      });
+                    },
+                  ),
+                ),
               ),
             ],
           ),

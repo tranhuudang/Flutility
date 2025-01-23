@@ -1,5 +1,6 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_toolkits/src/core/core.dart';
 import 'package:flutter_toolkits/src/presentation/icons/parts/fluent_icons_screen.dart';
 
 import 'package:flutter_toolkits/src/presentation/icons/parts/material_icons_screen.dart';
@@ -20,20 +21,33 @@ class _IconsScreenState extends State<IconsScreen> {
         leading: const Icon(FluentIcons.icons_20_regular),
         title: const Text('Icons'),
         actions: [
-          DropdownButton<String>(
-            value: selectedPlatform,
-            items: ['Material Icons', 'Fluent Icons'].map((item) {
-              return DropdownMenuItem<String>(
-                value: item,
-                child: Text(item),
-              );
-            }).toList(),
-            onChanged: (String? value) {
-              setState(() {
-                selectedPlatform = value!;
-              });
-            },
+          Container(
+            decoration:BoxDecoration(
+              color: context.theme.colorScheme.surfaceContainer,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: DropdownButtonHideUnderline(
+              child: DropdownButton<String>(
+                borderRadius: BorderRadius.circular(10),
+                value: selectedPlatform,
+                items: ['Material Icons', 'Fluent Icons'].map((item) {
+                  return DropdownMenuItem<String>(
+                    value: item,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(item),
+                    ),
+                  );
+                }).toList(),
+                onChanged: (String? value) {
+                  setState(() {
+                    selectedPlatform = value!;
+                  });
+                },
+              ),
+            ),
           ),
+          16.width
         ],
       ),
       body: selectedPlatform == 'Material Icons'

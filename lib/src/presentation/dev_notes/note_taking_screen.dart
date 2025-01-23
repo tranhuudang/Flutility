@@ -5,6 +5,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart' as quill;
 import 'package:flutter_toolkits/src/core/core.dart';
+import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 
 class NoteEditorScreen extends StatefulWidget {
@@ -34,8 +35,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
 
   _initDefault() {
     final sampleContent = quill.Document()
-      ..insert(0,
-          'Start typing your notes here. Your notes will auto-save.');
+      ..insert(0, 'Start typing your notes here. Your notes will auto-save.');
     _controller = quill.QuillController(
       document: sampleContent,
       selection: const TextSelection.collapsed(offset: 0),
@@ -43,8 +43,10 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
   }
 
   Future<void> _initializeEditor() async {
-    final directory = await getApplicationDocumentsDirectory();
-    final filePath = '${directory.path}/dev_note.json';
+    final directory = await getApplicationSupportDirectory();
+    final filePath = join(directory.path, 'dev_note.json');
+
+    DebugLog.info("Getting Dev Notes from: $filePath");
 
     if (await File(filePath).exists()) {
       // Load saved document
@@ -73,8 +75,8 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
   Future<void> _saveDocument() async {
     try {
       final content = jsonEncode(_controller.document.toDelta().toJson());
-      final directory = await getApplicationDocumentsDirectory();
-      final filePath = '${directory.path}/dev_note.json';
+      final directory = await getApplicationSupportDirectory();
+      final filePath = join(directory.path, 'dev_note.json');
 
       final file = File(filePath);
       await file.writeAsString(content);
