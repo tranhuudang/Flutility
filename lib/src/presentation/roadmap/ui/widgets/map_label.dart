@@ -24,7 +24,7 @@ class MapLabel extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(FluentIcons.flag_checkered_20_regular,),
+                const Icon(FluentIcons.flag_checkered_20_regular,),
                 8.width,
                 Text(
                   label,

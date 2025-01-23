@@ -70,7 +70,7 @@ class InfoView extends StatelessWidget {
                 url: 'https://github.com/tranhuudang'),
             _buildIconButton(
                 icon: const Icon(Icons.mail),
-                url: 'mailto:tranhuudang148@gmail.com'),
+                url: 'mailto:dt148f148@gmail.com'),
           ],
         ),
         8.height,
