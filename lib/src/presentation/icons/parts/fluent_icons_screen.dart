@@ -15,6 +15,8 @@ class FluentIconsScreen extends StatefulWidget {
 }
 
 class _FluentIconsScreenState extends State<FluentIconsScreen> {
+  List<String> fluentuiSystemIcons = FluentuiSystemIcons.fluentuiSystemIcons;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -74,8 +76,28 @@ class _FluentIconsScreenState extends State<FluentIconsScreen> {
                   ),
                 ),
               ),
-              24.height,
+             // 24.height,
             ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: TextField(
+            decoration: InputDecoration(
+              hintText: 'Search'.i18n,
+              prefixIcon: const Icon(Icons.search),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+            ),
+            onChanged: (text) {
+              setState(() {
+                fluentuiSystemIcons = FluentuiSystemIcons.fluentuiSystemIcons
+                    .where((item) => item.contains(text))
+                    .toList();
+              });
+            },
           ),
         ),
         Expanded(
@@ -94,10 +116,9 @@ class _FluentIconsScreenState extends State<FluentIconsScreen> {
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
               ),
-              itemCount: FluentuiSystemIcons.fluentuiSystemIcons.length,
+              itemCount: fluentuiSystemIcons.length,
               itemBuilder: (context, index) {
-                String iconPath =
-                    FluentuiSystemIcons.fluentuiSystemIcons[index];
+                String iconPath = fluentuiSystemIcons[index];
                 String iconName = iconPath
                     .split('/')
                     .last
@@ -137,4 +158,3 @@ class _FluentIconsScreenState extends State<FluentIconsScreen> {
     );
   }
 }
-
