@@ -5,6 +5,7 @@ import 'package:flutter_toolkits/src/core/core.dart';
 import 'package:flutter_toolkits/src/presentation/shared/ui/widgets/highlight_text.dart';
 import 'package:flutter_toolkits/src/presentation/shared/ui/widgets/see_more_section.dart';
 part 'parts/flutter_commands.dart';
+
 class CommandLineScreen extends StatefulWidget {
   const CommandLineScreen({super.key});
 
@@ -13,20 +14,28 @@ class CommandLineScreen extends StatefulWidget {
 }
 
 class _CommandLineScreenState extends State<CommandLineScreen> {
-
+  final List<Map<String, String>> totalCommands = [];
   // List of unique topics for filtering
-  List<String> get topics =>
-      flutterCommands.map((command) => command['topic']!).toSet().toList();
+  late List<String> topics;
 
   // Current selected topic for filtering
   String? selectedTopic;
 
   @override
+  void initState() {
+    super.initState();
+    totalCommands.addAll(FlutterCommands.flutter);
+    totalCommands.addAll(FlutterCommands.pod);
+    totalCommands.addAll(FlutterCommands.firebase);
+    topics = totalCommands.map((command) => command['topic']!).toSet().toList();
+  }
+
+  @override
   Widget build(BuildContext context) {
     // Filtered list of commands based on selected topic
     final filteredCommands = selectedTopic == null
-        ? flutterCommands
-        : flutterCommands
+        ? totalCommands
+        : totalCommands
             .where((command) => command['topic'] == selectedTopic)
             .toList();
 
@@ -35,29 +44,37 @@ class _CommandLineScreenState extends State<CommandLineScreen> {
         leading: const Icon(FluentIcons.tasks_app_20_regular),
         title: Text('Common Flutter CLI Commands'.i18n),
         actions: [
-          DropdownButton<String>(
-            borderRadius: BorderRadius.circular(5),
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            value: selectedTopic,
-            hint: Text("Select Topic".i18n,
-                style: const TextStyle(color: Colors.white)),
-            icon: const Icon(Icons.filter_list),
-            underline: Container(),
-            items: [
-              DropdownMenuItem(
-                value: null,
-                child: Text("All".i18n),
-              ),
-              ...topics.map((topic) => DropdownMenuItem(
-                    value: topic,
-                    child: Text(topic[0].toUpperCase() + topic.substring(1)),
-                  )),
-            ],
-            onChanged: (value) {
-              setState(() {
-                selectedTopic = value;
-              });
-            },
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: context.theme.colorScheme.surfaceContainer),
+            child: DropdownButton<String>(
+              borderRadius: BorderRadius.circular(8),
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              value: selectedTopic,
+              hint: Text("Select Topic".i18n,
+                  style: const TextStyle(color: Colors.white)),
+              icon: const Icon(Icons.filter_list),
+              underline: Container(),
+              items: [
+                DropdownMenuItem(
+                  value: null,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("All".i18n),
+                  ),
+                ),
+                ...topics.map((topic) => DropdownMenuItem(
+                      value: topic,
+                      child: Text(topic[0].toUpperCase() + topic.substring(1)),
+                    )),
+              ],
+              onChanged: (value) {
+                setState(() {
+                  selectedTopic = value;
+                });
+              },
+            ),
           ),
           10.width,
         ],
