@@ -43,7 +43,6 @@ final List<String> fontFamilies_1 = [
   'Montserrat Alternates',
   'Crimson Text',
   'Lexend',
-  'Zilla Slab Highlight',
   'Teko',
   'Varela Round',
   'Vesper Libre',
