@@ -155,7 +155,7 @@ class RoadmapScreen extends StatelessWidget {
                         children: [
                           Expanded(
                               flex: 2, child: Text('introductionRoadmap'.i18n)),
-                          8.width,
+                          16.width,
                           Expanded(
                             child: DottedBorder(
                               dashPattern: const [4, 4],

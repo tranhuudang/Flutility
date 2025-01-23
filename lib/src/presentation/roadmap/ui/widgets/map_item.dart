@@ -23,11 +23,14 @@ class MapItem extends StatelessWidget {
       child: Container(
         height: 50,
         padding: const EdgeInsets.only(left: 8, right: 8),
-        color: importantLevel == 0
-            ? context.theme.colorScheme.secondary
-            : importantLevel == 1
-                ? context.theme.colorScheme.secondaryContainer
-                : context.theme.colorScheme.tertiaryContainer,
+        decoration: BoxDecoration(
+          color: importantLevel == 0
+              ? context.theme.colorScheme.secondary
+              : importantLevel == 1
+              ? context.theme.colorScheme.secondaryContainer
+              : context.theme.colorScheme.tertiaryContainer,
+          borderRadius: BorderRadius.circular(8),
+        ),
         width: width ?? 120,
         child: Row(
           children: [

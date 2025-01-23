@@ -1,3 +1,4 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_toolkits/src/core/core.dart';
 
@@ -10,26 +11,31 @@ class MapLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-          decoration: BoxDecoration(
-              color: context.theme.colorScheme.secondaryContainer,
-              borderRadius: BorderRadius.circular(50)),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                label,
-                style: context.theme.textTheme.titleMedium?.copyWith(
-                    color: context.theme.colorScheme.onSecondaryContainer),
-              ),
-            ],
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            decoration: BoxDecoration(
+                color: context.theme.colorScheme.secondaryContainer,
+                borderRadius: BorderRadius.circular(50)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(FluentIcons.flag_checkered_20_regular,),
+                8.width,
+                Text(
+                  label,
+                  style: context.theme.textTheme.titleMedium?.copyWith(
+                      color: context.theme.colorScheme.onSecondaryContainer),
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

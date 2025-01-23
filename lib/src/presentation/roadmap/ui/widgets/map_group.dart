@@ -25,7 +25,7 @@ class MapGroup extends StatelessWidget {
           width: sizingInfo.isDesktop ? 320:  260,
           decoration: BoxDecoration(
               color: backgroundColor ?? context.theme.colorScheme.surfaceContainer,
-              borderRadius: BorderRadius.circular(5)),
+              borderRadius: BorderRadius.circular(8)),
           child: Column(
             children: [
               if (title != null) ...[
@@ -37,7 +37,7 @@ class MapGroup extends StatelessWidget {
               ],
               if (columnChildren != null) ...[
                 ...columnChildren!,
-                4.height,
+                8.height,
               ],
               if (gridChildren != null)
                 GridView(
@@ -45,8 +45,8 @@ class MapGroup extends StatelessWidget {
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       mainAxisExtent: 50,
-                      crossAxisSpacing: 4,
-                      mainAxisSpacing: 4),
+                      crossAxisSpacing: 6,
+                      mainAxisSpacing: 6),
                   children: gridChildren!,
                 ),
             ],
