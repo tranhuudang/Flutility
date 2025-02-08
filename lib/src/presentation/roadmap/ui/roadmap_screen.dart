@@ -144,6 +144,7 @@ class RoadmapScreen extends StatelessWidget {
                   ],
                 ),
                 ListView(
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   padding:
                       const EdgeInsets.only(left: 16, right: 16, bottom: 16),

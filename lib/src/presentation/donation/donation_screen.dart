@@ -21,7 +21,7 @@ class _DonationScreenState extends State<DonationScreen> {
         title:  Text('Development Fund'.i18n),
       ),
       body: Center(
-        child: Container(
+        child: SizedBox(
           //color: Colors.red,
           width: 700,
           child: Padding(
