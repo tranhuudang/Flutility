@@ -75,7 +75,7 @@ class InfoView extends StatelessWidget {
         ),
         8.height,
         Text(
-          "© 2024 Tran Huu Dang. ${"All rights reserved.".i18n}",
+          "© ${DateTime.now().year} Tran Huu Dang. ${"All rights reserved.".i18n}",
           style: context.theme.textTheme.bodyMedium
               ?.copyWith(color: context.theme.colorScheme.onSurfaceVariant),
         ),

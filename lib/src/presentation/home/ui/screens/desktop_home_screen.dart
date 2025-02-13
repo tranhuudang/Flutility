@@ -436,8 +436,8 @@ class DashboardShape extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 86,
-      width: 86,
+      height: 88,
+      width: 88,
       color: backgroundColor,
       child: Padding(
         padding: const EdgeInsets.all(16.0),

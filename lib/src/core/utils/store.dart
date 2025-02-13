@@ -1,7 +1,13 @@
+import 'package:flutter_toolkits/src/core/core.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void goToStoreListing() async {
-  final Uri url = Uri.parse('ms-windows-store://pdp/?productid=9nm16zpqh6bz');
+  late Uri url;
+  if (isWindows) {
+    url = Uri.parse('ms-windows-store://pdp/?productid=9nm16zpqh6bz');
+  } else {
+    url = Uri.parse('https://github.com/tranhuudang/flutter_toolkit');
+  }
   if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
     throw Exception('Could not launch $url');
   }

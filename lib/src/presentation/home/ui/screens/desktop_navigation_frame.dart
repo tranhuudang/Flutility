@@ -138,6 +138,15 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                 opacity: .8,
                 child: Row(
                   children: [
+                    IconButton(onPressed: (){
+                      goBranch(2); // 2 is setting in branch root
+                    },
+                        icon: Icon(
+                          FluentIcons.settings_16_regular,
+                          size: 18,
+                          color: context.theme.colorScheme.onSurface,
+                        ),
+                    ),
                     TextButton.icon(
                         onPressed: () {
                           goToBugReport();
