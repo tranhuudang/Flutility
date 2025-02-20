@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart' as quill;
-import 'package:flutter_toolkits/src/core/core.dart';
+import 'package:fluttertoys/src/core/core.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 

@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_toolkits/src/core/core.dart';
+import 'package:fluttertoys/src/core/core.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class MaterialIconsScreen extends StatefulWidget {

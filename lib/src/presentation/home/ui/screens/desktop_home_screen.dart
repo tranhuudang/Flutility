@@ -1,7 +1,7 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
-import 'package:flutter_toolkits/src/core/core.dart';
-import 'package:flutter_toolkits/src/core/router/route_configurations_desktop.dart';
+import 'package:fluttertoys/src/core/core.dart';
+import 'package:fluttertoys/src/core/router/route_configurations_desktop.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -94,8 +94,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                                   style: context.theme.textTheme.headlineSmall,
                                 ),
                                 const SizedBox(width: 100, child: Divider()),
-                                Text('Essential Tools for Flutter Developers.'
-                                    .i18n)
+                                Text(DefaultSettings.appDescription.i18n)
                               ],
                             ),
                           ),
@@ -115,10 +114,8 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                                     size: 20,
                                   ),
                                   url: 'mailto:dt148f148@gmail.com'),
-
                             ],
                           ),
-
                         ],
                       ),
                     ],

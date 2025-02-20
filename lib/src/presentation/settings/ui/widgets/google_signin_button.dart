@@ -1,5 +1,5 @@
-import 'package:flutter_toolkits/src/core/core.dart';
-import 'package:flutter_toolkits/src/presentation/presentation.dart';
+import 'package:fluttertoys/src/core/core.dart';
+import 'package:fluttertoys/src/presentation/presentation.dart';
 import 'package:flutter/material.dart';
 
 class GoogleSignInButton extends StatelessWidget {

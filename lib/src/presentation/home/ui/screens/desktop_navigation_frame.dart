@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'package:flutter_toolkits/src/core/core.dart';
-import 'package:flutter_toolkits/src/presentation/home/data/utils/upgrader_config.dart';
-import 'package:flutter_toolkits/src/presentation/presentation.dart';
+import 'package:fluttertoys/src/core/core.dart';
+import 'package:fluttertoys/src/presentation/home/data/utils/upgrader_config.dart';
+import 'package:fluttertoys/src/presentation/presentation.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -138,14 +138,16 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                 opacity: .8,
                 child: Row(
                   children: [
-                    IconButton(onPressed: (){
-                      goBranch(2); // 2 is setting in branch root
-                    },
-                        icon: Icon(
-                          FluentIcons.settings_16_regular,
-                          size: 18,
-                          color: context.theme.colorScheme.onSurface,
-                        ),
+                    if (isMacOS)
+                    IconButton(
+                      onPressed: () {
+                        goBranch(2); // 2 is setting in branch root
+                      },
+                      icon: Icon(
+                        FluentIcons.settings_16_regular,
+                        size: 18,
+                        color: context.theme.colorScheme.onSurface,
+                      ),
                     ),
                     TextButton.icon(
                         onPressed: () {

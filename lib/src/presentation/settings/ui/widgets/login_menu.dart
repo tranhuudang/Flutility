@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter_toolkits/src/core/core.dart';
-import 'package:flutter_toolkits/src/presentation/presentation.dart';
+import 'package:fluttertoys/src/core/core.dart';
+import 'package:fluttertoys/src/presentation/presentation.dart';
 
 class LoginMenu extends StatelessWidget {
   const LoginMenu({

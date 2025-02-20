@@ -1,7 +1,7 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_toolkits/src/core/core.dart';
-import 'package:flutter_toolkits/src/presentation/donation/widgets/paypal_donation_widget.dart';
+import 'package:fluttertoys/src/core/core.dart';
+import 'package:fluttertoys/src/presentation/donation/widgets/paypal_donation_widget.dart';
 
 import '../shared/ui/widgets/divider_with_text.dart';
 
