@@ -16,7 +16,7 @@ Get FlutterToys on your preferred platform:
 | Platform  | Link                                                                                                                                                                          |  
 |-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 | **Microsoft Store** | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)](https://www.microsoft.com/store/productId/9NM16ZPQH6BZ?ocid=pdpshare) |  
-| **macOS** | [![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/tranhuudang/fluttertoysfluttertoys/releases)                 |  
+| **macOS** | [![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/tranhuudang/fluttertoys/releases)                 |  
 
 ---
 
