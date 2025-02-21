@@ -186,7 +186,8 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
               ),
               8.height,
               InkWell(
-                onTap: (){},
+                onTap: () =>
+                    openUrl(OnlineDirectory.howToCustomizeIconOnAndroid),
                 child: Text(
                   'What if the icon have a white border on Android device?'
                       .i18n,
