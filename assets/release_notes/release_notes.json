@@ -1,9 +1,9 @@
 [
   {
     "version": "92",
-    "date": "20-02-2025",
+    "date": "21-02-2025",
     "changesNote": [
-      "Rename app to FlutterToys",
+      "Improve Icon Generator",
       "Add support for MacOS"
     ]
   },

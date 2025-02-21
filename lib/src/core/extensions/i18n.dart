@@ -935,7 +935,13 @@ extension Localization on Object {
       'en_us': 'Error picking directory or copying files:',
       'vi_vi': 'Lỗi khi chọn thư mục hoặc sao chép tệp:',
       'zh_cn': '选择目录或复制文件时出错：'
+    },
+    'How do I remove the unwanted white border around my app icon on Android devices?': {
+      'en_us': 'How do I remove the unwanted white border around my app icon on Android devices?',
+      'vi_vi': 'Làm cách nào để loại bỏ viền trắng không mong muốn xung quanh biểu tượng ứng dụng trên thiết bị Android?',
+      'zh_cn': '如何去除Android设备上应用图标周围不必要的白色边框？'
     }
+
   });
 
   String get i18n => localize(this, _t);

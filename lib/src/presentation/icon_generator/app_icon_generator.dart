@@ -20,6 +20,7 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
   String? _projectPath;
   bool _isGenerating = false;
   final _imagePicker = ImagePicker();
+  final _scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +28,22 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
       appBar: AppBar(
         leading: const Icon(FluentIcons.apps_settings_16_regular),
         title: Text('App Icon Setter for Flutter Project'.i18n),
+        actions: [
+          IconButton(
+            icon: const Icon(FluentIcons.question_circle_28_regular),
+            onPressed: (){
+              _scrollController.animateTo(
+                _scrollController.position.maxScrollExtent,
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.easeOut,
+              );
+            },
+          ),
+          8.width,
+        ],
       ),
       body: ListView(
+        controller: _scrollController,
         padding: const EdgeInsets.only(bottom: 16, right: 16, left: 16),
         children: [
           // Step 1: Select PNG Image
@@ -173,7 +188,7 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
           ),
           16.height,
 
-          Divider(),
+          const Divider(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -189,7 +204,7 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
                 onTap: () =>
                     openUrl(OnlineDirectory.howToCustomizeIconOnAndroid),
                 child: Text(
-                  'What if the icon have a white border on Android device?'
+                  'How do I remove the unwanted white border around my app icon on Android devices?'
                       .i18n,
                   style: const TextStyle(
                     fontSize: 14,

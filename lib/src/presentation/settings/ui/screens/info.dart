@@ -63,6 +63,9 @@ class InfoView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _buildIconButton(
+                icon: const Icon(FontAwesomeIcons.linkedin, size: 20,),
+                url: 'https://www.linkedin.com/in/dang-tran-huu/'),
+            _buildIconButton(
                 icon: const Icon(
                   FontAwesomeIcons.github,
                   size: 20,

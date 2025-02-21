@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../domain/domain.dart';
 
 class DefaultSettings {
-  static const String appName = 'FlutterToys';
+  static const String appName = 'Flutter Toolkit';
   static const String appDescription = 'Essential Tools for Flutter Developers.';
   static const Size defaultWindowsSize = Size(850, 620);
   static const Size minWindowsSize = Size(850, 620);
