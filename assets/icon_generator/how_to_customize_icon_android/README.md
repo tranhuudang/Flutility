@@ -3,7 +3,7 @@
 ## Steps to Customize Your Flutter App Icon
 
 ### Step 1: Open Android Folder
-Open the Android folder in your Flutter project using Android Studio. Wait for the project to load completely. The time taken depends on your machine specifications.
+Open the `Android` folder in your Flutter project using Android Studio. Wait for the project to load completely. The time taken depends on your machine specifications.
 
 ![Step 1](https://github.com/tranhuudang/FlutterToolkit/blob/master/assets/icon_generator/open_android_folder.png?raw=true)
 
