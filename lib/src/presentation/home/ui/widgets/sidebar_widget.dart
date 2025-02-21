@@ -1,4 +1,4 @@
-import 'package:fluttertoys/src/core/core.dart';
+import 'package:flutter_toolkits/src/core/core.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 
 import '../../../presentation.dart';

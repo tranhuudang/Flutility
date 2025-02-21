@@ -2,8 +2,8 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fluttertoys/src/core/core.dart';
-import 'package:fluttertoys/src/presentation/fonts/text_theme_showcase.dart';
+import 'package:flutter_toolkits/src/core/core.dart';
+import 'package:flutter_toolkits/src/presentation/fonts/text_theme_showcase.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 

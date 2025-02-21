@@ -1,8 +1,8 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:fluttertoys/src/presentation/presentation.dart';
-import 'package:fluttertoys/src/core/core.dart';
+import 'package:flutter_toolkits/src/presentation/presentation.dart';
+import 'package:flutter_toolkits/src/core/core.dart';
 
 class InfoView extends StatelessWidget {
   const InfoView({super.key});

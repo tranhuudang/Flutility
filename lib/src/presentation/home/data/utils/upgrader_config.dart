@@ -1,4 +1,4 @@
-import 'package:fluttertoys/src/core/core.dart';
+import 'package:flutter_toolkits/src/core/core.dart';
 import 'package:upgrader/upgrader.dart';
 
 class UpgraderConfig {

@@ -1,9 +1,9 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoys/src/core/core.dart';
-import 'package:fluttertoys/src/presentation/icons/parts/fluent_icons_screen.dart';
+import 'package:flutter_toolkits/src/core/core.dart';
+import 'package:flutter_toolkits/src/presentation/icons/parts/fluent_icons_screen.dart';
 
-import 'package:fluttertoys/src/presentation/icons/parts/material_icons_screen.dart';
+import 'package:flutter_toolkits/src/presentation/icons/parts/material_icons_screen.dart';
 
 class IconsScreen extends StatefulWidget {
   const IconsScreen({super.key});

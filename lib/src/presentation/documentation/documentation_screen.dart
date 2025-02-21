@@ -1,7 +1,7 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
-import 'package:fluttertoys/src/core/core.dart';
-import 'package:fluttertoys/src/presentation/home/ui/screens/desktop_home_screen.dart';
-import 'package:fluttertoys/src/presentation/presentation.dart';
+import 'package:flutter_toolkits/src/core/core.dart';
+import 'package:flutter_toolkits/src/presentation/home/ui/screens/desktop_home_screen.dart';
+import 'package:flutter_toolkits/src/presentation/presentation.dart';
 import 'package:url_launcher/url_launcher.dart';
 part 'parts/additional_documentation.dart';
 part 'parts/official_documentation.dart';

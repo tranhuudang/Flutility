@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fluttertoys/src/core/core.dart';
+import 'package:flutter_toolkits/src/core/core.dart';
 
 class HighlightedText extends StatefulWidget {
   final String text;

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:fluttertoys/src/core/core.dart';
+import 'package:flutter_toolkits/src/core/core.dart';
 
 class JsonHandler {
 // Function to prettify the JSON

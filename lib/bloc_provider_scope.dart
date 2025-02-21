@@ -1,4 +1,4 @@
-import 'package:fluttertoys/src/presentation/presentation.dart';
+import 'package:flutter_toolkits/src/presentation/presentation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BlocProviderScope extends StatelessWidget {

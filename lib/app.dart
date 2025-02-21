@@ -1,6 +1,6 @@
-import 'package:fluttertoys/src/core/core.dart';
-import 'package:fluttertoys/src/core/router/route_configurations_desktop.dart';
-import 'package:fluttertoys/src/presentation/presentation.dart';
+import 'package:flutter_toolkits/src/core/core.dart';
+import 'package:flutter_toolkits/src/core/router/route_configurations_desktop.dart';
+import 'package:flutter_toolkits/src/presentation/presentation.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoys/src/core/core.dart';
+import 'package:flutter_toolkits/src/core/core.dart';
 
 class MapDot extends StatelessWidget {
   final bool? branchLeft;

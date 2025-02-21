@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoys/src/core/core.dart';
+import 'package:flutter_toolkits/src/core/core.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PaypalDonationWidget extends StatefulWidget {
