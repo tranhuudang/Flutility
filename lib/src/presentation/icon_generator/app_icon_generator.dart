@@ -32,34 +32,51 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
         padding: const EdgeInsets.only(bottom: 16, right: 16, left: 16),
         children: [
           // Step 1: Select PNG Image
-          Text(
-            'Step 1: Select a PNG Image'.i18n,
-            style: context.theme.textTheme.titleMedium,
-          ),
-          const SizedBox(height: 8),
-          Text(
-            'Choose a PNG image that will be used to generate icons for various platforms. The image should be clear and high-resolution.'
-                .i18n,
-            style: TextStyle(fontSize: 14, color: Colors.grey[600]),
-          ),
-          const SizedBox(height: 8),
-          Center(
-            child: ElevatedButton(
-              onPressed: _pickImage,
-              child: Text(_selectedImage == null
-                  ? 'Select PNG Image'.i18n
-                  : 'Change Image'.i18n),
-            ),
-          ),
-          if (_selectedImage != null)
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Image.file(
-                _selectedImage!,
-                width: 128,
-                height: 128,
+          Column(
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Step 1: Select a PNG Image'.i18n,
+                          style: context.theme.textTheme.titleMedium,
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          'Choose a PNG image that will be used to generate icons for various platforms. The image should be clear and high-resolution.'
+                              .i18n,
+                          style:
+                              TextStyle(fontSize: 14, color: Colors.grey[600]),
+                        ),
+                      ],
+                    ),
+                  ),
+                  if (_selectedImage != null)
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Image.file(
+                        _selectedImage!,
+                        width: 128,
+                        height: 128,
+                      ),
+                    ),
+                ],
               ),
-            ),
+              const SizedBox(height: 8),
+              Center(
+                child: ElevatedButton(
+                  onPressed: _pickImage,
+                  child: Text(_selectedImage == null
+                      ? 'Select PNG Image'.i18n
+                      : 'Change Image'.i18n),
+                ),
+              ),
+            ],
+          ),
+
           const SizedBox(height: 16.0),
           // Step 2: Select Flutter Project Location
           Text(
@@ -72,7 +89,24 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
                 .i18n,
             style: TextStyle(fontSize: 14, color: Colors.grey[600]),
           ),
-          const SizedBox(height: 8),
+
+          if (_projectPath != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Row(
+                children: [
+                  Text('${'Project Path:'.i18n} '),
+                  Expanded(
+                      child: Text(
+                    '$_projectPath',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: context.theme.colorScheme.primary),
+                  )),
+                ],
+              ),
+            ),
+          16.height,
           Center(
             child: ElevatedButton(
               onPressed: _pickProjectPath,
@@ -81,12 +115,7 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
                   : 'Change Project Path'.i18n),
             ),
           ),
-          if (_projectPath != null)
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Text('${'Project Path'.i18n}: $_projectPath'),
-            ),
-          const SizedBox(height: 32.0),
+          24.height,
           // Step 3: Generate Icons
           Text(
             'Step 3: Generate Icons'.i18n,
@@ -113,7 +142,7 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
           ),
           16.height,
           DottedBorder(
-            dashPattern: const [4,4],
+            dashPattern: const [4, 4],
             borderType: BorderType.RRect,
             strokeWidth: .5,
             radius: const Radius.circular(5),
@@ -141,7 +170,34 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
                 ),
               ),
             ),
-          )
+          ),
+          16.height,
+
+          Divider(),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '${'Resources'.i18n}:',
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              8.height,
+              InkWell(
+                onTap: (){},
+                child: Text(
+                  'What if the icon have a white border on Android device?'
+                      .i18n,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: Colors.blueAccent,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
