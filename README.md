@@ -1,38 +1,38 @@
-# FlutterToys
-![cover](https://github.com/tranhuudang/fluttertoys/blob/master/assets/banner.png?raw=true)
+# Flutter Toolkit
+![cover](https://github.com/tranhuudang/FlutterToolkit/blob/master/assets/banner.png?raw=true)
 
-## FlutterToys - Your All-in-One Developer & Designer Toolkit
+## Flutter Toolkit - Your All-in-One Developer & Designer Toolkit
 
-FlutterToys is a comprehensive desktop application tailored for developers, designers, and content creators. 
+Flutter Toolkit is a comprehensive desktop application tailored for developers, designers, and content creators. 
 This versatile tool brings together essential utilities in a single platform, streamlining your workflow and saving you valuable time. 
-Whether you need to preview fonts, pick colors, format JSON, test APIs, or compress images, FlutterToys has you covered with a clean and intuitive interface.
+Whether you need to preview fonts, pick colors, format JSON, test APIs, or compress images, Flutter Toolkit has you covered with a clean and intuitive interface.
 
 ---
 
-## Download FlutterToys
+## Download Flutter Toolkit
 
-Get FlutterToys on your preferred platform:
+Get Flutter Toolkit on your preferred platform:
 
-| Platform  | Link                                                                                                                                                                          |  
-|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+| Platform  | Link                                                                                                                                                                                               |  
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 | **Microsoft Store** | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)](https://www.microsoft.com/store/productId/9NM16ZPQH6BZ?ocid=pdpshare) |  
-| **macOS** | [![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/tranhuudang/fluttertoys/releases)                 |  
+| **macOS** | [![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/tranhuudang/FlutterToolkit/releases)                                       |  
 
 ---
 
 ## Join the Community 🌟
 
-FlutterToys is **open source**, and we’d love for you to be part of our journey! Whether you’re a developer, designer, or just passionate about Flutter, your contributions can help make this toolkit even better.
+Flutter Toolkit is **open source**, and we’d love for you to be part of our journey! Whether you’re a developer, designer, or just passionate about Flutter, your contributions can help make this toolkit even better.
 
-- **Contribute**: Check out our [GitHub repository](https://github.com/tranhuudang/fluttertoys) to get started.
+- **Contribute**: Check out our [GitHub repository](https://github.com/tranhuudang/FlutterToolkit) to get started.
 - **Suggest Features**: Have an idea? Open an issue or submit a pull request.
-- **Spread the Word**: Share FlutterToys with your friends and colleagues!
+- **Spread the Word**: Share Flutter Toolkit with your friends and colleagues!
 
 ---
 
 ## Support the Development 💖
 
-Building anFlutterToys takes time, effort, and resources. If you find this app helpful, consider supporting its development by donating. Your contributions will help us continue improving the toolkit and adding new features.
+Building anFlutter Toolkit takes time, effort, and resources. If you find this app helpful, consider supporting its development by donating. Your contributions will help us continue improving the toolkit and adding new features.
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue?style=for-the-badge&logo=paypal)](https://paypal.me/DangTran565)  
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/dak_solutions)
@@ -79,7 +79,7 @@ After following these steps, macOS will allow this app to open without any furth
 
 ## Feedback and Suggestions 💬
 
-We’d love to hear from you! If you have any feedback, suggestions, or issues, please feel free to reach out. Your input helps us improve FlutterToys and make it even better for developers like you.
+We’d love to hear from you! If you have any feedback, suggestions, or issues, please feel free to reach out. Your input helps us improve Flutter Toolkit and make it even better for developers like you.
 
 ---
 
