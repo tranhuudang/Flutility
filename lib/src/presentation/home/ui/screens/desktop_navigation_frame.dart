@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'package:flutter_toolkits/src/core/core.dart';
-import 'package:flutter_toolkits/src/presentation/home/data/utils/upgrader_config.dart';
-import 'package:flutter_toolkits/src/presentation/presentation.dart';
+import 'package:flutility/src/core/core.dart';
+import 'package:flutility/src/presentation/home/data/utils/upgrader_config.dart';
+import 'package:flutility/src/presentation/presentation.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:responsive_builder/responsive_builder.dart';

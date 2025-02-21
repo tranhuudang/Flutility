@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_toolkits/src/core/core.dart';
+import 'package:flutility/src/core/core.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextThemeShowcaseScreen extends StatefulWidget {

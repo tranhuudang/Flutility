@@ -1,6 +1,6 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_toolkits/src/core/core.dart';
+import 'package:flutility/src/core/core.dart';
 
 class MapLabel extends StatelessWidget {
   final String label;

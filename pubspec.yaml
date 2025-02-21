@@ -1,4 +1,4 @@
-name: flutter_toolkits
+name: flutility
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -91,11 +91,11 @@ flutter:
     - assets/images/app-icon.png
     - assets/donation/
 msix_config:
-  display_name: Flutter Toolkit
+  display_name: Flutility
   publisher_display_name: DAK Solutions
   identity_name: 24555Zeroboy.FlutterToolkits
   publisher: CN=DA7D2C99-987C-4B69-8953-17157F6E0E1A
-  msix_version: 2025.2.21.0
+  msix_version: 2025.2.22.0
   trim_logo: false
   logo_path: C:\Users\tranh\StudioProjects\FlutterToolkit\assets\images\app-icon.png
   store: true
