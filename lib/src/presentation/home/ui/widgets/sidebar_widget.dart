@@ -37,7 +37,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
       child: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 55),
+            padding: const EdgeInsets.only(top: 55, bottom: 55),
             child: ScrollConfiguration(
               behavior:
                   ScrollConfiguration.of(context).copyWith(scrollbars: false),
