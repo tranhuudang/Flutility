@@ -50,6 +50,7 @@ class Settings with _$Settings {
     required bool isGenerateForMacOs,
     required bool isGenerateForWindows,
     required bool isGenerateForWeb,
+    required String currentGenerateIconForProjectPath,
 
   }) = _Setting;
 }

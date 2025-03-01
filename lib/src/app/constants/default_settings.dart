@@ -29,5 +29,7 @@ class DefaultSettings {
     isGenerateForMacOs: true,
     isGenerateForWindows: true,
     isGenerateForWeb: true,
+    currentGenerateIconForProjectPath: '',
+
   );
 }

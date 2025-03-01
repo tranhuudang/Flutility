@@ -60,6 +60,9 @@ class Properties {
         newSetting.isGenerateForWindows);
     await prefs.setBool(
         SharedPreferencesKey.isGenerateForWeb, newSetting.isGenerateForWeb);
+    await prefs.setString(
+        SharedPreferencesKey.currentGenerateIconForProjectPath,
+        newSetting.currentGenerateIconForProjectPath);
 
     await prefs.setString(
         SharedPreferencesKey.colorCollection, newSetting.colorCollection);
@@ -125,6 +128,9 @@ class Properties {
       isGenerateForWeb:
           await prefs.getBool(SharedPreferencesKey.isGenerateForWeb) ??
               settings.isGenerateForWeb,
+      currentGenerateIconForProjectPath: await prefs.getString(
+              SharedPreferencesKey.currentGenerateIconForProjectPath) ??
+          settings.currentGenerateIconForProjectPath,
     );
     return savedSetting;
   }

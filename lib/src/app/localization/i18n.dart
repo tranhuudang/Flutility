@@ -708,10 +708,10 @@ extension Localization on Object {
       "vi_vi": "Thay đổi đường dẫn dự án",
       "zh_cn": "更改项目路径"
     },
-    "Project Path": {
-      "en_us": "Project Path",
-      "vi_vi": "Đường dẫn dự án",
-      "zh_cn": "项目路径"
+    "Project Path:": {
+      "en_us": "Project Path:",
+      "vi_vi": "Đường dẫn dự án:",
+      "zh_cn": "项目路径:"
     },
     "Step 3: Generate Icons": {
       "en_us": "Step 3: Generate Icons",
@@ -936,12 +936,14 @@ extension Localization on Object {
       'vi_vi': 'Lỗi khi chọn thư mục hoặc sao chép tệp:',
       'zh_cn': '选择目录或复制文件时出错：'
     },
-    'How do I remove the unwanted white border around my app icon on Android devices?': {
-      'en_us': 'How do I remove the unwanted white border around my app icon on Android devices?',
-      'vi_vi': 'Làm cách nào để loại bỏ viền trắng không mong muốn xung quanh biểu tượng ứng dụng trên thiết bị Android?',
+    'How do I remove the unwanted white border around my app icon on Android devices?':
+        {
+      'en_us':
+          'How do I remove the unwanted white border around my app icon on Android devices?',
+      'vi_vi':
+          'Làm cách nào để loại bỏ viền trắng không mong muốn xung quanh biểu tượng ứng dụng trên thiết bị Android?',
       'zh_cn': '如何去除Android设备上应用图标周围不必要的白色边框？'
     }
-
   });
 
   String get i18n => localize(this, _t);

@@ -39,7 +39,7 @@ class AppIconGeneratorState with _$AppIconGeneratorState {
       generateForMacos: settings.isGenerateForMacOs,
       generateForWeb: settings.isGenerateForWeb,
       generateForWindows: settings.isGenerateForWindows,
-      projectPath: '',
+      projectPath: settings.currentGenerateIconForProjectPath,
       selectedImage: null,
     );
   }
@@ -99,7 +99,8 @@ class AppIconGenerator extends StateNotifier<AppIconGeneratorState> {
         isGenerateForIOs: state.generateForIos,
         isGenerateForMacOs: state.generateForMacos,
         isGenerateForWeb: state.generateForWeb,
-        isGenerateForWindows: state.generateForWindows));
+        isGenerateForWindows: state.generateForWindows,
+        currentGenerateIconForProjectPath: state.projectPath));
 
     try {
       if (state.selectedImage == null || state.projectPath.isEmpty) return;

@@ -19,6 +19,7 @@ class SharedPreferencesKey {
   static String get isGenerateForMacOs => 'isGenerateForMacOs';
   static String get isGenerateForWindows => 'isGenerateForWindows';
   static String get isGenerateForWeb => 'isGenerateForWeb';
+  static String get currentGenerateIconForProjectPath => 'currentGenerateIconForProjectPath';
 
 
 }

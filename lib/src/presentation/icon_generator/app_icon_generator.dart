@@ -6,8 +6,6 @@ import 'package:flutility/src/app/app.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dotted_border/dotted_border.dart';
 
-// create AppIconGenerator screen using Riverpod
-
 class AppIconGeneratorScreen extends ConsumerStatefulWidget {
   const AppIconGeneratorScreen({super.key});
 
@@ -133,7 +131,7 @@ class _AppIconGeneratorScreenState
                     Text('${'Project Path:'.i18n} '),
                     Expanded(
                         child: Text(
-                      '${state.projectPath}',
+                      state.projectPath,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: context.theme.colorScheme.primary),

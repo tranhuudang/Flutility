@@ -62,6 +62,8 @@ mixin _$Settings {
   bool get isGenerateForMacOs => throw _privateConstructorUsedError;
   bool get isGenerateForWindows => throw _privateConstructorUsedError;
   bool get isGenerateForWeb => throw _privateConstructorUsedError;
+  String get currentGenerateIconForProjectPath =>
+      throw _privateConstructorUsedError;
 
   /// Create a copy of Settings
   /// with the given fields replaced by the non-null parameter values.
@@ -95,7 +97,8 @@ abstract class $SettingsCopyWith<$Res> {
       bool isGenerateForIOs,
       bool isGenerateForMacOs,
       bool isGenerateForWindows,
-      bool isGenerateForWeb});
+      bool isGenerateForWeb,
+      String currentGenerateIconForProjectPath});
 }
 
 /// @nodoc
@@ -133,6 +136,7 @@ class _$SettingsCopyWithImpl<$Res, $Val extends Settings>
     Object? isGenerateForMacOs = null,
     Object? isGenerateForWindows = null,
     Object? isGenerateForWeb = null,
+    Object? currentGenerateIconForProjectPath = null,
   }) {
     return _then(_value.copyWith(
       themeMode: null == themeMode
@@ -215,6 +219,11 @@ class _$SettingsCopyWithImpl<$Res, $Val extends Settings>
           ? _value.isGenerateForWeb
           : isGenerateForWeb // ignore: cast_nullable_to_non_nullable
               as bool,
+      currentGenerateIconForProjectPath: null ==
+              currentGenerateIconForProjectPath
+          ? _value.currentGenerateIconForProjectPath
+          : currentGenerateIconForProjectPath // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -246,7 +255,8 @@ abstract class _$$SettingImplCopyWith<$Res> implements $SettingsCopyWith<$Res> {
       bool isGenerateForIOs,
       bool isGenerateForMacOs,
       bool isGenerateForWindows,
-      bool isGenerateForWeb});
+      bool isGenerateForWeb,
+      String currentGenerateIconForProjectPath});
 }
 
 /// @nodoc
@@ -282,6 +292,7 @@ class __$$SettingImplCopyWithImpl<$Res>
     Object? isGenerateForMacOs = null,
     Object? isGenerateForWindows = null,
     Object? isGenerateForWeb = null,
+    Object? currentGenerateIconForProjectPath = null,
   }) {
     return _then(_$SettingImpl(
       themeMode: null == themeMode
@@ -364,6 +375,11 @@ class __$$SettingImplCopyWithImpl<$Res>
           ? _value.isGenerateForWeb
           : isGenerateForWeb // ignore: cast_nullable_to_non_nullable
               as bool,
+      currentGenerateIconForProjectPath: null ==
+              currentGenerateIconForProjectPath
+          ? _value.currentGenerateIconForProjectPath
+          : currentGenerateIconForProjectPath // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -391,7 +407,8 @@ class _$SettingImpl implements _Setting {
       required this.isGenerateForIOs,
       required this.isGenerateForMacOs,
       required this.isGenerateForWindows,
-      required this.isGenerateForWeb});
+      required this.isGenerateForWeb,
+      required this.currentGenerateIconForProjectPath});
 
   /// Save current theme of this app in this param, it holds string value of [ThemeMode] with value:
   /// ThemeMode.system, ThemeMode.dark, ThemeMode.light
@@ -459,10 +476,12 @@ class _$SettingImpl implements _Setting {
   final bool isGenerateForWindows;
   @override
   final bool isGenerateForWeb;
+  @override
+  final String currentGenerateIconForProjectPath;
 
   @override
   String toString() {
-    return 'Settings(themeMode: $themeMode, enableAdaptiveTheme: $enableAdaptiveTheme, openAppCount: $openAppCount, didRateApp: $didRateApp, language: $language, windowsWidth: $windowsWidth, windowsHeight: $windowsHeight, themeColor: $themeColor, selectedTab: $selectedTab, colorCollection: $colorCollection, continueWithoutLogin: $continueWithoutLogin, randomNumberForWebLogin: $randomNumberForWebLogin, enableApiTesting: $enableApiTesting, enableImageCompress: $enableImageCompress, enableJsonFormatter: $enableJsonFormatter, isGenerateForAndroid: $isGenerateForAndroid, isGenerateForIOs: $isGenerateForIOs, isGenerateForMacOs: $isGenerateForMacOs, isGenerateForWindows: $isGenerateForWindows, isGenerateForWeb: $isGenerateForWeb)';
+    return 'Settings(themeMode: $themeMode, enableAdaptiveTheme: $enableAdaptiveTheme, openAppCount: $openAppCount, didRateApp: $didRateApp, language: $language, windowsWidth: $windowsWidth, windowsHeight: $windowsHeight, themeColor: $themeColor, selectedTab: $selectedTab, colorCollection: $colorCollection, continueWithoutLogin: $continueWithoutLogin, randomNumberForWebLogin: $randomNumberForWebLogin, enableApiTesting: $enableApiTesting, enableImageCompress: $enableImageCompress, enableJsonFormatter: $enableJsonFormatter, isGenerateForAndroid: $isGenerateForAndroid, isGenerateForIOs: $isGenerateForIOs, isGenerateForMacOs: $isGenerateForMacOs, isGenerateForWindows: $isGenerateForWindows, isGenerateForWeb: $isGenerateForWeb, currentGenerateIconForProjectPath: $currentGenerateIconForProjectPath)';
   }
 
   @override
@@ -510,7 +529,11 @@ class _$SettingImpl implements _Setting {
             (identical(other.isGenerateForWindows, isGenerateForWindows) ||
                 other.isGenerateForWindows == isGenerateForWindows) &&
             (identical(other.isGenerateForWeb, isGenerateForWeb) ||
-                other.isGenerateForWeb == isGenerateForWeb));
+                other.isGenerateForWeb == isGenerateForWeb) &&
+            (identical(other.currentGenerateIconForProjectPath,
+                    currentGenerateIconForProjectPath) ||
+                other.currentGenerateIconForProjectPath ==
+                    currentGenerateIconForProjectPath));
   }
 
   @override
@@ -535,7 +558,8 @@ class _$SettingImpl implements _Setting {
         isGenerateForIOs,
         isGenerateForMacOs,
         isGenerateForWindows,
-        isGenerateForWeb
+        isGenerateForWeb,
+        currentGenerateIconForProjectPath
       ]);
 
   /// Create a copy of Settings
@@ -568,7 +592,8 @@ abstract class _Setting implements Settings {
       required final bool isGenerateForIOs,
       required final bool isGenerateForMacOs,
       required final bool isGenerateForWindows,
-      required final bool isGenerateForWeb}) = _$SettingImpl;
+      required final bool isGenerateForWeb,
+      required final String currentGenerateIconForProjectPath}) = _$SettingImpl;
 
   /// Save current theme of this app in this param, it holds string value of [ThemeMode] with value:
   /// ThemeMode.system, ThemeMode.dark, ThemeMode.light
@@ -636,6 +661,8 @@ abstract class _Setting implements Settings {
   bool get isGenerateForWindows;
   @override
   bool get isGenerateForWeb;
+  @override
+  String get currentGenerateIconForProjectPath;
 
   /// Create a copy of Settings
   /// with the given fields replaced by the non-null parameter values.
