@@ -13,9 +13,9 @@
     <img alt="GitHub release" src="https://img.shields.io/github/release/tranhuudang/flutility.svg">
   </a>
 </p>
-Your All-in-One Developer & Designer Toolkit
+Helpful toolkit for Flutter Developer
 
-Flutility is a comprehensive desktop application tailored for developers, designers, and content creators. 
+Flutility is a comprehensive desktop application tailored for Flutter developers. 
 This versatile tool brings together essential utilities in a single platform, streamlining your workflow and saving you valuable time. 
 Whether you need to preview fonts, pick colors, format JSON, test APIs, or compress images, Flutility has you covered with a clean and intuitive interface.
 
@@ -32,7 +32,7 @@ Get Flutility on your preferred platform:
 
 ---
 
-## Join the Community 🌟
+## Join the Community
 
 Flutility is **open source**, and we’d love for you to be part of our journey! Whether you’re a developer, designer, or just passionate about Flutter, your contributions can help make this toolkit even better.
 
@@ -42,7 +42,7 @@ Flutility is **open source**, and we’d love for you to be part of our journey!
 
 ---
 
-## Support the Development 💖
+## Support the Development
 
 Building anFlutter Toolkit takes time, effort, and resources. If you find this app helpful, consider supporting its development by donating. Your contributions will help us continue improving the toolkit and adding new features.
 
@@ -89,7 +89,7 @@ After following these steps, macOS will allow this app to open without any furth
 
 ---
 
-## Feedback and Suggestions 💬
+## Feedback and Suggestions
 
 We’d love to hear from you! If you have any feedback, suggestions, or issues, please feel free to reach out. Your input helps us improve Flutility and make it even better for developers like you.
 
