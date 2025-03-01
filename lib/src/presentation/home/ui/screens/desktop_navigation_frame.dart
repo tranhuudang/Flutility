@@ -83,7 +83,7 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Image.asset(
-                          'assets/images/app-icon.png',
+                          'assets/images/app_icon.png',
                         ),
                       )),
                   const Text(DefaultSettings.appName),
