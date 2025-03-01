@@ -1,4 +1,4 @@
-import 'package:flutility/src/app/app.dart';
+import 'package:dak_solutions_common/dak_solutions_common.dart';
 import 'package:flutility/src/presentation/presentation.dart';
 
 class HomeSection extends StatelessWidget {

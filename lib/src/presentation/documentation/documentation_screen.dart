@@ -1,3 +1,4 @@
+import 'package:dak_solutions_common/dak_solutions_common.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutility/src/app/app.dart';
 import 'package:flutility/src/presentation/home/ui/screens/desktop_home_screen.dart';

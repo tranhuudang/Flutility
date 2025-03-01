@@ -1,7 +1,7 @@
+import 'package:dak_solutions_common/dak_solutions_common.dart';
 import 'package:flutility/src/presentation/presentation.dart';
 import 'package:flutter/services.dart';
 
-import '../app.dart';
 
 ThemeData darkTheme({required ColorScheme colorScheme}) {
   return ThemeData(

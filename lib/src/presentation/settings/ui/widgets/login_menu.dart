@@ -1,3 +1,4 @@
+import 'package:dak_solutions_common/dak_solutions_common.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';

@@ -1,3 +1,4 @@
+import 'package:dak_solutions_common/dak_solutions_common.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';

@@ -1,3 +1,4 @@
+import 'package:dak_solutions_common/dak_solutions_common.dart';
 import 'package:flutility/src/app/app.dart';
 import 'package:upgrader/upgrader.dart';
 

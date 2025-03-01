@@ -1,9 +1,8 @@
+import 'package:dak_solutions_common/dak_solutions_common.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutility/src/app/app.dart';
 import 'package:flutility/src/presentation/donation/widgets/paypal_donation_widget.dart';
-
-import '../shared/ui/widgets/divider_with_text.dart';
 
 class DonationScreen extends StatefulWidget {
   const DonationScreen({super.key});

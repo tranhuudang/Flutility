@@ -1,3 +1,4 @@
+import 'package:dak_solutions_common/dak_solutions_common.dart';
 import 'package:flutility/src/app/app.dart';
 import 'package:flutility/src/app/router/route_configurations_desktop.dart';
 import 'package:flutility/src/presentation/presentation.dart';

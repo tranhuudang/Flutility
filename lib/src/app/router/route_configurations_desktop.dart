@@ -28,7 +28,8 @@ final _shellNavigatorIconGeneratorKey =
 final _shellNavigatorApiKey =
     GlobalKey<NavigatorState>(debugLabel: 'Vocabulary');
 final _shellNavigatorNoteTakingKey =
-    GlobalKey<NavigatorState>(debugLabel: 'noteTaking');final _shellNavigatorDonationKey =
+    GlobalKey<NavigatorState>(debugLabel: 'noteTaking');
+final _shellNavigatorDonationKey =
     GlobalKey<NavigatorState>(debugLabel: 'donation');
 final _shellNavigatorOthersKey =
     GlobalKey<NavigatorState>(debugLabel: 'Others');
@@ -335,13 +336,14 @@ GoRouter routerConfigDesktop = GoRouter(
               pageBuilder: (context, state) {
                 return NoTransitionPage(
                   child: I18n(
-                    child: const NoteEditorScreen(),
+                    child: const DevNoteScreen(),
                   ),
                 );
               },
             ),
           ],
         ),
+
         /// 15 donation
         StatefulShellBranch(
           navigatorKey: _shellNavigatorDonationKey,

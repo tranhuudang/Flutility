@@ -1,3 +1,4 @@
+import 'package:dak_solutions_common/dak_solutions_common.dart';
 import 'package:flutility/bloc_provider_scope.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:flutility/src/app/app.dart';

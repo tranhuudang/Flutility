@@ -1,5 +1,5 @@
+import 'package:dak_solutions_common/dak_solutions_common.dart';
 import 'package:flutter/material.dart';
-import 'package:flutility/src/app/app.dart';
 
 class MapItem extends StatelessWidget {
   final String? label;
