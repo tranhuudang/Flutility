@@ -14,4 +14,11 @@ class SharedPreferencesKey {
   static String get randomNumberForWebLogin => 'randomNumberForWebLogin';
   static String get colorCollection => 'colorCollection';
   static String get didRateApp => 'didRateApp';
+  static String get isGenerateForAndroid => 'isGenerateForAndroid';
+  static String get isGenerateForIOs => 'isGenerateForIOs';
+  static String get isGenerateForMacOs => 'isGenerateForMacOs';
+  static String get isGenerateForWindows => 'isGenerateForWindows';
+  static String get isGenerateForWeb => 'isGenerateForWeb';
+
+
 }

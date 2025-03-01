@@ -24,5 +24,10 @@ class DefaultSettings {
     enableJsonFormatter: false,
     randomNumberForWebLogin: 0,
     colorCollection: '[{"color": 4278190080, "label": "Default Black"}]',
+    isGenerateForAndroid: true,
+    isGenerateForIOs: true,
+    isGenerateForMacOs: true,
+    isGenerateForWindows: true,
+    isGenerateForWeb: true,
   );
 }

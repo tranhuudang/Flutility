@@ -56,6 +56,13 @@ mixin _$Settings {
   bool get enableImageCompress => throw _privateConstructorUsedError;
   bool get enableJsonFormatter => throw _privateConstructorUsedError;
 
+  /// Icon Generator
+  bool get isGenerateForAndroid => throw _privateConstructorUsedError;
+  bool get isGenerateForIOs => throw _privateConstructorUsedError;
+  bool get isGenerateForMacOs => throw _privateConstructorUsedError;
+  bool get isGenerateForWindows => throw _privateConstructorUsedError;
+  bool get isGenerateForWeb => throw _privateConstructorUsedError;
+
   /// Create a copy of Settings
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -83,7 +90,12 @@ abstract class $SettingsCopyWith<$Res> {
       int randomNumberForWebLogin,
       bool enableApiTesting,
       bool enableImageCompress,
-      bool enableJsonFormatter});
+      bool enableJsonFormatter,
+      bool isGenerateForAndroid,
+      bool isGenerateForIOs,
+      bool isGenerateForMacOs,
+      bool isGenerateForWindows,
+      bool isGenerateForWeb});
 }
 
 /// @nodoc
@@ -116,6 +128,11 @@ class _$SettingsCopyWithImpl<$Res, $Val extends Settings>
     Object? enableApiTesting = null,
     Object? enableImageCompress = null,
     Object? enableJsonFormatter = null,
+    Object? isGenerateForAndroid = null,
+    Object? isGenerateForIOs = null,
+    Object? isGenerateForMacOs = null,
+    Object? isGenerateForWindows = null,
+    Object? isGenerateForWeb = null,
   }) {
     return _then(_value.copyWith(
       themeMode: null == themeMode
@@ -178,6 +195,26 @@ class _$SettingsCopyWithImpl<$Res, $Val extends Settings>
           ? _value.enableJsonFormatter
           : enableJsonFormatter // ignore: cast_nullable_to_non_nullable
               as bool,
+      isGenerateForAndroid: null == isGenerateForAndroid
+          ? _value.isGenerateForAndroid
+          : isGenerateForAndroid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerateForIOs: null == isGenerateForIOs
+          ? _value.isGenerateForIOs
+          : isGenerateForIOs // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerateForMacOs: null == isGenerateForMacOs
+          ? _value.isGenerateForMacOs
+          : isGenerateForMacOs // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerateForWindows: null == isGenerateForWindows
+          ? _value.isGenerateForWindows
+          : isGenerateForWindows // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerateForWeb: null == isGenerateForWeb
+          ? _value.isGenerateForWeb
+          : isGenerateForWeb // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -204,7 +241,12 @@ abstract class _$$SettingImplCopyWith<$Res> implements $SettingsCopyWith<$Res> {
       int randomNumberForWebLogin,
       bool enableApiTesting,
       bool enableImageCompress,
-      bool enableJsonFormatter});
+      bool enableJsonFormatter,
+      bool isGenerateForAndroid,
+      bool isGenerateForIOs,
+      bool isGenerateForMacOs,
+      bool isGenerateForWindows,
+      bool isGenerateForWeb});
 }
 
 /// @nodoc
@@ -235,6 +277,11 @@ class __$$SettingImplCopyWithImpl<$Res>
     Object? enableApiTesting = null,
     Object? enableImageCompress = null,
     Object? enableJsonFormatter = null,
+    Object? isGenerateForAndroid = null,
+    Object? isGenerateForIOs = null,
+    Object? isGenerateForMacOs = null,
+    Object? isGenerateForWindows = null,
+    Object? isGenerateForWeb = null,
   }) {
     return _then(_$SettingImpl(
       themeMode: null == themeMode
@@ -297,6 +344,26 @@ class __$$SettingImplCopyWithImpl<$Res>
           ? _value.enableJsonFormatter
           : enableJsonFormatter // ignore: cast_nullable_to_non_nullable
               as bool,
+      isGenerateForAndroid: null == isGenerateForAndroid
+          ? _value.isGenerateForAndroid
+          : isGenerateForAndroid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerateForIOs: null == isGenerateForIOs
+          ? _value.isGenerateForIOs
+          : isGenerateForIOs // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerateForMacOs: null == isGenerateForMacOs
+          ? _value.isGenerateForMacOs
+          : isGenerateForMacOs // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerateForWindows: null == isGenerateForWindows
+          ? _value.isGenerateForWindows
+          : isGenerateForWindows // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerateForWeb: null == isGenerateForWeb
+          ? _value.isGenerateForWeb
+          : isGenerateForWeb // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -319,7 +386,12 @@ class _$SettingImpl implements _Setting {
       required this.randomNumberForWebLogin,
       required this.enableApiTesting,
       required this.enableImageCompress,
-      required this.enableJsonFormatter});
+      required this.enableJsonFormatter,
+      required this.isGenerateForAndroid,
+      required this.isGenerateForIOs,
+      required this.isGenerateForMacOs,
+      required this.isGenerateForWindows,
+      required this.isGenerateForWeb});
 
   /// Save current theme of this app in this param, it holds string value of [ThemeMode] with value:
   /// ThemeMode.system, ThemeMode.dark, ThemeMode.light
@@ -376,9 +448,21 @@ class _$SettingImpl implements _Setting {
   @override
   final bool enableJsonFormatter;
 
+  /// Icon Generator
+  @override
+  final bool isGenerateForAndroid;
+  @override
+  final bool isGenerateForIOs;
+  @override
+  final bool isGenerateForMacOs;
+  @override
+  final bool isGenerateForWindows;
+  @override
+  final bool isGenerateForWeb;
+
   @override
   String toString() {
-    return 'Settings(themeMode: $themeMode, enableAdaptiveTheme: $enableAdaptiveTheme, openAppCount: $openAppCount, didRateApp: $didRateApp, language: $language, windowsWidth: $windowsWidth, windowsHeight: $windowsHeight, themeColor: $themeColor, selectedTab: $selectedTab, colorCollection: $colorCollection, continueWithoutLogin: $continueWithoutLogin, randomNumberForWebLogin: $randomNumberForWebLogin, enableApiTesting: $enableApiTesting, enableImageCompress: $enableImageCompress, enableJsonFormatter: $enableJsonFormatter)';
+    return 'Settings(themeMode: $themeMode, enableAdaptiveTheme: $enableAdaptiveTheme, openAppCount: $openAppCount, didRateApp: $didRateApp, language: $language, windowsWidth: $windowsWidth, windowsHeight: $windowsHeight, themeColor: $themeColor, selectedTab: $selectedTab, colorCollection: $colorCollection, continueWithoutLogin: $continueWithoutLogin, randomNumberForWebLogin: $randomNumberForWebLogin, enableApiTesting: $enableApiTesting, enableImageCompress: $enableImageCompress, enableJsonFormatter: $enableJsonFormatter, isGenerateForAndroid: $isGenerateForAndroid, isGenerateForIOs: $isGenerateForIOs, isGenerateForMacOs: $isGenerateForMacOs, isGenerateForWindows: $isGenerateForWindows, isGenerateForWeb: $isGenerateForWeb)';
   }
 
   @override
@@ -416,27 +500,43 @@ class _$SettingImpl implements _Setting {
             (identical(other.enableImageCompress, enableImageCompress) ||
                 other.enableImageCompress == enableImageCompress) &&
             (identical(other.enableJsonFormatter, enableJsonFormatter) ||
-                other.enableJsonFormatter == enableJsonFormatter));
+                other.enableJsonFormatter == enableJsonFormatter) &&
+            (identical(other.isGenerateForAndroid, isGenerateForAndroid) ||
+                other.isGenerateForAndroid == isGenerateForAndroid) &&
+            (identical(other.isGenerateForIOs, isGenerateForIOs) ||
+                other.isGenerateForIOs == isGenerateForIOs) &&
+            (identical(other.isGenerateForMacOs, isGenerateForMacOs) ||
+                other.isGenerateForMacOs == isGenerateForMacOs) &&
+            (identical(other.isGenerateForWindows, isGenerateForWindows) ||
+                other.isGenerateForWindows == isGenerateForWindows) &&
+            (identical(other.isGenerateForWeb, isGenerateForWeb) ||
+                other.isGenerateForWeb == isGenerateForWeb));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      themeMode,
-      enableAdaptiveTheme,
-      openAppCount,
-      didRateApp,
-      language,
-      windowsWidth,
-      windowsHeight,
-      themeColor,
-      selectedTab,
-      colorCollection,
-      continueWithoutLogin,
-      randomNumberForWebLogin,
-      enableApiTesting,
-      enableImageCompress,
-      enableJsonFormatter);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        themeMode,
+        enableAdaptiveTheme,
+        openAppCount,
+        didRateApp,
+        language,
+        windowsWidth,
+        windowsHeight,
+        themeColor,
+        selectedTab,
+        colorCollection,
+        continueWithoutLogin,
+        randomNumberForWebLogin,
+        enableApiTesting,
+        enableImageCompress,
+        enableJsonFormatter,
+        isGenerateForAndroid,
+        isGenerateForIOs,
+        isGenerateForMacOs,
+        isGenerateForWindows,
+        isGenerateForWeb
+      ]);
 
   /// Create a copy of Settings
   /// with the given fields replaced by the non-null parameter values.
@@ -463,7 +563,12 @@ abstract class _Setting implements Settings {
       required final int randomNumberForWebLogin,
       required final bool enableApiTesting,
       required final bool enableImageCompress,
-      required final bool enableJsonFormatter}) = _$SettingImpl;
+      required final bool enableJsonFormatter,
+      required final bool isGenerateForAndroid,
+      required final bool isGenerateForIOs,
+      required final bool isGenerateForMacOs,
+      required final bool isGenerateForWindows,
+      required final bool isGenerateForWeb}) = _$SettingImpl;
 
   /// Save current theme of this app in this param, it holds string value of [ThemeMode] with value:
   /// ThemeMode.system, ThemeMode.dark, ThemeMode.light
@@ -519,6 +624,18 @@ abstract class _Setting implements Settings {
   bool get enableImageCompress;
   @override
   bool get enableJsonFormatter;
+
+  /// Icon Generator
+  @override
+  bool get isGenerateForAndroid;
+  @override
+  bool get isGenerateForIOs;
+  @override
+  bool get isGenerateForMacOs;
+  @override
+  bool get isGenerateForWindows;
+  @override
+  bool get isGenerateForWeb;
 
   /// Create a copy of Settings
   /// with the given fields replaced by the non-null parameter values.

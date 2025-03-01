@@ -22,6 +22,23 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
   bool _isGenerating = false;
   final _imagePicker = ImagePicker();
   final _scrollController = ScrollController();
+  // Generate for platforms
+  late bool _generateAndroid;
+  late bool _generateIos;
+  late bool _generateMacos;
+  late bool _generateWindows;
+  late bool _generateWeb;
+
+  @override
+  void initState() {
+    super.initState();
+    final settings = Properties.instance.settings;
+    _generateAndroid = settings.isGenerateForAndroid;
+    _generateIos = settings.isGenerateForIOs;
+    _generateMacos = settings.isGenerateForMacOs;
+    _generateWindows = settings.isGenerateForWindows;
+    _generateWeb = settings.isGenerateForWeb;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +49,7 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
         actions: [
           IconButton(
             icon: const Icon(FluentIcons.question_circle_28_regular),
-            onPressed: (){
+            onPressed: () {
               _scrollController.animateTo(
                 _scrollController.position.maxScrollExtent,
                 duration: const Duration(milliseconds: 500),
@@ -44,6 +61,7 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
         ],
       ),
       body: ListView(
+        shrinkWrap: true,
         controller: _scrollController,
         padding: const EdgeInsets.only(bottom: 16, right: 16, left: 16),
         children: [
@@ -144,6 +162,73 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
             style: TextStyle(fontSize: 14, color: Colors.grey[600]),
           ),
           const SizedBox(height: 16),
+          DottedBorder(
+            dashPattern: const [4, 4],
+            borderType: BorderType.RRect,
+            strokeWidth: 1,
+            radius: const Radius.circular(5),
+            color: context.theme.dividerColor,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // Generate for Android
+                SwitchListTile(
+                  title: const Text('Android'),
+                  value: _generateAndroid,
+                  onChanged: (value) {
+                    setState(() {
+                      _generateAndroid = value;
+                    });
+                  },
+                ),
+
+                // Generate for iOS
+                SwitchListTile(
+                  title: const Text('iOS'),
+                  value: _generateIos,
+                  onChanged: (value) {
+                    setState(() {
+                      _generateIos = value;
+                    });
+                  },
+                ),
+
+                // Generate for macOS
+                SwitchListTile(
+                  title: const Text('macOS'),
+                  value: _generateMacos,
+                  onChanged: (value) {
+                    setState(() {
+                      _generateMacos = value;
+                    });
+                  },
+                ),
+
+                // Generate for Windows
+                SwitchListTile(
+                  title: const Text('Windows'),
+                  value: _generateWindows,
+                  onChanged: (value) {
+                    setState(() {
+                      _generateWindows = value;
+                    });
+                  },
+                ),
+
+                // Generate for Web
+                SwitchListTile(
+                  title: const Text('Web'),
+                  value: _generateWeb,
+                  onChanged: (value) {
+                    setState(() {
+                      _generateWeb = value;
+                    });
+                  },
+                ),
+              ],
+            ),
+          ),
+          16.height,
           Center(
             child: ElevatedButton(
               onPressed: (_selectedImage != null &&
@@ -247,6 +332,14 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
       _isGenerating = true;
     });
 
+    // Save new settings
+    Properties.instance.saveSettings(Properties.instance.settings.copyWith(
+        isGenerateForAndroid: _generateAndroid,
+        isGenerateForIOs: _generateIos,
+        isGenerateForMacOs: _generateMacos,
+        isGenerateForWeb: _generateWeb,
+        isGenerateForWindows: _generateWindows));
+
     try {
       if (_selectedImage == null || _projectPath == null) return;
 
@@ -256,11 +349,11 @@ class _AppIconGeneratorState extends State<AppIconGenerator> {
       }
 
       // Generate icons for each platform
-      await _generateAndroidIcons(image);
-      await _generateIosIcons(image);
-      await _generateMacosIcons(image);
-      await _generateWindowsIcons(image);
-      await _generateWebIcons(image);
+      if (_generateAndroid) await _generateAndroidIcons(image);
+      if (_generateIos) await _generateIosIcons(image);
+      if (_generateMacos) await _generateMacosIcons(image);
+      if (_generateWindows) await _generateWindowsIcons(image);
+      if (_generateWeb) await _generateWebIcons(image);
 
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Icons generated successfully!')),

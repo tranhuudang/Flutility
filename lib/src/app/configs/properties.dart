@@ -47,8 +47,20 @@ class Properties {
         newSetting.enableImageCompress);
     await prefs.setBool(
         SharedPreferencesKey.enableApiTesting, newSetting.enableApiTesting);
+    await prefs.setBool(SharedPreferencesKey.didRateApp, newSetting.didRateApp);
+
+// Icon Generator
+    await prefs.setBool(SharedPreferencesKey.isGenerateForAndroid,
+        newSetting.isGenerateForAndroid);
     await prefs.setBool(
-        SharedPreferencesKey.didRateApp, newSetting.didRateApp);
+        SharedPreferencesKey.isGenerateForIOs, newSetting.isGenerateForIOs);
+    await prefs.setBool(
+        SharedPreferencesKey.isGenerateForMacOs, newSetting.isGenerateForMacOs);
+    await prefs.setBool(SharedPreferencesKey.isGenerateForWindows,
+        newSetting.isGenerateForWindows);
+    await prefs.setBool(
+        SharedPreferencesKey.isGenerateForWeb, newSetting.isGenerateForWeb);
+
     await prefs.setString(
         SharedPreferencesKey.colorCollection, newSetting.colorCollection);
     DebugLog.info('Setting saved');
@@ -82,8 +94,7 @@ class Properties {
       enableJsonFormatter:
           await prefs.getBool(SharedPreferencesKey.enableJsonFormatter) ??
               settings.enableJsonFormatter,
-      didRateApp:
-      await prefs.getBool(SharedPreferencesKey.didRateApp) ??
+      didRateApp: await prefs.getBool(SharedPreferencesKey.didRateApp) ??
           settings.didRateApp,
       enableImageCompress:
           await prefs.getBool(SharedPreferencesKey.enableImageCompress) ??
@@ -95,8 +106,25 @@ class Properties {
           await prefs.getInt(SharedPreferencesKey.randomNumberForWebLogin) ??
               settings.randomNumberForWebLogin,
       colorCollection:
-      await prefs.getString(SharedPreferencesKey.colorCollection) ??
-          settings.colorCollection,
+          await prefs.getString(SharedPreferencesKey.colorCollection) ??
+              settings.colorCollection,
+
+      // Icon Generator
+      isGenerateForAndroid:
+          await prefs.getBool(SharedPreferencesKey.isGenerateForAndroid) ??
+              settings.isGenerateForAndroid,
+      isGenerateForIOs:
+          await prefs.getBool(SharedPreferencesKey.isGenerateForIOs) ??
+              settings.isGenerateForIOs,
+      isGenerateForMacOs:
+          await prefs.getBool(SharedPreferencesKey.isGenerateForMacOs) ??
+              settings.isGenerateForMacOs,
+      isGenerateForWindows:
+          await prefs.getBool(SharedPreferencesKey.isGenerateForWindows) ??
+              settings.isGenerateForWindows,
+      isGenerateForWeb:
+          await prefs.getBool(SharedPreferencesKey.isGenerateForWeb) ??
+              settings.isGenerateForWeb,
     );
     return savedSetting;
   }

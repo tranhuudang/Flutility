@@ -43,5 +43,13 @@ class Settings with _$Settings {
     required bool enableApiTesting,
     required bool enableImageCompress,
     required bool enableJsonFormatter,
+
+    /// Icon Generator
+    required bool isGenerateForAndroid,
+    required bool isGenerateForIOs,
+    required bool isGenerateForMacOs,
+    required bool isGenerateForWindows,
+    required bool isGenerateForWeb,
+
   }) = _Setting;
 }
