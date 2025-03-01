@@ -60,7 +60,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
           Row(children: [
             Expanded(
               child: Container(
-                height: 176,
+                height: 160,
                 color: context.theme.colorScheme.surfaceContainerLow,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),

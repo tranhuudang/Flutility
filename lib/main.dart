@@ -1,5 +1,6 @@
 import 'package:dak_solutions_common/dak_solutions_common.dart';
 import 'package:flutility/bloc_provider_scope.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:flutility/src/app/app.dart';
 import 'package:flutility/src/presentation/presentation.dart';
@@ -12,7 +13,7 @@ void main() async {
   await _Initializer.start();
   runApp(
     const BlocProviderScope(
-      child: App(),
+      child: ProviderScope(child: App()),
     ),
   );
 }

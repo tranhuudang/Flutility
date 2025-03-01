@@ -282,7 +282,7 @@ GoRouter routerConfigDesktop = GoRouter(
               pageBuilder: (context, state) {
                 return NoTransitionPage(
                   child: I18n(
-                    child: const AppIconGenerator(),
+                    child: const AppIconGeneratorScreen(),
                   ),
                 );
               },
