@@ -1,32 +1,44 @@
-# Flutter Toolkit
-![cover](https://github.com/tranhuudang/FlutterToolkit/blob/master/assets/banner.png?raw=true)
+<div align="center">
+  <!-- <img src="https://github.com/allenai/OLMo/assets/8812459/774ac485-a535-4768-8f7c-db7be20f5cc3" width="300"/> -->
+<img src="https://raw.githubusercontent.com/tranhuudang/Flutility/assets/images/app_icon.png" alt="Flutility Logo" width="250"/>
+<br/>
+  <br>
+  <h1>Flutility</h1>
+</div>
+<p align="center">
+  <a href="https://github.com/tranhuudang/flutility/blob/main/LICENSE">
+    <img alt="GitHub License" src="https://img.shields.io/github/license/allenai/OLMo">
+  </a>
+  <a href="https://github.com/tranhuudang/flutility/releases">
+    <img alt="GitHub release" src="https://img.shields.io/github/release/tranhuudang/flutility.svg">
+  </a>
+</p>
+Your All-in-One Developer & Designer Toolkit
 
-## Flutter Toolkit - Your All-in-One Developer & Designer Toolkit
-
-Flutter Toolkit is a comprehensive desktop application tailored for developers, designers, and content creators. 
+Flutility is a comprehensive desktop application tailored for developers, designers, and content creators. 
 This versatile tool brings together essential utilities in a single platform, streamlining your workflow and saving you valuable time. 
-Whether you need to preview fonts, pick colors, format JSON, test APIs, or compress images, Flutter Toolkit has you covered with a clean and intuitive interface.
+Whether you need to preview fonts, pick colors, format JSON, test APIs, or compress images, Flutility has you covered with a clean and intuitive interface.
 
 ---
 
-## Download Flutter Toolkit
+## Download Flutility
 
-Get Flutter Toolkit on your preferred platform:
+Get Flutility on your preferred platform:
 
 | Platform  | Link                                                                                                                                                                                               |  
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 | **Microsoft Store** | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)](https://www.microsoft.com/store/productId/9NM16ZPQH6BZ?ocid=pdpshare) |  
-| **macOS** | [![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/tranhuudang/FlutterToolkit/releases)                                       |  
+| **macOS** | [![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/tranhuudang/Flutility/releases)                                       |  
 
 ---
 
 ## Join the Community 🌟
 
-Flutter Toolkit is **open source**, and we’d love for you to be part of our journey! Whether you’re a developer, designer, or just passionate about Flutter, your contributions can help make this toolkit even better.
+Flutility is **open source**, and we’d love for you to be part of our journey! Whether you’re a developer, designer, or just passionate about Flutter, your contributions can help make this toolkit even better.
 
-- **Contribute**: Check out our [GitHub repository](https://github.com/tranhuudang/FlutterToolkit) to get started.
+- **Contribute**: Check out our [GitHub repository](https://github.com/tranhuudang/Flutility) to get started.
 - **Suggest Features**: Have an idea? Open an issue or submit a pull request.
-- **Spread the Word**: Share Flutter Toolkit with your friends and colleagues!
+- **Spread the Word**: Share Flutility with your friends and colleagues!
 
 ---
 
@@ -79,14 +91,11 @@ After following these steps, macOS will allow this app to open without any furth
 
 ## Feedback and Suggestions 💬
 
-We’d love to hear from you! If you have any feedback, suggestions, or issues, please feel free to reach out. Your input helps us improve Flutter Toolkit and make it even better for developers like you.
+We’d love to hear from you! If you have any feedback, suggestions, or issues, please feel free to reach out. Your input helps us improve Flutility and make it even better for developers like you.
 
 ---
 
 ## License 📜
 
-Flutter Toolkits is open source and licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+Flutility is open source and licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
----
-
-Thank you for choosing Flutter Toolkits. Let’s build something amazing together! 🎉  
