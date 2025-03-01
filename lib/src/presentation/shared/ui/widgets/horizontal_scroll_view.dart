@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 
-import '../../../../core/core.dart';
+import '../../../../app/app.dart';
 
 
 class HorizontalScrollView extends StatefulWidget {

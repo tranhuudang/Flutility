@@ -1,8 +1,8 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutility/src/core/core.dart';
-import 'package:flutility/src/core/utils/json_formatter.dart'; // For JSON formatting
+import 'package:flutility/src/app/app.dart';
+import 'package:flutility/src/app/utils/json_formatter.dart'; // For JSON formatting
 
 class JsonFormatterScreen extends StatefulWidget {
   const JsonFormatterScreen({super.key});

@@ -1,7 +1,7 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutility/src/core/core.dart';
+import 'package:flutility/src/app/app.dart';
 import 'package:flutility/src/presentation/shared/ui/widgets/highlight_text.dart';
 import 'package:flutility/src/presentation/shared/ui/widgets/see_more_section.dart';
 part 'parts/flutter_commands.dart';

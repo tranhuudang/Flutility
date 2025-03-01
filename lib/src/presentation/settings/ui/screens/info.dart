@@ -2,7 +2,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutility/src/presentation/presentation.dart';
-import 'package:flutility/src/core/core.dart';
+import 'package:flutility/src/app/app.dart';
 
 class InfoView extends StatelessWidget {
   const InfoView({super.key});
@@ -36,7 +36,7 @@ class InfoView extends StatelessWidget {
         Column(
           children: [
             const Image(
-              image: AssetImage(LocalDirectory.rebookLogo256),
+              image: AssetImage(LocalDirectory.appLogo),
               height: 90,
             ),
             8.height,
@@ -63,7 +63,10 @@ class InfoView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _buildIconButton(
-                icon: const Icon(FontAwesomeIcons.linkedin, size: 20,),
+                icon: const Icon(
+                  FontAwesomeIcons.linkedin,
+                  size: 20,
+                ),
                 url: 'https://www.linkedin.com/in/dang-tran-huu/'),
             _buildIconButton(
                 icon: const Icon(

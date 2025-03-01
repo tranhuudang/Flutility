@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutility/src/core/core.dart';
+import 'package:flutility/src/app/app.dart';
 
 class JsonHandler {
 // Function to prettify the JSON

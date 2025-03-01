@@ -1,4 +1,4 @@
-import 'package:flutility/src/core/core.dart';
+import 'package:flutility/src/app/app.dart';
 import 'package:flutility/src/presentation/presentation.dart';
 import 'package:go_router/go_router.dart';
 import 'package:responsive_builder/responsive_builder.dart';

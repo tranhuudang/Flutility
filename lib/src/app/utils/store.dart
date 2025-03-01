@@ -1,4 +1,4 @@
-import 'package:flutility/src/core/core.dart';
+import 'package:flutility/src/app/app.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void goToStoreListing() async {

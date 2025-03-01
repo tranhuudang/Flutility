@@ -1,5 +1,5 @@
-import 'package:flutility/src/core/core.dart';
-import 'package:flutility/src/core/router/route_configurations_desktop.dart';
+import 'package:flutility/src/app/app.dart';
+import 'package:flutility/src/app/router/route_configurations_desktop.dart';
 import 'package:flutility/src/presentation/presentation.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

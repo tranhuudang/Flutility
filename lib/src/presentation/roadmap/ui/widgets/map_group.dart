@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutility/src/core/core.dart';
+import 'package:flutility/src/app/app.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class MapGroup extends StatelessWidget {

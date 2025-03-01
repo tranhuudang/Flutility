@@ -3,7 +3,7 @@
 import 'package:flutility/src/presentation/presentation.dart';
 import 'package:flutter/services.dart';
 
-import '../core.dart';
+import '../app.dart';
 
 const lightThemeBackgroundColor = Color(0xfffffef5);
 

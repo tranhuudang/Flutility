@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutility/src/presentation/presentation.dart';
-import 'package:flutility/src/core/core.dart';
+import 'package:flutility/src/app/app.dart';
 
 class ColorPaletteSelector {
   Color selectedColor;

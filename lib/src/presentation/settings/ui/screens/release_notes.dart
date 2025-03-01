@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutility/src/data/data.dart';
 import 'package:flutility/src/presentation/presentation.dart';
-import 'package:flutility/src/core/core.dart';
+import 'package:flutility/src/app/app.dart';
 import 'package:flutter/services.dart';
 
 class ReleaseNotesView extends StatefulWidget {

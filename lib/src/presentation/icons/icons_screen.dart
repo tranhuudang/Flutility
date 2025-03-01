@@ -1,6 +1,6 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutility/src/core/core.dart';
+import 'package:flutility/src/app/app.dart';
 import 'package:flutility/src/presentation/icons/parts/fluent_icons_screen.dart';
 
 import 'package:flutility/src/presentation/icons/parts/material_icons_screen.dart';

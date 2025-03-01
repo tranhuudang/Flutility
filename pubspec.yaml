@@ -11,6 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  dak_solutions_common:
+    path: C:/Users/tranh/StudioProjects/new/dak_solutions_common
   ## DATA HANDLE PACKAGES
   # This lib to set windows size on Windows.
   window_manager: ^0.4.2

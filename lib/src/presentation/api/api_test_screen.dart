@@ -1,9 +1,9 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutility/src/core/core.dart';
+import 'package:flutility/src/app/app.dart';
 import 'package:http/http.dart' as http;
-import '../../core/utils/json_formatter.dart';
+import '../../app/utils/json_formatter.dart';
 
 class ApiTestScreen extends StatefulWidget {
   const ApiTestScreen({super.key});

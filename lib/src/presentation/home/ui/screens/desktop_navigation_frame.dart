@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:flutility/src/core/core.dart';
+import 'package:flutility/src/app/app.dart';
 import 'package:flutility/src/presentation/home/data/utils/upgrader_config.dart';
 import 'package:flutility/src/presentation/presentation.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
@@ -9,7 +9,7 @@ import 'package:upgrader/upgrader.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:windows_status_bar/windows_status_bar_widget.dart';
 
-import '../../../../core/router/route_configurations_desktop.dart';
+import '../../../../app/router/route_configurations_desktop.dart';
 
 class DesktopNavigationFrame extends StatefulWidget {
   final StatefulNavigationShell navigationShell;
@@ -82,8 +82,7 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                       height: kToolbarHeight - 1,
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
-                        child: Image.asset(
-                          'assets/images/app_icon.png',
+                        child: Image.asset(LocalDirectory.appLogo,
                         ),
                       )),
                   const Text(DefaultSettings.appName),

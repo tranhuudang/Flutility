@@ -1,4 +1,4 @@
-import 'package:flutility/src/core/core.dart';
+import 'package:flutility/src/app/app.dart';
 import 'package:flutility/src/presentation/presentation.dart';
 
 extension BuildContextExtension on BuildContext {

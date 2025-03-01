@@ -14,7 +14,7 @@ import 'package:go_router/go_router.dart';
 import 'package:i18n_extension/i18n_extension.dart';
 import 'package:flutility/src/presentation/presentation.dart';
 import '../../presentation/icons/icons_screen.dart';
-import '../core.dart';
+import '../app.dart';
 
 // private navigators key shell
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
