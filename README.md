@@ -95,7 +95,7 @@ We’d love to hear from you! If you have any feedback, suggestions, or issues, 
 
 ---
 
-## License 📜
+## License
 
 Flutility is open source and licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
