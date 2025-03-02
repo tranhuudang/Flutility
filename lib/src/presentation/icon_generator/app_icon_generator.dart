@@ -1,6 +1,7 @@
 import 'package:dak_solutions_common/dak_solutions_common.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutility/src/presentation/icon_generator/riverpod/app_icon_generator_riverpod.dart';
+import 'package:flutility/src/presentation/icon_generator/riverpod/app_icon_generator_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutility/src/app/app.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

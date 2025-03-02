@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,231 +10,154 @@ part of 'settings.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Settings {
   /// Save current theme of this app in this param, it holds string value of [ThemeMode] with value:
   /// ThemeMode.system, ThemeMode.dark, ThemeMode.light
-  String get themeMode => throw _privateConstructorUsedError;
+  String get themeMode;
 
   /// Adaptive theme use DynamicTheme package to generate colorScheme
-  bool get enableAdaptiveTheme => throw _privateConstructorUsedError;
+  bool get enableAdaptiveTheme;
 
   /// Open app count will trigger a specific function when user use app for a period of time
-  int get openAppCount => throw _privateConstructorUsedError;
-  bool get didRateApp => throw _privateConstructorUsedError;
+  int get openAppCount;
+  bool get didRateApp;
 
   /// Language of app, those value : English, Tiếng Việt, System default will be convert
   /// to [Locale('en', 'US')] to change value of the app
-  String get language => throw _privateConstructorUsedError;
+  String get language;
 
   /// Hold windows size value
-  double get windowsWidth => throw _privateConstructorUsedError;
+  double get windowsWidth;
 
   /// Hold windows size value
-  double get windowsHeight => throw _privateConstructorUsedError;
+  double get windowsHeight;
 
   /// Hold primary color for the app, it can be generate to other colors later to
   /// create colorScheme
-  int get themeColor => throw _privateConstructorUsedError;
+  int get themeColor;
 
   /// Save selected tab path for desktop device
-  int get selectedTab => throw _privateConstructorUsedError;
+  int get selectedTab;
 
   /// Collection of saved color
-  String get colorCollection => throw _privateConstructorUsedError;
+  String get colorCollection;
 
   /// Working in login screen, it true when user decide to using the app without login
-  bool get continueWithoutLogin => throw _privateConstructorUsedError;
+  bool get continueWithoutLogin;
 
   /// A random number for web login
-  int get randomNumberForWebLogin => throw _privateConstructorUsedError;
-  bool get enableApiTesting => throw _privateConstructorUsedError;
-  bool get enableImageCompress => throw _privateConstructorUsedError;
-  bool get enableJsonFormatter => throw _privateConstructorUsedError;
+  int get randomNumberForWebLogin;
+  bool get enableApiTesting;
+  bool get enableImageCompress;
+  bool get enableJsonFormatter;
 
   /// Icon Generator
-  bool get isGenerateForAndroid => throw _privateConstructorUsedError;
-  bool get isGenerateForIOs => throw _privateConstructorUsedError;
-  bool get isGenerateForMacOs => throw _privateConstructorUsedError;
-  bool get isGenerateForWindows => throw _privateConstructorUsedError;
-  bool get isGenerateForWeb => throw _privateConstructorUsedError;
-  String get currentGenerateIconForProjectPath =>
-      throw _privateConstructorUsedError;
+  bool get isGenerateForAndroid;
+  bool get isGenerateForIOs;
+  bool get isGenerateForMacOs;
+  bool get isGenerateForWindows;
+  bool get isGenerateForWeb;
+  String get currentGenerateIconForProjectPath;
 
   /// Create a copy of Settings
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SettingsCopyWith<Settings> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SettingsCopyWith<$Res> {
-  factory $SettingsCopyWith(Settings value, $Res Function(Settings) then) =
-      _$SettingsCopyWithImpl<$Res, Settings>;
-  @useResult
-  $Res call(
-      {String themeMode,
-      bool enableAdaptiveTheme,
-      int openAppCount,
-      bool didRateApp,
-      String language,
-      double windowsWidth,
-      double windowsHeight,
-      int themeColor,
-      int selectedTab,
-      String colorCollection,
-      bool continueWithoutLogin,
-      int randomNumberForWebLogin,
-      bool enableApiTesting,
-      bool enableImageCompress,
-      bool enableJsonFormatter,
-      bool isGenerateForAndroid,
-      bool isGenerateForIOs,
-      bool isGenerateForMacOs,
-      bool isGenerateForWindows,
-      bool isGenerateForWeb,
-      String currentGenerateIconForProjectPath});
-}
-
-/// @nodoc
-class _$SettingsCopyWithImpl<$Res, $Val extends Settings>
-    implements $SettingsCopyWith<$Res> {
-  _$SettingsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Settings
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $SettingsCopyWith<Settings> get copyWith =>
+      _$SettingsCopyWithImpl<Settings>(this as Settings, _$identity);
+
   @override
-  $Res call({
-    Object? themeMode = null,
-    Object? enableAdaptiveTheme = null,
-    Object? openAppCount = null,
-    Object? didRateApp = null,
-    Object? language = null,
-    Object? windowsWidth = null,
-    Object? windowsHeight = null,
-    Object? themeColor = null,
-    Object? selectedTab = null,
-    Object? colorCollection = null,
-    Object? continueWithoutLogin = null,
-    Object? randomNumberForWebLogin = null,
-    Object? enableApiTesting = null,
-    Object? enableImageCompress = null,
-    Object? enableJsonFormatter = null,
-    Object? isGenerateForAndroid = null,
-    Object? isGenerateForIOs = null,
-    Object? isGenerateForMacOs = null,
-    Object? isGenerateForWindows = null,
-    Object? isGenerateForWeb = null,
-    Object? currentGenerateIconForProjectPath = null,
-  }) {
-    return _then(_value.copyWith(
-      themeMode: null == themeMode
-          ? _value.themeMode
-          : themeMode // ignore: cast_nullable_to_non_nullable
-              as String,
-      enableAdaptiveTheme: null == enableAdaptiveTheme
-          ? _value.enableAdaptiveTheme
-          : enableAdaptiveTheme // ignore: cast_nullable_to_non_nullable
-              as bool,
-      openAppCount: null == openAppCount
-          ? _value.openAppCount
-          : openAppCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      didRateApp: null == didRateApp
-          ? _value.didRateApp
-          : didRateApp // ignore: cast_nullable_to_non_nullable
-              as bool,
-      language: null == language
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
-              as String,
-      windowsWidth: null == windowsWidth
-          ? _value.windowsWidth
-          : windowsWidth // ignore: cast_nullable_to_non_nullable
-              as double,
-      windowsHeight: null == windowsHeight
-          ? _value.windowsHeight
-          : windowsHeight // ignore: cast_nullable_to_non_nullable
-              as double,
-      themeColor: null == themeColor
-          ? _value.themeColor
-          : themeColor // ignore: cast_nullable_to_non_nullable
-              as int,
-      selectedTab: null == selectedTab
-          ? _value.selectedTab
-          : selectedTab // ignore: cast_nullable_to_non_nullable
-              as int,
-      colorCollection: null == colorCollection
-          ? _value.colorCollection
-          : colorCollection // ignore: cast_nullable_to_non_nullable
-              as String,
-      continueWithoutLogin: null == continueWithoutLogin
-          ? _value.continueWithoutLogin
-          : continueWithoutLogin // ignore: cast_nullable_to_non_nullable
-              as bool,
-      randomNumberForWebLogin: null == randomNumberForWebLogin
-          ? _value.randomNumberForWebLogin
-          : randomNumberForWebLogin // ignore: cast_nullable_to_non_nullable
-              as int,
-      enableApiTesting: null == enableApiTesting
-          ? _value.enableApiTesting
-          : enableApiTesting // ignore: cast_nullable_to_non_nullable
-              as bool,
-      enableImageCompress: null == enableImageCompress
-          ? _value.enableImageCompress
-          : enableImageCompress // ignore: cast_nullable_to_non_nullable
-              as bool,
-      enableJsonFormatter: null == enableJsonFormatter
-          ? _value.enableJsonFormatter
-          : enableJsonFormatter // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isGenerateForAndroid: null == isGenerateForAndroid
-          ? _value.isGenerateForAndroid
-          : isGenerateForAndroid // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isGenerateForIOs: null == isGenerateForIOs
-          ? _value.isGenerateForIOs
-          : isGenerateForIOs // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isGenerateForMacOs: null == isGenerateForMacOs
-          ? _value.isGenerateForMacOs
-          : isGenerateForMacOs // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isGenerateForWindows: null == isGenerateForWindows
-          ? _value.isGenerateForWindows
-          : isGenerateForWindows // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isGenerateForWeb: null == isGenerateForWeb
-          ? _value.isGenerateForWeb
-          : isGenerateForWeb // ignore: cast_nullable_to_non_nullable
-              as bool,
-      currentGenerateIconForProjectPath: null ==
-              currentGenerateIconForProjectPath
-          ? _value.currentGenerateIconForProjectPath
-          : currentGenerateIconForProjectPath // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Settings &&
+            (identical(other.themeMode, themeMode) ||
+                other.themeMode == themeMode) &&
+            (identical(other.enableAdaptiveTheme, enableAdaptiveTheme) ||
+                other.enableAdaptiveTheme == enableAdaptiveTheme) &&
+            (identical(other.openAppCount, openAppCount) ||
+                other.openAppCount == openAppCount) &&
+            (identical(other.didRateApp, didRateApp) ||
+                other.didRateApp == didRateApp) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            (identical(other.windowsWidth, windowsWidth) ||
+                other.windowsWidth == windowsWidth) &&
+            (identical(other.windowsHeight, windowsHeight) ||
+                other.windowsHeight == windowsHeight) &&
+            (identical(other.themeColor, themeColor) ||
+                other.themeColor == themeColor) &&
+            (identical(other.selectedTab, selectedTab) ||
+                other.selectedTab == selectedTab) &&
+            (identical(other.colorCollection, colorCollection) ||
+                other.colorCollection == colorCollection) &&
+            (identical(other.continueWithoutLogin, continueWithoutLogin) ||
+                other.continueWithoutLogin == continueWithoutLogin) &&
+            (identical(
+                    other.randomNumberForWebLogin, randomNumberForWebLogin) ||
+                other.randomNumberForWebLogin == randomNumberForWebLogin) &&
+            (identical(other.enableApiTesting, enableApiTesting) ||
+                other.enableApiTesting == enableApiTesting) &&
+            (identical(other.enableImageCompress, enableImageCompress) ||
+                other.enableImageCompress == enableImageCompress) &&
+            (identical(other.enableJsonFormatter, enableJsonFormatter) ||
+                other.enableJsonFormatter == enableJsonFormatter) &&
+            (identical(other.isGenerateForAndroid, isGenerateForAndroid) ||
+                other.isGenerateForAndroid == isGenerateForAndroid) &&
+            (identical(other.isGenerateForIOs, isGenerateForIOs) ||
+                other.isGenerateForIOs == isGenerateForIOs) &&
+            (identical(other.isGenerateForMacOs, isGenerateForMacOs) ||
+                other.isGenerateForMacOs == isGenerateForMacOs) &&
+            (identical(other.isGenerateForWindows, isGenerateForWindows) ||
+                other.isGenerateForWindows == isGenerateForWindows) &&
+            (identical(other.isGenerateForWeb, isGenerateForWeb) ||
+                other.isGenerateForWeb == isGenerateForWeb) &&
+            (identical(other.currentGenerateIconForProjectPath,
+                    currentGenerateIconForProjectPath) ||
+                other.currentGenerateIconForProjectPath ==
+                    currentGenerateIconForProjectPath));
+  }
+
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        themeMode,
+        enableAdaptiveTheme,
+        openAppCount,
+        didRateApp,
+        language,
+        windowsWidth,
+        windowsHeight,
+        themeColor,
+        selectedTab,
+        colorCollection,
+        continueWithoutLogin,
+        randomNumberForWebLogin,
+        enableApiTesting,
+        enableImageCompress,
+        enableJsonFormatter,
+        isGenerateForAndroid,
+        isGenerateForIOs,
+        isGenerateForMacOs,
+        isGenerateForWindows,
+        isGenerateForWeb,
+        currentGenerateIconForProjectPath
+      ]);
+
+  @override
+  String toString() {
+    return 'Settings(themeMode: $themeMode, enableAdaptiveTheme: $enableAdaptiveTheme, openAppCount: $openAppCount, didRateApp: $didRateApp, language: $language, windowsWidth: $windowsWidth, windowsHeight: $windowsHeight, themeColor: $themeColor, selectedTab: $selectedTab, colorCollection: $colorCollection, continueWithoutLogin: $continueWithoutLogin, randomNumberForWebLogin: $randomNumberForWebLogin, enableApiTesting: $enableApiTesting, enableImageCompress: $enableImageCompress, enableJsonFormatter: $enableJsonFormatter, isGenerateForAndroid: $isGenerateForAndroid, isGenerateForIOs: $isGenerateForIOs, isGenerateForMacOs: $isGenerateForMacOs, isGenerateForWindows: $isGenerateForWindows, isGenerateForWeb: $isGenerateForWeb, currentGenerateIconForProjectPath: $currentGenerateIconForProjectPath)';
   }
 }
 
 /// @nodoc
-abstract class _$$SettingImplCopyWith<$Res> implements $SettingsCopyWith<$Res> {
-  factory _$$SettingImplCopyWith(
-          _$SettingImpl value, $Res Function(_$SettingImpl) then) =
-      __$$SettingImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $SettingsCopyWith<$Res> {
+  factory $SettingsCopyWith(Settings value, $Res Function(Settings) _then) =
+      _$SettingsCopyWithImpl;
   @useResult
   $Res call(
       {String themeMode,
@@ -260,12 +184,11 @@ abstract class _$$SettingImplCopyWith<$Res> implements $SettingsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SettingImplCopyWithImpl<$Res>
-    extends _$SettingsCopyWithImpl<$Res, _$SettingImpl>
-    implements _$$SettingImplCopyWith<$Res> {
-  __$$SettingImplCopyWithImpl(
-      _$SettingImpl _value, $Res Function(_$SettingImpl) _then)
-      : super(_value, _then);
+class _$SettingsCopyWithImpl<$Res> implements $SettingsCopyWith<$Res> {
+  _$SettingsCopyWithImpl(this._self, this._then);
+
+  final Settings _self;
+  final $Res Function(Settings) _then;
 
   /// Create a copy of Settings
   /// with the given fields replaced by the non-null parameter values.
@@ -294,90 +217,90 @@ class __$$SettingImplCopyWithImpl<$Res>
     Object? isGenerateForWeb = null,
     Object? currentGenerateIconForProjectPath = null,
   }) {
-    return _then(_$SettingImpl(
+    return _then(_self.copyWith(
       themeMode: null == themeMode
-          ? _value.themeMode
+          ? _self.themeMode
           : themeMode // ignore: cast_nullable_to_non_nullable
               as String,
       enableAdaptiveTheme: null == enableAdaptiveTheme
-          ? _value.enableAdaptiveTheme
+          ? _self.enableAdaptiveTheme
           : enableAdaptiveTheme // ignore: cast_nullable_to_non_nullable
               as bool,
       openAppCount: null == openAppCount
-          ? _value.openAppCount
+          ? _self.openAppCount
           : openAppCount // ignore: cast_nullable_to_non_nullable
               as int,
       didRateApp: null == didRateApp
-          ? _value.didRateApp
+          ? _self.didRateApp
           : didRateApp // ignore: cast_nullable_to_non_nullable
               as bool,
       language: null == language
-          ? _value.language
+          ? _self.language
           : language // ignore: cast_nullable_to_non_nullable
               as String,
       windowsWidth: null == windowsWidth
-          ? _value.windowsWidth
+          ? _self.windowsWidth
           : windowsWidth // ignore: cast_nullable_to_non_nullable
               as double,
       windowsHeight: null == windowsHeight
-          ? _value.windowsHeight
+          ? _self.windowsHeight
           : windowsHeight // ignore: cast_nullable_to_non_nullable
               as double,
       themeColor: null == themeColor
-          ? _value.themeColor
+          ? _self.themeColor
           : themeColor // ignore: cast_nullable_to_non_nullable
               as int,
       selectedTab: null == selectedTab
-          ? _value.selectedTab
+          ? _self.selectedTab
           : selectedTab // ignore: cast_nullable_to_non_nullable
               as int,
       colorCollection: null == colorCollection
-          ? _value.colorCollection
+          ? _self.colorCollection
           : colorCollection // ignore: cast_nullable_to_non_nullable
               as String,
       continueWithoutLogin: null == continueWithoutLogin
-          ? _value.continueWithoutLogin
+          ? _self.continueWithoutLogin
           : continueWithoutLogin // ignore: cast_nullable_to_non_nullable
               as bool,
       randomNumberForWebLogin: null == randomNumberForWebLogin
-          ? _value.randomNumberForWebLogin
+          ? _self.randomNumberForWebLogin
           : randomNumberForWebLogin // ignore: cast_nullable_to_non_nullable
               as int,
       enableApiTesting: null == enableApiTesting
-          ? _value.enableApiTesting
+          ? _self.enableApiTesting
           : enableApiTesting // ignore: cast_nullable_to_non_nullable
               as bool,
       enableImageCompress: null == enableImageCompress
-          ? _value.enableImageCompress
+          ? _self.enableImageCompress
           : enableImageCompress // ignore: cast_nullable_to_non_nullable
               as bool,
       enableJsonFormatter: null == enableJsonFormatter
-          ? _value.enableJsonFormatter
+          ? _self.enableJsonFormatter
           : enableJsonFormatter // ignore: cast_nullable_to_non_nullable
               as bool,
       isGenerateForAndroid: null == isGenerateForAndroid
-          ? _value.isGenerateForAndroid
+          ? _self.isGenerateForAndroid
           : isGenerateForAndroid // ignore: cast_nullable_to_non_nullable
               as bool,
       isGenerateForIOs: null == isGenerateForIOs
-          ? _value.isGenerateForIOs
+          ? _self.isGenerateForIOs
           : isGenerateForIOs // ignore: cast_nullable_to_non_nullable
               as bool,
       isGenerateForMacOs: null == isGenerateForMacOs
-          ? _value.isGenerateForMacOs
+          ? _self.isGenerateForMacOs
           : isGenerateForMacOs // ignore: cast_nullable_to_non_nullable
               as bool,
       isGenerateForWindows: null == isGenerateForWindows
-          ? _value.isGenerateForWindows
+          ? _self.isGenerateForWindows
           : isGenerateForWindows // ignore: cast_nullable_to_non_nullable
               as bool,
       isGenerateForWeb: null == isGenerateForWeb
-          ? _value.isGenerateForWeb
+          ? _self.isGenerateForWeb
           : isGenerateForWeb // ignore: cast_nullable_to_non_nullable
               as bool,
       currentGenerateIconForProjectPath: null ==
               currentGenerateIconForProjectPath
-          ? _value.currentGenerateIconForProjectPath
+          ? _self.currentGenerateIconForProjectPath
           : currentGenerateIconForProjectPath // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -386,8 +309,8 @@ class __$$SettingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SettingImpl implements _Setting {
-  const _$SettingImpl(
+class _Setting implements Settings {
+  const _Setting(
       {required this.themeMode,
       required this.enableAdaptiveTheme,
       required this.openAppCount,
@@ -479,16 +402,19 @@ class _$SettingImpl implements _Setting {
   @override
   final String currentGenerateIconForProjectPath;
 
+  /// Create a copy of Settings
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Settings(themeMode: $themeMode, enableAdaptiveTheme: $enableAdaptiveTheme, openAppCount: $openAppCount, didRateApp: $didRateApp, language: $language, windowsWidth: $windowsWidth, windowsHeight: $windowsHeight, themeColor: $themeColor, selectedTab: $selectedTab, colorCollection: $colorCollection, continueWithoutLogin: $continueWithoutLogin, randomNumberForWebLogin: $randomNumberForWebLogin, enableApiTesting: $enableApiTesting, enableImageCompress: $enableImageCompress, enableJsonFormatter: $enableJsonFormatter, isGenerateForAndroid: $isGenerateForAndroid, isGenerateForIOs: $isGenerateForIOs, isGenerateForMacOs: $isGenerateForMacOs, isGenerateForWindows: $isGenerateForWindows, isGenerateForWeb: $isGenerateForWeb, currentGenerateIconForProjectPath: $currentGenerateIconForProjectPath)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SettingCopyWith<_Setting> get copyWith =>
+      __$SettingCopyWithImpl<_Setting>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SettingImpl &&
+            other is _Setting &&
             (identical(other.themeMode, themeMode) ||
                 other.themeMode == themeMode) &&
             (identical(other.enableAdaptiveTheme, enableAdaptiveTheme) ||
@@ -562,112 +488,165 @@ class _$SettingImpl implements _Setting {
         currentGenerateIconForProjectPath
       ]);
 
+  @override
+  String toString() {
+    return 'Settings(themeMode: $themeMode, enableAdaptiveTheme: $enableAdaptiveTheme, openAppCount: $openAppCount, didRateApp: $didRateApp, language: $language, windowsWidth: $windowsWidth, windowsHeight: $windowsHeight, themeColor: $themeColor, selectedTab: $selectedTab, colorCollection: $colorCollection, continueWithoutLogin: $continueWithoutLogin, randomNumberForWebLogin: $randomNumberForWebLogin, enableApiTesting: $enableApiTesting, enableImageCompress: $enableImageCompress, enableJsonFormatter: $enableJsonFormatter, isGenerateForAndroid: $isGenerateForAndroid, isGenerateForIOs: $isGenerateForIOs, isGenerateForMacOs: $isGenerateForMacOs, isGenerateForWindows: $isGenerateForWindows, isGenerateForWeb: $isGenerateForWeb, currentGenerateIconForProjectPath: $currentGenerateIconForProjectPath)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$SettingCopyWith<$Res>
+    implements $SettingsCopyWith<$Res> {
+  factory _$SettingCopyWith(_Setting value, $Res Function(_Setting) _then) =
+      __$SettingCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String themeMode,
+      bool enableAdaptiveTheme,
+      int openAppCount,
+      bool didRateApp,
+      String language,
+      double windowsWidth,
+      double windowsHeight,
+      int themeColor,
+      int selectedTab,
+      String colorCollection,
+      bool continueWithoutLogin,
+      int randomNumberForWebLogin,
+      bool enableApiTesting,
+      bool enableImageCompress,
+      bool enableJsonFormatter,
+      bool isGenerateForAndroid,
+      bool isGenerateForIOs,
+      bool isGenerateForMacOs,
+      bool isGenerateForWindows,
+      bool isGenerateForWeb,
+      String currentGenerateIconForProjectPath});
+}
+
+/// @nodoc
+class __$SettingCopyWithImpl<$Res> implements _$SettingCopyWith<$Res> {
+  __$SettingCopyWithImpl(this._self, this._then);
+
+  final _Setting _self;
+  final $Res Function(_Setting) _then;
+
   /// Create a copy of Settings
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SettingImplCopyWith<_$SettingImpl> get copyWith =>
-      __$$SettingImplCopyWithImpl<_$SettingImpl>(this, _$identity);
+  $Res call({
+    Object? themeMode = null,
+    Object? enableAdaptiveTheme = null,
+    Object? openAppCount = null,
+    Object? didRateApp = null,
+    Object? language = null,
+    Object? windowsWidth = null,
+    Object? windowsHeight = null,
+    Object? themeColor = null,
+    Object? selectedTab = null,
+    Object? colorCollection = null,
+    Object? continueWithoutLogin = null,
+    Object? randomNumberForWebLogin = null,
+    Object? enableApiTesting = null,
+    Object? enableImageCompress = null,
+    Object? enableJsonFormatter = null,
+    Object? isGenerateForAndroid = null,
+    Object? isGenerateForIOs = null,
+    Object? isGenerateForMacOs = null,
+    Object? isGenerateForWindows = null,
+    Object? isGenerateForWeb = null,
+    Object? currentGenerateIconForProjectPath = null,
+  }) {
+    return _then(_Setting(
+      themeMode: null == themeMode
+          ? _self.themeMode
+          : themeMode // ignore: cast_nullable_to_non_nullable
+              as String,
+      enableAdaptiveTheme: null == enableAdaptiveTheme
+          ? _self.enableAdaptiveTheme
+          : enableAdaptiveTheme // ignore: cast_nullable_to_non_nullable
+              as bool,
+      openAppCount: null == openAppCount
+          ? _self.openAppCount
+          : openAppCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      didRateApp: null == didRateApp
+          ? _self.didRateApp
+          : didRateApp // ignore: cast_nullable_to_non_nullable
+              as bool,
+      language: null == language
+          ? _self.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as String,
+      windowsWidth: null == windowsWidth
+          ? _self.windowsWidth
+          : windowsWidth // ignore: cast_nullable_to_non_nullable
+              as double,
+      windowsHeight: null == windowsHeight
+          ? _self.windowsHeight
+          : windowsHeight // ignore: cast_nullable_to_non_nullable
+              as double,
+      themeColor: null == themeColor
+          ? _self.themeColor
+          : themeColor // ignore: cast_nullable_to_non_nullable
+              as int,
+      selectedTab: null == selectedTab
+          ? _self.selectedTab
+          : selectedTab // ignore: cast_nullable_to_non_nullable
+              as int,
+      colorCollection: null == colorCollection
+          ? _self.colorCollection
+          : colorCollection // ignore: cast_nullable_to_non_nullable
+              as String,
+      continueWithoutLogin: null == continueWithoutLogin
+          ? _self.continueWithoutLogin
+          : continueWithoutLogin // ignore: cast_nullable_to_non_nullable
+              as bool,
+      randomNumberForWebLogin: null == randomNumberForWebLogin
+          ? _self.randomNumberForWebLogin
+          : randomNumberForWebLogin // ignore: cast_nullable_to_non_nullable
+              as int,
+      enableApiTesting: null == enableApiTesting
+          ? _self.enableApiTesting
+          : enableApiTesting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      enableImageCompress: null == enableImageCompress
+          ? _self.enableImageCompress
+          : enableImageCompress // ignore: cast_nullable_to_non_nullable
+              as bool,
+      enableJsonFormatter: null == enableJsonFormatter
+          ? _self.enableJsonFormatter
+          : enableJsonFormatter // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerateForAndroid: null == isGenerateForAndroid
+          ? _self.isGenerateForAndroid
+          : isGenerateForAndroid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerateForIOs: null == isGenerateForIOs
+          ? _self.isGenerateForIOs
+          : isGenerateForIOs // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerateForMacOs: null == isGenerateForMacOs
+          ? _self.isGenerateForMacOs
+          : isGenerateForMacOs // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerateForWindows: null == isGenerateForWindows
+          ? _self.isGenerateForWindows
+          : isGenerateForWindows // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerateForWeb: null == isGenerateForWeb
+          ? _self.isGenerateForWeb
+          : isGenerateForWeb // ignore: cast_nullable_to_non_nullable
+              as bool,
+      currentGenerateIconForProjectPath: null ==
+              currentGenerateIconForProjectPath
+          ? _self.currentGenerateIconForProjectPath
+          : currentGenerateIconForProjectPath // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
-abstract class _Setting implements Settings {
-  const factory _Setting(
-      {required final String themeMode,
-      required final bool enableAdaptiveTheme,
-      required final int openAppCount,
-      required final bool didRateApp,
-      required final String language,
-      required final double windowsWidth,
-      required final double windowsHeight,
-      required final int themeColor,
-      required final int selectedTab,
-      required final String colorCollection,
-      required final bool continueWithoutLogin,
-      required final int randomNumberForWebLogin,
-      required final bool enableApiTesting,
-      required final bool enableImageCompress,
-      required final bool enableJsonFormatter,
-      required final bool isGenerateForAndroid,
-      required final bool isGenerateForIOs,
-      required final bool isGenerateForMacOs,
-      required final bool isGenerateForWindows,
-      required final bool isGenerateForWeb,
-      required final String currentGenerateIconForProjectPath}) = _$SettingImpl;
-
-  /// Save current theme of this app in this param, it holds string value of [ThemeMode] with value:
-  /// ThemeMode.system, ThemeMode.dark, ThemeMode.light
-  @override
-  String get themeMode;
-
-  /// Adaptive theme use DynamicTheme package to generate colorScheme
-  @override
-  bool get enableAdaptiveTheme;
-
-  /// Open app count will trigger a specific function when user use app for a period of time
-  @override
-  int get openAppCount;
-  @override
-  bool get didRateApp;
-
-  /// Language of app, those value : English, Tiếng Việt, System default will be convert
-  /// to [Locale('en', 'US')] to change value of the app
-  @override
-  String get language;
-
-  /// Hold windows size value
-  @override
-  double get windowsWidth;
-
-  /// Hold windows size value
-  @override
-  double get windowsHeight;
-
-  /// Hold primary color for the app, it can be generate to other colors later to
-  /// create colorScheme
-  @override
-  int get themeColor;
-
-  /// Save selected tab path for desktop device
-  @override
-  int get selectedTab;
-
-  /// Collection of saved color
-  @override
-  String get colorCollection;
-
-  /// Working in login screen, it true when user decide to using the app without login
-  @override
-  bool get continueWithoutLogin;
-
-  /// A random number for web login
-  @override
-  int get randomNumberForWebLogin;
-  @override
-  bool get enableApiTesting;
-  @override
-  bool get enableImageCompress;
-  @override
-  bool get enableJsonFormatter;
-
-  /// Icon Generator
-  @override
-  bool get isGenerateForAndroid;
-  @override
-  bool get isGenerateForIOs;
-  @override
-  bool get isGenerateForMacOs;
-  @override
-  bool get isGenerateForWindows;
-  @override
-  bool get isGenerateForWeb;
-  @override
-  String get currentGenerateIconForProjectPath;
-
-  /// Create a copy of Settings
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SettingImplCopyWith<_$SettingImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

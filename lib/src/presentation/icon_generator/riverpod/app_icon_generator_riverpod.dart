@@ -2,48 +2,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutility/src/app/app.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image/image.dart' as img;
 import 'package:path/path.dart' as p;
 import 'package:image_picker/image_picker.dart';
-part 'app_icon_generator_riverpod.freezed.dart';
+import 'app_icon_generator_state.dart';
 
 final appIconGeneratorProvider =
     StateNotifierProvider<AppIconGenerator, AppIconGeneratorState>((ref) {
   return AppIconGenerator();
 });
 
-@freezed
-class AppIconGeneratorState with _$AppIconGeneratorState {
-  const factory AppIconGeneratorState({
-    required bool isGenerating,
-    required bool isGenerateSuccess,
-    required bool isGenerateError,
-    required bool generateForAndroid,
-    required bool generateForIos,
-    required bool generateForMacos,
-    required bool generateForWeb,
-    required bool generateForWindows,
-    required String projectPath,
-    required File? selectedImage,
-  }) = _AppIconGeneratorState;
-
-  factory AppIconGeneratorState.initial() {
-    final settings = Properties.instance.settings;
-    return AppIconGeneratorState(
-      isGenerating: false,
-      isGenerateSuccess: false,
-      isGenerateError: false,
-      generateForAndroid: settings.isGenerateForAndroid,
-      generateForIos: settings.isGenerateForIOs,
-      generateForMacos: settings.isGenerateForMacOs,
-      generateForWeb: settings.isGenerateForWeb,
-      generateForWindows: settings.isGenerateForWindows,
-      projectPath: settings.currentGenerateIconForProjectPath,
-      selectedImage: null,
-    );
-  }
-}
 
 class AppIconGenerator extends StateNotifier<AppIconGeneratorState> {
   AppIconGenerator() : super(AppIconGeneratorState.initial()) {

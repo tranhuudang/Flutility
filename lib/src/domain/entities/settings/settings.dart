@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'settings.freezed.dart';
 
 @freezed
-class Settings with _$Settings {
+abstract class Settings with _$Settings {
   const factory Settings({
     /// Save current theme of this app in this param, it holds string value of [ThemeMode] with value:
     /// ThemeMode.system, ThemeMode.dark, ThemeMode.light

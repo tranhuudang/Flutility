@@ -12,8 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
   dak_solutions_common:
-    # path: C:/Users/tranh/StudioProjects/new/dak_solutions_common
-    path: /Volumes/Macintosh HD/Users/dak/Documents/Github/dak_solutions_common
+    path: C:/Users/tranh/StudioProjects/new/dak_solutions_common
+    # path: /Volumes/Macintosh HD/Users/dak/Documents/Github/dak_solutions_common
   ## DATA HANDLE PACKAGES
   # This lib to set windows size on Windows.
   window_manager: ^0.4.2
@@ -37,8 +37,6 @@ dependencies:
   # The path package provides common operations for manipulating paths: joining, splitting, normalizing, etc
   path: ^1.9.0
   image_picker: ^1.1.2
-  freezed_annotation: ^2.4.4
-  json_annotation: ^4.9.0
 
   ### UI PACKAGES
   responsive_builder: ^0.7.0
@@ -74,13 +72,19 @@ dependencies:
   flutter_colorpicker: ^1.1.0
   flutter_svg: ^2.0.17
   flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+  freezed_annotation: ^3.0.0
+  json_annotation: ^4.9.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.1
-  build_runner: ^2.4.8
-  freezed: any
-  json_serializable: ^6.8.0
+  riverpod_generator: ^2.6.5
+  custom_lint: ^0.7.5
+  riverpod_lint: ^2.6.5
+  build_runner: ^2.4.15
+  freezed: ^3.0.2
+  json_serializable: ^6.9.4
 
 # The following section is specific to Flutter packages.
 flutter:
