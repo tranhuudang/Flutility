@@ -83,11 +83,14 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                       height: kToolbarHeight - 1,
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
-                        child: Image.asset(LocalDirectory.appLogo,
+                        child: Image.asset(
+                          LocalDirectory.appLogo,
                         ),
                       )),
                   const Text(DefaultSettings.appName),
                   const Spacer(),
+                  const DarkModeButton(),
+                  8.width,
                   IconButton(
                       onPressed: () {
                         goBranch(2); // 2 is setting in branch root
@@ -139,16 +142,16 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                 child: Row(
                   children: [
                     if (isMacOS)
-                    IconButton(
-                      onPressed: () {
-                        goBranch(2); // 2 is setting in branch root
-                      },
-                      icon: Icon(
-                        FluentIcons.settings_16_regular,
-                        size: 18,
-                        color: context.theme.colorScheme.onSurface,
+                      IconButton(
+                        onPressed: () {
+                          goBranch(2); // 2 is setting in branch root
+                        },
+                        icon: Icon(
+                          FluentIcons.settings_16_regular,
+                          size: 18,
+                          color: context.theme.colorScheme.onSurface,
+                        ),
                       ),
-                    ),
                     TextButton.icon(
                         onPressed: () {
                           goToBugReport();

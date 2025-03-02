@@ -56,13 +56,15 @@ class _DarkModeButtonState extends State<DarkModeButton> {
             onPressed: () async {
               if (snapshot.data == ThemeMode.light) {
                 _streamController.sink.add(ThemeMode.dark);
-                await Future.delayed(const Duration(milliseconds: 500)).then((_) {
+                await Future.delayed(const Duration(milliseconds: 500))
+                    .then((_) {
                   settingBloc
                       .add(ChangeThemeModeEvent(themeMode: ThemeMode.dark));
                 });
               } else {
                 _streamController.sink.add(ThemeMode.light);
-                await Future.delayed(const Duration(milliseconds: 500)).then((_) {
+                await Future.delayed(const Duration(milliseconds: 500))
+                    .then((_) {
                   settingBloc
                       .add(ChangeThemeModeEvent(themeMode: ThemeMode.light));
                 });
@@ -76,9 +78,9 @@ class _DarkModeButtonState extends State<DarkModeButton> {
                       size: widget.size,
                       key: const ValueKey(ThemeMode.light),
                     )
-                  :  Icon(
+                  : Icon(
                       Icons.dark_mode,
-                size: widget.size,
+                      size: widget.size,
                       key: const ValueKey(ThemeMode.dark),
                     ),
               transitionBuilder: (child, animation) {
@@ -120,13 +122,15 @@ class _DarkModeButtonTonalState extends State<DarkModeButtonTonal> {
             onPressed: () async {
               if (snapshot.data == ThemeMode.light) {
                 _streamController.sink.add(ThemeMode.dark);
-                await Future.delayed(const Duration(milliseconds: 500)).then((_) {
+                await Future.delayed(const Duration(milliseconds: 500))
+                    .then((_) {
                   settingBloc
                       .add(ChangeThemeModeEvent(themeMode: ThemeMode.dark));
                 });
               } else {
                 _streamController.sink.add(ThemeMode.light);
-                await Future.delayed(const Duration(milliseconds: 500)).then((_) {
+                await Future.delayed(const Duration(milliseconds: 500))
+                    .then((_) {
                   settingBloc
                       .add(ChangeThemeModeEvent(themeMode: ThemeMode.light));
                 });
@@ -135,16 +139,16 @@ class _DarkModeButtonTonalState extends State<DarkModeButtonTonal> {
             icon: AnimatedSwitcher(
               duration: const Duration(milliseconds: 400),
               child: snapshot.data == ThemeMode.light
-                  ?  Icon(
-                Icons.light_mode,
-                size: widget.size,
-                key: const ValueKey(ThemeMode.light),
-              )
-                  :  Icon(
-                Icons.dark_mode,
-                size: widget.size,
-                key: const ValueKey(ThemeMode.dark),
-              ),
+                  ? Icon(
+                      Icons.light_mode,
+                      size: widget.size,
+                      key: const ValueKey(ThemeMode.light),
+                    )
+                  : Icon(
+                      Icons.dark_mode,
+                      size: widget.size,
+                      key: const ValueKey(ThemeMode.dark),
+                    ),
               transitionBuilder: (child, animation) {
                 return RotationTransition(
                   turns: child.key == const ValueKey(ThemeMode.dark)
@@ -161,4 +165,3 @@ class _DarkModeButtonTonalState extends State<DarkModeButtonTonal> {
     );
   }
 }
-
