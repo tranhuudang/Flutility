@@ -104,7 +104,7 @@ msix_config:
   publisher_display_name: DAK Solutions
   identity_name: 24555Zeroboy.FlutterToolkits
   publisher: CN=DA7D2C99-987C-4B69-8953-17157F6E0E1A
-  msix_version: 2025.2.22.0
+  msix_version: 2025.3.3.0
   trim_logo: false
   logo_path: C:\Users\tranh\StudioProjects\FlutterToolkit\assets\images\app_icon.png
   store: true

@@ -1,5 +1,17 @@
 [
   {
+    "version": "98",
+    "date": "03-03-2025",
+    "changesNote": [
+        "Add search functionality",
+        "Add dark mode button on status bar",
+        "Migrate to Riverpod on app icon generator",
+        "Remove unused platform filesfiles",
+        "Add selection for icon generator",
+        "Fix bug that prevent sidebar showing up properly"
+    ]
+},
+  {
     "version": "92",
     "date": "21-02-2025",
     "changesNote": [
