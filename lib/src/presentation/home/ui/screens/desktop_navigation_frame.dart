@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:dak_solutions_common/dak_solutions_common.dart';
 import 'package:flutility/src/app/app.dart';
 import 'package:flutility/src/presentation/home/data/utils/upgrader_config.dart';
+import 'package:flutility/src/presentation/indexing/indexing.dart';
 import 'package:flutility/src/presentation/presentation.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:go_router/go_router.dart';
@@ -9,7 +10,6 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:upgrader/upgrader.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:windows_status_bar/windows_status_bar_widget.dart';
-
 import '../../../../app/router/route_configurations_desktop.dart';
 
 class DesktopNavigationFrame extends StatefulWidget {
@@ -26,6 +26,8 @@ class DesktopNavigationFrame extends StatefulWidget {
 class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
     with WindowListener {
   Timer? _saveWindowsSizeTimer;
+  final TextEditingController _searchController = TextEditingController();
+  final List<String> _searchResults = [];
 
   // Detect when windows is changing size and save windows size
   @override
@@ -45,18 +47,29 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
     });
   }
 
-  void _loadUpData() async {
-    /// Increase count number to count the how many time user open app
-    Properties.instance.saveSettings(Properties.instance.settings
-        .copyWith(openAppCount: Properties.instance.settings.openAppCount + 1));
-  }
-
   @override
   void initState() {
     super.initState();
     WindowManager.instance.addListener(this);
     // Other loading steps
     _loadUpData();
+  }
+
+  void _loadUpData() async {
+    /// Increase count number to count the how many time user open app
+    Properties.instance.saveSettings(Properties.instance.settings
+        .copyWith(openAppCount: Properties.instance.settings.openAppCount + 1));
+  }
+
+  dynamic _onSearchResultTap(String query) {
+    final lowerCaseQuery = query.toLowerCase();
+    return searchIndices
+        .where((indexedItem) =>
+            indexedItem.title.toLowerCase().contains(lowerCaseQuery) ||
+            indexedItem.keywords.any(
+                (keyword) => keyword.toLowerCase().contains(lowerCaseQuery)))
+        .map((index) => index.title)
+        .toList();
   }
 
   @override
@@ -75,27 +88,41 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
         child: Column(
           children: [
             if (isWindows)
-              WindowsStatusBarWidget(
-                backgroundColor: context.theme.scaffoldBackgroundColor,
-                actions: [
-                  SizedBox(
-                      width: kToolbarHeight,
-                      height: kToolbarHeight - 1,
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Image.asset(
-                          LocalDirectory.appLogo,
-                        ),
-                      )),
-                  const Text(DefaultSettings.appName),
-                  const Spacer(),
-                  const DarkModeButton(),
-                  8.width,
-                  IconButton(
-                      onPressed: () {
-                        goBranch(2); // 2 is setting in branch root
-                      },
-                      icon: const Icon(FluentIcons.settings_16_regular)),
+              Stack(
+                children: [
+                  WindowsStatusBarWidget(
+                    backgroundColor: context.theme.scaffoldBackgroundColor,
+                    actions: [
+                      SizedBox(
+                          width: kToolbarHeight,
+                          height: kToolbarHeight - 1,
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Image.asset(
+                              LocalDirectory.appLogo,
+                            ),
+                          )),
+                      const Text(DefaultSettings.appName),
+                      const Spacer(),
+                      const Spacer(),
+                      const DarkModeButton(),
+                      8.width,
+                      IconButton(
+                          onPressed: () {
+                            goBranch(2); // 2 is setting in branch root
+                          },
+                          icon: const Icon(FluentIcons.settings_16_regular)),
+                    ],
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 6),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SearchBoxPrototype(),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             Expanded(
@@ -228,6 +255,142 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class SearchBoxPrototype extends StatelessWidget {
+  const SearchBoxPrototype({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        final TextEditingController searchController = TextEditingController();
+        List<String> searchResults = [];
+        showDialog(
+          context: context,
+          builder: (context) {
+            final Size screenSize = MediaQuery.of(context).size;
+            return StatefulBuilder(
+              builder: (context, setState) {
+                return Dialog(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        16), // Adjust the radius value as needed
+                  ),
+                  insetPadding: const EdgeInsets.only(right: 200, left: 200),
+                  child: SizedBox(
+                    width: 600,
+                    height: screenSize.height * 0.7, // 80% of screen height
+                    child: Column(
+                      children: [
+                        8.height,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: TextField(
+                            controller: searchController,
+                            autofocus: true,
+                            decoration: InputDecoration(
+                              hintText: 'Search...'.i18n,
+                              suffixIcon:
+                                  const Icon(FluentIcons.search_16_regular),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide(
+                                  color: context.theme.dividerColor
+                                      .withOpacity(.3),
+                                  width: 0.3,
+                                ),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide(
+                                  color: context.theme.dividerColor
+                                      .withOpacity(.3),
+                                  width: 0.3,
+                                ),
+                              ),
+                            ),
+                            onChanged: (value) {
+                              setState(() {
+                                if (value.isNotEmpty) {
+                                  searchResults = searchIndices
+                                      .where((index) =>
+                                          index.title
+                                              .toLowerCase()
+                                              .contains(value.toLowerCase()) ||
+                                          index.keywords.any((keyword) =>
+                                              keyword.toLowerCase().contains(
+                                                  value.toLowerCase())))
+                                      .map((index) => index.title)
+                                      .toList();
+                                } else {
+                                  searchResults = [];
+                                }
+                              });
+                            },
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Expanded(
+                          child: ListView.builder(
+                            padding: const EdgeInsets.all(16.0),
+                            itemCount: searchResults.length,
+                            itemBuilder: (context, index) {
+                              return ListTile(
+                                title: Text(searchResults[index]),
+                                onTap: () {
+                                  Navigator.pop(context);
+                                  final selectedIndex =
+                                      searchIndices.indexWhere((element) =>
+                                          element.title ==
+                                          searchResults[index]);
+                                  if (selectedIndex != -1) {
+                                    goBranch(
+                                        searchIndices[selectedIndex].index);
+                                  }
+                                },
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            );
+          },
+        );
+      },
+      child: Container(
+        width: context.screenSize.width * .3,
+        decoration: BoxDecoration(
+          color: context.theme.scaffoldBackgroundColor.withOpacity(.5),
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+              color: context.theme.dividerColor.withOpacity(.5), width: .3),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+          child: Row(
+            children: [
+              Text('Search...'.i18n),
+              const Spacer(),
+              const Icon(
+                FluentIcons.search_16_regular,
+                size: 16,
+              ),
+            ],
+          ),
         ),
       ),
     );
