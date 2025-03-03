@@ -3,7 +3,7 @@ description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 1.0.17+855
+version: 1.0.18+855
 
 environment:
   sdk: '>=3.4.1 <4.0.0'
@@ -12,8 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
   dak_solutions_common:
-    path: C:/Users/tranh/StudioProjects/new/dak_solutions_common
-    # path: /Volumes/Macintosh HD/Users/dak/Documents/Github/dak_solutions_common
+#    path: C:/Users/tranh/StudioProjects/new/dak_solutions_common
+    path: /Volumes/Macintosh HD/Users/dak/Documents/Github/dak_solutions_common
   ## DATA HANDLE PACKAGES
   # This lib to set windows size on Windows.
   window_manager: ^0.4.2

@@ -292,7 +292,7 @@ packages:
   dak_solutions_common:
     dependency: "direct main"
     description:
-      path: "C:\\Users\\tranh\\StudioProjects\\new\\dak_solutions_common"
+      path: "/Volumes/Macintosh HD/Users/dak/Documents/Github/dak_solutions_common"
       relative: false
     source: path
     version: "0.0.19"

@@ -125,6 +125,54 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                   ),
                 ],
               ),
+            if (isMacOS)
+              Stack(
+                children: [
+                  Container(
+                    //color: context.theme.colorScheme.surfaceContainerLow,
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: context.theme.dividerColor.withOpacity(.2)
+                        )
+                      )
+                    ),
+                    height: 46,
+                    child: Row(
+                      children: [
+                        SizedBox(
+                            width: kToolbarHeight,
+                            height: kToolbarHeight - 1,
+                            child: Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Image.asset(
+                                LocalDirectory.appLogo,
+                              ),
+                            )),
+                        const Text(DefaultSettings.appName),
+                        const Spacer(),
+                        const Spacer(),
+                        const DarkModeButton(),
+                        8.width,
+                        IconButton(
+                            onPressed: () {
+                              goBranch(2); // 2 is setting in branch root
+                            },
+                            icon: const Icon(FluentIcons.settings_16_regular)),
+                      ],
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SearchBoxPrototype(),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             Expanded(
               child: Row(
                 children: [
@@ -168,17 +216,6 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                 opacity: .8,
                 child: Row(
                   children: [
-                    if (isMacOS)
-                      IconButton(
-                        onPressed: () {
-                          goBranch(2); // 2 is setting in branch root
-                        },
-                        icon: Icon(
-                          FluentIcons.settings_16_regular,
-                          size: 18,
-                          color: context.theme.colorScheme.onSurface,
-                        ),
-                      ),
                     TextButton.icon(
                         onPressed: () {
                           goToBugReport();
