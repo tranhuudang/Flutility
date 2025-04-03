@@ -788,15 +788,6 @@ extension Localization on Object {
       'zh_cn':
           '本指南将帮助您从初学者进阶到高级Flutter开发者。它概述了您需要掌握的关键概念、工具和最佳实践，包括Dart编程、Flutter小部件、UI设计和状态管理。遵循此路线图，建立坚实的Flutter基础，开始开发强大的移动应用程序。',
     },
-
-    'If something isn’t working as expected, we’d like to know. Share your feedback on how we can improve or let us know what you enjoy about our app.':
-        {
-      'en_us':
-          "If something isn’t working as expected, we’d like to know. Share your feedback on how we can improve or let us know what you enjoy about our app.",
-      'vi_vi':
-          "Nếu có điều gì đó không hoạt động như mong đợi, chúng tôi muốn biết. Chia sẻ ý kiến của bạn về cách chúng tôi có thể cải thiện hoặc cho chúng tôi biết điều gì bạn yêu thích về ứng dụng của chúng tôi.",
-      'zh_cn': "如果有任何问题未如预期般运作，我们希望了解您的反馈。请分享您的建议，让我们知道如何改进，或者告诉我们您喜欢的功能。"
-    },
     'Basics': {
       'en_us': 'Basics',
       'vi_vi': 'Cơ bản',
@@ -943,7 +934,103 @@ extension Localization on Object {
       'vi_vi':
           'Làm cách nào để loại bỏ viền trắng không mong muốn xung quanh biểu tượng ứng dụng trên thiết bị Android?',
       'zh_cn': '如何去除Android设备上应用图标周围不必要的白色边框？'
-    }
+    },
+    'View and manage SQLite and Hive databases in your Flutter projects.': {
+      'en_us':
+          'View and manage SQLite and Hive databases in your Flutter projects.',
+      'vi_vi':
+          'Xem và quản lý cơ sở dữ liệu SQLite và Hive trong các dự án Flutter của bạn.',
+      'zh_cn': '在您的 Flutter 项目中查看和管理 SQLite 和 Hive 数据库。',
+    },
+    'Database Explorer': {
+      'en_us': 'Database Explorer',
+      'vi_vi': 'Trình khám phá cơ sở dữ liệu',
+      'zh_cn': '数据库资源管理器',
+    },
+    'Search...': {
+      'en_us': 'Search...',
+      'vi_vi': 'Tìm kiếm...',
+      'zh_cn': '搜索...',
+    },
+    'Explorer': {
+      'en_us': 'Explorer',
+      'vi_vi': 'Trình khám phá',
+      'zh_cn': '资源管理器',
+    },
+    'Query': {
+      'en_us': 'Query',
+      'vi_vi': 'Truy vấn',
+      'zh_cn': '查询',
+    },
+    'Database Type:': {
+      'en_us': 'Database Type:',
+      'vi_vi': 'Loại cơ sở dữ liệu:',
+      'zh_cn': '数据库类型：',
+    },
+    'Database Path': {
+      'en_us': 'Database Path',
+      'vi_vi': 'Đường dẫn cơ sở dữ liệu',
+      'zh_cn': '数据库路径',
+    },
+    'Load': {
+      'en_us': 'Load',
+      'vi_vi': 'Tải',
+      'zh_cn': '加载',
+    },
+    'SQL Query': {
+      'en_us': 'SQL Query',
+      'vi_vi': 'Truy vấn SQL',
+      'zh_cn': 'SQL 查询',
+    },
+    'Execute Query': {
+      'en_us': 'Execute Query',
+      'vi_vi': 'Thực thi truy vấn',
+      'zh_cn': '执行查询',
+    },
+    'Load a database first': {
+      'en_us': 'Load a database first',
+      'vi_vi': 'Tải một cơ sở dữ liệu trước',
+      'zh_cn': '请先加载数据库',
+    },
+    'Enter a SQL query and execute it to see results': {
+      'en_us': 'Enter a SQL query and execute it to see results',
+      'vi_vi': 'Nhập truy vấn SQL và thực thi để xem kết quả',
+      'zh_cn': '输入 SQL 查询并执行以查看结果',
+    },
+    'Select a table to view its data': {
+      'en_us': 'Select a table to view its data',
+      'vi_vi': 'Chọn một bảng để xem dữ liệu',
+      'zh_cn': '选择一个表以查看其数据',
+    },
+    'Select a table': {
+      'en_us': 'Select a table',
+      'vi_vi': 'Chọn một bảng',
+      'zh_cn': '选择一个表',
+    },
+    'Copy row': {
+      'en_us': 'Copy row',
+      'vi_vi': 'Sao chép hàng',
+      'zh_cn': '复制行',
+    },
+    'Load a database to see available tables': {
+      'en_us': 'Load a database to see available tables',
+      'vi_vi': 'Tải cơ sở dữ liệu để xem các bảng có sẵn',
+      'zh_cn': '加载数据库以查看可用的表',
+    },
+    'Only for small databases': {
+      'en_us': 'Only for small databases',
+      'vi_vi': 'Chỉ dành cho cơ sở dữ liệu nhỏ',
+      'zh_cn': '仅适用于小型数据库',
+    },
+
+    'Share your feedback on how we can improve or let us know what you enjoy about our app.':
+        {
+      'en_us':
+          'Share your feedback on how we can improve or let us know what you enjoy about our app.',
+      'vi_vi':
+          'Chia sẻ phản hồi của bạn về cách chúng tôi có thể cải thiện hoặc cho chúng tôi biết điều bạn thích ở ứng dụng của chúng tôi.',
+      'zh_cn': '分享您的反馈，让我们知道如何改进，或告诉我们您喜欢我们应用的哪些方面。',
+    },
   });
 
   String get i18n => localize(this, _t);

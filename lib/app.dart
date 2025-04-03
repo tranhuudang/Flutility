@@ -1,11 +1,12 @@
 import 'package:marina_labs_common/marina_labs_common.dart';
 import 'package:flutility/src/app/app.dart';
 import 'package:flutility/src/app/router/route_configurations_desktop.dart';
-import 'package:flutility/src/presentation/presentation.dart';
+import 'package:flutility/src/features/presentation.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
+import 'package:flutter_quill/flutter_quill.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -71,6 +72,7 @@ class _AppState extends State<App> {
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
+            FlutterQuillLocalizations.delegate,
           ],
           supportedLocales: const [
             Locale('en', 'US'),

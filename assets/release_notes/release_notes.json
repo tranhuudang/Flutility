@@ -1,5 +1,12 @@
 [
   {
+    "version": "100",
+    "date": "03-04-2025",
+    "changesNote": [
+      "Add Database Explorer for SQLite and Hive"
+    ]
+  },
+  {
     "version": "98",
     "date": "03-03-2025",
     "changesNote": [

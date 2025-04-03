@@ -1,20 +1,20 @@
-import 'package:flutility/src/presentation/api/api_test_screen.dart';
-import 'package:flutility/src/presentation/colors/color_picker_screen.dart';
-import 'package:flutility/src/presentation/database_explorer/database_explorer_screen.dart';
-import 'package:flutility/src/presentation/dev_notes/note_taking_screen.dart';
-import 'package:flutility/src/presentation/documentation/common_command_screen.dart';
-import 'package:flutility/src/presentation/documentation/documentation_screen.dart';
-import 'package:flutility/src/presentation/donation/donation_screen.dart';
-import 'package:flutility/src/presentation/fonts/fonts_screen.dart';
-import 'package:flutility/src/presentation/home/ui/screens/desktop_home_screen.dart';
-import 'package:flutility/src/presentation/icon_generator/app_icon_generator.dart';
-import 'package:flutility/src/presentation/image_compress/image_compress_screen.dart';
-import 'package:flutility/src/presentation/json/json_formatter_screen.dart';
-import 'package:flutility/src/presentation/roadmap/ui/roadmap_screen.dart';
+import 'package:flutility/src/features/api/api_test_screen.dart';
+import 'package:flutility/src/features/colors/color_picker_screen.dart';
+import 'package:flutility/src/features/database_explorer/database_explorer_screen.dart';
+import 'package:flutility/src/features/dev_notes/note_taking_screen.dart';
+import 'package:flutility/src/features/documentation/common_command_screen.dart';
+import 'package:flutility/src/features/documentation/documentation_screen.dart';
+import 'package:flutility/src/features/donation/donation_screen.dart';
+import 'package:flutility/src/features/fonts/fonts_screen.dart';
+import 'package:flutility/src/features/home/ui/screens/desktop_home_screen.dart';
+import 'package:flutility/src/features/icon_generator/app_icon_generator.dart';
+import 'package:flutility/src/features/image_compress/image_compress_screen.dart';
+import 'package:flutility/src/features/json/json_formatter_screen.dart';
+import 'package:flutility/src/features/roadmap/ui/roadmap_screen.dart';
 import 'package:go_router/go_router.dart';
 import 'package:i18n_extension/i18n_extension.dart';
-import 'package:flutility/src/presentation/presentation.dart';
-import '../../presentation/icons/icons_screen.dart';
+import 'package:flutility/src/features/presentation.dart';
+import '../../features/icons/icons_screen.dart';
 import '../app.dart';
 
 // private navigators key shell

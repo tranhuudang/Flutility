@@ -89,7 +89,7 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "DAK Solutions" "\0"
+            VALUE "CompanyName", "Marina Labs" "\0"
             VALUE "FileDescription", "flutility" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "flutility" "\0"

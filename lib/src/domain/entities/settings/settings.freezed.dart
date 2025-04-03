@@ -54,6 +54,7 @@ mixin _$Settings {
   bool get enableApiTesting;
   bool get enableImageCompress;
   bool get enableJsonFormatter;
+  bool get enableDatabaseExplorer;
 
   /// Icon Generator
   bool get isGenerateForAndroid;
@@ -106,6 +107,8 @@ mixin _$Settings {
                 other.enableImageCompress == enableImageCompress) &&
             (identical(other.enableJsonFormatter, enableJsonFormatter) ||
                 other.enableJsonFormatter == enableJsonFormatter) &&
+            (identical(other.enableDatabaseExplorer, enableDatabaseExplorer) ||
+                other.enableDatabaseExplorer == enableDatabaseExplorer) &&
             (identical(other.isGenerateForAndroid, isGenerateForAndroid) ||
                 other.isGenerateForAndroid == isGenerateForAndroid) &&
             (identical(other.isGenerateForIOs, isGenerateForIOs) ||
@@ -140,6 +143,7 @@ mixin _$Settings {
         enableApiTesting,
         enableImageCompress,
         enableJsonFormatter,
+        enableDatabaseExplorer,
         isGenerateForAndroid,
         isGenerateForIOs,
         isGenerateForMacOs,
@@ -150,7 +154,7 @@ mixin _$Settings {
 
   @override
   String toString() {
-    return 'Settings(themeMode: $themeMode, enableAdaptiveTheme: $enableAdaptiveTheme, openAppCount: $openAppCount, didRateApp: $didRateApp, language: $language, windowsWidth: $windowsWidth, windowsHeight: $windowsHeight, themeColor: $themeColor, selectedTab: $selectedTab, colorCollection: $colorCollection, continueWithoutLogin: $continueWithoutLogin, randomNumberForWebLogin: $randomNumberForWebLogin, enableApiTesting: $enableApiTesting, enableImageCompress: $enableImageCompress, enableJsonFormatter: $enableJsonFormatter, isGenerateForAndroid: $isGenerateForAndroid, isGenerateForIOs: $isGenerateForIOs, isGenerateForMacOs: $isGenerateForMacOs, isGenerateForWindows: $isGenerateForWindows, isGenerateForWeb: $isGenerateForWeb, currentGenerateIconForProjectPath: $currentGenerateIconForProjectPath)';
+    return 'Settings(themeMode: $themeMode, enableAdaptiveTheme: $enableAdaptiveTheme, openAppCount: $openAppCount, didRateApp: $didRateApp, language: $language, windowsWidth: $windowsWidth, windowsHeight: $windowsHeight, themeColor: $themeColor, selectedTab: $selectedTab, colorCollection: $colorCollection, continueWithoutLogin: $continueWithoutLogin, randomNumberForWebLogin: $randomNumberForWebLogin, enableApiTesting: $enableApiTesting, enableImageCompress: $enableImageCompress, enableJsonFormatter: $enableJsonFormatter, enableDatabaseExplorer: $enableDatabaseExplorer, isGenerateForAndroid: $isGenerateForAndroid, isGenerateForIOs: $isGenerateForIOs, isGenerateForMacOs: $isGenerateForMacOs, isGenerateForWindows: $isGenerateForWindows, isGenerateForWeb: $isGenerateForWeb, currentGenerateIconForProjectPath: $currentGenerateIconForProjectPath)';
   }
 }
 
@@ -175,6 +179,7 @@ abstract mixin class $SettingsCopyWith<$Res> {
       bool enableApiTesting,
       bool enableImageCompress,
       bool enableJsonFormatter,
+      bool enableDatabaseExplorer,
       bool isGenerateForAndroid,
       bool isGenerateForIOs,
       bool isGenerateForMacOs,
@@ -210,6 +215,7 @@ class _$SettingsCopyWithImpl<$Res> implements $SettingsCopyWith<$Res> {
     Object? enableApiTesting = null,
     Object? enableImageCompress = null,
     Object? enableJsonFormatter = null,
+    Object? enableDatabaseExplorer = null,
     Object? isGenerateForAndroid = null,
     Object? isGenerateForIOs = null,
     Object? isGenerateForMacOs = null,
@@ -278,6 +284,10 @@ class _$SettingsCopyWithImpl<$Res> implements $SettingsCopyWith<$Res> {
           ? _self.enableJsonFormatter
           : enableJsonFormatter // ignore: cast_nullable_to_non_nullable
               as bool,
+      enableDatabaseExplorer: null == enableDatabaseExplorer
+          ? _self.enableDatabaseExplorer
+          : enableDatabaseExplorer // ignore: cast_nullable_to_non_nullable
+              as bool,
       isGenerateForAndroid: null == isGenerateForAndroid
           ? _self.isGenerateForAndroid
           : isGenerateForAndroid // ignore: cast_nullable_to_non_nullable
@@ -326,6 +336,7 @@ class _Setting implements Settings {
       required this.enableApiTesting,
       required this.enableImageCompress,
       required this.enableJsonFormatter,
+      required this.enableDatabaseExplorer,
       required this.isGenerateForAndroid,
       required this.isGenerateForIOs,
       required this.isGenerateForMacOs,
@@ -387,6 +398,8 @@ class _Setting implements Settings {
   final bool enableImageCompress;
   @override
   final bool enableJsonFormatter;
+  @override
+  final bool enableDatabaseExplorer;
 
   /// Icon Generator
   @override
@@ -446,6 +459,8 @@ class _Setting implements Settings {
                 other.enableImageCompress == enableImageCompress) &&
             (identical(other.enableJsonFormatter, enableJsonFormatter) ||
                 other.enableJsonFormatter == enableJsonFormatter) &&
+            (identical(other.enableDatabaseExplorer, enableDatabaseExplorer) ||
+                other.enableDatabaseExplorer == enableDatabaseExplorer) &&
             (identical(other.isGenerateForAndroid, isGenerateForAndroid) ||
                 other.isGenerateForAndroid == isGenerateForAndroid) &&
             (identical(other.isGenerateForIOs, isGenerateForIOs) ||
@@ -480,6 +495,7 @@ class _Setting implements Settings {
         enableApiTesting,
         enableImageCompress,
         enableJsonFormatter,
+        enableDatabaseExplorer,
         isGenerateForAndroid,
         isGenerateForIOs,
         isGenerateForMacOs,
@@ -490,7 +506,7 @@ class _Setting implements Settings {
 
   @override
   String toString() {
-    return 'Settings(themeMode: $themeMode, enableAdaptiveTheme: $enableAdaptiveTheme, openAppCount: $openAppCount, didRateApp: $didRateApp, language: $language, windowsWidth: $windowsWidth, windowsHeight: $windowsHeight, themeColor: $themeColor, selectedTab: $selectedTab, colorCollection: $colorCollection, continueWithoutLogin: $continueWithoutLogin, randomNumberForWebLogin: $randomNumberForWebLogin, enableApiTesting: $enableApiTesting, enableImageCompress: $enableImageCompress, enableJsonFormatter: $enableJsonFormatter, isGenerateForAndroid: $isGenerateForAndroid, isGenerateForIOs: $isGenerateForIOs, isGenerateForMacOs: $isGenerateForMacOs, isGenerateForWindows: $isGenerateForWindows, isGenerateForWeb: $isGenerateForWeb, currentGenerateIconForProjectPath: $currentGenerateIconForProjectPath)';
+    return 'Settings(themeMode: $themeMode, enableAdaptiveTheme: $enableAdaptiveTheme, openAppCount: $openAppCount, didRateApp: $didRateApp, language: $language, windowsWidth: $windowsWidth, windowsHeight: $windowsHeight, themeColor: $themeColor, selectedTab: $selectedTab, colorCollection: $colorCollection, continueWithoutLogin: $continueWithoutLogin, randomNumberForWebLogin: $randomNumberForWebLogin, enableApiTesting: $enableApiTesting, enableImageCompress: $enableImageCompress, enableJsonFormatter: $enableJsonFormatter, enableDatabaseExplorer: $enableDatabaseExplorer, isGenerateForAndroid: $isGenerateForAndroid, isGenerateForIOs: $isGenerateForIOs, isGenerateForMacOs: $isGenerateForMacOs, isGenerateForWindows: $isGenerateForWindows, isGenerateForWeb: $isGenerateForWeb, currentGenerateIconForProjectPath: $currentGenerateIconForProjectPath)';
   }
 }
 
@@ -517,6 +533,7 @@ abstract mixin class _$SettingCopyWith<$Res>
       bool enableApiTesting,
       bool enableImageCompress,
       bool enableJsonFormatter,
+      bool enableDatabaseExplorer,
       bool isGenerateForAndroid,
       bool isGenerateForIOs,
       bool isGenerateForMacOs,
@@ -552,6 +569,7 @@ class __$SettingCopyWithImpl<$Res> implements _$SettingCopyWith<$Res> {
     Object? enableApiTesting = null,
     Object? enableImageCompress = null,
     Object? enableJsonFormatter = null,
+    Object? enableDatabaseExplorer = null,
     Object? isGenerateForAndroid = null,
     Object? isGenerateForIOs = null,
     Object? isGenerateForMacOs = null,
@@ -619,6 +637,10 @@ class __$SettingCopyWithImpl<$Res> implements _$SettingCopyWith<$Res> {
       enableJsonFormatter: null == enableJsonFormatter
           ? _self.enableJsonFormatter
           : enableJsonFormatter // ignore: cast_nullable_to_non_nullable
+              as bool,
+      enableDatabaseExplorer: null == enableDatabaseExplorer
+          ? _self.enableDatabaseExplorer
+          : enableDatabaseExplorer // ignore: cast_nullable_to_non_nullable
               as bool,
       isGenerateForAndroid: null == isGenerateForAndroid
           ? _self.isGenerateForAndroid

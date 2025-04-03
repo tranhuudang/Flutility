@@ -43,6 +43,7 @@ abstract class Settings with _$Settings {
     required bool enableApiTesting,
     required bool enableImageCompress,
     required bool enableJsonFormatter,
+    required bool enableDatabaseExplorer,
 
     /// Icon Generator
     required bool isGenerateForAndroid,

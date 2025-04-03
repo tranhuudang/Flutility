@@ -43,6 +43,7 @@ dependencies:
   # The path package provides common operations for manipulating paths: joining, splitting, normalizing, etc
   path: ^1.9.0
   image_picker: ^1.1.2
+  flutter_quill: ^11.1.1
 
   ### UI PACKAGES
   responsive_builder: ^0.7.0
@@ -106,10 +107,10 @@ flutter:
     - assets/donation/
 msix_config:
   display_name: Flutility
-  publisher_display_name: DAK Solutions
+  publisher_display_name: Marina Labs
   identity_name: 24555Zeroboy.FlutterToolkits
   publisher: CN=DA7D2C99-987C-4B69-8953-17157F6E0E1A
-  msix_version: 2025.3.3.0
+  msix_version: 2025.4.3.0
   trim_logo: false
   logo_path: C:\Users\tranh\StudioProjects\FlutterToolkit\assets\images\app_icon.png
   store: true
