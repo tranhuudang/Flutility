@@ -27,12 +27,13 @@ class RoutePath {
   static const String documentation = '/documentation';
   static const String commandLine = '/commandLine';
   static const String loginRequired = '/login-required';
+  static const String databaseExplorer = '/database-explorer';
+
   /// Different paths on mobile
   static const String splash = '/';
   static const String home = '/home';
   static const String mobileDialogue = '/dialogue';
   static const String mobileEssential = '/essential-1848';
-
 
   // Shared nested paths on platforms
   static const String dialogueView = 'dialogue-view';

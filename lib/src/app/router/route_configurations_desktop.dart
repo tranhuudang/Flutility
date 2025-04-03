@@ -1,5 +1,6 @@
 import 'package:flutility/src/presentation/api/api_test_screen.dart';
 import 'package:flutility/src/presentation/colors/color_picker_screen.dart';
+import 'package:flutility/src/presentation/database_explorer/database_explorer_screen.dart';
 import 'package:flutility/src/presentation/dev_notes/note_taking_screen.dart';
 import 'package:flutility/src/presentation/documentation/common_command_screen.dart';
 import 'package:flutility/src/presentation/documentation/documentation_screen.dart';
@@ -31,6 +32,8 @@ final _shellNavigatorNoteTakingKey =
     GlobalKey<NavigatorState>(debugLabel: 'noteTaking');
 final _shellNavigatorDonationKey =
     GlobalKey<NavigatorState>(debugLabel: 'donation');
+final _shellNavigatorDatabaseExplorerKey =
+    GlobalKey<NavigatorState>(debugLabel: 'DatabaseExplorer');
 final _shellNavigatorOthersKey =
     GlobalKey<NavigatorState>(debugLabel: 'Others');
 final _shellNavigatorJsonKey = GlobalKey<NavigatorState>(debugLabel: 'Json');
@@ -358,6 +361,21 @@ GoRouter routerConfigDesktop = GoRouter(
                     child: const DonationScreen(),
                   ),
                 );
+              },
+            ),
+          ],
+        ),
+         // 16 database explorer
+        StatefulShellBranch(
+          navigatorKey: _shellNavigatorDatabaseExplorerKey,
+          routes: [
+            // top route inside branch
+            GoRoute(
+              name: RouteName.databaseExplorer,
+              path: RoutePath.databaseExplorer,
+              pageBuilder: (context, state) {
+                return NoTransitionPage(
+                    child: I18n(child: const DatabaseExplorerScreen()));
               },
             ),
           ],

@@ -41,7 +41,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
             actionButtonTitle: 'Feedback'.i18n,
             title: 'Help Us Improve'.i18n,
             content:
-                "If something isn’t working as expected, we’d like to know. Share your feedback on how we can improve or let us know what you enjoy about our app."
+                "If something isn't working as expected, we'd like to know. Share your feedback on how we can improve or let us know what you enjoy about our app."
                     .i18n,
             action: () {
               goToStoreListing();
@@ -344,6 +344,16 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                             goBranch(13);
                           },
                         ),
+                      OverviewItem(
+                        icon: FluentIcons.database_search_20_regular,
+                        title: 'Database Explorer'.i18n,
+                        subtitle:
+                            'View and manage SQLite and Hive databases in your Flutter projects.'
+                                .i18n,
+                        onTap: () {
+                          goBranch(16);
+                        },
+                      ),
                     ],
                   ),
                 ),

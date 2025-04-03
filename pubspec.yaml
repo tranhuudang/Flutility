@@ -24,6 +24,12 @@ dependencies:
   flutter_cache_manager: ^3.4.0
   # Save settings
   shared_preferences: ^2.3.2
+  # SQLite database
+  sqflite: ^2.3.2
+  sqflite_common_ffi: ^2.3.3
+  # Hive NoSQL database
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
   ##
   # Package for Packaging Windows App
   msix: ^3.16.8
