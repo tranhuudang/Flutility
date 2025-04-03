@@ -143,11 +143,25 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
           controller: _tabController,
           tabs: [
             Tab(
-                icon: const Icon(FluentIcons.database_search_20_regular),
-                text: "Explorer".i18n),
+              height: 40,
+                child : Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(FluentIcons.database_search_20_regular),
+                    8.width,
+                    Text("Explorer".i18n),
+                  ],
+                ),),
             Tab(
-                icon: const Icon(FluentIcons.database_search_20_regular),
-                text: "SQL Query".i18n),
+              height: 40,
+                icon: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(FluentIcons.database_search_20_regular),
+                    8.width,
+                    Text("Query".i18n),
+                  ],
+                ),),
           ],
         ),
       ),
