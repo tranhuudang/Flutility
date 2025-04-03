@@ -1,4 +1,4 @@
-import 'package:dak_solutions_common/dak_solutions_common.dart';
+import 'package:marina_labs_common/marina_labs_common.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutility/src/presentation/icon_generator/riverpod/app_icon_generator_riverpod.dart';
 import 'package:flutility/src/presentation/icon_generator/riverpod/app_icon_generator_state.dart';

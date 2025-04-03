@@ -1,4 +1,4 @@
-import 'package:dak_solutions_common/dak_solutions_common.dart';
+import 'package:marina_labs_common/marina_labs_common.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

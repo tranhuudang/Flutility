@@ -1,4 +1,4 @@
-import 'package:dak_solutions_common/dak_solutions_common.dart';
+import 'package:marina_labs_common/marina_labs_common.dart';
 class OnlineDirectory extends OnlineDirectoryBase {
   static const String privacyPolicyURL =
       'https://www.privacypolicies.com/live/1327bb8a-752b-455e-b6d0-36c0cecbbacd';

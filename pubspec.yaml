@@ -11,9 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dak_solutions_common:
-#    path: C:/Users/tranh/StudioProjects/new/dak_solutions_common
-    path: /Volumes/Macintosh HD/Users/dak/Documents/Github/dak_solutions_common
+  marina_labs_common:
+    path: C:/Users/tranh/StudioProjects/marina_labs_common
+#    path: /Volumes/Macintosh HD/Users/dak/Documents/Github/marina_labs_common
   ## DATA HANDLE PACKAGES
   # This lib to set windows size on Windows.
   window_manager: ^0.4.2
@@ -44,7 +44,7 @@ dependencies:
   # use for customizing theme
   dynamic_color: ^1.7.0
   # localization
-  flutter_localization: ^0.2.0
+  flutter_localization: ^0.3.1
   flutter_localizations:
     sdk: flutter
   i18n_extension: ^12.0.1
@@ -68,7 +68,6 @@ dependencies:
   image: ^4.3.0
   flex_color_picker: ^3.6.0
   upgrader: ^10.3.0
-  flutter_quill: ^10.8.5
   flutter_colorpicker: ^1.1.0
   flutter_svg: ^2.0.17
   flutter_riverpod: ^2.6.1

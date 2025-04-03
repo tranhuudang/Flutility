@@ -1,4 +1,4 @@
-import 'package:dak_solutions_common/dak_solutions_common.dart';
+import 'package:marina_labs_common/marina_labs_common.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void goToStoreListing() async {

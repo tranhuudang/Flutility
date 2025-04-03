@@ -1,4 +1,4 @@
-import 'package:dak_solutions_common/dak_solutions_common.dart';
+import 'package:marina_labs_common/marina_labs_common.dart';
 
 class LocalDirectory extends LocalDirectoryBase {
   static const String releaseNotes = 'assets/release_notes/release_notes.json';
