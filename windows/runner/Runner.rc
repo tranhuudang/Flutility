@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "Marina Labs" "\0"
-            VALUE "FileDescription", "flutility" "\0"
+            VALUE "FileDescription", "Flutility" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "flutility" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 Tran Huu Dang. All rights reserved." "\0"
-            VALUE "OriginalFilename", "flutility.exe" "\0"
-            VALUE "ProductName", "flutility" "\0"
+            VALUE "InternalName", "Flutility" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 Marina Labs. All rights reserved." "\0"
+            VALUE "OriginalFilename", "Flutility.exe" "\0"
+            VALUE "ProductName", "Flutility" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
