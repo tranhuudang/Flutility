@@ -63,7 +63,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
           Row(children: [
             Expanded(
               child: Container(
-                height: 160,
+                height: 165,
                 color: context.theme.colorScheme.surfaceContainerLow,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -95,7 +95,9 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                               children: [
                                 Text(
                                   DefaultSettings.appName,
-                                  style: context.theme.textTheme.headlineSmall,
+                                  style: context.theme.textTheme.headlineLarge?.copyWith(
+                                    fontWeight: FontWeight.bold
+                                  ),
                                 ),
                                 const SizedBox(width: 100, child: Divider()),
                                 Text(DefaultSettings.appDescription.i18n)
@@ -111,13 +113,13 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                                     size: 16,
                                   ),
                                   url:
-                                      'https://github.com/tranhuudang/flutter_toolkit'),
+                                      OnlineDirectoryBase.githubURL),
                               _buildIconButton(
                                   icon: const Icon(
                                     Icons.mail,
                                     size: 20,
                                   ),
-                                  url: 'mailto:dt148f148@gmail.com'),
+                                  url: OnlineDirectoryBase.email),
                             ],
                           ),
                         ],
