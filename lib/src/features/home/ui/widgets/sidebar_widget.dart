@@ -194,7 +194,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                           ),
                           8.height,
                           _buildSidebarItem(
-                              icon: FluentIcons.network_check_20_regular,
+                              icon: FluentIcons.window_database_24_regular,
                               selectedIcon: FluentIcons.network_check_20_filled,
                               label: 'Database Explorer'.i18n,
                               index: 16),

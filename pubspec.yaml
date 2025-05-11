@@ -12,8 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   marina_labs_common:
-    path: C:/Users/tranh/StudioProjects/marina_labs_common
-#    path: /Volumes/Macintosh HD/Users/dak/Documents/Github/marina_labs_common
+    git: https://github.com/marina-labs/marina_labs_common.git
   ## DATA HANDLE PACKAGES
   # This lib to set windows size on Windows.
   window_manager: ^0.4.2

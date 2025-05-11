@@ -79,7 +79,7 @@ SPEC CHECKSUMS:
   FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
   package_info_plus: 8147fd5037235202932580f35ebe195f7a55e3cd
   path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
-  quill_native_bridge_macos: d2e4f5d8310fc5fbf76bd6399e3a383ec6842c60
+  quill_native_bridge_macos: 2b005cb56902bb740e0cd9620aa399dfac6b4882
   screen_retriever: 4f97c103641aab8ce183fa5af3b87029df167936
   shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
   sqflite_darwin: 44bb54cc302bff1fbe5752293aba1820b157cf1c

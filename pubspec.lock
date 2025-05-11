@@ -920,10 +920,12 @@ packages:
   marina_labs_common:
     dependency: "direct main"
     description:
-      path: "C:\\Users\\tranh\\StudioProjects\\marina_labs_common"
-      relative: false
-    source: path
-    version: "0.0.46"
+      path: "."
+      ref: HEAD
+      resolved-ref: d3b66e04f7b983ca6cc8895c0e7152acfb992acf
+      url: "https://github.com/marina-labs/marina_labs_common.git"
+    source: git
+    version: "0.0.51"
   markdown:
     dependency: transitive
     description:
