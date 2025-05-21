@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:marina_labs_common/marina_labs_common.dart';
 import 'package:flutility/src/app/app.dart';
 
 // Custom class to handle binary blob data
@@ -163,7 +162,7 @@ class _DatabaseContentViewerState extends State<DatabaseContentViewer> {
                   controller: _horizontalScrollController,
                   child: DataTable(
                     columns: [
-                      DataColumn(label: const Text('#')),
+                      const DataColumn(label: Text('#')),
                       ...columns.map((column) => DataColumn(
                             label: Tooltip(
                               message: column,

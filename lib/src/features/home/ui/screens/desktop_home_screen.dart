@@ -1,6 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutility/src/features/home/data/utils/model/terrace_advertise.dart';
+import 'package:flutility/src/features/home/ui/widgets/advertisement_card.dart';
+import 'package:flutility/src/features/home/ui/widgets/dashboard_shape.dart';
+import 'package:flutility/src/features/home/ui/widgets/overview_item.dart';
+import 'package:intl/intl.dart';
 import 'package:marina_labs_common/marina_labs_common.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
-import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:flutility/src/app/app.dart';
 import 'package:flutility/src/app/router/route_configurations_desktop.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -21,7 +26,8 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
   late bool isImageCompressorEnabled;
   late bool isApiTestingEnabled;
   late bool isDatabaseExplorerEnabled;
-
+  List<TerraceAdvertise> advertisements = [];
+  int indexx = 0;
   @override
   void initState() {
     super.initState();
@@ -31,6 +37,54 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
     isDatabaseExplorerEnabled =
         Properties.instance.settings.enableDatabaseExplorer;
     _seekFeedback();
+    _loadAdvertisements();
+  }
+
+  void _loadAdvertisements() async {
+    final ads = await _getAdvertisements();
+    if (mounted) {
+      setState(() {
+        advertisements = ads;
+      });
+    }
+  }
+
+  Future<List<TerraceAdvertise>> _getAdvertisements() async {
+    try {
+      final snapshot = await FirebaseFirestore.instance
+          .collection('Advertisements')
+          .where('isActive', isEqualTo: true)
+          .orderBy('order', descending: false)
+          .get();
+
+      final now = DateTime.now();
+      final ads = snapshot.docs.map((doc) {
+        final data = doc.data();
+        // Add document ID to the data
+        data['id'] = doc.id;
+        return TerraceAdvertise.fromJson(data);
+      }).where((ad) {
+        // Filter by date if start and end date are specified
+        final startDate = ad.startDate;
+        final endDate = ad.endDate;
+
+        if (startDate != null && endDate != null) {
+          return now.isAfter(startDate) && now.isBefore(endDate);
+        } else if (startDate != null) {
+          return now.isAfter(startDate);
+        } else if (endDate != null) {
+          return now.isBefore(endDate);
+        }
+
+        return true; // No date constraints
+      }).toList();
+
+      DebugLog.info('Loaded ${ads.length} advertisements');
+      return ads;
+    } catch (e) {
+      DebugLog.error('Error loading advertisements: ${e.toString()}');
+      return [];
+    }
   }
 
   void _seekFeedback() async {
@@ -63,7 +117,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
           Row(children: [
             Expanded(
               child: Container(
-                height: 165,
+                height: 140,
                 color: context.theme.colorScheme.surfaceContainerLow,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -78,25 +132,22 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          TextButton(
-                            child: Text('${DateTime.now().year}.$appVersion'),
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const ReleaseNotesView()));
-                            },
-                          ),
                           Padding(
                             padding: const EdgeInsets.only(left: 10),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  DefaultSettings.appName,
-                                  style: context.theme.textTheme.headlineLarge?.copyWith(
-                                    fontWeight: FontWeight.bold
+                                8.height,
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      indexx++;
+                                    });
+                                  },
+                                  child: Text(
+                                    DefaultSettings.appName,
+                                    style: context.theme.textTheme.headlineLarge
+                                        ?.copyWith(fontWeight: FontWeight.bold),
                                   ),
                                 ),
                                 const SizedBox(width: 100, child: Divider()),
@@ -112,8 +163,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                                     FontAwesomeIcons.github,
                                     size: 16,
                                   ),
-                                  url:
-                                      OnlineDirectoryBase.githubURL),
+                                  url: OnlineDirectoryBase.githubURL),
                               _buildIconButton(
                                   icon: const Icon(
                                     Icons.mail,
@@ -365,121 +415,289 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                 ),
               ],
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            child: Row(
+              children: [
+                Text('Your go-to tools, built by us'.i18n,
+                    style: context.theme.textTheme.titleSmall),
+                const Spacer(),
+                if (indexx > 10)
+                  TextButton.icon(
+                    icon: const Icon(Icons.add_circle_outline),
+                    label: Text('New Ad'.i18n),
+                    onPressed: () => _showCreateAdDialog(context),
+                  ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 14, right: 14),
+            child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, mainAxisExtent: 150),
+              shrinkWrap: true,
+              itemCount: advertisements.length,
+              itemBuilder: (context, index) {
+                final ad = advertisements[index];
+                return AdvertisementCard(
+                  ad: ad,
+                  isEditorMode: indexx > 10,
+                );
+              },
+            ),
+          ),
+          32.height,
         ],
       ),
     );
   }
-}
 
-class OverviewItem extends StatelessWidget {
-  final IconData? icon;
-  final String title;
-  final String subtitle;
-  final VoidCallback onTap;
-  const OverviewItem({
-    super.key,
-    required this.icon,
-    required this.title,
-    required this.subtitle,
-    required this.onTap,
-  });
+  Future<void> _createNewAd({
+    required String title,
+    required String description,
+    required String iconUrl,
+    required String link,
+    String? previewImage,
+    required int order,
+    required bool isActive,
+    DateTime? startDate,
+    DateTime? endDate,
+  }) async {
+    try {
+      final docRef = FirebaseFirestore.instance
+          .collection("Advertisements")
+          .doc(); // Automatically generate ID
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(2.0),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(5),
-        onTap: onTap,
-        child: Container(
-          height: 90,
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-              border:
-                  Border.all(color: context.theme.dividerColor.withOpacity(.5)),
-              borderRadius: BorderRadius.circular(5)),
-          child: Row(
+      final adData = {
+        'title': title,
+        'description': description,
+        'iconUrl': iconUrl,
+        'link': link,
+        'order': order,
+        'isActive': isActive,
+        'createdAt': FieldValue.serverTimestamp(),
+        'updatedAt': FieldValue.serverTimestamp(),
+      };
+
+      if (previewImage != null && previewImage.isNotEmpty) {
+        adData['previewImage'] = previewImage;
+      }
+
+      if (startDate != null) {
+        adData['startDate'] = Timestamp.fromDate(startDate);
+      }
+
+      if (endDate != null) {
+        adData['endDate'] = Timestamp.fromDate(endDate);
+      }
+
+      await docRef.set(adData);
+      DebugLog.info('Created new advertisement with ID: ${docRef.id}');
+
+      // Refresh advertisements
+      _loadAdvertisements();
+
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Advertisement created successfully'.i18n)));
+    } catch (e) {
+      DebugLog.error('Error creating advertisement: ${e.toString()}');
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('Error creating advertisement: ${e.toString()}'.i18n)));
+    }
+  }
+
+  Future<void> _showCreateAdDialog(BuildContext context) async {
+    final titleController = TextEditingController();
+    final descriptionController = TextEditingController();
+    final iconUrlController = TextEditingController();
+    final linkController = TextEditingController();
+    final previewImageController = TextEditingController();
+    final orderController = TextEditingController(text: '0');
+    bool isActive = true;
+    DateTime? startDate;
+    DateTime? endDate;
+
+    showDialog(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: Text('Create New Announcement'.i18n),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              8.width,
-              if (icon != null)
-                Icon(
-                  icon,
-                  size: 30,
+              TextField(
+                controller: titleController,
+                decoration: InputDecoration(
+                  labelText: 'Title'.i18n,
+                  border: const OutlineInputBorder(),
                 ),
-              16.width,
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      maxLines: 1,
-                      style: context.theme.textTheme.bodyMedium,
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: descriptionController,
+                decoration: InputDecoration(
+                  labelText: 'Description'.i18n,
+                  border: const OutlineInputBorder(),
+                ),
+                maxLines: 3,
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: iconUrlController,
+                decoration: InputDecoration(
+                  labelText: 'Icon URL'.i18n,
+                  border: const OutlineInputBorder(),
+                  hintText: 'https://example.com/icon.png',
+                ),
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: linkController,
+                decoration: InputDecoration(
+                  labelText: 'Link'.i18n,
+                  border: const OutlineInputBorder(),
+                  hintText: 'https://example.com or /route/name',
+                ),
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: previewImageController,
+                decoration: InputDecoration(
+                  labelText: 'Preview Image URL (Optional)'.i18n,
+                  border: const OutlineInputBorder(),
+                  hintText: 'https://example.com/preview.png',
+                ),
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: orderController,
+                decoration: InputDecoration(
+                  labelText: 'Display Order'.i18n,
+                  border: const OutlineInputBorder(),
+                ),
+                keyboardType: TextInputType.number,
+              ),
+              const SizedBox(height: 16),
+              StatefulBuilder(
+                builder: (context, setState) => SwitchListTile(
+                  title: Text('Active'.i18n),
+                  value: isActive,
+                  onChanged: (value) {
+                    setState(() {
+                      isActive = value;
+                    });
+                  },
+                ),
+              ),
+              const SizedBox(height: 8),
+              Text('Date Range (Optional)'.i18n,
+                  style: const TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  Expanded(
+                    child: StatefulBuilder(
+                      builder: (context, setState) => ListTile(
+                        title: Text(startDate != null
+                            ? DateFormat('yyyy-MM-dd').format(startDate!)
+                            : 'Start Date (Optional)'.i18n),
+                        onTap: () async {
+                          final date = await showDatePicker(
+                            context: context,
+                            initialDate: startDate ?? DateTime.now(),
+                            firstDate: DateTime.now()
+                                .subtract(const Duration(days: 365)),
+                            lastDate: DateTime.now()
+                                .add(const Duration(days: 365 * 2)),
+                          );
+                          if (date != null) {
+                            setState(() {
+                              startDate = date;
+                            });
+                          }
+                        },
+                        trailing: const Icon(Icons.calendar_today),
+                      ),
                     ),
-                    Opacity(
-                        opacity: .5,
-                        child: Text(
-                          subtitle,
-                          style: context.theme.textTheme.bodySmall,
-                          maxLines: 3,
-                          overflow: TextOverflow.ellipsis,
-                        ))
-                  ],
-                ),
-              )
+                  ),
+                  Expanded(
+                    child: StatefulBuilder(
+                      builder: (context, setState) => ListTile(
+                        title: Text(endDate != null
+                            ? DateFormat('yyyy-MM-dd').format(endDate!)
+                            : 'End Date (Optional)'.i18n),
+                        onTap: () async {
+                          final date = await showDatePicker(
+                            context: context,
+                            initialDate: endDate ??
+                                DateTime.now().add(const Duration(days: 30)),
+                            firstDate: DateTime.now(),
+                            lastDate: DateTime.now()
+                                .add(const Duration(days: 365 * 2)),
+                          );
+                          if (date != null) {
+                            setState(() {
+                              endDate = date;
+                            });
+                          }
+                        },
+                        trailing: const Icon(Icons.calendar_today),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext),
+            child: Text('Cancel'.i18n),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              if (titleController.text.isEmpty ||
+                  descriptionController.text.isEmpty ||
+                  iconUrlController.text.isEmpty ||
+                  linkController.text.isEmpty) {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text('Please fill in all required fields'.i18n)));
+                return;
+              }
+
+              _createNewAd(
+                title: titleController.text,
+                description: descriptionController.text,
+                iconUrl: iconUrlController.text,
+                link: linkController.text,
+                previewImage: previewImageController.text.isNotEmpty
+                    ? previewImageController.text
+                    : null,
+                order: int.tryParse(orderController.text) ?? 0,
+                isActive: isActive,
+                startDate: startDate,
+                endDate: endDate,
+              ).then((_) => Navigator.pop(dialogContext));
+            },
+            child: Text('Create'.i18n),
+          ),
+        ],
       ),
     );
   }
-}
 
-class DashboardShape extends StatelessWidget {
-  final Color backgroundColor;
-  final Color textColor;
-  final String text;
-  const DashboardShape({
-    super.key,
-    required this.backgroundColor,
-    required this.textColor,
-    required this.text,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 88,
-      width: 88,
-      color: backgroundColor,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              text,
-              style: TextStyle(color: textColor, fontSize: 10),
-            ),
-            Text(
-              '#${textColor.toHexString()}',
-              style: TextStyle(color: textColor, fontSize: 10),
-            ),
-          ],
-        ),
-      ),
-    );
+  Widget _buildIconButton({required Icon icon, required String url}) {
+    return IconButton(
+        onPressed: () async {
+          final Uri uri = Uri.parse(url);
+          if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+            throw Exception('Could not launch $uri');
+          }
+        },
+        icon: icon);
   }
-}
-
-Widget _buildIconButton({required Icon icon, required String url}) {
-  return IconButton(
-      onPressed: () async {
-        final Uri uri = Uri.parse(url);
-        if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
-          throw Exception('Could not launch $uri');
-        }
-      },
-      icon: icon);
 }

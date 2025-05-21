@@ -2,6 +2,7 @@ part of 'main.dart';
 
 class _Initializer {
   static Future<void> start() async {
+    await _initialFirebase();
     if (isWindows) {
       await _initForWindows();
     }
@@ -10,6 +11,45 @@ class _Initializer {
     }
     if (isWeb) {
       await _initForWeb();
+    }
+  }
+
+  static Future<void> _initialFirebase() async {
+    FirebaseOptions? options;
+
+    if (isWindows) {
+      options = DefaultFirebaseOptions.windows;
+    } else if (isMacOS) {
+      options = DefaultFirebaseOptions.macos;
+    } else if (isWeb) {
+      options = DefaultFirebaseOptions.web;
+    }
+
+    if (options == null) {
+      throw UnsupportedError(
+          'Unsupported platform for Firebase initialization');
+    }
+
+    await Firebase.initializeApp(options: options);
+
+    // Configure Firestore persistence
+    if (!isWeb) {
+      if (isWindows) {
+        await _configureWindowsFirestore();
+      } else {
+        FirebaseFirestore.instance.settings =
+            const Settings(persistenceEnabled: true);
+      }
+    }
+  }
+
+  static Future<void> _configureWindowsFirestore() async {
+    try {
+      await FirebaseFirestore.instance.clearPersistence();
+      FirebaseFirestore.instance.settings =
+          const Settings(persistenceEnabled: true);
+    } catch (e) {
+      DebugLog.error('Failed to configure Windows Firestore persistence: $e');
     }
   }
 

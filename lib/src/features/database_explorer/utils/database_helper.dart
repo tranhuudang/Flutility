@@ -174,7 +174,7 @@ class DatabaseHelper {
           if (value is Map) {
             // If value is already a map, add it with key info
             final Map<String, dynamic> row =
-                Map<String, dynamic>.from(value as Map);
+                Map<String, dynamic>.from(value);
             row['_key'] = key;
             result.add(row);
           } else {
@@ -191,7 +191,7 @@ class DatabaseHelper {
 
         if (value is Map) {
           // If value is a map, convert each entry
-          (value as Map).forEach((k, v) {
+          (value).forEach((k, v) {
             result.add({
               'key': k.toString(),
               'value': v?.toString() ?? 'null',
@@ -199,7 +199,7 @@ class DatabaseHelper {
           });
         } else if (value is List) {
           // If value is a list, add each item with index
-          for (int i = 0; i < (value as List).length; i++) {
+          for (int i = 0; i < (value).length; i++) {
             result.add({
               'index': i,
               'value': value[i]?.toString() ?? 'null',

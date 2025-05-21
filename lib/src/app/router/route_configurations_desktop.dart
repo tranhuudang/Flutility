@@ -1,6 +1,5 @@
 import 'package:flutility/src/features/api/api_test_screen.dart';
 import 'package:flutility/src/features/colors/color_picker_screen.dart';
-import 'package:flutility/src/features/database_explorer/database_explorer_screen.dart';
 import 'package:flutility/src/features/dev_notes/note_taking_screen.dart';
 import 'package:flutility/src/features/documentation/common_command_screen.dart';
 import 'package:flutility/src/features/documentation/documentation_screen.dart';

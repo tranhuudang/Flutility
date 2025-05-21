@@ -2,10 +2,7 @@ import 'package:marina_labs_common/marina_labs_common.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutility/src/app/app.dart';
-import 'package:flutter/services.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:file_picker/file_picker.dart';
-import 'dart:io';
 import 'models/database_models.dart';
 import 'utils/database_helper.dart';
 import 'widgets/database_content_viewer.dart';
@@ -183,7 +180,7 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
       ),
       bottomNavigationBar: Container(
         padding: const EdgeInsets.all(8.0),
-        color: Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.3),
+        color: Theme.of(context).colorScheme.surfaceContainerHighest.withOpacity(0.3),
         child: Text(_statusMessage),
       ),
     );

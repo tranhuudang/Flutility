@@ -3,8 +3,11 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  cloud_firestore
   dynamic_color
   file_selector_windows
+  firebase_core
+  firebase_storage
   flutter_localization
   screen_retriever
   url_launcher_windows

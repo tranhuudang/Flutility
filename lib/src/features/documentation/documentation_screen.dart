@@ -1,7 +1,7 @@
+import 'package:flutility/src/features/home/ui/widgets/overview_item.dart';
 import 'package:marina_labs_common/marina_labs_common.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutility/src/app/app.dart';
-import 'package:flutility/src/features/home/ui/screens/desktop_home_screen.dart';
 import 'package:flutility/src/features/presentation.dart';
 import 'package:url_launcher/url_launcher.dart';
 part 'parts/additional_documentation.dart';
