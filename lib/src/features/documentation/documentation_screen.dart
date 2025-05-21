@@ -105,12 +105,13 @@ class AdditionalResourceItem extends StatelessWidget {
       child: Container(
         //padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-            border:
-            Border.all(color: context.theme.dividerColor.withOpacity(.5)),
+            border: Border.all(
+                color: context.theme.dividerColor.withValues(alpha: .5)),
             borderRadius: BorderRadius.circular(5)),
         child: Theme(
           data: ThemeData(
-            dividerColor: Colors.transparent, // Set divider color to transparent
+            dividerColor:
+                Colors.transparent, // Set divider color to transparent
           ),
           child: ExpansionTile(
             title: Text(
@@ -120,7 +121,9 @@ class AdditionalResourceItem extends StatelessWidget {
             children: section['items'].map<Widget>((item) {
               return ListTile(
                 title: Text(
-                  '- ${item['name']}',  style: context.theme.textTheme.bodyMedium,),
+                  '- ${item['name']}',
+                  style: context.theme.textTheme.bodyMedium,
+                ),
                 onTap: () => _launchURL(item['url']),
                 trailing: const Icon(Icons.open_in_new),
               );

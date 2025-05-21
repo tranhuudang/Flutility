@@ -33,8 +33,8 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
         child: Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-              border:
-                  Border.all(color: context.theme.dividerColor.withOpacity(.5)),
+              border: Border.all(
+                  color: context.theme.dividerColor.withValues(alpha: .5)),
               borderRadius: BorderRadius.circular(5)),
           child: Stack(
             children: [
@@ -75,7 +75,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         color: context.theme.colorScheme.onSurface
-                            .withOpacity(0.7),
+                            .withValues(alpha: 0.7),
                       ),
                     ),
                     const Spacer(),
@@ -121,8 +121,8 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
                         const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                     decoration: BoxDecoration(
                       color: (ad.isActive ?? true)
-                          ? Colors.green.withOpacity(0.8)
-                          : Colors.red.withOpacity(0.8),
+                          ? Colors.green.withValues(alpha: 0.8)
+                          : Colors.red.withValues(alpha: 0.8),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
@@ -145,8 +145,8 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 6, vertical: 2),
                       decoration: BoxDecoration(
-                        color:
-                            context.theme.colorScheme.primary.withOpacity(0.8),
+                        color: context.theme.colorScheme.primary
+                            .withValues(alpha: 0.8),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Text(

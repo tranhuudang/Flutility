@@ -139,9 +139,10 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
         actions: [
           Opacity(
             opacity: 0.5,
-            child:
-              Text('Only for small databases'.i18n, style: TextStyle(color: context.theme.colorScheme.error),),
-
+            child: Text(
+              'Only for small databases'.i18n,
+              style: TextStyle(color: context.theme.colorScheme.error),
+            ),
           ),
           16.width,
         ],
@@ -150,24 +151,26 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
           tabs: [
             Tab(
               height: 40,
-                child : Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(FluentIcons.database_search_20_regular),
-                    8.width,
-                    Text("Explorer".i18n),
-                  ],
-                ),),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(FluentIcons.database_search_20_regular),
+                  8.width,
+                  Text("Explorer".i18n),
+                ],
+              ),
+            ),
             Tab(
               height: 40,
-                icon: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(FluentIcons.database_search_20_regular),
-                    8.width,
-                    Text("Query".i18n),
-                  ],
-                ),),
+              icon: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(FluentIcons.database_search_20_regular),
+                  8.width,
+                  Text("Query".i18n),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -180,7 +183,10 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
       ),
       bottomNavigationBar: Container(
         padding: const EdgeInsets.all(8.0),
-        color: Theme.of(context).colorScheme.surfaceContainerHighest.withOpacity(0.3),
+        color: Theme.of(context)
+            .colorScheme
+            .surfaceContainerHighest
+            .withValues(alpha: 0.3),
         child: Text(_statusMessage),
       ),
     );

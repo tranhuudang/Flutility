@@ -46,7 +46,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                 children: [
                   ExpansionTile(
                     backgroundColor: context.theme.colorScheme.surfaceContainer
-                        .withOpacity(1),
+                        .withValues(alpha: 1),
                     leading: const Icon(
                       FluentIcons.document_search_16_regular,
                     ),
@@ -87,7 +87,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                   ),
                   ExpansionTile(
                     backgroundColor: context.theme.colorScheme.surfaceContainer
-                        .withOpacity(1),
+                        .withValues(alpha: 1),
                     leading: const Icon(FluentIcons.toolbox_16_regular),
                     tilePadding: const EdgeInsets.only(
                         left: 14, right: 10, top: 0, bottom: 4),
@@ -187,7 +187,8 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                               index: 13),
                           8.height,
                         ],
-                        if (Properties.instance.settings.enableDatabaseExplorer) ...[
+                        if (Properties
+                            .instance.settings.enableDatabaseExplorer) ...[
                           const Divider(
                             thickness: .3,
                             height: 0,

@@ -26,8 +26,6 @@ class DesktopNavigationFrame extends StatefulWidget {
 class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
     with WindowListener {
   Timer? _saveWindowsSizeTimer;
-  final TextEditingController _searchController = TextEditingController();
-  final List<String> _searchResults = [];
 
   // Detect when windows is changing size and save windows size
   @override
@@ -59,17 +57,6 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
     /// Increase count number to count the how many time user open app
     Properties.instance.saveSettings(Properties.instance.settings
         .copyWith(openAppCount: Properties.instance.settings.openAppCount + 1));
-  }
-
-  dynamic _onSearchResultTap(String query) {
-    final lowerCaseQuery = query.toLowerCase();
-    return searchIndices
-        .where((indexedItem) =>
-            indexedItem.title.toLowerCase().contains(lowerCaseQuery) ||
-            indexedItem.keywords.any(
-                (keyword) => keyword.toLowerCase().contains(lowerCaseQuery)))
-        .map((index) => index.title)
-        .toList();
   }
 
   @override
@@ -131,12 +118,10 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                   Container(
                     //color: context.theme.colorScheme.surfaceContainerLow,
                     decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(
-                          color: context.theme.dividerColor.withOpacity(.2)
-                        )
-                      )
-                    ),
+                        border: Border(
+                            bottom: BorderSide(
+                                color: context.theme.dividerColor
+                                    .withValues(alpha: .2)))),
                     height: 46,
                     child: Row(
                       children: [
@@ -210,7 +195,8 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                   //color: context.theme.colorScheme.surfaceContainer,
                   border: Border(
                       top: BorderSide(
-                          color: context.theme.dividerColor.withOpacity(.3),
+                          color:
+                              context.theme.dividerColor.withValues(alpha: .3),
                           width: .3))),
               child: Opacity(
                 opacity: .8,
@@ -343,7 +329,7 @@ class SearchBoxPrototype extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10),
                                 borderSide: BorderSide(
                                   color: context.theme.dividerColor
-                                      .withOpacity(.3),
+                                      .withValues(alpha: .3),
                                   width: 0.3,
                                 ),
                               ),
@@ -351,7 +337,7 @@ class SearchBoxPrototype extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10),
                                 borderSide: BorderSide(
                                   color: context.theme.dividerColor
-                                      .withOpacity(.3),
+                                      .withValues(alpha: .3),
                                   width: 0.3,
                                 ),
                               ),
@@ -411,10 +397,11 @@ class SearchBoxPrototype extends StatelessWidget {
       child: Container(
         width: context.screenSize.width * .3,
         decoration: BoxDecoration(
-          color: context.theme.scaffoldBackgroundColor.withOpacity(.5),
+          color: context.theme.scaffoldBackgroundColor.withValues(alpha: .5),
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
-              color: context.theme.dividerColor.withOpacity(.5), width: .3),
+              color: context.theme.dividerColor.withValues(alpha: .5),
+              width: .3),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),

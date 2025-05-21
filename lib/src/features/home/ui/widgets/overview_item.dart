@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marina_labs_common/marina_labs_common.dart';
 
-
 class OverviewItem extends StatelessWidget {
   final IconData? icon;
   final String title;
@@ -26,8 +25,8 @@ class OverviewItem extends StatelessWidget {
           height: 90,
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-              border:
-                  Border.all(color: context.theme.dividerColor.withOpacity(.5)),
+              border: Border.all(
+                  color: context.theme.dividerColor.withValues(alpha: .5)),
               borderRadius: BorderRadius.circular(5)),
           child: Row(
             children: [
