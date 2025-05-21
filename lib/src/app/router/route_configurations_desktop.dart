@@ -220,41 +220,6 @@ GoRouter routerConfigDesktop = GoRouter(
                 return NoTransitionPage(
                     child: I18n(child: const IconsScreen()));
               },
-              routes: [
-                // Reading chamber's reading space
-                GoRoute(
-                    name: RouteName.readingSpace,
-                    path: RoutePath.readingSpace,
-                    pageBuilder: (context, state) {
-                      return NoTransitionPage(
-                          child: I18n(
-                        child: const IconsScreen(),
-                      ));
-                    }),
-                // Reading history
-                GoRoute(
-                  name: RouteName.readingChamberHistory,
-                  path: RoutePath.readingChamberHistory,
-                  pageBuilder: (context, state) {
-                    return NoTransitionPage(
-                        child: I18n(
-                      child: const IconsScreen(),
-                    ));
-                  },
-                ),
-                // Reading bookmarks
-                GoRoute(
-                  name: RouteName.readingChamberBookmark,
-                  path: RoutePath.readingChamberBookmark,
-                  pageBuilder: (context, state) {
-                    return NoTransitionPage(
-                      child: I18n(
-                        child: const IconsScreen(),
-                      ),
-                    );
-                  },
-                ),
-              ],
             ),
           ],
         ),
