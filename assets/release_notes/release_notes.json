@@ -1,4 +1,12 @@
 [
+   {
+    "version": "101",
+    "date": "21-05-2025",
+    "changesNote": [
+      "Improve search icon functionality",
+      "Improve app reliability"
+    ]
+  },
   {
     "version": "100",
     "date": "03-04-2025",

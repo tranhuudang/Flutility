@@ -48,7 +48,7 @@ class _FluentIconsScreenState extends State<FluentIconsScreen> {
     }
   }
 
-    @override
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -109,7 +109,7 @@ class _FluentIconsScreenState extends State<FluentIconsScreen> {
                     ),
                   ),
                 ),
-               // 24.height,
+                // 24.height,
               ],
             ),
           ),
@@ -126,10 +126,26 @@ class _FluentIconsScreenState extends State<FluentIconsScreen> {
               contentPadding: const EdgeInsets.symmetric(horizontal: 16),
             ),
             onChanged: (text) {
+              // setState(() {
+              //   fluentuiSystemIcons = FluentuiSystemIcons.fluentuiSystemIcons
+              //       .where((item) => item.contains(text))
+              //       .toList();
+              // });
               setState(() {
-                fluentuiSystemIcons = FluentuiSystemIcons.fluentuiSystemIcons
-                    .where((item) => item.contains(text))
-                    .toList();
+                fluentuiSystemIcons =
+                    FluentuiSystemIcons.fluentuiSystemIcons.where((item) {
+                  final itemLower = item.toLowerCase();
+                  final searchTermLower = text.toLowerCase();
+
+                  // Split search term into individual words
+                  final searchWords = searchTermLower
+                      .split(RegExp(r'\s+'))
+                      .where((word) => word.isNotEmpty);
+
+                  // Match if any of the search words is found in the item
+                  return searchWords.isEmpty ||
+                      searchWords.any((word) => itemLower.contains(word));
+                }).toList();
               });
             },
           ),

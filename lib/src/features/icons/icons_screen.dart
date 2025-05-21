@@ -13,7 +13,7 @@ class IconsScreen extends StatefulWidget {
 }
 
 class _IconsScreenState extends State<IconsScreen> {
-  String selectedPlatform = 'Material Icons'; // Default platform selection
+  String selectedPlatform = 'Fluent Icons'; // Default platform selection
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class _IconsScreenState extends State<IconsScreen> {
         title: const Text('Icons'),
         actions: [
           Container(
-            decoration:BoxDecoration(
+            decoration: BoxDecoration(
               color: context.theme.colorScheme.surfaceContainer,
               borderRadius: BorderRadius.circular(10),
             ),
@@ -56,4 +56,3 @@ class _IconsScreenState extends State<IconsScreen> {
     );
   }
 }
-
