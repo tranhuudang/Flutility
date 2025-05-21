@@ -115,6 +115,6 @@ msix_config:
   publisher: CN=DA7D2C99-987C-4B69-8953-17157F6E0E1A
   msix_version: 2025.5.21.0
   trim_logo: false
-  logo_path: C:\Users\tranh\StudioProjects\FlutterToolkit\assets\images\app_icon.png
+  logo_path: C:\Users\tranh\StudioProjects\Flutility\assets\images\app_icon.png
   store: true
   language: en-us, vi-vi, zh-cn
