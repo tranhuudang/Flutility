@@ -5,10 +5,10 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = flutility
+PRODUCT_NAME = Flutility
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.zeroboy.flutterToolkits
+PRODUCT_BUNDLE_IDENTIFIER = com.marinalabs.flutility
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2024 com.zeroboy. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2025 Marina Labs. All rights reserved.
