@@ -67,7 +67,7 @@ dependencies:
   file_picker: ^8.0.6
   open_file_plus: ^3.4.1+1
   loading_animation_widget: ^1.2.1
-  intl: ^0.19.0
+  intl: ^0.20.2
   string_validator: ^1.1.0
   windows_status_bar:
     git: https://github.com/tranhuudang/windows_status_bar

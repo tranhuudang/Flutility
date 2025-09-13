@@ -12,7 +12,7 @@ ThemeData darkTheme({required ColorScheme colorScheme}) {
     navigationRailTheme: NavigationRailThemeData(
       backgroundColor: isWindows ? const Color(0xFF292726) : Colors.black,
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       color: isWindows ? const Color(0xFF343230) : colorScheme.surfaceContainer,
       margin: const EdgeInsets.only(bottom: 8),
       shape: RoundedRectangleBorder(

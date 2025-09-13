@@ -10,7 +10,7 @@ const lightThemeBackgroundColor = Color(0xfffffef5);
 ThemeData lightTheme({required ColorScheme colorScheme}) {
   return ThemeData(
     scaffoldBackgroundColor: isWindows ? colorScheme.surface : lightThemeBackgroundColor,
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       color: colorScheme.surfaceContainerLow,
       margin: const EdgeInsets.only(bottom: 8),
       shape: RoundedRectangleBorder(
