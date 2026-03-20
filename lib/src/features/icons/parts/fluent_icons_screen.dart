@@ -59,11 +59,12 @@ class _FluentIconsScreenState extends State<FluentIconsScreen> {
             child: Column(
               children: [
                 DottedBorder(
-                  dashPattern: const [4, 4],
-                  borderType: BorderType.RRect,
-                  strokeWidth: 1,
-                  radius: const Radius.circular(5),
-                  color: context.theme.dividerColor,
+                  options: RoundedRectDottedBorderOptions(
+                    dashPattern: const [4, 4],
+                    strokeWidth: 1,
+                    radius: const Radius.circular(5),
+                    color: context.theme.dividerColor,
+                  ),
                   child: Container(
                     padding: const EdgeInsets.all(8),
                     child: Column(

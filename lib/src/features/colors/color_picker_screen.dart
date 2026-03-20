@@ -120,18 +120,21 @@ class _ColorPickerScreenState extends State<ColorPickerScreen> {
             Padding(
               padding: const EdgeInsets.only(left: 16, bottom: 16),
               child: Text(
-                "Don't forget to press Enter after changing the name of the color to save the changes.".i18n,
-                style: context.theme.textTheme.labelSmall?.copyWith(color: context.theme.colorScheme.error),
+                "Don't forget to press Enter after changing the name of the color to save the changes."
+                    .i18n,
+                style: context.theme.textTheme.labelSmall
+                    ?.copyWith(color: context.theme.colorScheme.error),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
               child: DottedBorder(
-                dashPattern: const [4, 4],
-                borderType: BorderType.RRect,
-                strokeWidth: .5,
-                radius: const Radius.circular(5),
-                color: context.theme.dividerColor,
+                options: RoundedRectDottedBorderOptions(
+                  dashPattern: const [4, 4],
+                  strokeWidth: .5,
+                  color: context.theme.dividerColor,
+                  radius: const Radius.circular(5),
+                ),
                 child: Center(
                   child: GridView(
                     shrinkWrap: true,

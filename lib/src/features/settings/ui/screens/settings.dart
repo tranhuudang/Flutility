@@ -17,7 +17,6 @@ class SettingsView extends StatefulWidget {
 }
 
 class _SettingsViewState extends State<SettingsView> {
-
   Future<void> _restoreBackupFiles() async {
     try {
       FilePickerResult? result =
@@ -216,6 +215,7 @@ class LanguageSwitcher extends StatefulWidget {
 class _LanguageSwitcherState extends State<LanguageSwitcher> {
   final languageStreamController = StreamController<String>();
   final supportedLanguages = ['English', 'Tiếng Việt', '中国', 'System default'];
+
   @override
   Widget build(BuildContext context) {
     final settingBloc = context.read<SettingBloc>();
@@ -223,15 +223,20 @@ class _LanguageSwitcherState extends State<LanguageSwitcher> {
         stream: languageStreamController.stream,
         initialData: Properties.instance.settings.language,
         builder: (context, languageState) {
+          // The language is already stored as display name (e.g., 'English', 'Tiếng Việt')
+          final language = languageState.data ?? 'System default';
           return DropdownButtonHideUnderline(
             child: DropdownButton<String>(
               focusColor: context.theme.scaffoldBackgroundColor,
               borderRadius: BorderRadius.circular(16),
-              value: languageState.data,
-              onChanged: (String? language) {
-                if (language != null) {
-                  languageStreamController.add(language);
-                  settingBloc.add(ChangeLanguageEvent(language: language));
+              value: supportedLanguages.contains(language)
+                  ? language
+                  : 'System default',
+              onChanged: (String? displayName) {
+                if (displayName != null) {
+                  // Save the display name directly (not the locale code)
+                  languageStreamController.add(displayName);
+                  settingBloc.add(ChangeLanguageEvent(language: displayName));
                 }
               },
               items: supportedLanguages

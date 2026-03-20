@@ -163,11 +163,12 @@ class _AppIconGeneratorScreenState
             ),
             const SizedBox(height: 16),
             DottedBorder(
-              dashPattern: const [4, 4],
-              borderType: BorderType.RRect,
-              strokeWidth: 1,
-              radius: const Radius.circular(5),
-              color: context.theme.dividerColor,
+              options: RoundedRectDottedBorderOptions(
+                dashPattern: const [4, 4],
+                strokeWidth: 1,
+                radius: const Radius.circular(5),
+                color: context.theme.dividerColor,
+              ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -233,11 +234,12 @@ class _AppIconGeneratorScreenState
             ),
             16.height,
             DottedBorder(
-              dashPattern: const [4, 4],
-              borderType: BorderType.RRect,
-              strokeWidth: .5,
-              radius: const Radius.circular(5),
-              color: context.theme.dividerColor,
+              options: RoundedRectDottedBorderOptions(
+                dashPattern: const [4, 4],
+                strokeWidth: .5,
+                radius: const Radius.circular(5),
+                color: context.theme.dividerColor,
+              ),
               child: Opacity(
                 opacity: .5,
                 child: Container(

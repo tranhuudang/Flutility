@@ -83,8 +83,7 @@ GoRouter routerConfigDesktop = GoRouter(
               name: RouteName.dashboard,
               path: RoutePath.dashboard,
               pageBuilder: (context, state) {
-                return NoTransitionPage(
-                    child: I18n(child: const DesktopHomeScreen()));
+                return NoTransitionPage(child: const DesktopHomeScreen());
               },
             ),
           ],
@@ -98,7 +97,7 @@ GoRouter routerConfigDesktop = GoRouter(
               name: RouteName.desktopUserSettings,
               path: RoutePath.desktopUserSettings,
               pageBuilder: (context, state) {
-                return NoTransitionPage(child: I18n(child: Container()));
+                return NoTransitionPage(child: Container());
               },
               routes: const [],
             ),
@@ -113,8 +112,7 @@ GoRouter routerConfigDesktop = GoRouter(
               name: RouteName.commonSettings,
               path: RoutePath.settings,
               pageBuilder: (context, state) {
-                return NoTransitionPage(
-                    child: I18n(child: const SettingsView()));
+                return NoTransitionPage(child: const SettingsView());
               },
             ),
           ],
@@ -128,7 +126,7 @@ GoRouter routerConfigDesktop = GoRouter(
               name: RouteName.infos,
               path: RoutePath.infos,
               pageBuilder: (context, state) {
-                return NoTransitionPage(child: I18n(child: const InfoView()));
+                return NoTransitionPage(child: const InfoView());
               },
             ),
           ],
@@ -142,8 +140,7 @@ GoRouter routerConfigDesktop = GoRouter(
               name: RouteName.documentation,
               path: RoutePath.documentation,
               pageBuilder: (context, state) {
-                return NoTransitionPage(
-                    child: I18n(child: const DocumentationScreen()));
+                return NoTransitionPage(child: const DocumentationScreen());
               },
             ),
           ],
@@ -157,8 +154,7 @@ GoRouter routerConfigDesktop = GoRouter(
               name: RouteName.commandLine,
               path: RoutePath.commandLine,
               pageBuilder: (context, state) {
-                return NoTransitionPage(
-                    child: I18n(child: const CommandLineScreen()));
+                return NoTransitionPage(child: const CommandLineScreen());
               },
             ),
           ],
@@ -172,8 +168,7 @@ GoRouter routerConfigDesktop = GoRouter(
               name: RouteName.roadmap,
               path: RoutePath.roadmap,
               pageBuilder: (context, state) {
-                return NoTransitionPage(
-                    child: I18n(child: const RoadmapScreen()));
+                return NoTransitionPage(child: const RoadmapScreen());
               },
             ),
           ],
@@ -187,8 +182,7 @@ GoRouter routerConfigDesktop = GoRouter(
               name: RouteName.fonts,
               path: RoutePath.fonts,
               pageBuilder: (context, state) {
-                return NoTransitionPage(
-                    child: I18n(child: const FontPreviewerScreen()));
+                return NoTransitionPage(child: const FontPreviewerScreen());
               },
             ),
           ],
@@ -202,8 +196,7 @@ GoRouter routerConfigDesktop = GoRouter(
               name: RouteName.color,
               path: RoutePath.color,
               pageBuilder: (context, state) {
-                return NoTransitionPage(
-                    child: I18n(child: const ColorPickerScreen()));
+                return NoTransitionPage(child: const ColorPickerScreen());
               },
             ),
           ],
@@ -217,8 +210,7 @@ GoRouter routerConfigDesktop = GoRouter(
               name: RouteName.icon,
               path: RoutePath.icon,
               pageBuilder: (context, state) {
-                return NoTransitionPage(
-                    child: I18n(child: const IconsScreen()));
+                return NoTransitionPage(child: const IconsScreen());
               },
             ),
           ],
@@ -232,8 +224,7 @@ GoRouter routerConfigDesktop = GoRouter(
               name: RouteName.json,
               path: RoutePath.json,
               pageBuilder: (context, state) {
-                return NoTransitionPage(
-                    child: I18n(child: const JsonFormatterScreen()));
+                return NoTransitionPage(child: const JsonFormatterScreen());
               },
             ),
           ],
@@ -248,9 +239,7 @@ GoRouter routerConfigDesktop = GoRouter(
               path: RoutePath.iconGenerator,
               pageBuilder: (context, state) {
                 return NoTransitionPage(
-                  child: I18n(
-                    child: const AppIconGeneratorScreen(),
-                  ),
+                  child: const AppIconGeneratorScreen(),
                 );
               },
             ),
@@ -266,9 +255,7 @@ GoRouter routerConfigDesktop = GoRouter(
               path: RoutePath.imageCompress,
               pageBuilder: (context, state) {
                 return NoTransitionPage(
-                  child: I18n(
-                    child: const ImageCompressScreen(),
-                  ),
+                  child: const ImageCompressScreen(),
                 );
               },
             ),
@@ -284,9 +271,7 @@ GoRouter routerConfigDesktop = GoRouter(
               path: RoutePath.api,
               pageBuilder: (context, state) {
                 return NoTransitionPage(
-                  child: I18n(
-                    child: const ApiTestScreen(),
-                  ),
+                  child: const ApiTestScreen(),
                 );
               },
             ),
@@ -302,9 +287,7 @@ GoRouter routerConfigDesktop = GoRouter(
               path: RoutePath.noteTaking,
               pageBuilder: (context, state) {
                 return NoTransitionPage(
-                  child: I18n(
-                    child: const DevNoteScreen(),
-                  ),
+                  child: const DevNoteScreen(),
                 );
               },
             ),
@@ -321,15 +304,13 @@ GoRouter routerConfigDesktop = GoRouter(
               path: RoutePath.donation,
               pageBuilder: (context, state) {
                 return NoTransitionPage(
-                  child: I18n(
-                    child: const DonationScreen(),
-                  ),
+                  child: const DonationScreen(),
                 );
               },
             ),
           ],
         ),
-         // 16 database explorer
+        // 16 database explorer
         StatefulShellBranch(
           navigatorKey: _shellNavigatorDatabaseExplorerKey,
           routes: [
@@ -338,8 +319,7 @@ GoRouter routerConfigDesktop = GoRouter(
               name: RouteName.databaseExplorer,
               path: RoutePath.databaseExplorer,
               pageBuilder: (context, state) {
-                return NoTransitionPage(
-                    child: I18n(child: const DatabaseExplorerScreen()));
+                return NoTransitionPage(child: const DatabaseExplorerScreen());
               },
             ),
           ],
@@ -348,6 +328,6 @@ GoRouter routerConfigDesktop = GoRouter(
     ),
   ],
   errorBuilder: (context, state) {
-    return I18n(child: const IconsScreen());
+    return const IconsScreen();
   },
 );

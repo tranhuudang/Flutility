@@ -32,9 +32,17 @@ class _FontPreviewerScreenState extends State<FontPreviewerScreen> {
         leading: const Icon(FluentIcons.text_font_16_regular),
         title: Text('Font Previewer'.i18n),
         actions: [
-          TextButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> TextThemeShowcaseScreen(font: selectedFont,)));
-          }, child: Text('Show case', style: GoogleFonts.getFont(selectedFont)))
+          TextButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => TextThemeShowcaseScreen(
+                              font: selectedFont,
+                            )));
+              },
+              child:
+                  Text('Show case', style: GoogleFonts.getFont(selectedFont)))
         ],
       ),
       body: Column(
@@ -55,11 +63,12 @@ class _FontPreviewerScreenState extends State<FontPreviewerScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       DottedBorder(
-                        dashPattern: const [4, 4],
-                        borderType: BorderType.RRect,
-                        strokeWidth: 1,
-                        radius: const Radius.circular(5),
-                        color: context.theme.dividerColor,
+                        options: RoundedRectDottedBorderOptions(
+                          dashPattern: const [4, 4],
+                          strokeWidth: 1,
+                          radius: const Radius.circular(5),
+                          color: context.theme.dividerColor,
+                        ),
                         child: Container(
                           padding: const EdgeInsets.all(8),
                           child: Column(
@@ -135,11 +144,12 @@ class _FontPreviewerScreenState extends State<FontPreviewerScreen> {
           Padding(
             padding: const EdgeInsets.all(16),
             child: DottedBorder(
-              dashPattern: const [4, 4],
-              borderType: BorderType.RRect,
-              strokeWidth: 1,
-              radius: const Radius.circular(5),
-              color: context.theme.dividerColor,
+              options: RoundedRectDottedBorderOptions(
+                dashPattern: const [4, 4],
+                strokeWidth: 1,
+                radius: const Radius.circular(5),
+                color: context.theme.dividerColor,
+              ),
               child: Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(8),

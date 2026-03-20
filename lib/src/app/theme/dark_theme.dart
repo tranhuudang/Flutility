@@ -2,10 +2,9 @@ import 'package:marina_labs_common/marina_labs_common.dart';
 import 'package:flutility/src/features/presentation.dart';
 import 'package:flutter/services.dart';
 
-
 ThemeData darkTheme({required ColorScheme colorScheme}) {
   return ThemeData(
-    bottomAppBarTheme: BottomAppBarTheme(
+    bottomAppBarTheme: BottomAppBarThemeData(
       color: isWindows ? const Color(0xFF292726) : Colors.black,
     ),
     scaffoldBackgroundColor: isWindows ? const Color(0xFF292726) : Colors.black,
@@ -24,7 +23,8 @@ ThemeData darkTheme({required ColorScheme colorScheme}) {
       //iconTheme: IconThemeData(color: colorScheme.primary),
       titleTextStyle: TextStyle(
         fontSize: 18,
-        fontWeight: FontWeight.bold,  color: colorScheme.onSurface,
+        fontWeight: FontWeight.bold,
+        color: colorScheme.onSurface,
       ),
       centerTitle: false,
       backgroundColor: isWindows ? const Color(0xFF292726) : Colors.black,

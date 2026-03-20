@@ -160,11 +160,12 @@ class RoadmapScreen extends StatelessWidget {
                           16.width,
                           Expanded(
                             child: DottedBorder(
-                              dashPattern: const [4, 4],
-                              borderType: BorderType.RRect,
-                              strokeWidth: 1,
-                              radius: const Radius.circular(5),
-                              color: context.theme.dividerColor,
+                              options: RoundedRectDottedBorderOptions(
+                                dashPattern: const [4, 4],
+                                strokeWidth: 1,
+                                radius: const Radius.circular(5),
+                                color: context.theme.dividerColor,
+                              ),
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [

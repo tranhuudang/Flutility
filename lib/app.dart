@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:flutter_quill/flutter_quill.dart';
+import 'package:i18n_extension/i18n_extension.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -67,25 +68,27 @@ class _AppState extends State<App> {
       ColorScheme darkColorScheme) {
     return FlutterSizer(
       builder: (context, orientation, screenType) {
-        return MaterialApp.router(
+        return I18n(
+          initialLocale: state.params.language.toLocale(),
+          supportedLocales: const [
+            Locale('en', 'US'),
+            Locale('vi', 'VN'),
+            Locale('zh', 'CN')
+          ],
           localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
             FlutterQuillLocalizations.delegate,
           ],
-          supportedLocales: const [
-            Locale('en', 'US'),
-            Locale('vi', 'VI'),
-            Locale('zh', 'CN')
-          ],
-          locale: state.params.language.toLocale(),
-          themeMode: state.params.themeMode,
-          theme: lightTheme(colorScheme: lightColorScheme),
-          darkTheme: darkTheme(colorScheme: darkColorScheme),
-          title: DefaultSettings.appName,
-          debugShowCheckedModeBanner: false,
-          routerConfig: routerConfigDesktop,
+          child: MaterialApp.router(
+            themeMode: state.params.themeMode,
+            theme: lightTheme(colorScheme: lightColorScheme),
+            darkTheme: darkTheme(colorScheme: darkColorScheme),
+            title: DefaultSettings.appName,
+            debugShowCheckedModeBanner: false,
+            routerConfig: routerConfigDesktop,
+          ),
         );
       },
     );

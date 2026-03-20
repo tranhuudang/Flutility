@@ -12,6 +12,8 @@ import 'package:window_manager/window_manager.dart';
 import 'package:windows_status_bar/windows_status_bar_widget.dart';
 import '../../../../app/router/route_configurations_desktop.dart';
 
+const int dcWindowsStatusBarHeight = 55;
+
 class DesktopNavigationFrame extends StatefulWidget {
   final StatefulNavigationShell navigationShell;
   const DesktopNavigationFrame({
@@ -189,7 +191,7 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
               ),
             ),
             Container(
-              height: dcWindowsStatusBarHeight,
+              height: 55 ,
               padding: const EdgeInsets.symmetric(horizontal: 4),
               decoration: BoxDecoration(
                   //color: context.theme.colorScheme.surfaceContainer,
