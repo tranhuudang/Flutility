@@ -129,4 +129,4 @@ msix_config:
   trim_logo: false
   logo_path: C:\Users\tranh\StudioProjects\Flutility\assets\images\app_icon.png
   store: true
-  language: en-us, vi-vi, zh-cn
+  language: en-us, vi-vi

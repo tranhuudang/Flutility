@@ -10,12 +10,9 @@ void main() async {
 
   final en = <String, String>{};
   final vi = <String, String>{};
-  final zh = <String, String>{};
-  
   // ARB headers
   en['@@locale'] = 'en';
   vi['@@locale'] = 'vi';
-  zh['@@locale'] = 'zh';
 
   int i = 0;
   for (final match in matches) {
@@ -35,7 +32,6 @@ void main() async {
     
     String enVal = getVal('en-US') ?? originalKey;
     String viVal = getVal('vi-VN') ?? originalKey;
-    String zhVal = getVal('zh-CN') ?? originalKey;
 
     // We need to convert originalKey to a valid dart variable name
     String camelKey = toCamelCase(originalKey);
@@ -59,7 +55,6 @@ void main() async {
 
     en[camelKey] = enVal;
     vi[camelKey] = viVal;
-    zh[camelKey] = zhVal;
     
     i++;
   }
@@ -67,7 +62,6 @@ void main() async {
   await Directory('lib/l10n').create(recursive: true);
   await File('lib/l10n/intl_en.arb').writeAsString(JsonEncoder.withIndent('  ').convert(en));
   await File('lib/l10n/intl_vi.arb').writeAsString(JsonEncoder.withIndent('  ').convert(vi));
-  await File('lib/l10n/intl_zh.arb').writeAsString(JsonEncoder.withIndent('  ').convert(zh));
   
   print('Generated ${en.length - 1} translation keys.');
 }
