@@ -199,7 +199,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                               icon: FluentIcons.window_database_24_regular,
                               selectedIcon: FluentIcons.network_check_20_filled,
                               label: S.of(context).databaseExplorer,
-                              index: 15),
+                              index: 14),
                           8.height,
                         ],
                       ],

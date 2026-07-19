@@ -274,7 +274,7 @@ GoRouter routerConfigDesktop = GoRouter(
         ),
 
 
-        // 15 database explorer
+        // 14 database explorer
         StatefulShellBranch(
           navigatorKey: _shellNavigatorDatabaseExplorerKey,
           routes: [
