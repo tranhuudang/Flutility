@@ -2,7 +2,7 @@ import 'package:flutility/src/features/api/api_test_screen.dart';
 import 'package:flutility/src/features/colors/color_picker_screen.dart';
 import 'package:flutility/src/features/documentation/common_command_screen.dart';
 import 'package:flutility/src/features/documentation/documentation_screen.dart';
-import 'package:flutility/src/features/donation/donation_screen.dart';
+
 import 'package:flutility/src/features/fonts/fonts_screen.dart';
 import 'package:flutility/src/features/home/ui/screens/desktop_home_screen.dart';
 import 'package:flutility/src/features/icon_generator/app_icon_generator.dart';
@@ -25,8 +25,7 @@ final _shellNavigatorIconGeneratorKey =
     GlobalKey<NavigatorState>(debugLabel: 'IconGenerator');
 final _shellNavigatorApiKey =
     GlobalKey<NavigatorState>(debugLabel: 'Vocabulary');
-final _shellNavigatorDonationKey =
-    GlobalKey<NavigatorState>(debugLabel: 'donation');
+
 final _shellNavigatorDatabaseExplorerKey =
     GlobalKey<NavigatorState>(debugLabel: 'DatabaseExplorer');
 final _shellNavigatorOthersKey =
@@ -274,22 +273,7 @@ GoRouter routerConfigDesktop = GoRouter(
           ],
         ),
 
-        /// 14 donation
-        StatefulShellBranch(
-          navigatorKey: _shellNavigatorDonationKey,
-          routes: [
-            // top route inside branch
-            GoRoute(
-              name: RouteName.donation,
-              path: RoutePath.donation,
-              pageBuilder: (context, state) {
-                return NoTransitionPage(
-                  child: const DonationScreen(),
-                );
-              },
-            ),
-          ],
-        ),
+
         // 15 database explorer
         StatefulShellBranch(
           navigatorKey: _shellNavigatorDatabaseExplorerKey,

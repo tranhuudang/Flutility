@@ -180,17 +180,5 @@ final List<SearchIndex> searchIndices = [
       S.current.response
     ],
   ),
-  SearchIndex(
-    index: 14,
-    title: 'Donation',
-    keywords: [
-      'donation',
-      'donate',
-      'support',
-      'sponsor',
-      'sponsorship',
-      'buy me a coffee',
-      S.current.developmentFund
-    ],
-  ),
+
 ];

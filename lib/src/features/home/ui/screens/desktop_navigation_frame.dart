@@ -222,39 +222,7 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                           ),
                         )),
                     const Spacer(),
-                    InkWell(
-                      borderRadius: BorderRadius.circular(10),
-                      onTap: () {
-                        /// go to donation screen
-                        goBranch(14);
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: context.theme.colorScheme.primaryContainer,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 6),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                S.of(context).donate,
-                                style: context.theme.textTheme.labelSmall,
-                              ),
-                              4.width,
-                              Icon(
-                                FluentIcons.heart_12_regular,
-                                color: context.theme.colorScheme.primary,
-                                size: 16,
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
+
                     TextButton(
                         onPressed: () {
                           goToStoreListing();

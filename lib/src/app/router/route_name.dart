@@ -16,7 +16,7 @@ class RouteName {
   static const String fonts = 'fonts';
   static const String dashboard = 'dashboard';
   static const String api = 'api';
-  static const String donation = 'donation';
+
   static const String databaseExplorer = 'database-explorer';
   static const String icon = 'icon';
   static const String licenses = 'licenses';
