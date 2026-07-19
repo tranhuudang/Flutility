@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutility/src/app/app.dart';
 import 'package:http/http.dart' as http;
 import '../../app/utils/json_formatter.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class ApiTestScreen extends StatefulWidget {
   const ApiTestScreen({super.key});
@@ -80,7 +81,7 @@ class _ApiTestScreenState extends State<ApiTestScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(FluentIcons.network_check_20_regular),
-        title: Text("API Testing Tool".i18n),
+        title: Text(S.of(context).apiTestingTool),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -90,7 +91,7 @@ class _ApiTestScreenState extends State<ApiTestScreen> {
             children: [
               Text(
                 "This API Testing Tool allows you to perform basic HTTP requests like GET, POST, and DELETE. Enter a URL to test the response and see the status code and data returned by the server."
-                    .i18n,
+                    ,
               ),
               16.height,
               // GET Request Section
@@ -169,12 +170,12 @@ class _ApiTestScreenState extends State<ApiTestScreen> {
               Row(
                 children: [
                   Text(
-                    "Response".i18n,
+                    S.of(context).response,
                     style: context.theme.textTheme.titleSmall,
                   ),
                   const Spacer(),
                   Text(
-                    "${'Status'.i18n}: ",
+                    "${S.of(context).status}: ",
                     style: context.theme.textTheme.titleSmall,
                   ),
                   Text(
@@ -206,13 +207,13 @@ class _ApiTestScreenState extends State<ApiTestScreen> {
                       children: [
                         const Spacer(),
                         TextButton.icon(
-                            label: Text('Copy'.i18n),
+                            label: Text(S.of(context).copy),
                             onPressed: () {
                               Clipboard.setData(
                                 ClipboardData(text: _response),
                               );
                               context.showSnackBar(
-                                  content: 'Copied to clipboard'.i18n);
+                                  content: S.of(context).copiedToClipboard);
                             },
                             icon: const Icon(Icons.copy_rounded))
                       ],

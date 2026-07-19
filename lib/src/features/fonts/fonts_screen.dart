@@ -9,6 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'fonts_list.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class FontPreviewerScreen extends StatefulWidget {
   const FontPreviewerScreen({super.key});
@@ -20,7 +21,7 @@ class FontPreviewerScreen extends StatefulWidget {
 class _FontPreviewerScreenState extends State<FontPreviewerScreen> {
   String selectedFont = 'Teko'; // Default font
   String sampleText =
-      'The quick brown fox jumps over the lazy dog.'.i18n; // Text to preview
+      S.current.theQuickBrownFoxJumpsOverTheLazyDog; // Text to preview
 
   // List of different font sizes
   final List<double> fontSizes = [24, 18, 14]; // Decreasing sizes
@@ -30,7 +31,7 @@ class _FontPreviewerScreenState extends State<FontPreviewerScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(FluentIcons.text_font_16_regular),
-        title: Text('Font Previewer'.i18n),
+        title: Text(S.of(context).fontPreviewer),
         actions: [
           TextButton(
               onPressed: () {
@@ -75,7 +76,7 @@ class _FontPreviewerScreenState extends State<FontPreviewerScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'For implementation steps, visit:'.i18n,
+                                S.of(context).forImplementationStepsVisit,
                               ),
                               4.height,
                               Row(
@@ -98,7 +99,7 @@ class _FontPreviewerScreenState extends State<FontPreviewerScreen> {
                                       }
                                     },
                                     child: Text(
-                                      'Google Fonts on pub.dev'.i18n,
+                                      S.of(context).googleFontsOnPubDev,
                                       style: TextStyle(
                                         color:
                                             context.theme.colorScheme.primary,
@@ -111,7 +112,7 @@ class _FontPreviewerScreenState extends State<FontPreviewerScreen> {
                               4.height,
                               Text(
                                 'You can learn how to use Google Fonts in your Flutter app by following the documentation.'
-                                    .i18n,
+                                    ,
                               ),
                             ],
                           ),
@@ -216,7 +217,7 @@ class FontListItem extends StatelessWidget {
                   Clipboard.setData(
                     ClipboardData(text: font),
                   );
-                  context.showSnackBar(content: 'Copied to clipboard'.i18n);
+                  context.showSnackBar(content: S.of(context).copiedToClipboard);
                 },
                 icon: const Icon(Icons.copy_rounded))
           ],

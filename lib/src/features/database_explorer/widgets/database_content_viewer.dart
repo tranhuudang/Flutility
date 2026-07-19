@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutility/src/app/app.dart';
+import 'package:flutility/generated/l10n.dart';
 
 // Custom class to handle binary blob data
 class Blob {
@@ -94,7 +95,7 @@ class _DatabaseContentViewerState extends State<DatabaseContentViewer> {
 
     Clipboard.setData(ClipboardData(text: buffer.toString()));
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Row data copied to clipboard'.i18n)),
+      SnackBar(content: Text('Row data copied to clipboard')),
     );
   }
 
@@ -118,14 +119,14 @@ class _DatabaseContentViewerState extends State<DatabaseContentViewer> {
 
     Clipboard.setData(ClipboardData(text: buffer.toString()));
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('All data copied to clipboard'.i18n)),
+      SnackBar(content: Text('All data copied to clipboard')),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     if (widget.data.isEmpty) {
-      return Center(child: Text('No data available'.i18n));
+      return Center(child: Text('No data available'));
     }
 
     return Column(
@@ -134,12 +135,12 @@ class _DatabaseContentViewerState extends State<DatabaseContentViewer> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('${widget.data.length} rows'.i18n,
+            Text('${widget.data.length} rows',
                 style: const TextStyle(fontWeight: FontWeight.bold)),
             TextButton.icon(
               onPressed: _copyAllToClipboard,
               icon: const Icon(Icons.copy_all),
-              label: Text('Copy All'.i18n),
+              label: Text('Copy All'),
             ),
           ],
         ),
@@ -203,7 +204,7 @@ class _DatabaseContentViewerState extends State<DatabaseContentViewer> {
         DataCell(IconButton(
           icon: const Icon(Icons.copy, size: 18),
           onPressed: () => _copyRowToClipboard(rowIndex),
-          tooltip: 'Copy row'.i18n,
+          tooltip: S.of(context).copyRow,
         )),
       ],
     );

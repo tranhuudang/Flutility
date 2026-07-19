@@ -1,4 +1,5 @@
 import '../../app/app.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class SearchIndex {
   final int index;
@@ -16,7 +17,7 @@ final List<SearchIndex> searchIndices = [
   SearchIndex(
     index: 0,
     title: 'Dashboard',
-    keywords: ['dashboard', DefaultSettings.appDescription.i18n, 'home', 'welcome', 'Flutter Tools'],
+    keywords: ['dashboard', DefaultSettings.appDescription, 'home', 'welcome', 'Flutter Tools'],
   ),
   SearchIndex(
     index: 2,
@@ -26,12 +27,12 @@ final List<SearchIndex> searchIndices = [
       'accent color',
       'backup files',
       'settings',
-      'Common'.i18n,
-      'Theme'.i18n,
-      'Language'.i18n,
-      'Restore from a backup file'.i18n,
-      'Create a new backup'.i18n,
-      'Reset to default settings'.i18n
+      S.current.common,
+      S.current.theme,
+      S.current.language,
+      S.current.restoreFromABackupFile,
+      S.current.createANewBackup,
+      S.current.resetToDefaultSettings
     ],
   ),
   SearchIndex(
@@ -43,7 +44,7 @@ final List<SearchIndex> searchIndices = [
       'version',
       'license',
       'privacy policy',
-      'About'.i18n
+      S.current.about
     ],
   ),
   SearchIndex(
@@ -55,8 +56,8 @@ final List<SearchIndex> searchIndices = [
       'help',
       'faq',
       'tutorial',
-      'Official Documentation Websites'.i18n,
-      'Additional Flutter Resources'.i18n
+      S.current.officialDocumentationWebsites,
+      S.current.additionalFlutterResources
     ],
   ),
   SearchIndex(
@@ -66,7 +67,7 @@ final List<SearchIndex> searchIndices = [
       'command line',
       'cli',
       'terminal',
-      'Common Flutter CLI Commands'.i18n
+      S.current.commonFlutterCliCommands
     ],
   ),
   SearchIndex(
@@ -74,11 +75,11 @@ final List<SearchIndex> searchIndices = [
     title: 'Roadmap',
     keywords: [
       'roadmap',
-      "Flutter Learning Roadmap".i18n,
-      'Basics'.i18n,
-      'Getting Deeper'.i18n,
-      'Almost there'.i18n,
-      'Mastering Flutter'.i18n
+      S.current.flutterLearningRoadmap,
+      S.current.basics,
+      S.current.gettingDeeper,
+      S.current.almostThere,
+      'Mastering Flutter'
     ],
   ),
   SearchIndex(
@@ -87,14 +88,14 @@ final List<SearchIndex> searchIndices = [
     keywords: [
       'fonts',
       'font picker',
-      'The quick brown fox jumps over the lazy dog.'.i18n,
+      S.current.theQuickBrownFoxJumpsOverTheLazyDog,
       'Font Collection',
       'Font Family',
       'Font Size',
       'Font Weight',
       'Font Style',
       'Font Decoration',
-      'Google Fonts on pub.dev'.i18n
+      S.current.googleFontsOnPubDev
     ],
   ),
   SearchIndex(
@@ -104,7 +105,7 @@ final List<SearchIndex> searchIndices = [
       'color picker',
       'color palette',
       'color collection',
-      'Color Picker'.i18n,
+      S.current.colorPicker,
     ],
   ),
   const SearchIndex(
@@ -136,11 +137,11 @@ final List<SearchIndex> searchIndices = [
     title: 'JSON Formatter',
     keywords: [
       'json formatter',
-      "JSON Formatter".i18n,
+      S.current.jsonFormatter,
       'JSON Beautifier',
       "Enter your JSON below and click 'Format JSON' to prettify it. Make sure it's valid JSON format."
-          .i18n,
-      "Format JSON".i18n
+          ,
+      S.current.formatJson
     ],
   ),
   SearchIndex(
@@ -148,10 +149,10 @@ final List<SearchIndex> searchIndices = [
     title: 'Icon Generator',
     keywords: [
       'icon generator',
-      'App Icon Setter for Flutter Project'.i18n,
-      'Step 1: Select a PNG Image'.i18n,
+      S.current.appIconSetterForFlutterProject,
+      S.current.step1SelectAPngImage,
       'Pick the root directory of your Flutter project. Icons will be generated and placed in the appropriate folders for Android, iOS, macOS, Windows, and Web platforms.'
-          .i18n
+          
     ],
   ),
   SearchIndex(
@@ -159,12 +160,12 @@ final List<SearchIndex> searchIndices = [
     title: 'Image Compress',
     keywords: [
       'image compress',
-      'Image Compression'.i18n,
-      'Step 1: Pick Images to Compress'.i18n,
+      S.current.imageCompression,
+      S.current.step1PickImagesToCompress,
       'You can select multiple JPG or PNG images to compress. Click the button below to start.'
-          .i18n,
+          ,
       'image',
-      'Compress Images'.i18n
+      S.current.compressImages
     ],
   ),
   SearchIndex(
@@ -172,11 +173,11 @@ final List<SearchIndex> searchIndices = [
     title: 'API Test',
     keywords: [
       'api test',
-      "API Testing Tool".i18n,
+      S.current.apiTestingTool,
       "This API Testing Tool allows you to perform basic HTTP requests like GET, POST, and DELETE. Enter a URL to test the response and see the status code and data returned by the server."
-          .i18n,
+          ,
       "Send Request",
-      "Response".i18n
+      S.current.response
     ],
   ),
   SearchIndex(
@@ -189,7 +190,7 @@ final List<SearchIndex> searchIndices = [
       'sponsor',
       'sponsorship',
       'buy me a coffee',
-      'Development Fund'.i18n
+      S.current.developmentFund
     ],
   ),
 ];

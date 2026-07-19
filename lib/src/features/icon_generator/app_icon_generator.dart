@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutility/src/app/app.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class AppIconGeneratorScreen extends ConsumerStatefulWidget {
   const AppIconGeneratorScreen({super.key});
@@ -45,7 +46,7 @@ class _AppIconGeneratorScreenState
       return Scaffold(
         appBar: AppBar(
           leading: const Icon(FluentIcons.apps_settings_16_regular),
-          title: Text('App Icon Setter for Flutter Project'.i18n),
+          title: Text(S.of(context).appIconSetterForFlutterProject),
           actions: [
             IconButton(
               icon: const Icon(FluentIcons.question_circle_28_regular),
@@ -75,13 +76,13 @@ class _AppIconGeneratorScreenState
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Step 1: Select a PNG Image'.i18n,
+                            S.of(context).step1SelectAPngImage,
                             style: context.theme.textTheme.titleMedium,
                           ),
                           const SizedBox(height: 8),
                           Text(
                             'Choose a PNG image that will be used to generate icons for various platforms. The image should be clear and high-resolution.'
-                                .i18n,
+                                ,
                             style: TextStyle(
                                 fontSize: 14, color: Colors.grey[600]),
                           ),
@@ -104,8 +105,8 @@ class _AppIconGeneratorScreenState
                   child: ElevatedButton(
                     onPressed: notifier.pickImage,
                     child: Text(state.selectedImage == null
-                        ? 'Select PNG Image'.i18n
-                        : 'Change Image'.i18n),
+                        ? S.of(context).selectPngImage
+                        : S.of(context).changeImage),
                   ),
                 ),
               ],
@@ -114,13 +115,13 @@ class _AppIconGeneratorScreenState
             const SizedBox(height: 16.0),
             // Step 2: Select Flutter Project Location
             Text(
-              'Step 2: Select the Flutter Project Location'.i18n,
+              S.of(context).step2SelectTheFlutterProjectLocation,
               style: context.theme.textTheme.titleMedium,
             ),
             const SizedBox(height: 8),
             Text(
               'Pick the root directory of your Flutter project. Icons will be generated and placed in the appropriate folders for Android, iOS, macOS, Windows, and Web platforms.'
-                  .i18n,
+                  ,
               style: TextStyle(fontSize: 14, color: Colors.grey[600]),
             ),
 
@@ -129,7 +130,7 @@ class _AppIconGeneratorScreenState
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Row(
                   children: [
-                    Text('${'Project Path:'.i18n} '),
+                    Text('${S.of(context).projectPath} '),
                     Expanded(
                         child: Text(
                       state.projectPath,
@@ -145,20 +146,20 @@ class _AppIconGeneratorScreenState
               child: ElevatedButton(
                 onPressed: notifier.pickProjectPath,
                 child: Text(state.projectPath.isEmpty
-                    ? 'Select Flutter Project'.i18n
-                    : 'Change Project Path'.i18n),
+                    ? S.of(context).selectFlutterProject
+                    : S.of(context).changeProjectPath),
               ),
             ),
             24.height,
             // Step 3: Generate Icons
             Text(
-              'Step 3: Generate Icons'.i18n,
+              S.of(context).step3GenerateIcons,
               style: context.theme.textTheme.titleMedium,
             ),
             const SizedBox(height: 8),
             Text(
               'Click the "Generate Icons" button to create icons for each platform. Make sure you have selected a valid PNG image and Flutter project location before proceeding.'
-                  .i18n,
+                  ,
               style: TextStyle(fontSize: 14, color: Colors.grey[600]),
             ),
             const SizedBox(height: 16),
@@ -229,7 +230,7 @@ class _AppIconGeneratorScreenState
                     : null,
                 child: state.isGenerating
                     ? const CircularProgressIndicator()
-                    : Text('Generate Icons'.i18n),
+                    : Text(S.of(context).generateIcons),
               ),
             ),
             16.height,
@@ -247,7 +248,7 @@ class _AppIconGeneratorScreenState
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('The following folders will be changed.'.i18n),
+                      Text(S.of(context).theFollowingFoldersWillBeChanged),
                       const Text('<Flutter_Project_Location>\n'
                           '├── android/app/src/main/res/\n'
                           '│   ├── mipmap-mdpi/\n'
@@ -271,7 +272,7 @@ class _AppIconGeneratorScreenState
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '${'Resources'.i18n}:',
+                  '${S.of(context).resources}:',
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
@@ -283,7 +284,7 @@ class _AppIconGeneratorScreenState
                       openUrl(OnlineDirectory.howToCustomizeIconOnAndroid),
                   child: Text(
                     'How do I remove the unwanted white border around my app icon on Android devices?'
-                        .i18n,
+                        ,
                     style: const TextStyle(
                       fontSize: 14,
                       color: Colors.blueAccent,

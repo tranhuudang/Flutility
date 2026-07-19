@@ -5,6 +5,7 @@ import 'package:flutility/src/features/home/data/utils/model/terrace_advertise.d
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:marina_labs_common/marina_labs_common.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class AdvertisementCard extends StatefulWidget {
   final TerraceAdvertise ad;
@@ -104,7 +105,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
                     child: IconButton(
                       icon: const Icon(Icons.edit, size: 18),
                       onPressed: () => _showEditAdDialog(context, ad),
-                      tooltip: 'Edit Advertisement'.i18n,
+                      tooltip: 'Edit Advertisement',
                       constraints: const BoxConstraints(),
                       padding: const EdgeInsets.all(8),
                     ),
@@ -126,7 +127,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      (ad.isActive ?? true) ? 'Active'.i18n : 'Inactive'.i18n,
+                      (ad.isActive ?? true) ? 'Active' : 'Inactive',
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 10,
@@ -152,11 +153,11 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
                       child: Text(
                         ad.endDate != null
                             ? 'Expires: ${DateFormat('MM/dd').format(ad.endDate!)}'
-                                .i18n
+                                
                             : ad.startDate != null
                                 ? 'From: ${DateFormat('MM/dd').format(ad.startDate!)}'
-                                    .i18n
-                                : 'No Date Limit'.i18n,
+                                    
+                                : 'No Date Limit',
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 10,
@@ -189,7 +190,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
     showDialog(
       context: context,
       builder: (dialogContext) => AlertDialog(
-        title: Text('Edit Advertisement'.i18n),
+        title: Text('Edit Advertisement'),
         content: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -198,7 +199,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
               TextField(
                 controller: titleController,
                 decoration: InputDecoration(
-                  labelText: 'Title'.i18n,
+                  labelText: 'Title',
                   border: const OutlineInputBorder(),
                 ),
               ),
@@ -206,7 +207,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
               TextField(
                 controller: descriptionController,
                 decoration: InputDecoration(
-                  labelText: 'Description'.i18n,
+                  labelText: 'Description',
                   border: const OutlineInputBorder(),
                 ),
                 maxLines: 3,
@@ -215,7 +216,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
               TextField(
                 controller: iconUrlController,
                 decoration: InputDecoration(
-                  labelText: 'Icon URL'.i18n,
+                  labelText: 'Icon URL',
                   border: const OutlineInputBorder(),
                   hintText: 'https://example.com/icon.png',
                 ),
@@ -224,7 +225,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
               TextField(
                 controller: linkController,
                 decoration: InputDecoration(
-                  labelText: 'Link'.i18n,
+                  labelText: 'Link',
                   border: const OutlineInputBorder(),
                   hintText: 'https://example.com or /route/name',
                 ),
@@ -233,7 +234,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
               TextField(
                 controller: previewImageController,
                 decoration: InputDecoration(
-                  labelText: 'Preview Image URL (Optional)'.i18n,
+                  labelText: 'Preview Image URL (Optional)',
                   border: const OutlineInputBorder(),
                   hintText: 'https://example.com/preview.png',
                 ),
@@ -242,7 +243,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
               TextField(
                 controller: orderController,
                 decoration: InputDecoration(
-                  labelText: 'Display Order'.i18n,
+                  labelText: 'Display Order',
                   border: const OutlineInputBorder(),
                 ),
                 keyboardType: TextInputType.number,
@@ -250,7 +251,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
               const SizedBox(height: 16),
               StatefulBuilder(
                 builder: (context, setState) => SwitchListTile(
-                  title: Text('Active'.i18n),
+                  title: Text('Active'),
                   value: isActive,
                   onChanged: (value) {
                     setState(() {
@@ -260,7 +261,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
                 ),
               ),
               const SizedBox(height: 8),
-              Text('Date Range (Optional)'.i18n,
+              Text('Date Range (Optional)',
                   style: const TextStyle(fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
               Row(
@@ -270,7 +271,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
                       builder: (context, setState) => ListTile(
                         title: Text(startDate != null
                             ? DateFormat('yyyy-MM-dd').format(startDate!)
-                            : 'Start Date (Optional)'.i18n),
+                            : 'Start Date (Optional)'),
                         onTap: () async {
                           final date = await showDatePicker(
                             context: context,
@@ -304,7 +305,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
                       builder: (context, setState) => ListTile(
                         title: Text(endDate != null
                             ? DateFormat('yyyy-MM-dd').format(endDate!)
-                            : 'End Date (Optional)'.i18n),
+                            : 'End Date (Optional)'),
                         onTap: () async {
                           final date = await showDatePicker(
                             context: context,
@@ -342,11 +343,11 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
           TextButton(
             onPressed: () => _showDeleteConfirmation(dialogContext, ad),
             child:
-                Text('Delete'.i18n, style: const TextStyle(color: Colors.red)),
+                Text('Delete', style: const TextStyle(color: Colors.red)),
           ),
           TextButton(
             onPressed: () => Navigator.pop(dialogContext),
-            child: Text('Cancel'.i18n),
+            child: Text(S.of(context).cancel),
           ),
           ElevatedButton(
             onPressed: () {
@@ -355,7 +356,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
                   iconUrlController.text.isEmpty ||
                   linkController.text.isEmpty) {
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('Please fill in all required fields'.i18n)));
+                    content: Text('Please fill in all required fields')));
                 return;
               }
 
@@ -374,7 +375,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
                 endDate: endDate,
               ).then((_) => Navigator.pop(dialogContext));
             },
-            child: Text('Update'.i18n),
+            child: Text('Update'),
           ),
         ],
       ),
@@ -432,11 +433,11 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
       DebugLog.info('Updated advertisement with ID: $id');
 
       ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Advertisement updated successfully'.i18n)));
+          SnackBar(content: Text('Advertisement updated successfully')));
     } catch (e) {
       DebugLog.error('Error updating advertisement: ${e.toString()}');
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text('Error updating advertisement: ${e.toString()}'.i18n)));
+          content: Text('Error updating advertisement: ${e.toString()}')));
     }
   }
 
@@ -445,14 +446,14 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
     return showDialog(
       context: context,
       builder: (dialogContext) => AlertDialog(
-        title: Text('Delete Advertisement?'.i18n),
+        title: Text('Delete Advertisement?'),
         content: Text(
             'Are you sure you want to delete this advertisement? This action cannot be undone.'
-                .i18n),
+                ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(dialogContext),
-            child: Text('Cancel'.i18n),
+            child: Text(S.of(context).cancel),
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -466,7 +467,7 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
                 Navigator.pop(context);
               });
             },
-            child: Text('Delete'.i18n),
+            child: Text('Delete'),
           ),
         ],
       ),
@@ -483,11 +484,11 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
       DebugLog.info('Deleted advertisement with ID: $id');
 
       ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Advertisement deleted successfully'.i18n)));
+          SnackBar(content: Text('Advertisement deleted successfully')));
     } catch (e) {
       DebugLog.error('Error deleting advertisement: ${e.toString()}');
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text('Error deleting advertisement: ${e.toString()}'.i18n)));
+          content: Text('Error deleting advertisement: ${e.toString()}')));
     }
   }
 }

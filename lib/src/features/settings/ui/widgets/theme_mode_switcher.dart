@@ -3,6 +3,7 @@ import 'package:marina_labs_common/marina_labs_common.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutility/src/features/presentation.dart';
 import 'package:flutility/src/app/app.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class ThemeSwitcher extends StatefulWidget {
   const ThemeSwitcher({super.key});
@@ -27,7 +28,7 @@ class _ThemeSwitcherState extends State<ThemeSwitcher> {
             settingBloc.add(ChangeThemeModeEvent(themeMode: ThemeMode.system));
           },
           icon: const Icon(Icons.auto_awesome),
-          label: Text('Adaptive'.i18n),
+          label: Text(S.of(context).adaptive),
         ),
       ],
     );

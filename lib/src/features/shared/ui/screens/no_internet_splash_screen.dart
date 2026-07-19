@@ -1,6 +1,7 @@
 import 'package:flutility/src/app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class NoInternetApp extends StatelessWidget {
   const NoInternetApp({super.key});
@@ -25,7 +26,7 @@ class NoInternetScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Center(child: Text('No internet connection.'.i18n)),
+      body: Center(child: Text(S.of(context).noInternetConnection)),
     );
   }
 
@@ -33,8 +34,8 @@ class NoInternetScreen extends StatelessWidget {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('No Internet'.i18n),
-        content: Text('Please check your internet connection or update your app if this bug persists.'.i18n),
+        title: Text(S.of(context).noInternet),
+        content: Text(S.of(context).pleaseCheckYourInternetConnectionOrUpdateYourAppIfThisBugPersists),
         actions: [
           TextButton(
             onPressed: () {

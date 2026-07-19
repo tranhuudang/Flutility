@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutility/src/app/app.dart';
 import 'dart:io';
+import 'package:flutility/generated/l10n.dart';
 import 'package:image/image.dart' as img;
 import 'package:path/path.dart' as path;
 
@@ -88,18 +89,18 @@ class _ImageCompressScreenState extends State<ImageCompressScreen> {
     return Scaffold(
       appBar: AppBar(
           leading: const Icon(Icons.compress),
-          title:  Text('Image Compression'.i18n)),
+          title:  Text(S.of(context).imageCompression)),
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [
           // Guidance Text
           Text(
-            'Step 1: Pick Images to Compress'.i18n,
+            S.of(context).step1PickImagesToCompress,
             style: context.theme.textTheme.titleMedium,
           ),
           const SizedBox(height: 8),
            Text(
-            'You can select multiple JPG or PNG images to compress. Click the button below to start.'.i18n,
+            S.of(context).youCanSelectMultipleJpgOrPngImagesToCompressClickTheButtonBelowToStart,
             style: const TextStyle(fontSize: 14, color: Colors.grey),
           ),
           const SizedBox(height: 16),
@@ -109,7 +110,7 @@ class _ImageCompressScreenState extends State<ImageCompressScreen> {
             child: ElevatedButton.icon(
               onPressed: _pickFiles,
               icon: const Icon(Icons.image),
-              label:  Text('Pick Images'.i18n),
+              label:  Text(S.of(context).pickImages),
             ),
           ),
           const SizedBox(height: 20),
@@ -120,7 +121,7 @@ class _ImageCompressScreenState extends State<ImageCompressScreen> {
 
           // Guidance Text for selected images
           Text(
-            'Selected Images'.i18n,
+            S.of(context).selectedImages,
             style: context.theme.textTheme.titleMedium,
           ),
           const SizedBox(height: 10),
@@ -129,7 +130,7 @@ class _ImageCompressScreenState extends State<ImageCompressScreen> {
           _selectedFiles.isEmpty
               ?  Center(
                   child: Text(
-                    'No images selected.'.i18n,
+                    S.of(context).noImagesSelected,
                     style: const TextStyle(color: Colors.grey, fontSize: 16),
                   ),
                 )
@@ -166,12 +167,12 @@ class _ImageCompressScreenState extends State<ImageCompressScreen> {
 
           // Slider guidance text
           Text(
-            'Step 2: Adjust Quality of Compression'.i18n,
+            S.of(context).step2AdjustQualityOfCompression,
             style: context.theme.textTheme.titleMedium,
           ),
           const SizedBox(height: 8),
            Text(
-            'Use the slider below to set the quality for compression (0 = low quality, 100 = high quality).'.i18n,
+            S.of(context).useTheSliderBelowToSetTheQualityForCompression0LowQuality100HighQuality,
             style: const TextStyle(fontSize: 14, color: Colors.grey),
           ),
           const SizedBox(height: 10),
@@ -180,7 +181,7 @@ class _ImageCompressScreenState extends State<ImageCompressScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-               Text('Quality:'.i18n),
+               Text(S.of(context).quality),
               Expanded(
                 child: Slider(
                   value: _quality,
@@ -206,7 +207,7 @@ class _ImageCompressScreenState extends State<ImageCompressScreen> {
 
           // Button to pick output directory
           Text(
-            'Step 3: Choose Output Directory'.i18n,
+            S.of(context).step3ChooseOutputDirectory,
             style: context.theme.textTheme.titleMedium,
           ),
           const SizedBox(height: 8),
@@ -214,14 +215,14 @@ class _ImageCompressScreenState extends State<ImageCompressScreen> {
             child: ElevatedButton.icon(
               onPressed: _pickOutputDirectory,
               icon: const Icon(Icons.folder_open),
-              label:  Text('Select Output Directory'.i18n),
+              label:  Text(S.of(context).selectOutputDirectory),
             ),
           ),
           if (_outputDirectory != null)
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Text(
-                '${'Output Directory'.i18n}: $_outputDirectory',
+                '${'Output Directory'}: $_outputDirectory',
                 style: const TextStyle(color: Colors.green, fontSize: 14),
               ),
             ),
@@ -233,7 +234,7 @@ class _ImageCompressScreenState extends State<ImageCompressScreen> {
 
           // Button to compress images
           Text(
-            'Step 4: Compress Images'.i18n,
+            S.of(context).step4CompressImages,
             style: context.theme.textTheme.titleMedium,
           ),
           const SizedBox(height: 8),
@@ -244,7 +245,7 @@ class _ImageCompressScreenState extends State<ImageCompressScreen> {
                   ? const CircularProgressIndicator(
                       color: Colors.white, strokeWidth: 2)
                   : const Icon(Icons.compress),
-              label:  Text('Compress Images'.i18n),
+              label:  Text(S.of(context).compressImages),
             ),
           ),
         ],

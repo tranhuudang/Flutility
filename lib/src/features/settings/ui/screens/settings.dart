@@ -8,6 +8,7 @@ import 'package:flutility/src/features/presentation.dart';
 import 'package:flutility/src/app/app.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class SettingsView extends StatefulWidget {
   const SettingsView({super.key});
@@ -38,18 +39,18 @@ class _SettingsViewState extends State<SettingsView> {
               SnackBar(
                   content: Text(
                       'Backup files is copied to Application Support Directory.'
-                          .i18n)),
+                          )),
             );
           } else {
             // Inform the user
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('Backup files is not valid.'.i18n)),
+              SnackBar(content: Text(S.of(context).backupFilesIsNotValid)),
             );
           }
         }
       }
     } catch (e) {
-      DebugLog.error("${"Error picking files:".i18n} $e");
+      DebugLog.error("${S.of(context).errorPickingFiles} $e");
     }
   }
 
@@ -77,13 +78,13 @@ class _SettingsViewState extends State<SettingsView> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
               content:
-                  Text('Backup files are saved to selected directory'.i18n)),
+                  Text(S.of(context).backupFilesAreSavedToSelectedDirectory)),
         );
       } else {
         // User canceled the directory picker
       }
     } catch (e) {
-      print("${"Error picking directory or copying files:".i18n} $e");
+      print("${S.of(context).errorPickingDirectoryOrCopyingFiles} $e");
     }
   }
 
@@ -95,19 +96,19 @@ class _SettingsViewState extends State<SettingsView> {
         leading: isDesktop || isWebDesktop
             ? const Icon(FluentIcons.settings_16_regular)
             : const ChevronBackButton(),
-        title: Text('Settings'.i18n),
+        title: Text(S.of(context).settings),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          Section(title: 'Common'.i18n, children: [
+          Section(title: S.of(context).common, children: [
             /// Theme switcher
             Row(
               children: [
                 SizedBox(
                     width: 80,
                     child: Text(
-                      'Theme'.i18n,
+                      S.of(context).theme,
                       style: context.theme.textTheme.titleSmall,
                     )),
                 isWindows || isMacOS || isWeb ? 8.width : 4.width,
@@ -122,7 +123,7 @@ class _SettingsViewState extends State<SettingsView> {
                 SizedBox(
                     width: 80,
                     child: Text(
-                      'Language'.i18n,
+                      S.of(context).language,
                       style: context.theme.textTheme.titleSmall,
                     )),
                 8.width,
@@ -140,11 +141,11 @@ class _SettingsViewState extends State<SettingsView> {
                         minLeadingWidth: 0,
                         contentPadding: const EdgeInsets.symmetric(vertical: 8),
                         title: Text(
-                          'Restore from a backup file'.i18n,
+                          S.of(context).restoreFromABackupFile,
                           style: context.theme.textTheme.titleSmall,
                         ),
                         subtitle: Text(
-                          'personal-data-notice'.i18n,
+                          S.of(context).personalDataNotice,
                         ))),
                 8.width,
                 SizedBox(
@@ -152,15 +153,15 @@ class _SettingsViewState extends State<SettingsView> {
                   child: Column(
                     children: [
                       FilledButton.tonal(
-                          child: Text('Create a new backup'.i18n),
+                          child: Text(S.of(context).createANewBackup),
                           onPressed: () {
                             _createBackupFiles();
                           }),
                       8.height,
-                      DividerWithText(text: 'or'.i18n),
+                      DividerWithText(text: S.of(context).or),
                       8.height,
                       FilledButton.tonal(
-                          child: Text('Restore'.i18n),
+                          child: Text(S.of(context).restore),
                           onPressed: () {
                             _restoreBackupFiles();
                           }),
@@ -175,23 +176,23 @@ class _SettingsViewState extends State<SettingsView> {
               minLeadingWidth: 0,
               contentPadding: const EdgeInsets.symmetric(vertical: 8),
               title: Text(
-                'Reset to default settings'.i18n,
+                S.of(context).resetToDefaultSettings,
                 style: context.theme.textTheme.titleSmall,
               ),
               subtitle: Text(
                   'Restore the settings to their default as when the application was first installed.'
-                      .i18n),
+                      ),
               onTap: () {
                 context.showAlertDialog(
-                    title: 'Reset to default settings'.i18n,
+                    title: S.of(context).resetToDefaultSettings,
                     content:
                         'Restore the settings to their default as when the application was first installed.'
-                            .i18n,
+                            ,
                     action: () {
                       Properties.instance
                           .saveSettings(DefaultSettings.settings);
                       context.showSnackBar(
-                          content: 'Default settings are restored.'.i18n);
+                          content: 'Default settings are restored.');
                     });
               },
               trailing: const Icon(Icons.restart_alt),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutility/src/app/app.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class ToggleToolsDialog extends StatefulWidget {
   const ToggleToolsDialog({super.key});
@@ -25,14 +26,14 @@ class _ToggleToolsDialogState extends State<ToggleToolsDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Enable Additional Tools'.i18n),
+      title: Text(S.of(context).enableAdditionalTools),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           SwitchListTile(
-            title: Text('JSON Formatter'.i18n),
+            title: Text(S.of(context).jsonFormatter),
             subtitle:
-                Text('Format your JSON data for better readability.'.i18n),
+                Text(S.of(context).formatYourJsonDataForBetterReadability),
             value: isJsonFormatterEnabled,
             onChanged: (value) {
               setState(() {
@@ -41,9 +42,9 @@ class _ToggleToolsDialogState extends State<ToggleToolsDialog> {
             },
           ),
           SwitchListTile(
-            title: Text('Image Compressor'.i18n),
+            title: Text(S.of(context).imageCompressor),
             subtitle:
-                Text('Reduce image file sizes without quality loss.'.i18n),
+                Text(S.of(context).reduceImageFileSizesWithoutQualityLoss),
             value: isImageCompressorEnabled,
             onChanged: (value) {
               setState(() {
@@ -52,8 +53,8 @@ class _ToggleToolsDialogState extends State<ToggleToolsDialog> {
             },
           ),
           SwitchListTile(
-            title: Text('API Testing'.i18n),
-            subtitle: Text('Test and debug your API endpoints.'.i18n),
+            title: Text(S.of(context).apiTesting),
+            subtitle: Text(S.of(context).testAndDebugYourApiEndpoints),
             value: isApiTestingEnabled,
             onChanged: (value) {
               setState(() {
@@ -68,7 +69,7 @@ class _ToggleToolsDialogState extends State<ToggleToolsDialog> {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          child: Text('Cancel'.i18n),
+          child: Text(S.of(context).cancel),
         ),
         ElevatedButton(
           onPressed: () {
@@ -85,7 +86,7 @@ class _ToggleToolsDialogState extends State<ToggleToolsDialog> {
               'apiTesting': isApiTestingEnabled,
             });
           },
-          child: Text('Save'.i18n),
+          child: Text(S.of(context).save),
         ),
       ],
     );

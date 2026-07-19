@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutility/src/app/app.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class MaterialIconsScreen extends StatefulWidget {
   const MaterialIconsScreen({super.key});
@@ -125,13 +126,13 @@ class _MaterialIconsScreenState extends State<MaterialIconsScreen> {
                     borderRadius: BorderRadius.circular(10),
 
                     value: selectedTopic,
-                    hint: Text('Select Topic'.i18n),
+                    hint: Text(S.of(context).selectTopic),
                     items: topics.map((topic) {
                       return DropdownMenuItem<String>(
                         value: topic,
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text(topic.i18n),
+                          child: Text(topic),
                         ),
                       );
                     }).toList(),
@@ -178,7 +179,7 @@ class _MaterialIconsScreenState extends State<MaterialIconsScreen> {
                           Clipboard.setData(
                               ClipboardData(text: 'Icons.$iconName'));
                           context.showSnackBar(
-                              content: 'Copied to clipboard'.i18n);
+                              content: S.of(context).copiedToClipboard);
                         },
                         child: Column(
                           children: [

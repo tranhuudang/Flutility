@@ -5,6 +5,7 @@ import 'package:flutility/src/data/data.dart';
 import 'package:flutility/src/features/presentation.dart';
 import 'package:flutility/src/app/app.dart';
 import 'package:flutter/services.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class ReleaseNotesView extends StatefulWidget {
   final bool isShowingAsSingleScreen;
@@ -41,7 +42,7 @@ class _ReleaseNotesViewState extends State<ReleaseNotesView> {
       appBar: widget.isShowingAsSingleScreen
           ? AppBar(
               title: Text(
-                'Release notes'.i18n,
+                S.of(context).releaseNotes,
               ),
             )
           : null,

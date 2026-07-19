@@ -11,6 +11,7 @@ import 'package:upgrader/upgrader.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:windows_status_bar/windows_status_bar_widget.dart';
 import '../../../../app/router/route_configurations_desktop.dart';
+import 'package:flutility/generated/l10n.dart';
 
 const int dcWindowsStatusBarHeight = 55;
 
@@ -216,7 +217,7 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                         label: Opacity(
                           opacity: .5,
                           child: Text(
-                            'Report Issues'.i18n,
+                            S.of(context).reportIssues,
                             style: context.theme.textTheme.labelSmall,
                           ),
                         )),
@@ -240,7 +241,7 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Donate'.i18n,
+                                S.of(context).donate,
                                 style: context.theme.textTheme.labelSmall,
                               ),
                               4.width,
@@ -261,7 +262,7 @@ class _DesktopNavigationFrameState extends State<DesktopNavigationFrame>
                         child: Opacity(
                           opacity: .5,
                           child: Text(
-                            'Rate us'.i18n,
+                            S.of(context).rateUs,
                             style: context.theme.textTheme.labelSmall,
                           ),
                         )),
@@ -321,7 +322,7 @@ class SearchBoxPrototype extends StatelessWidget {
                             controller: searchController,
                             autofocus: true,
                             decoration: InputDecoration(
-                              hintText: 'Search...'.i18n,
+                              hintText: S.of(context).search2,
                               suffixIcon:
                                   const Icon(FluentIcons.search_16_regular),
                               border: OutlineInputBorder(
@@ -409,7 +410,7 @@ class SearchBoxPrototype extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
           child: Row(
             children: [
-              Text('Search...'.i18n),
+              Text(S.of(context).search2),
               const Spacer(),
               const Icon(
                 FluentIcons.search_16_regular,

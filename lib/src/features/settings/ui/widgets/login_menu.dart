@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutility/src/app/app.dart';
 import 'package:flutility/src/features/presentation.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class LoginMenu extends StatelessWidget {
   const LoginMenu({
@@ -29,7 +30,7 @@ class LoginMenu extends StatelessWidget {
               const SizedBox(
                 width: 8,
               ),
-              Text('Privacy Policy'.i18n),
+              Text(S.of(context).privacyPolicy),
             ],
           ),
           onTap: () async {
@@ -48,7 +49,7 @@ class LoginMenu extends StatelessWidget {
               const SizedBox(
                 width: 8,
               ),
-              Text('About'.i18n),
+              Text(S.of(context).about),
             ],
           ),
           onTap: () {

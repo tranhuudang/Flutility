@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutility/src/features/presentation.dart';
 import 'package:flutility/src/app/app.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class InfoView extends StatelessWidget {
   const InfoView({super.key});
@@ -15,7 +16,7 @@ class InfoView extends StatelessWidget {
         leading: isDesktop || isWebDesktop
             ? const Icon(FluentIcons.info_16_regular)
             : const ChevronBackButton(),
-        title: Text('About'.i18n),
+        title: Text(S.of(context).about),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
@@ -32,7 +33,7 @@ class InfoView extends StatelessWidget {
   // Extract About section to improve readability
   Widget _buildAboutSection(BuildContext context) {
     return Section(
-      title: 'About'.i18n,
+      title: S.of(context).about,
       children: [
         Column(
           children: [
@@ -82,7 +83,7 @@ class InfoView extends StatelessWidget {
         ),
         8.height,
         Text(
-          "© ${DateTime.now().year} Marina Labs. ${"All rights reserved.".i18n}",
+          "© ${DateTime.now().year} Marina Labs. ${S.of(context).allRightsReserved}",
           style: context.theme.textTheme.bodyMedium
               ?.copyWith(color: context.theme.colorScheme.onSurfaceVariant),
         ),
@@ -93,11 +94,11 @@ class InfoView extends StatelessWidget {
   // Extract Licenses section
   Widget _buildLicensesSection(BuildContext context) {
     return Section(
-      title: 'Licenses'.i18n,
+      title: S.of(context).licenses,
       isExpand: false,
       children: [
         Text(
-          'DescriptionTextForLicenses'.i18n,
+          S.of(context).descriptiontextforlicenses,
           style: context.theme.textTheme.bodyMedium
               ?.copyWith(color: context.theme.colorScheme.onSurface),
         ),
@@ -106,7 +107,7 @@ class InfoView extends StatelessWidget {
             onPressed: () {
               showLicensePage(context: context);
             },
-            child: Text('Licenses'.i18n)),
+            child: Text(S.of(context).licenses)),
       ],
     );
   }
@@ -114,18 +115,18 @@ class InfoView extends StatelessWidget {
   // Extract Privacy Policy section
   Widget _buildPrivacyPolicySection(BuildContext context) {
     return Section(
-      title: 'Privacy Policy'.i18n,
+      title: S.of(context).privacyPolicy,
       crossAxisAlignment: CrossAxisAlignment.start,
       isExpand: false,
       children: [
         Text(
-          'DesciptionTextForPrivacyPolicy'.i18n,
+          S.of(context).desciptiontextforprivacypolicy,
           style: context.theme.textTheme.bodyMedium
               ?.copyWith(color: context.theme.colorScheme.onSurface),
         ),
         4.height,
         Text(
-          'For more information about our privacy policy, please visit:'.i18n,
+          S.of(context).forMoreInformationAboutOurPrivacyPolicyPleaseVisit,
           style: context.theme.textTheme.bodyMedium
               ?.copyWith(color: context.theme.colorScheme.onSurface),
         ),
@@ -133,7 +134,7 @@ class InfoView extends StatelessWidget {
         Center(
           child: _buildFilledButton(
               url: OnlineDirectory.privacyPolicyURL,
-              text: 'Privacy Policy'.i18n),
+              text: S.of(context).privacyPolicy),
         )
       ],
     );

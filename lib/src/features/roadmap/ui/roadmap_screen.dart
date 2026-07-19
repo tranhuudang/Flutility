@@ -10,6 +10,7 @@ import 'widgets/map_dot.dart';
 import 'widgets/map_group.dart';
 import 'widgets/map_item.dart';
 import 'widgets/map_label.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class RoadmapScreen extends StatelessWidget {
   const RoadmapScreen({super.key});
@@ -19,7 +20,7 @@ class RoadmapScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(FluentIcons.map_16_regular),
-        title: Text("Flutter Learning Roadmap".i18n),
+        title: Text(S.of(context).flutterLearningRoadmap),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -44,7 +45,7 @@ class RoadmapScreen extends StatelessWidget {
                   children: [
                     190.height,
                     MapLabel(
-                      label: 'Basics'.i18n,
+                      label: S.of(context).basics,
                     ),
                     60.height,
                     const MapDot(
@@ -80,7 +81,7 @@ class RoadmapScreen extends StatelessWidget {
                     ),
                     140.height,
                     MapLabel(
-                      label: 'Getting Deeper'.i18n,
+                      label: S.of(context).gettingDeeper,
                     ),
                     50.height,
                     const MapDot(
@@ -124,7 +125,7 @@ class RoadmapScreen extends StatelessWidget {
                     ),
                     130.height,
                     MapLabel(
-                      label: 'Almost there'.i18n,
+                      label: S.of(context).almostThere,
                     ),
                     80.height,
                     const MapDot(
@@ -140,7 +141,7 @@ class RoadmapScreen extends StatelessWidget {
                     ),
                     130.height,
                     MapLabel(
-                      label: 'The End'.i18n,
+                      label: S.of(context).theEnd,
                     ),
                   ],
                 ),
@@ -156,7 +157,7 @@ class RoadmapScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           Expanded(
-                              flex: 2, child: Text('introductionRoadmap'.i18n)),
+                              flex: 2, child: Text(S.of(context).introductionroadmap)),
                           16.width,
                           Expanded(
                             child: DottedBorder(
@@ -180,13 +181,13 @@ class RoadmapScreen extends StatelessWidget {
                                               .theme.colorScheme.secondary),
                                     ),
                                     title: Text(
-                                      'Must have'.i18n,
+                                      S.of(context).mustHave,
                                       style: context.theme.textTheme.labelSmall,
                                     ),
                                     onTap: () {
                                       showInfoBottomSheet(
                                         context,
-                                        'Must Have'.i18n,
+                                        'Must Have',
                                         0,
                                         'These are fundamental concepts every Flutter developer should know.',
                                         {
@@ -209,13 +210,13 @@ class RoadmapScreen extends StatelessWidget {
                                               .secondaryContainer),
                                     ),
                                     title: Text(
-                                      'Nice to have'.i18n,
+                                      S.of(context).niceToHave,
                                       style: context.theme.textTheme.labelSmall,
                                     ),
                                     onTap: () {
                                       showInfoBottomSheet(
                                         context,
-                                        'Nice to Have'.i18n,
+                                        'Nice to Have',
                                         1,
                                         'These concepts are beneficial to know, but not required at the beginning.',
                                         {
@@ -238,13 +239,13 @@ class RoadmapScreen extends StatelessWidget {
                                               .tertiaryContainer),
                                     ),
                                     title: Text(
-                                      'Optional'.i18n,
+                                      S.of(context).optional,
                                       style: context.theme.textTheme.labelSmall,
                                     ),
                                     onTap: () {
                                       showInfoBottomSheet(
                                         context,
-                                        'Optional'.i18n,
+                                        S.of(context).optional,
                                         2,
                                         'These are optional topics that may be useful in certain cases.',
                                         {
@@ -1798,7 +1799,7 @@ class RoadmapScreen extends StatelessWidget {
                 ),
                 8.height,
                 Text(
-                  '${'Importance'.i18n}: ${importanceLevel == 0 ? 'Must Have'.i18n : importanceLevel == 1 ? 'Nice to Have'.i18n : 'Optional'.i18n}',
+                  '${S.of(context).importance}: ${importanceLevel == 0 ? 'Must Have' : importanceLevel == 1 ? 'Nice to Have' : S.of(context).optional}',
                   style: TextStyle(
                     color: Colors.grey[700],
                     fontWeight: FontWeight.bold,
@@ -1810,7 +1811,7 @@ class RoadmapScreen extends StatelessWidget {
                 ),
                 8.height,
                 Text(
-                  '${'Resources'.i18n}:',
+                  '${S.of(context).resources}:',
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,

@@ -3,6 +3,7 @@ import 'package:marina_labs_common/marina_labs_common.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutility/src/features/presentation.dart';
 import 'package:flutility/src/app/app.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class ColorPaletteSelector {
   Color selectedColor;
@@ -45,7 +46,7 @@ class _ThemeColorPaletteState extends State<ThemeColorPalette> {
         Align(
           alignment: Alignment.centerLeft,
           child: Text(
-            'Accent color'.i18n,
+            S.of(context).accentColor,
             style: context.theme.textTheme.titleSmall,
           ),
         ),
@@ -115,7 +116,7 @@ class _ThemeColorPaletteState extends State<ThemeColorPalette> {
             settingBloc.add(EnableAdaptiveThemeColorEvent());
           },
           icon: const Icon(Icons.auto_awesome),
-          label: Text('Use System Theme'.i18n),
+          label: Text(S.of(context).useSystemTheme),
         ),
       ],
     );

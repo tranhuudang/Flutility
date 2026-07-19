@@ -7,6 +7,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutility/src/app/app.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class ColorPickerScreen extends StatefulWidget {
   const ColorPickerScreen({super.key});
@@ -66,7 +67,7 @@ class _ColorPickerScreenState extends State<ColorPickerScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(FluentIcons.color_16_regular),
-        title: Text('Color Picker'.i18n),
+        title: Text(S.of(context).colorPicker),
       ),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
@@ -105,7 +106,7 @@ class _ColorPickerScreenState extends State<ColorPickerScreen> {
               // });
               _addColorToCollection();
             },
-            label: Text('Add this color to Collection'.i18n),
+            label: Text(S.of(context).addThisColorToCollection),
             icon: const Icon(Icons.bookmark),
           )),
           8.height,
@@ -113,7 +114,7 @@ class _ColorPickerScreenState extends State<ColorPickerScreen> {
             Padding(
               padding: const EdgeInsets.only(left: 16, bottom: 8),
               child: Text(
-                'Color Collection'.i18n,
+                S.of(context).colorCollection,
                 style: context.theme.textTheme.titleMedium,
               ),
             ),
@@ -121,7 +122,7 @@ class _ColorPickerScreenState extends State<ColorPickerScreen> {
               padding: const EdgeInsets.only(left: 16, bottom: 16),
               child: Text(
                 "Don't forget to press Enter after changing the name of the color to save the changes."
-                    .i18n,
+                    ,
                 style: context.theme.textTheme.labelSmall
                     ?.copyWith(color: context.theme.colorScheme.error),
               ),
@@ -171,7 +172,7 @@ class _ColorPickerScreenState extends State<ColorPickerScreen> {
                                         await _saveColorCollection();
                                       },
                                       decoration: InputDecoration(
-                                        hintText: 'Label'.i18n,
+                                        hintText: S.of(context).label,
                                         isDense: true,
                                       ),
                                     ),
@@ -187,7 +188,7 @@ class _ColorPickerScreenState extends State<ColorPickerScreen> {
                                           .showSnackBar(
                                         SnackBar(
                                             content: Text(
-                                                'Copied to clipboard'.i18n)),
+                                                S.of(context).copiedToClipboard)),
                                       );
                                     },
                                   ),

@@ -8,6 +8,7 @@ import 'package:flutility/src/app/app.dart';
 import 'package:flutility/src/features/icons/data/fluentui_system_icons.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class FluentIconsScreen extends StatefulWidget {
   const FluentIconsScreen({super.key});
@@ -71,7 +72,7 @@ class _FluentIconsScreenState extends State<FluentIconsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'For implementation steps, visit:'.i18n,
+                          S.of(context).forImplementationStepsVisit,
                         ),
                         4.height,
                         Row(
@@ -92,7 +93,7 @@ class _FluentIconsScreenState extends State<FluentIconsScreen> {
                                 }
                               },
                               child: Text(
-                                'Fluent UI System Icons on pub.dev'.i18n,
+                                'Fluent UI System Icons on pub.dev',
                                 style: TextStyle(
                                   color: context.theme.colorScheme.primary,
                                   fontWeight: FontWeight.bold,
@@ -104,7 +105,7 @@ class _FluentIconsScreenState extends State<FluentIconsScreen> {
                         4.height,
                         Text(
                           'You can learn how to use Fluent UI System Icons in your Flutter app by following the documentation.'
-                              .i18n,
+                              ,
                         ),
                       ],
                     ),
@@ -119,7 +120,7 @@ class _FluentIconsScreenState extends State<FluentIconsScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: TextField(
             decoration: InputDecoration(
-              hintText: 'Search'.i18n,
+              hintText: S.of(context).search1,
               prefixIcon: const Icon(Icons.search),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
@@ -182,7 +183,7 @@ class _FluentIconsScreenState extends State<FluentIconsScreen> {
                   onTap: () {
                     Clipboard.setData(
                         ClipboardData(text: 'FluentIcons.$iconName'));
-                    context.showSnackBar(content: 'Copied to clipboard'.i18n);
+                    context.showSnackBar(content: S.of(context).copiedToClipboard);
                   },
                   child: Column(
                     children: [

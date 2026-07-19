@@ -6,6 +6,7 @@ import 'package:file_picker/file_picker.dart';
 import 'models/database_models.dart';
 import 'utils/database_helper.dart';
 import 'widgets/database_content_viewer.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class DatabaseExplorerScreen extends StatefulWidget {
   const DatabaseExplorerScreen({super.key});
@@ -135,12 +136,12 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(FluentIcons.database_20_regular),
-        title: Text("Database Explorer".i18n),
+        title: Text(S.of(context).databaseExplorer),
         actions: [
           Opacity(
             opacity: 0.5,
             child: Text(
-              'Only for small databases'.i18n,
+              S.of(context).onlyForSmallDatabases,
               style: TextStyle(color: context.theme.colorScheme.error),
             ),
           ),
@@ -156,7 +157,7 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
                 children: [
                   const Icon(FluentIcons.database_search_20_regular),
                   8.width,
-                  Text("Explorer".i18n),
+                  Text(S.of(context).explorer),
                 ],
               ),
             ),
@@ -167,7 +168,7 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
                 children: [
                   const Icon(FluentIcons.database_search_20_regular),
                   8.width,
-                  Text("Query".i18n),
+                  Text(S.of(context).query),
                 ],
               ),
             ),
@@ -201,7 +202,7 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
           // Database type selection
           Row(
             children: [
-              Text("Database Type:".i18n,
+              Text(S.of(context).databaseType,
                   style: const TextStyle(fontWeight: FontWeight.bold)),
               const SizedBox(width: 16),
               DropdownButton<DbType>(
@@ -235,7 +236,7 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
                 child: TextField(
                   controller: _pathController,
                   decoration: InputDecoration(
-                    labelText: "Database Path".i18n,
+                    labelText: S.of(context).databasePath,
                     border: const OutlineInputBorder(),
                     suffixIcon: IconButton(
                       icon: const Icon(Icons.folder_open),
@@ -248,7 +249,7 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
               ElevatedButton.icon(
                 onPressed: _loadDatabase,
                 icon: const Icon(FluentIcons.database_search_20_regular),
-                label: Text("Load".i18n),
+                label: Text(S.of(context).loadLabel),
               ),
             ],
           ),
@@ -258,14 +259,14 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
           if (_tables.isNotEmpty)
             Row(
               children: [
-                Text("Select Table:".i18n,
+                Text("Select Table:",
                     style: const TextStyle(fontWeight: FontWeight.bold)),
                 const SizedBox(width: 16),
                 Expanded(
                   child: DropdownButton<String>(
                     isExpanded: true,
                     value: _selectedTable,
-                    hint: Text("Select a table".i18n),
+                    hint: Text(S.of(context).selectATable),
                     onChanged: (String? newValue) {
                       setState(() {
                         _selectedTable = newValue;
@@ -294,9 +295,9 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
               child: DatabaseContentViewer(data: _tableData),
             )
           else if (_tables.isNotEmpty)
-            Center(child: Text("Select a table to view its data".i18n))
+            Center(child: Text(S.of(context).selectATableToViewItsData))
           else
-            Center(child: Text("Load a database to see available tables".i18n)),
+            Center(child: Text(S.of(context).loadADatabaseToSeeAvailableTables)),
         ],
       ),
     );
@@ -315,7 +316,7 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
             Padding(
               padding: const EdgeInsets.only(bottom: 16.0),
               child: Text(
-                "Connected to: ${_pathController.text}".i18n,
+                "Connected to: ${_pathController.text}",
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.primary,
                   fontWeight: FontWeight.bold,
@@ -328,7 +329,7 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
             controller: queryController,
             maxLines: 4,
             decoration: InputDecoration(
-              labelText: "SQL Query".i18n,
+              labelText: S.of(context).sqlQuery,
               hintText: "SELECT * FROM table_name WHERE condition",
               border: const OutlineInputBorder(),
             ),
@@ -365,7 +366,7 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
                   }
                 : null,
             icon: const Icon(FluentIcons.play_20_regular),
-            label: Text("Execute Query".i18n),
+            label: Text(S.of(context).executeQuery),
           ),
           const SizedBox(height: 16),
 
@@ -386,7 +387,7 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
                         size: 48),
                     const SizedBox(height: 16),
                     Text(
-                        "Enter a SQL query and execute it to see results".i18n),
+                        S.of(context).enterASqlQueryAndExecuteItToSeeResults),
                   ],
                 ),
               ),
@@ -399,7 +400,7 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
                   children: [
                     const Icon(FluentIcons.database_20_regular, size: 48),
                     const SizedBox(height: 16),
-                    Text("Load a database first".i18n),
+                    Text(S.of(context).loadADatabaseFirst),
                   ],
                 ),
               ),

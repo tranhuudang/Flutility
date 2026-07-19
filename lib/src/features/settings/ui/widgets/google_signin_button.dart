@@ -31,7 +31,7 @@ class GoogleSignInButton extends StatelessWidget {
           const SizedBox(
             width: 10,
           ),
-          Text('Continue with Google'.i18n),
+          Text('Continue with Google'),
         ],
       ),
     );

@@ -3,6 +3,7 @@ import 'package:flutility/src/app/app.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 
 import '../../../presentation.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class SidebarWidget extends StatefulWidget {
   final int selectedIndex;
@@ -53,14 +54,14 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                     tilePadding: const EdgeInsets.only(
                         left: 14, right: 10, top: 0, bottom: 4),
                     title: Text(
-                      'Documentation'.i18n,
+                      S.of(context).documentation,
                       style: context.theme.textTheme.titleSmall,
                     ),
                     children: [
                       _buildSidebarItem(
                           icon: FluentIcons.document_search_16_regular,
                           selectedIcon: FluentIcons.document_search_16_filled,
-                          label: 'Flutter Docs'.i18n,
+                          label: S.of(context).flutterDocs,
                           index: 4),
                       const Divider(
                         thickness: .3,
@@ -68,7 +69,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                       _buildSidebarItem(
                           icon: FluentIcons.tasks_app_20_regular,
                           selectedIcon: FluentIcons.tasks_app_20_filled,
-                          label: 'Common Flutter CLI Commands'.i18n,
+                          label: S.of(context).commonFlutterCliCommands,
                           index: 5),
                       const Divider(
                         thickness: .3,
@@ -76,7 +77,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                       _buildSidebarItem(
                           icon: FluentIcons.map_16_regular,
                           selectedIcon: FluentIcons.map_16_filled,
-                          label: 'Flutter Learning Roadmap'.i18n,
+                          label: S.of(context).flutterLearningRoadmap,
                           index: 6),
                       8.height,
                     ],
@@ -92,14 +93,14 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                     tilePadding: const EdgeInsets.only(
                         left: 14, right: 10, top: 0, bottom: 4),
                     title: Text(
-                      'Features'.i18n,
+                      S.of(context).features,
                       style: context.theme.textTheme.titleSmall,
                     ),
                     children: [
                       _buildSidebarItem(
                           icon: FluentIcons.text_font_16_regular,
                           selectedIcon: FluentIcons.text_font_16_filled,
-                          label: 'Fonts'.i18n,
+                          label: S.of(context).fonts,
                           index: 7),
                       const Divider(
                         thickness: .3,
@@ -107,7 +108,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                       _buildSidebarItem(
                           icon: FluentIcons.color_16_regular,
                           selectedIcon: FluentIcons.color_16_filled,
-                          label: 'Color Picker'.i18n,
+                          label: S.of(context).colorPicker,
                           index: 8),
                       const Divider(
                         thickness: .3,
@@ -115,7 +116,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                       _buildSidebarItem(
                           icon: FluentIcons.icons_20_regular,
                           selectedIcon: FluentIcons.icons_20_filled,
-                          label: 'Icons'.i18n,
+                          label: S.of(context).icons,
                           index: 9),
                       8.height,
                       const Divider(
@@ -124,7 +125,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                       _buildSidebarItem(
                           icon: FluentIcons.apps_settings_16_regular,
                           selectedIcon: FluentIcons.apps_settings_16_filled,
-                          label: 'App Icon Setter'.i18n,
+                          label: S.of(context).appIconSetter,
                           index: 11),
                       8.height,
                     ],
@@ -143,7 +144,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                       tilePadding: const EdgeInsets.only(
                           left: 14, right: 10, top: 0, bottom: 0),
                       title: Text(
-                        'Additional Tools'.i18n,
+                        S.of(context).additionalTools,
                         style: context.theme.textTheme.titleSmall,
                       ),
                       children: [
@@ -157,7 +158,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                           _buildSidebarItem(
                               icon: FluentIcons.data_pie_20_regular,
                               selectedIcon: FluentIcons.data_pie_20_filled,
-                              label: 'JSON Formatter'.i18n,
+                              label: S.of(context).jsonFormatter,
                               index: 10),
                         ],
                         if (Properties
@@ -170,7 +171,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                           _buildSidebarItem(
                               icon: Icons.compress,
                               selectedIcon: Icons.compress,
-                              label: 'Image Compress'.i18n,
+                              label: S.of(context).imageCompress,
                               index: 12),
                           8.height,
                         ],
@@ -183,7 +184,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                           _buildSidebarItem(
                               icon: FluentIcons.network_check_20_regular,
                               selectedIcon: FluentIcons.network_check_20_filled,
-                              label: 'API Testing'.i18n,
+                              label: S.of(context).apiTesting,
                               index: 13),
                           8.height,
                         ],
@@ -197,7 +198,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                           _buildSidebarItem(
                               icon: FluentIcons.window_database_24_regular,
                               selectedIcon: FluentIcons.network_check_20_filled,
-                              label: 'Database Explorer'.i18n,
+                              label: S.of(context).databaseExplorer,
                               index: 15),
                           8.height,
                         ],
@@ -211,7 +212,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                   // _buildSidebarItem(
                   //     icon: FluentIcons.network_check_20_regular,
                   //     selectedIcon: FluentIcons.network_check_20_filled,
-                  //     label: 'API Testing'.i18n,
+                  //     label: S.of(context).apiTesting,
                   //     index: 11),
                 ],
               ),
@@ -222,7 +223,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
               4.height,
               _buildSidebarItem(
                   icon: FluentIcons.home_12_regular,
-                  label: 'Dashboard'.i18n,
+                  label: S.of(context).dashboard,
                   selectedIcon: FluentIcons.home_12_filled,
                   index: 0),
               const Divider(

@@ -13,6 +13,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../../presentation.dart';
 import '../widgets/toggle_diague.dart';
+import 'package:flutility/generated/l10n.dart';
 
 class DesktopHomeScreen extends StatefulWidget {
   const DesktopHomeScreen({super.key});
@@ -95,11 +96,11 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
         (didRateApp && openAppCount % 50 == 0)) {
       await Future.delayed(const Duration(seconds: 2), () {
         context.showAlertDialog(
-            actionButtonTitle: 'Feedback'.i18n,
-            title: 'Help Us Improve'.i18n,
+            actionButtonTitle: S.of(context).feedback,
+            title: S.of(context).helpUsImprove,
             content:
                 "Share your feedback on how we can improve or let us know what you enjoy about our app."
-                    .i18n,
+                    ,
             action: () {
               goToStoreListing();
               Properties.instance.saveSettings(
@@ -151,7 +152,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                                   ),
                                 ),
                                 const SizedBox(width: 100, child: Divider()),
-                                Text(DefaultSettings.appDescription.i18n)
+                                Text(DefaultSettings.appDescription)
                               ],
                             ),
                           ),
@@ -209,7 +210,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
           /// Overview
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-            child: Text('Documentation'.i18n,
+            child: Text(S.of(context).documentation,
                 style: context.theme.textTheme.titleSmall),
           ),
           Padding(
@@ -226,28 +227,28 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                     children: [
                       OverviewItem(
                           icon: FluentIcons.document_search_16_regular,
-                          title: 'Flutter Documentation'.i18n,
+                          title: S.of(context).flutterDocumentation,
                           subtitle:
                               'Explore setup steps, API references, and example projects to accelerate your development.'
-                                  .i18n,
+                                  ,
                           onTap: () {
                             goBranch(4);
                           }),
                       OverviewItem(
                           icon: FluentIcons.tasks_app_20_regular,
-                          title: 'Common Flutter CLI Commands'.i18n,
+                          title: S.of(context).commonFlutterCliCommands,
                           subtitle:
                               'A command-line interface for managing Flutter project.'
-                                  .i18n,
+                                  ,
                           onTap: () {
                             goBranch(5);
                           }),
                       OverviewItem(
                         icon: FluentIcons.map_16_regular,
-                        title: 'Flutter Learning Roadmap'.i18n,
+                        title: S.of(context).flutterLearningRoadmap,
                         subtitle:
                             'A structured guide to help you advance from beginner to expert in Flutter.'
-                                .i18n,
+                                ,
                         onTap: () {
                           goBranch(6);
                         },
@@ -264,7 +265,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
             child: Row(
               children: [
-                Text('Features'.i18n,
+                Text(S.of(context).features,
                     style: context.theme.textTheme.titleSmall),
               ],
             ),
@@ -283,35 +284,35 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                     children: [
                       OverviewItem(
                           icon: FluentIcons.text_font_16_regular,
-                          title: 'Fonts Preview'.i18n,
+                          title: S.of(context).fontsPreview,
                           subtitle:
-                              'Choose your preferred font style and size.'.i18n,
+                              S.of(context).chooseYourPreferredFontStyleAndSize,
                           onTap: () {
                             goBranch(7);
                           }),
                       OverviewItem(
                         icon: FluentIcons.color_16_regular,
-                        title: 'Color Picker'.i18n,
+                        title: S.of(context).colorPicker,
                         subtitle:
-                            'Pick the perfect color for your project.'.i18n,
+                            S.of(context).pickThePerfectColorForYourProject,
                         onTap: () {
                           goBranch(8);
                         },
                       ),
                       OverviewItem(
                         icon: FluentIcons.icons_20_regular,
-                        title: 'Icons Preview'.i18n,
+                        title: S.of(context).iconsPreview,
                         subtitle:
-                            'Browse and select from a variety of icons.'.i18n,
+                            S.of(context).browseAndSelectFromAVarietyOfIcons,
                         onTap: () {
                           goBranch(9);
                         },
                       ),
                       OverviewItem(
                         icon: FluentIcons.apps_settings_16_regular,
-                        title: 'App Icon Setter for Flutter'.i18n,
+                        title: S.of(context).appIconSetterForFlutter,
                         subtitle:
-                            'Create custom icons tailored to your needs.'.i18n,
+                            S.of(context).createCustomIconsTailoredToYourNeeds,
                         onTap: () {
                           goBranch(11);
                         },
@@ -328,7 +329,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
             child: Row(
               children: [
-                Text('Additional Tools'.i18n,
+                Text(S.of(context).additionalTools,
                     style: context.theme.textTheme.titleSmall),
                 const Spacer(),
                 TextButton(
@@ -350,7 +351,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                         }
                       });
                     },
-                    child: Text('Options'.i18n))
+                    child: Text(S.of(context).options))
               ],
             ),
           ),
@@ -369,10 +370,10 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                       if (isJsonFormatterEnabled)
                         OverviewItem(
                           icon: FluentIcons.data_pie_20_regular,
-                          title: 'JSON Formatter'.i18n,
+                          title: S.of(context).jsonFormatter,
                           subtitle:
                               'Format your JSON data for better readability.'
-                                  .i18n,
+                                  ,
                           onTap: () {
                             goBranch(10);
                           },
@@ -380,10 +381,10 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                       if (isImageCompressorEnabled)
                         OverviewItem(
                           icon: Icons.compress,
-                          title: 'Image Compress'.i18n,
+                          title: S.of(context).imageCompress,
                           subtitle:
                               'Reduce image file sizes without sacrificing quality.'
-                                  .i18n,
+                                  ,
                           onTap: () {
                             goBranch(12);
                           },
@@ -391,10 +392,10 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                       if (isApiTestingEnabled)
                         OverviewItem(
                           icon: FluentIcons.network_check_20_regular,
-                          title: 'API Testing'.i18n,
+                          title: S.of(context).apiTesting,
                           subtitle:
                               'Test and debug your API endpoints efficiently.'
-                                  .i18n,
+                                  ,
                           onTap: () {
                             goBranch(13);
                           },
@@ -402,10 +403,10 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                       if (isDatabaseExplorerEnabled)
                         OverviewItem(
                           icon: FluentIcons.database_search_20_regular,
-                          title: 'Database Explorer'.i18n,
+                          title: S.of(context).databaseExplorer,
                           subtitle:
                               'View and manage SQLite and Hive databases in your Flutter projects.'
-                                  .i18n,
+                                  ,
                           onTap: () {
                             goBranch(15);
                           },
@@ -420,13 +421,13 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
             child: Row(
               children: [
-                Text('Your go-to tools, built by us'.i18n,
+                Text('Your go-to tools, built by us',
                     style: context.theme.textTheme.titleSmall),
                 const Spacer(),
                 if (indexx > 10)
                   TextButton.icon(
                     icon: const Icon(Icons.add_circle_outline),
-                    label: Text('New Ad'.i18n),
+                    label: Text('New Ad'),
                     onPressed: () => _showCreateAdDialog(context),
                   ),
               ],
@@ -500,11 +501,11 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
       _loadAdvertisements();
 
       ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Advertisement created successfully'.i18n)));
+          SnackBar(content: Text('Advertisement created successfully')));
     } catch (e) {
       DebugLog.error('Error creating advertisement: ${e.toString()}');
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text('Error creating advertisement: ${e.toString()}'.i18n)));
+          content: Text('Error creating advertisement: ${e.toString()}')));
     }
   }
 
@@ -522,7 +523,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
     showDialog(
       context: context,
       builder: (dialogContext) => AlertDialog(
-        title: Text('Create New Announcement'.i18n),
+        title: Text('Create New Announcement'),
         content: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -531,7 +532,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
               TextField(
                 controller: titleController,
                 decoration: InputDecoration(
-                  labelText: 'Title'.i18n,
+                  labelText: 'Title',
                   border: const OutlineInputBorder(),
                 ),
               ),
@@ -539,7 +540,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
               TextField(
                 controller: descriptionController,
                 decoration: InputDecoration(
-                  labelText: 'Description'.i18n,
+                  labelText: 'Description',
                   border: const OutlineInputBorder(),
                 ),
                 maxLines: 3,
@@ -548,7 +549,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
               TextField(
                 controller: iconUrlController,
                 decoration: InputDecoration(
-                  labelText: 'Icon URL'.i18n,
+                  labelText: 'Icon URL',
                   border: const OutlineInputBorder(),
                   hintText: 'https://example.com/icon.png',
                 ),
@@ -557,7 +558,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
               TextField(
                 controller: linkController,
                 decoration: InputDecoration(
-                  labelText: 'Link'.i18n,
+                  labelText: 'Link',
                   border: const OutlineInputBorder(),
                   hintText: 'https://example.com or /route/name',
                 ),
@@ -566,7 +567,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
               TextField(
                 controller: previewImageController,
                 decoration: InputDecoration(
-                  labelText: 'Preview Image URL (Optional)'.i18n,
+                  labelText: 'Preview Image URL (Optional)',
                   border: const OutlineInputBorder(),
                   hintText: 'https://example.com/preview.png',
                 ),
@@ -575,7 +576,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
               TextField(
                 controller: orderController,
                 decoration: InputDecoration(
-                  labelText: 'Display Order'.i18n,
+                  labelText: 'Display Order',
                   border: const OutlineInputBorder(),
                 ),
                 keyboardType: TextInputType.number,
@@ -583,7 +584,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
               const SizedBox(height: 16),
               StatefulBuilder(
                 builder: (context, setState) => SwitchListTile(
-                  title: Text('Active'.i18n),
+                  title: Text('Active'),
                   value: isActive,
                   onChanged: (value) {
                     setState(() {
@@ -593,7 +594,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                 ),
               ),
               const SizedBox(height: 8),
-              Text('Date Range (Optional)'.i18n,
+              Text('Date Range (Optional)',
                   style: const TextStyle(fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
               Row(
@@ -603,7 +604,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                       builder: (context, setState) => ListTile(
                         title: Text(startDate != null
                             ? DateFormat('yyyy-MM-dd').format(startDate!)
-                            : 'Start Date (Optional)'.i18n),
+                            : 'Start Date (Optional)'),
                         onTap: () async {
                           final date = await showDatePicker(
                             context: context,
@@ -628,7 +629,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                       builder: (context, setState) => ListTile(
                         title: Text(endDate != null
                             ? DateFormat('yyyy-MM-dd').format(endDate!)
-                            : 'End Date (Optional)'.i18n),
+                            : 'End Date (Optional)'),
                         onTap: () async {
                           final date = await showDatePicker(
                             context: context,
@@ -656,7 +657,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(dialogContext),
-            child: Text('Cancel'.i18n),
+            child: Text(S.of(context).cancel),
           ),
           ElevatedButton(
             onPressed: () {
@@ -665,7 +666,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                   iconUrlController.text.isEmpty ||
                   linkController.text.isEmpty) {
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('Please fill in all required fields'.i18n)));
+                    content: Text('Please fill in all required fields')));
                 return;
               }
 
@@ -683,7 +684,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                 endDate: endDate,
               ).then((_) => Navigator.pop(dialogContext));
             },
-            child: Text('Create'.i18n),
+            child: Text('Create'),
           ),
         ],
       ),

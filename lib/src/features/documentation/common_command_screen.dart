@@ -3,6 +3,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutility/src/app/app.dart';
+import 'package:flutility/generated/l10n.dart';
 part 'parts/flutter_commands.dart';
 
 class CommandLineScreen extends StatefulWidget {
@@ -41,7 +42,7 @@ class _CommandLineScreenState extends State<CommandLineScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(FluentIcons.tasks_app_20_regular),
-        title: Text('Common Flutter CLI Commands'.i18n),
+        title: Text(S.of(context).commonFlutterCliCommands),
         actions: [
           Container(
             decoration: BoxDecoration(
@@ -51,7 +52,7 @@ class _CommandLineScreenState extends State<CommandLineScreen> {
               borderRadius: BorderRadius.circular(8),
               padding: const EdgeInsets.symmetric(horizontal: 8),
               value: selectedTopic,
-              hint: Text("Select Topic".i18n,
+              hint: Text(S.of(context).selectTopic,
                   style: const TextStyle(color: Colors.white)),
               icon: const Icon(Icons.filter_list),
               underline: Container(),
@@ -60,7 +61,7 @@ class _CommandLineScreenState extends State<CommandLineScreen> {
                   value: null,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("All".i18n),
+                    child: Text(S.of(context).all),
                   ),
                 ),
                 ...topics.map((topic) => DropdownMenuItem(
@@ -96,7 +97,7 @@ class _CommandLineScreenState extends State<CommandLineScreen> {
               );
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('Copied to clipboard'.i18n),
+                  content: Text(S.of(context).copiedToClipboard),
                 ),
               );
             },

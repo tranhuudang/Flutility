@@ -3,6 +3,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutility/src/app/app.dart';
+import 'package:flutility/generated/l10n.dart';
 import 'package:flutility/src/app/utils/json_formatter.dart'; // For JSON formatting
 
 class JsonFormatterScreen extends StatefulWidget {
@@ -28,7 +29,7 @@ class _JsonFormatterScreenState extends State<JsonFormatterScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(FluentIcons.data_pie_20_regular),
-        title: Text("JSON Formatter".i18n),
+        title: Text(S.of(context).jsonFormatter),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -44,7 +45,7 @@ class _JsonFormatterScreenState extends State<JsonFormatterScreen> {
                 Expanded(
                   child: Text(
                     "Enter your JSON below and click 'Format JSON' to prettify it. Make sure it's valid JSON format."
-                        .i18n,
+                        ,
                     style: TextStyle(color: context.theme.colorScheme.primary),
                   ),
                 ),
@@ -57,7 +58,7 @@ class _JsonFormatterScreenState extends State<JsonFormatterScreen> {
               controller: _jsonController,
               maxLines: 6,
               decoration: InputDecoration(
-                labelText: "Enter JSON".i18n,
+                labelText: S.of(context).enterJson,
                 border: const OutlineInputBorder(),
               ),
             ),
@@ -67,7 +68,7 @@ class _JsonFormatterScreenState extends State<JsonFormatterScreen> {
             Center(
               child: ElevatedButton(
                 onPressed: _formatJson,
-                child: Text("Format JSON".i18n),
+                child: Text(S.of(context).formatJson),
               ),
             ),
 
@@ -89,14 +90,14 @@ class _JsonFormatterScreenState extends State<JsonFormatterScreen> {
                         children: [
                           const Spacer(),
                           TextButton.icon(
-                            label: Text('Copy'.i18n),
+                            label: Text(S.of(context).copy),
                             onPressed: () {
                               Clipboard.setData(
                                 ClipboardData(text: _formattedJson),
                               );
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
-                                  content: Text('Copied to clipboard'.i18n),
+                                  content: Text(S.of(context).copiedToClipboard),
                                 ),
                               );
                             },
@@ -106,7 +107,7 @@ class _JsonFormatterScreenState extends State<JsonFormatterScreen> {
                       ),
                       SelectableText(
                         _formattedJson.isEmpty
-                            ? "Formatted JSON will appear here".i18n
+                            ? S.of(context).formattedJsonWillAppearHere
                             : _formattedJson,
                       ),
                     ],

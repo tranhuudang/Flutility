@@ -4,6 +4,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutility/src/app/app.dart';
 import 'package:flutility/src/features/presentation.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutility/generated/l10n.dart';
 part 'parts/additional_documentation.dart';
 part 'parts/official_documentation.dart';
 
@@ -14,7 +15,7 @@ class DocumentationScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(FluentIcons.document_search_16_regular),
-        title: Text('Flutter Documentation'.i18n),
+        title: Text(S.of(context).flutterDocumentation),
       ),
       body: ListView(
         children: [
@@ -23,7 +24,7 @@ class DocumentationScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
             child: Row(
               children: [
-                Text('Official Documentation Websites'.i18n,
+                Text(S.of(context).officialDocumentationWebsites,
                     style: context.theme.textTheme.titleSmall),
               ],
             ),
@@ -50,7 +51,7 @@ class DocumentationScreen extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  'Additional Flutter Resources'.i18n,
+                  S.of(context).additionalFlutterResources,
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
               ],
