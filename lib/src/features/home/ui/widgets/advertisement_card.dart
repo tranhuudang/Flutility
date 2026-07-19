@@ -250,14 +250,17 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
               ),
               const SizedBox(height: 16),
               StatefulBuilder(
-                builder: (context, setState) => SwitchListTile(
-                  title: Text('Active'),
-                  value: isActive,
-                  onChanged: (value) {
-                    setState(() {
-                      isActive = value;
-                    });
-                  },
+                builder: (context, setState) => Material(
+                  color: Colors.transparent,
+                  child: SwitchListTile(
+                    title: Text('Active'),
+                    value: isActive,
+                    onChanged: (value) {
+                      setState(() {
+                        isActive = value;
+                      });
+                    },
+                  ),
                 ),
               ),
               const SizedBox(height: 8),
@@ -268,69 +271,75 @@ class _AdvertisementCardState extends State<AdvertisementCard> {
                 children: [
                   Expanded(
                     child: StatefulBuilder(
-                      builder: (context, setState) => ListTile(
-                        title: Text(startDate != null
-                            ? DateFormat('yyyy-MM-dd').format(startDate!)
-                            : 'Start Date (Optional)'),
-                        onTap: () async {
-                          final date = await showDatePicker(
-                            context: context,
-                            initialDate: startDate ?? DateTime.now(),
-                            firstDate: DateTime.now()
-                                .subtract(const Duration(days: 365)),
-                            lastDate: DateTime.now()
-                                .add(const Duration(days: 365 * 2)),
-                          );
-                          if (date != null) {
-                            setState(() {
-                              startDate = date;
-                            });
-                          }
-                        },
-                        trailing: startDate != null
-                            ? IconButton(
-                                icon: const Icon(Icons.clear),
-                                onPressed: () {
-                                  setState(() {
-                                    startDate = null;
-                                  });
-                                },
-                              )
-                            : const Icon(Icons.calendar_today),
+                      builder: (context, setState) => Material(
+                        color: Colors.transparent,
+                        child: ListTile(
+                          title: Text(startDate != null
+                              ? DateFormat('yyyy-MM-dd').format(startDate!)
+                              : 'Start Date (Optional)'),
+                          onTap: () async {
+                            final date = await showDatePicker(
+                              context: context,
+                              initialDate: startDate ?? DateTime.now(),
+                              firstDate: DateTime.now()
+                                  .subtract(const Duration(days: 365)),
+                              lastDate: DateTime.now()
+                                  .add(const Duration(days: 365 * 2)),
+                            );
+                            if (date != null) {
+                              setState(() {
+                                startDate = date;
+                              });
+                            }
+                          },
+                          trailing: startDate != null
+                              ? IconButton(
+                                  icon: const Icon(Icons.clear),
+                                  onPressed: () {
+                                    setState(() {
+                                      startDate = null;
+                                    });
+                                  },
+                                )
+                              : const Icon(Icons.calendar_today),
+                        ),
                       ),
                     ),
                   ),
                   Expanded(
                     child: StatefulBuilder(
-                      builder: (context, setState) => ListTile(
-                        title: Text(endDate != null
-                            ? DateFormat('yyyy-MM-dd').format(endDate!)
-                            : 'End Date (Optional)'),
-                        onTap: () async {
-                          final date = await showDatePicker(
-                            context: context,
-                            initialDate: endDate ??
-                                DateTime.now().add(const Duration(days: 30)),
-                            firstDate: DateTime.now(),
-                            lastDate: DateTime.now()
-                                .add(const Duration(days: 365 * 2)),
-                          );
-                          if (date != null) {
-                            setState(() {
-                              endDate = date;
-                            });
-                          }
-                        },
-                        trailing: endDate != null
-                            ? IconButton(
-                                icon: const Icon(Icons.clear),
-                                onPressed: () {
-                                  setState(() {
-                                    endDate = null;
-                                  });
-                                },
-                              )
-                            : const Icon(Icons.calendar_today),
+                      builder: (context, setState) => Material(
+                        color: Colors.transparent,
+                        child: ListTile(
+                          title: Text(endDate != null
+                              ? DateFormat('yyyy-MM-dd').format(endDate!)
+                              : 'End Date (Optional)'),
+                          onTap: () async {
+                            final date = await showDatePicker(
+                              context: context,
+                              initialDate: endDate ??
+                                  DateTime.now().add(const Duration(days: 30)),
+                              firstDate: DateTime.now(),
+                              lastDate: DateTime.now()
+                                  .add(const Duration(days: 365 * 2)),
+                            );
+                            if (date != null) {
+                              setState(() {
+                                endDate = date;
+                              });
+                            }
+                          },
+                          trailing: endDate != null
+                              ? IconButton(
+                                  icon: const Icon(Icons.clear),
+                                  onPressed: () {
+                                    setState(() {
+                                      endDate = null;
+                                    });
+                                  },
+                                )
+                              : const Icon(Icons.calendar_today),
+                        ),
                       ),
                     ),
                   ),

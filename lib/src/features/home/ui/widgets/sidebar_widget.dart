@@ -32,243 +32,255 @@ class _SidebarWidgetState extends State<SidebarWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 220,
+    return Material(
       color: context.theme.scaffoldBackgroundColor,
-      child: Stack(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 55, bottom: 55),
-            child: ScrollConfiguration(
-              behavior:
-                  ScrollConfiguration.of(context).copyWith(scrollbars: false),
-              child: ListView(
-                controller: scrollController,
-                children: [
-                  ExpansionTile(
-                    backgroundColor: context.theme.colorScheme.surfaceContainer
-                        .withValues(alpha: 1),
-                    leading: const Icon(
-                      FluentIcons.document_search_16_regular,
-                    ),
-                    tilePadding: const EdgeInsets.only(
-                        left: 14, right: 10, top: 0, bottom: 4),
-                    title: Text(
-                      S.of(context).documentation,
-                      style: context.theme.textTheme.titleSmall,
-                    ),
-                    children: [
-                      _buildSidebarItem(
-                          icon: FluentIcons.document_search_16_regular,
-                          selectedIcon: FluentIcons.document_search_16_filled,
-                          label: S.of(context).flutterDocs,
-                          index: 4),
-                      const Divider(
-                        thickness: .3,
-                      ),
-                      _buildSidebarItem(
-                          icon: FluentIcons.tasks_app_20_regular,
-                          selectedIcon: FluentIcons.tasks_app_20_filled,
-                          label: S.of(context).commonFlutterCliCommands,
-                          index: 5),
-                      const Divider(
-                        thickness: .3,
-                      ),
-                      _buildSidebarItem(
-                          icon: FluentIcons.map_16_regular,
-                          selectedIcon: FluentIcons.map_16_filled,
-                          label: S.of(context).flutterLearningRoadmap,
-                          index: 6),
-                      8.height,
-                    ],
-                  ),
-                  const Divider(
-                    thickness: .3,
-                    height: 0,
-                  ),
-                  ExpansionTile(
-                    backgroundColor: context.theme.colorScheme.surfaceContainer
-                        .withValues(alpha: 1),
-                    leading: const Icon(FluentIcons.toolbox_16_regular),
-                    tilePadding: const EdgeInsets.only(
-                        left: 14, right: 10, top: 0, bottom: 4),
-                    title: Text(
-                      S.of(context).features,
-                      style: context.theme.textTheme.titleSmall,
-                    ),
-                    children: [
-                      _buildSidebarItem(
-                          icon: FluentIcons.text_font_16_regular,
-                          selectedIcon: FluentIcons.text_font_16_filled,
-                          label: S.of(context).fonts,
-                          index: 7),
-                      const Divider(
-                        thickness: .3,
-                      ),
-                      _buildSidebarItem(
-                          icon: FluentIcons.color_16_regular,
-                          selectedIcon: FluentIcons.color_16_filled,
-                          label: S.of(context).colorPicker,
-                          index: 8),
-                      const Divider(
-                        thickness: .3,
-                      ),
-                      _buildSidebarItem(
-                          icon: FluentIcons.icons_20_regular,
-                          selectedIcon: FluentIcons.icons_20_filled,
-                          label: S.of(context).icons,
-                          index: 9),
-                      8.height,
-                      const Divider(
-                        thickness: .3,
-                      ),
-                      _buildSidebarItem(
-                          icon: FluentIcons.apps_settings_16_regular,
-                          selectedIcon: FluentIcons.apps_settings_16_filled,
-                          label: S.of(context).appIconSetter,
-                          index: 11),
-                      8.height,
-                    ],
-                  ),
-                  const Divider(
-                    thickness: .3,
-                    height: 0,
-                  ),
-                  if (Properties.instance.settings.enableImageCompress ||
-                      Properties.instance.settings.enableApiTesting ||
-                      Properties.instance.settings.enableJsonFormatter)
+      child: SizedBox(
+        width: 220,
+        child: Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 55, bottom: 55),
+              child: ScrollConfiguration(
+                behavior: ScrollConfiguration.of(
+                  context,
+                ).copyWith(scrollbars: false),
+                child: ListView(
+                  controller: scrollController,
+                  children: [
                     ExpansionTile(
-                      backgroundColor:
-                          context.theme.colorScheme.surfaceContainer,
-                      leading: const Icon(FluentIcons.apps_add_in_16_regular),
+                      backgroundColor: context
+                          .theme
+                          .colorScheme
+                          .surfaceContainer
+                          .withValues(alpha: 1),
+                      leading: const Icon(
+                        FluentIcons.document_search_16_regular,
+                      ),
                       tilePadding: const EdgeInsets.only(
-                          left: 14, right: 10, top: 0, bottom: 0),
+                        left: 14,
+                        right: 10,
+                        top: 0,
+                        bottom: 4,
+                      ),
                       title: Text(
-                        S.of(context).additionalTools,
+                        S.of(context).documentation,
                         style: context.theme.textTheme.titleSmall,
                       ),
                       children: [
-                        if (Properties
-                            .instance.settings.enableJsonFormatter) ...[
-                          8.height,
-                          const Divider(
-                            thickness: .3,
-                            height: 0,
-                          ),
-                          _buildSidebarItem(
+                        _buildSidebarItem(
+                          icon: FluentIcons.document_search_16_regular,
+                          selectedIcon: FluentIcons.document_search_16_filled,
+                          label: S.of(context).flutterDocs,
+                          index: 4,
+                        ),
+                        const Divider(thickness: .3),
+                        _buildSidebarItem(
+                          icon: FluentIcons.tasks_app_20_regular,
+                          selectedIcon: FluentIcons.tasks_app_20_filled,
+                          label: S.of(context).commonFlutterCliCommands,
+                          index: 5,
+                        ),
+                        const Divider(thickness: .3),
+                        _buildSidebarItem(
+                          icon: FluentIcons.map_16_regular,
+                          selectedIcon: FluentIcons.map_16_filled,
+                          label: S.of(context).flutterLearningRoadmap,
+                          index: 6,
+                        ),
+                        8.height,
+                      ],
+                    ),
+                    const Divider(thickness: .3, height: 0),
+                    ExpansionTile(
+                      backgroundColor: context
+                          .theme
+                          .colorScheme
+                          .surfaceContainer
+                          .withValues(alpha: 1),
+                      leading: const Icon(FluentIcons.toolbox_16_regular),
+                      tilePadding: const EdgeInsets.only(
+                        left: 14,
+                        right: 10,
+                        top: 0,
+                        bottom: 4,
+                      ),
+                      title: Text(
+                        S.of(context).features,
+                        style: context.theme.textTheme.titleSmall,
+                      ),
+                      children: [
+                        _buildSidebarItem(
+                          icon: FluentIcons.text_font_16_regular,
+                          selectedIcon: FluentIcons.text_font_16_filled,
+                          label: S.of(context).fonts,
+                          index: 7,
+                        ),
+                        const Divider(thickness: .3),
+                        _buildSidebarItem(
+                          icon: FluentIcons.color_16_regular,
+                          selectedIcon: FluentIcons.color_16_filled,
+                          label: S.of(context).colorPicker,
+                          index: 8,
+                        ),
+                        const Divider(thickness: .3),
+                        _buildSidebarItem(
+                          icon: FluentIcons.icons_20_regular,
+                          selectedIcon: FluentIcons.icons_20_filled,
+                          label: S.of(context).icons,
+                          index: 9,
+                        ),
+                        8.height,
+                        const Divider(thickness: .3),
+                        _buildSidebarItem(
+                          icon: FluentIcons.apps_settings_16_regular,
+                          selectedIcon: FluentIcons.apps_settings_16_filled,
+                          label: S.of(context).appIconSetter,
+                          index: 11,
+                        ),
+                        8.height,
+                      ],
+                    ),
+                    const Divider(thickness: .3, height: 0),
+                    if (Properties.instance.settings.enableImageCompress ||
+                        Properties.instance.settings.enableApiTesting ||
+                        Properties.instance.settings.enableJsonFormatter)
+                      ExpansionTile(
+                        backgroundColor:
+                            context.theme.colorScheme.surfaceContainer,
+                        leading: const Icon(FluentIcons.apps_add_in_16_regular),
+                        tilePadding: const EdgeInsets.only(
+                          left: 14,
+                          right: 10,
+                          top: 0,
+                          bottom: 0,
+                        ),
+                        title: Text(
+                          S.of(context).additionalTools,
+                          style: context.theme.textTheme.titleSmall,
+                        ),
+                        children: [
+                          if (Properties
+                              .instance
+                              .settings
+                              .enableJsonFormatter) ...[
+                            8.height,
+                            const Divider(thickness: .3, height: 0),
+                            _buildSidebarItem(
                               icon: FluentIcons.data_pie_20_regular,
                               selectedIcon: FluentIcons.data_pie_20_filled,
                               label: S.of(context).jsonFormatter,
-                              index: 10),
-                        ],
-                        if (Properties
-                            .instance.settings.enableImageCompress) ...[
-                          8.height,
-                          const Divider(
-                            thickness: .3,
-                            height: 0,
-                          ),
-                          _buildSidebarItem(
+                              index: 10,
+                            ),
+                          ],
+                          if (Properties
+                              .instance
+                              .settings
+                              .enableImageCompress) ...[
+                            8.height,
+                            const Divider(thickness: .3, height: 0),
+                            _buildSidebarItem(
                               icon: Icons.compress,
                               selectedIcon: Icons.compress,
                               label: S.of(context).imageCompress,
-                              index: 12),
-                          8.height,
-                        ],
-                        if (Properties.instance.settings.enableApiTesting) ...[
-                          const Divider(
-                            thickness: .3,
-                            height: 0,
-                          ),
-                          8.height,
-                          _buildSidebarItem(
+                              index: 12,
+                            ),
+                            8.height,
+                          ],
+                          if (Properties
+                              .instance
+                              .settings
+                              .enableApiTesting) ...[
+                            const Divider(thickness: .3, height: 0),
+                            8.height,
+                            _buildSidebarItem(
                               icon: FluentIcons.network_check_20_regular,
                               selectedIcon: FluentIcons.network_check_20_filled,
                               label: S.of(context).apiTesting,
-                              index: 13),
-                          8.height,
-                        ],
-                        if (Properties
-                            .instance.settings.enableDatabaseExplorer) ...[
-                          const Divider(
-                            thickness: .3,
-                            height: 0,
-                          ),
-                          8.height,
-                          _buildSidebarItem(
+                              index: 13,
+                            ),
+                            8.height,
+                          ],
+                          if (Properties
+                              .instance
+                              .settings
+                              .enableDatabaseExplorer) ...[
+                            const Divider(thickness: .3, height: 0),
+                            8.height,
+                            _buildSidebarItem(
                               icon: FluentIcons.window_database_24_regular,
                               selectedIcon: FluentIcons.network_check_20_filled,
                               label: S.of(context).databaseExplorer,
-                              index: 14),
-                          8.height,
+                              index: 14,
+                            ),
+                            8.height,
+                          ],
                         ],
-                      ],
-                    ),
-                  // const Divider(
-                  //   thickness: .3,
-                  //   height: 0,
-                  // ),
-                  // 8.height,
-                  // _buildSidebarItem(
-                  //     icon: FluentIcons.network_check_20_regular,
-                  //     selectedIcon: FluentIcons.network_check_20_filled,
-                  //     label: S.of(context).apiTesting,
-                  //     index: 11),
-                ],
+                      ),
+                    // const Divider(
+                    //   thickness: .3,
+                    //   height: 0,
+                    // ),
+                    // 8.height,
+                    // _buildSidebarItem(
+                    //     icon: FluentIcons.network_check_20_regular,
+                    //     selectedIcon: FluentIcons.network_check_20_filled,
+                    //     label: S.of(context).apiTesting,
+                    //     index: 11),
+                  ],
+                ),
               ),
             ),
-          ),
-          Column(
-            children: [
-              4.height,
-              _buildSidebarItem(
+            Column(
+              children: [
+                4.height,
+                _buildSidebarItem(
                   icon: FluentIcons.home_12_regular,
                   label: S.of(context).dashboard,
                   selectedIcon: FluentIcons.home_12_filled,
-                  index: 0),
-              const Divider(
-                thickness: .3,
-              ),
-              const Spacer(),
-            ],
-          )
-        ],
+                  index: 0,
+                ),
+                const Divider(thickness: .3),
+                const Spacer(),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  Widget _buildSidebarItem(
-      {required IconData icon,
-      IconData? selectedIcon,
-      required String label,
-      required int index}) {
+  Widget _buildSidebarItem({
+    required IconData icon,
+    IconData? selectedIcon,
+    required String label,
+    required int index,
+  }) {
     return InkWell(
       onTap: () => onItemTap(index),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 8),
         child: Container(
           decoration: BoxDecoration(
-              // Highlight the selected item
-              color: selectedItemIndex == index
-                  ? context.theme.colorScheme.secondaryContainer
-                  : Colors.transparent,
-              borderRadius: BorderRadius.circular(8)),
-          padding: const EdgeInsets.symmetric(
-            horizontal: 8.0,
-            vertical: 8.0,
+            // Highlight the selected item
+            color: selectedItemIndex == index
+                ? context.theme.colorScheme.secondaryContainer
+                : Colors.transparent,
+            borderRadius: BorderRadius.circular(8),
           ),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
           alignment: Alignment.centerLeft,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Icon(
-                  selectedItemIndex == index && selectedIcon != null
-                      ? selectedIcon
-                      : icon,
-                  color: selectedItemIndex == index
-                      ? context.theme.colorScheme.onSecondaryContainer
-                      : context.theme.colorScheme.onSurface,
-                  size: 20),
+                selectedItemIndex == index && selectedIcon != null
+                    ? selectedIcon
+                    : icon,
+                color: selectedItemIndex == index
+                    ? context.theme.colorScheme.onSecondaryContainer
+                    : context.theme.colorScheme.onSurface,
+                size: 20,
+              ),
               14.width,
               Expanded(
                 child: Text(
@@ -276,9 +288,10 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
                   style: context.theme.textTheme.titleSmall?.copyWith(
-                      color: selectedItemIndex == index
-                          ? context.theme.colorScheme.onSecondaryContainer
-                          : context.theme.colorScheme.onSurface),
+                    color: selectedItemIndex == index
+                        ? context.theme.colorScheme.onSecondaryContainer
+                        : context.theme.colorScheme.onSurface,
+                  ),
                 ),
               ),
             ],

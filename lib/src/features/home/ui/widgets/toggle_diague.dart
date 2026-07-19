@@ -30,37 +30,46 @@ class _ToggleToolsDialogState extends State<ToggleToolsDialog> {
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SwitchListTile(
-            title: Text(S.of(context).jsonFormatter),
-            subtitle:
-                Text(S.of(context).formatYourJsonDataForBetterReadability),
-            value: isJsonFormatterEnabled,
-            onChanged: (value) {
-              setState(() {
-                isJsonFormatterEnabled = value;
-              });
-            },
+          Material(
+            color: Colors.transparent,
+            child: SwitchListTile(
+              title: Text(S.of(context).jsonFormatter),
+              subtitle:
+                  Text(S.of(context).formatYourJsonDataForBetterReadability),
+              value: isJsonFormatterEnabled,
+              onChanged: (value) {
+                setState(() {
+                  isJsonFormatterEnabled = value;
+                });
+              },
+            ),
           ),
-          SwitchListTile(
-            title: Text(S.of(context).imageCompressor),
-            subtitle:
-                Text(S.of(context).reduceImageFileSizesWithoutQualityLoss),
-            value: isImageCompressorEnabled,
-            onChanged: (value) {
-              setState(() {
-                isImageCompressorEnabled = value;
-              });
-            },
+          Material(
+            color: Colors.transparent,
+            child: SwitchListTile(
+              title: Text(S.of(context).imageCompressor),
+              subtitle:
+                  Text(S.of(context).reduceImageFileSizesWithoutQualityLoss),
+              value: isImageCompressorEnabled,
+              onChanged: (value) {
+                setState(() {
+                  isImageCompressorEnabled = value;
+                });
+              },
+            ),
           ),
-          SwitchListTile(
-            title: Text(S.of(context).apiTesting),
-            subtitle: Text(S.of(context).testAndDebugYourApiEndpoints),
-            value: isApiTestingEnabled,
-            onChanged: (value) {
-              setState(() {
-                isApiTestingEnabled = value;
-              });
-            },
+          Material(
+            color: Colors.transparent,
+            child: SwitchListTile(
+              title: Text(S.of(context).apiTesting),
+              subtitle: Text(S.of(context).testAndDebugYourApiEndpoints),
+              value: isApiTestingEnabled,
+              onChanged: (value) {
+                setState(() {
+                  isApiTestingEnabled = value;
+                });
+              },
+            ),
           ),
         ],
       ),

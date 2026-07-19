@@ -339,19 +339,22 @@ class SearchBoxPrototype extends StatelessWidget {
                             padding: const EdgeInsets.all(16.0),
                             itemCount: searchResults.length,
                             itemBuilder: (context, index) {
-                              return ListTile(
-                                title: Text(searchResults[index]),
-                                onTap: () {
-                                  Navigator.pop(context);
-                                  final selectedIndex =
-                                      searchIndices.indexWhere((element) =>
-                                          element.title ==
-                                          searchResults[index]);
-                                  if (selectedIndex != -1) {
-                                    goBranch(
-                                        searchIndices[selectedIndex].index);
-                                  }
-                                },
+                              return Material(
+                                color: Colors.transparent,
+                                child: ListTile(
+                                  title: Text(searchResults[index]),
+                                  onTap: () {
+                                    Navigator.pop(context);
+                                    final selectedIndex =
+                                        searchIndices.indexWhere((element) =>
+                                            element.title ==
+                                            searchResults[index]);
+                                    if (selectedIndex != -1) {
+                                      goBranch(
+                                          searchIndices[selectedIndex].index);
+                                    }
+                                  },
+                                ),
                               );
                             },
                           ),
