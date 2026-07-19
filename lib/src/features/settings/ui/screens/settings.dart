@@ -213,7 +213,7 @@ class LanguageSwitcher extends StatefulWidget {
 
 class _LanguageSwitcherState extends State<LanguageSwitcher> {
   final languageStreamController = StreamController<String>();
-  final supportedLanguages = ['English', 'Tiếng Việt', '中国', 'System default'];
+  final supportedLanguages = ['English', 'Tiếng Việt', 'System default'];
 
   @override
   Widget build(BuildContext context) {
