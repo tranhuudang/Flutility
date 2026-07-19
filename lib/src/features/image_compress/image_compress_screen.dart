@@ -1,7 +1,7 @@
 import 'package:marina_labs_common/marina_labs_common.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:flutility/src/app/app.dart';
+
 import 'dart:io';
 import 'package:flutility/generated/l10n.dart';
 import 'package:image/image.dart' as img;

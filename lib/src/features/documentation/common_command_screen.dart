@@ -1,4 +1,5 @@
-import 'package:marina_labs_common/marina_labs_common.dart';
+import 'package:marina_labs_common/marina_labs_common.dart' hide SeeMoreSection;
+import 'package:flutility/src/features/shared/ui/widgets/see_more_section.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

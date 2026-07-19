@@ -849,18 +849,18 @@ packages:
     dependency: transitive
     description:
       name: i18n_extension
-      sha256: "86f988fe3d1e4f26d85e92e4f3ba622ea40c6daa5bfbb71938bde7d256d167e1"
+      sha256: "53d243a640460f494456dd6a9fd312d654d871312e79eb2b73a937d38473e438"
       url: "https://pub.dev"
     source: hosted
-    version: "15.1.1"
+    version: "15.0.5"
   i18n_extension_core:
     dependency: transitive
     description:
       name: i18n_extension_core
-      sha256: "5d17d355b95882e803f89c97cad610ab7967a798f8e519563d274f7888bc968e"
+      sha256: "7923af27a4f643a21d5aea5203bed4859d42c9d38c08939e22d6d10f1fa4afb5"
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.2"
+    version: "5.0.1"
   image:
     dependency: "direct main"
     description:
