@@ -6,7 +6,6 @@ import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
-import 'package:flutter_quill/flutter_quill.dart';
 import 'package:i18n_extension/i18n_extension.dart';
 
 class App extends StatefulWidget {
@@ -79,7 +78,6 @@ class _AppState extends State<App> {
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
-            FlutterQuillLocalizations.delegate,
           ],
           child: MaterialApp.router(
             themeMode: state.params.themeMode,

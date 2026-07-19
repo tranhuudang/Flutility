@@ -803,16 +803,10 @@ extension Localization on Object {
       'vi-VN': 'Báo cáo sự cố',
       'zh-CN': '报告问题'
     },
-    'Open Note': {'en-US': 'Open Note', 'vi-VN': 'Mở ghi chú', 'zh-CN': '打开笔记'},
     'Almost there': {
       'en-US': 'Almost there',
       'vi-VN': 'Gần xong',
       'zh-CN': '快完成了',
-    },
-    'Dev Notes': {
-      'en-US': 'Dev Notes',
-      'vi-VN': 'Ghi chú lập trình',
-      'zh-CN': '开发笔记'
     },
     'The End': {
       'en-US': 'The End',

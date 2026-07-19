@@ -179,20 +179,8 @@ final List<SearchIndex> searchIndices = [
       "Response".i18n
     ],
   ),
-  const SearchIndex(
-    index: 14,
-    title: 'Note Taking',
-    keywords: [
-      'note taking',
-      'note',
-      'notes',
-      'notebook',
-      'notebooks',
-      'Dev Notes'
-    ],
-  ),
   SearchIndex(
-    index: 15,
+    index: 14,
     title: 'Donation',
     keywords: [
       'donation',

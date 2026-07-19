@@ -1,6 +1,5 @@
 import 'package:flutility/src/features/api/api_test_screen.dart';
 import 'package:flutility/src/features/colors/color_picker_screen.dart';
-import 'package:flutility/src/features/dev_notes/note_taking_screen.dart';
 import 'package:flutility/src/features/documentation/common_command_screen.dart';
 import 'package:flutility/src/features/documentation/documentation_screen.dart';
 import 'package:flutility/src/features/donation/donation_screen.dart';
@@ -11,7 +10,6 @@ import 'package:flutility/src/features/image_compress/image_compress_screen.dart
 import 'package:flutility/src/features/json/json_formatter_screen.dart';
 import 'package:flutility/src/features/roadmap/ui/roadmap_screen.dart';
 import 'package:go_router/go_router.dart';
-import 'package:i18n_extension/i18n_extension.dart';
 import 'package:flutility/src/features/presentation.dart';
 import '../../features/icons/icons_screen.dart';
 import '../app.dart';
@@ -27,8 +25,6 @@ final _shellNavigatorIconGeneratorKey =
     GlobalKey<NavigatorState>(debugLabel: 'IconGenerator');
 final _shellNavigatorApiKey =
     GlobalKey<NavigatorState>(debugLabel: 'Vocabulary');
-final _shellNavigatorNoteTakingKey =
-    GlobalKey<NavigatorState>(debugLabel: 'noteTaking');
 final _shellNavigatorDonationKey =
     GlobalKey<NavigatorState>(debugLabel: 'donation');
 final _shellNavigatorDatabaseExplorerKey =
@@ -277,24 +273,8 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 14 api
-        StatefulShellBranch(
-          navigatorKey: _shellNavigatorNoteTakingKey,
-          routes: [
-            // top route inside branch
-            GoRoute(
-              name: RouteName.noteTaking,
-              path: RoutePath.noteTaking,
-              pageBuilder: (context, state) {
-                return NoTransitionPage(
-                  child: const DevNoteScreen(),
-                );
-              },
-            ),
-          ],
-        ),
 
-        /// 15 donation
+        /// 14 donation
         StatefulShellBranch(
           navigatorKey: _shellNavigatorDonationKey,
           routes: [
@@ -310,7 +290,7 @@ GoRouter routerConfigDesktop = GoRouter(
             ),
           ],
         ),
-        // 16 database explorer
+        // 15 database explorer
         StatefulShellBranch(
           navigatorKey: _shellNavigatorDatabaseExplorerKey,
           routes: [

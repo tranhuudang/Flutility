@@ -45,8 +45,6 @@ dependencies:
   collection: ^1.19.1
   path: ^1.9.1
   image_picker: ^1.2.3
-  flutter_quill: ^11.5.1
-
 
   ### UI PACKAGES
   responsive_builder: ^0.7.1

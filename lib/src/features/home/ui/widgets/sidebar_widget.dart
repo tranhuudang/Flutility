@@ -198,7 +198,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                               icon: FluentIcons.window_database_24_regular,
                               selectedIcon: FluentIcons.network_check_20_filled,
                               label: 'Database Explorer'.i18n,
-                              index: 16),
+                              index: 15),
                           8.height,
                         ],
                       ],
@@ -229,20 +229,6 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                 thickness: .3,
               ),
               const Spacer(),
-              const Divider(
-                thickness: .3,
-                height: 0,
-              ),
-              Container(
-                padding: const EdgeInsets.only(bottom: 8, top: 8),
-                color: context.theme.scaffoldBackgroundColor,
-                child: _buildSidebarItem(
-                  icon: FluentIcons.notebook_16_regular,
-                  selectedIcon: FluentIcons.notebook_16_filled,
-                  label: 'Dev Notes'.i18n,
-                  index: 14,
-                ),
-              ),
             ],
           )
         ],

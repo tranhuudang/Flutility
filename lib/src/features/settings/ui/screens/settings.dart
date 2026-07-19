@@ -27,12 +27,11 @@ class _SettingsViewState extends State<SettingsView> {
 
         // Copy the selected files to the application support directory
         Directory appSupportDir = await getApplicationSupportDirectory();
-        for (File file in files.take(2)) {
+        for (File file in files) {
           String newFilePath =
               path.join(appSupportDir.path, file.uri.pathSegments.last);
-          if ((file.uri.pathSegments.last ==
-                  LocalDirectory.sharedPreferencesFileName) ||
-              (file.uri.pathSegments.last == LocalDirectory.devNotesFileName)) {
+          if (file.uri.pathSegments.last ==
+                  LocalDirectory.sharedPreferencesFileName) {
             await file.copy(newFilePath);
             // Inform the user
             ScaffoldMessenger.of(context).showSnackBar(
@@ -58,7 +57,6 @@ class _SettingsViewState extends State<SettingsView> {
     Directory appSupportDir = await getApplicationSupportDirectory();
     final List<String> targetFilePaths = [
       path.join(appSupportDir.path, LocalDirectory.sharedPreferencesFileName),
-      path.join(appSupportDir.path, LocalDirectory.devNotesFileName),
     ];
     try {
       // Pick a directory
