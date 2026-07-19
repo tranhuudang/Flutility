@@ -44,3 +44,6 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 macos_release/flutter_toolkit.dmg
+
+# FVM Version Cache
+.fvm/

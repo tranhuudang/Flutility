@@ -8,15 +8,15 @@ import 'package:image_picker/image_picker.dart';
 import 'app_icon_generator_state.dart';
 
 final appIconGeneratorProvider =
-    StateNotifierProvider<AppIconGenerator, AppIconGeneratorState>((ref) {
-  return AppIconGenerator();
-});
+    NotifierProvider<AppIconGenerator, AppIconGeneratorState>(AppIconGenerator.new);
 
 
-class AppIconGenerator extends StateNotifier<AppIconGeneratorState> {
-  AppIconGenerator() : super(AppIconGeneratorState.initial()) {
-    // init something
+class AppIconGenerator extends Notifier<AppIconGeneratorState> {
+  @override
+  AppIconGeneratorState build() {
+    return AppIconGeneratorState.initial();
   }
+
   final ImagePicker _imagePicker = ImagePicker();
 
   // Function to pick a PNG image
@@ -30,7 +30,7 @@ class AppIconGenerator extends StateNotifier<AppIconGeneratorState> {
 
   // Function to pick the Flutter project location
   Future<void> pickProjectPath() async {
-    final result = await FilePicker.platform.getDirectoryPath();
+    final result = await FilePicker.getDirectoryPath();
     if (result != null) {
       state = state.copyWith(projectPath: result);
     }

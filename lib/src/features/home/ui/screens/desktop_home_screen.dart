@@ -159,7 +159,7 @@ class _DesktopHomeScreenState extends State<DesktopHomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               _buildIconButton(
-                                  icon: const Icon(
+                                  icon: const FaIcon(
                                     FontAwesomeIcons.github,
                                     size: 16,
                                   ),

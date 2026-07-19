@@ -41,7 +41,7 @@ class _DatabaseExplorerScreenState extends State<DatabaseExplorerScreen>
 
   Future<void> _pickDatabaseFile() async {
     try {
-      FilePickerResult? result = await FilePicker.platform.pickFiles(
+      FilePickerResult? result = await FilePicker.pickFiles(
         type: FileType.custom,
         allowedExtensions: _selectedDbType == DbType.sqlite
             ? ['db', 'sqlite', 'sqlite3']

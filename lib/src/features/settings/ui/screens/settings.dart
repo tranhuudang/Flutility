@@ -20,7 +20,7 @@ class _SettingsViewState extends State<SettingsView> {
   Future<void> _restoreBackupFiles() async {
     try {
       FilePickerResult? result =
-          await FilePicker.platform.pickFiles(allowMultiple: true);
+          await FilePicker.pickFiles(allowMultiple: true);
 
       if (result != null) {
         List<File> files = result.paths.map((path) => File(path!)).toList();
@@ -62,7 +62,7 @@ class _SettingsViewState extends State<SettingsView> {
     ];
     try {
       // Pick a directory
-      String? directoryPath = await FilePicker.platform.getDirectoryPath();
+      String? directoryPath = await FilePicker.getDirectoryPath();
 
       if (directoryPath != null) {
         Directory selectedDirectory = Directory(directoryPath);

@@ -21,7 +21,7 @@ class _ImageCompressScreenState extends State<ImageCompressScreen> {
 
   // Function to pick images (single or multiple)
   Future<void> _pickFiles() async {
-    FilePickerResult? result = await FilePicker.platform.pickFiles(
+    FilePickerResult? result = await FilePicker.pickFiles(
       type: FileType.custom,
       allowedExtensions: ['jpg', 'jpeg', 'png'],
       allowMultiple: true,
@@ -37,7 +37,7 @@ class _ImageCompressScreenState extends State<ImageCompressScreen> {
 
   // Function to pick an output directory
   Future<void> _pickOutputDirectory() async {
-    String? directoryPath = await FilePicker.platform.getDirectoryPath();
+    String? directoryPath = await FilePicker.getDirectoryPath();
     if (directoryPath != null) {
       setState(() {
         _outputDirectory = directoryPath;

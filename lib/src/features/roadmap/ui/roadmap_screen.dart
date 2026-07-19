@@ -412,7 +412,7 @@ class RoadmapScreen extends StatelessWidget {
                               },
                             ),
                             MapItem(
-                              icon: const Icon(FontAwesomeIcons.gitAlt),
+                              icon: const FaIcon(FontAwesomeIcons.gitAlt),
                               label: 'Git',
                               importantLevel: 1,
                               onTap: () {
@@ -1262,7 +1262,7 @@ class RoadmapScreen extends StatelessWidget {
                               title: 'Languages',
                               gridChildren: [
                                 MapItem(
-                                  icon: const Icon(FontAwesomeIcons.swift),
+                                  icon: const FaIcon(FontAwesomeIcons.swift),
                                   label: 'Swift',
                                   importantLevel: 2,
                                   onTap: () {

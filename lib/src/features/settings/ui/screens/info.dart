@@ -64,13 +64,13 @@ class InfoView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _buildIconButton(
-                icon: const Icon(
+                icon: const FaIcon(
                   FontAwesomeIcons.linkedin,
                   size: 20,
                 ),
                 url: OnlineDirectoryBase.linkedinUrl),
             _buildIconButton(
-                icon: const Icon(
+                icon: const FaIcon(
                   FontAwesomeIcons.github,
                   size: 20,
                 ),
